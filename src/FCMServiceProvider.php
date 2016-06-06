@@ -16,7 +16,6 @@ class FCMServiceProvider extends ServiceProvider {
 		}
 	}
 
-
 	public function register()
 	{
 		$this->app->singleton('fcm', function($app) {

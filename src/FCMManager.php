@@ -15,7 +15,6 @@ class FCMManager extends Manager {
 	{
 		$config = $this->app['config']->get('fcm.http', []);
 		return new Client([
-			'base_uri' => $config['server_url'],
 			'timeout'  => $config['timeout'],
 		]);
 	}
