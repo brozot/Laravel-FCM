@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/Downstream/DownstreamResponse.php" line="0" mnemonic="7" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b2e8c84f-48c1-43a8-90f0-199c1a489a6e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Downstream/FCMDownstream.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Facades/FCMDownstream.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Group/FCMGroup.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Group/GroupResponse.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Request.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FCM.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Message/Message.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Facades/FCM.php" afterPath="$PROJECT_DIR$/src/Facades/FCMGroup.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Response/Response.php" afterPath="$PROJECT_DIR$/src/Downstream/DownstreamResponse.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/fcm.php" afterPath="$PROJECT_DIR$/config/fcm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FCM.php" afterPath="$PROJECT_DIR$/src/FCM.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FCMManager.php" afterPath="$PROJECT_DIR$/src/FCMManager.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FCMServiceProvider.php" afterPath="$PROJECT_DIR$/src/FCMServiceProvider.php" />
     </list>
     <ignored path="Laravel-FCM.iws" />
@@ -21,17 +32,20 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Laravel-FCM" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="composer.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/composer.json">
+      <file leaf-file-name="GroupResponse.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Group/GroupResponse.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
-              <folding />
+            <state relative-caret-position="345">
+              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+              <folding>
+                <element signature="e#36#65#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,11 +58,24 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/fcm.php" />
         <option value="$PROJECT_DIR$/src/FCMManager.php" />
         <option value="$PROJECT_DIR$/src/FCM.php" />
-        <option value="$PROJECT_DIR$/src/FCMServiceProvider.php" />
         <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/src/Message/Message.php" />
+        <option value="$PROJECT_DIR$/config/fcm.php" />
+        <option value="$PROJECT_DIR$/src/Request.php" />
+        <option value="$PROJECT_DIR$/src/Group/GroupResponse.php" />
+        <option value="$PROJECT_DIR$/src/Downstram/FCM.php" />
+        <option value="$PROJECT_DIR$/src/Downstream/FCM.php" />
+        <option value="$PROJECT_DIR$/src/Downstream/Response.php" />
+        <option value="$PROJECT_DIR$/src/Downstream/DownstreamResponse.php" />
+        <option value="$PROJECT_DIR$/src/Downstream/FCMGroup.php" />
+        <option value="$PROJECT_DIR$/src/Facades/FCMDownstreamphp" />
+        <option value="$PROJECT_DIR$/src/Facades/FCMGroup.php" />
+        <option value="$PROJECT_DIR$/src/Facades/FCMDownstream.php" />
+        <option value="$PROJECT_DIR$/src/FCMServiceProvider.php" />
+        <option value="$PROJECT_DIR$/src/Downstream/FCMDownstream.php" />
+        <option value="$PROJECT_DIR$/src/Group/FCMGroup.php" />
       </list>
     </option>
   </component>
@@ -138,7 +165,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Message" />
+              <option name="myItemId" value="Group" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -170,14 +197,32 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Downstream" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Laravel-FCM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Laravel-FCM" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -185,6 +230,52 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Miaow/API" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Facades" />
+      <recent name="$PROJECT_DIR$/src/Group" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Facades" />
+      <recent name="$PROJECT_DIR$/src/Group" />
+      <recent name="$PROJECT_DIR$/src/Downstream" />
+      <recent name="$PROJECT_DIR$/src/Downstram" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -200,22 +291,27 @@
       <option name="presentableId" value="Default" />
       <updated>1465188816498</updated>
       <workItem from="1465188817934" duration="2113000" />
-      <workItem from="1465229218313" duration="2013000" />
+      <workItem from="1465229218313" duration="2378000" />
+      <workItem from="1465232060903" duration="592000" />
+      <workItem from="1465275867296" duration="554000" />
+      <workItem from="1465319655297" duration="5996000" />
+      <workItem from="1465580403877" duration="1685000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4126000" />
+    <option name="totallyTimeSpent" value="13318000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="737" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25767368" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27382874" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -226,7 +322,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -247,107 +342,48 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/FCMServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="851">
-          <caret line="37" column="21" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="21" />
-          <folding>
-            <marker date="1465229271000" expanded="true" signature="120:698" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="145:342" ph="{...}" />
-            <marker date="1465229271000" expanded="true" signature="202:238" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="248:338" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="269:333" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="270:332" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="371:480" ph="{...}" />
-            <marker date="1465229271000" expanded="true" signature="399:447" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="422:446" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="515:626" ph="{...}" />
-            <marker date="1465229271000" expanded="true" signature="543:621" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="573:620" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="657:697" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NetworkClient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1464978631000" expanded="true" signature="87:131" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/fcm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FCMManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FCMServiceProvider.php">
+    <entry file="file://$PROJECT_DIR$/src/Facades/FCMDownstream.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding>
-            <marker date="1465229271000" expanded="true" signature="120:698" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="145:342" ph="{...}" />
-            <marker date="1465229271000" expanded="true" signature="202:238" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="248:338" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="269:333" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="270:332" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="371:480" ph="{...}" />
-            <marker date="1465229271000" expanded="true" signature="399:447" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="422:446" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="515:626" ph="{...}" />
-            <marker date="1465229271000" expanded="true" signature="543:621" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="573:620" ph="..." />
-            <marker date="1465229271000" expanded="true" signature="657:697" ph="{...}" />
+            <marker date="1465329032000" expanded="true" signature="41:99" ph="..." />
+            <marker date="1465329032000" expanded="true" signature="137:219" ph="..." />
+            <marker date="1465329032000" expanded="true" signature="185:218" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Message/Message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1465154891000" expanded="true" signature="86:279" ph=" Form more information about options, please refer to google official documentation : ..." />
-            <marker date="1465154891000" expanded="true" signature="318:2857" ph="..." />
-            <marker date="1465154891000" expanded="true" signature="614:774" ph="{...}" />
-            <marker date="1465154891000" expanded="true" signature="780:1215" ph=" Create a message which send to a registration token, notification key, or topic. ..." />
-            <marker date="1465154891000" expanded="true" signature="1353:1419" ph="..." />
-            <marker date="1465154891000" expanded="true" signature="1426:1683" ph=" Create a message for multicasting ..." />
-            <marker date="1465154891000" expanded="true" signature="1846:1924" ph="..." />
-            <marker date="1465154891000" expanded="true" signature="1931:2060" ph=" This parameter specifies a logical expression of conditions that determine the message target. ..." />
-            <marker date="1465154891000" expanded="true" signature="2105:2146" ph="{...}" />
-            <marker date="1465154891000" expanded="true" signature="2176:2327" ph="{...}" />
-            <marker date="1465154891000" expanded="true" signature="2206:2230" ph="..." />
-            <marker date="1465154891000" expanded="true" signature="2272:2309" ph="..." />
-            <marker date="1465154891000" expanded="true" signature="2348:2856" ph="{...}" />
-            <marker date="1465154891000" expanded="true" signature="2501:2676" ph="..." />
-            <marker date="1465154891000" expanded="true" signature="2703:2770" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Facades/FCM.php">
+    <entry file="file://$PROJECT_DIR$/src/Facades/FCMGroup.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
           <folding>
-            <marker date="1464978214000" expanded="true" signature="41:99" ph="..." />
-            <marker date="1464978214000" expanded="true" signature="127:198" ph="..." />
-            <marker date="1464978214000" expanded="true" signature="175:197" ph="{...}" />
+            <marker date="1465329004000" expanded="true" signature="41:99" ph="..." />
+            <marker date="1465329004000" expanded="true" signature="132:209" ph="..." />
+            <marker date="1465329004000" expanded="true" signature="180:208" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FCMServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="851">
+          <caret line="37" column="21" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -355,39 +391,192 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FCM.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-          <folding>
-            <marker date="1465191410000" expanded="false" signature="33:109" ph="..." />
-            <marker date="1465191410000" expanded="true" signature="147:2421" ph="..." />
-            <marker date="1465191410000" expanded="true" signature="323:420" ph="{...}" />
-            <marker date="1465191410000" expanded="true" signature="461:841" ph="{...}" />
-            <marker date="1465191410000" expanded="true" signature="654:744" ph="..." />
-            <marker date="1465191410000" expanded="true" signature="917:1099" ph="{...}" />
-            <marker date="1465191410000" expanded="true" signature="1192:1389" ph="{...}" />
-            <marker date="1465191410000" expanded="true" signature="1487:1687" ph="{...}" />
-            <marker date="1465191410000" expanded="true" signature="1728:1821" ph="{...}" />
-            <marker date="1465191410000" expanded="true" signature="1742:1816" ph="..." />
-            <marker date="1465191410000" expanded="true" signature="1946:2270" ph="{...}" />
-            <marker date="1465191410000" expanded="true" signature="1961:2234" ph="..." />
-            <marker date="1465191410000" expanded="true" signature="2017:2230" ph="..." />
-            <marker date="1465191410000" expanded="true" signature="2305:2418" ph="{...}" />
-            <marker date="1465191410000" expanded="true" signature="2319:2413" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
+        <state relative-caret-position="641">
           <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NetworkClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Downstream/DownstreamResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1058">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <marker date="1465328780000" expanded="true" signature="41:122" ph="..." />
+            <marker date="1465328780000" expanded="true" signature="151:2315" ph="..." />
+            <marker date="1465328780000" expanded="true" signature="416:543" ph="{...}" />
+            <marker date="1465328780000" expanded="true" signature="493:539" ph="..." />
+            <marker date="1465328780000" expanded="true" signature="570:843" ph="{...}" />
+            <marker date="1465328780000" expanded="true" signature="811:839" ph="..." />
+            <marker date="1465328780000" expanded="true" signature="876:1382" ph="{...}" />
+            <marker date="1465328780000" expanded="true" signature="981:1378" ph="..." />
+            <marker date="1465328780000" expanded="true" signature="1081:1167" ph="..." />
+            <marker date="1465328780000" expanded="true" signature="1218:1374" ph="..." />
+            <marker date="1465328780000" expanded="true" signature="1308:1369" ph="..." />
+            <marker date="1465328780000" expanded="true" signature="1416:1453" ph="{...}" />
+            <marker date="1465328780000" expanded="true" signature="1487:1524" ph="{...}" />
+            <marker date="1465328780000" expanded="true" signature="1564:1605" ph="{...}" />
+            <marker date="1465328780000" expanded="true" signature="1639:1676" ph="{...}" />
+            <marker date="1465328780000" expanded="true" signature="1710:1747" ph="{...}" />
+            <marker date="1465328780000" expanded="true" signature="1779:2313" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FCMServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/fcm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
+          <folding>
+            <marker date="1465321449000" expanded="true" signature="15:404" ph="..." />
+            <marker date="1465321449000" expanded="true" signature="76:402" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FCMManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding>
+            <marker date="1465189983000" expanded="false" signature="34:84" ph="..." />
+            <marker date="1465189983000" expanded="true" signature="120:376" ph="..." />
+            <marker date="1465189983000" expanded="true" signature="157:208" ph="{...}" />
+            <marker date="1465189983000" expanded="true" signature="249:375" ph="{...}" />
+            <marker date="1465189983000" expanded="true" signature="329:369" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Facades/FCMDownstream.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <marker date="1465329032000" expanded="true" signature="41:99" ph="..." />
+            <marker date="1465329032000" expanded="true" signature="137:219" ph="..." />
+            <marker date="1465329032000" expanded="true" signature="185:218" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+          <folding>
+            <marker date="1465323566000" expanded="true" signature="87:1567" ph="..." />
+            <marker date="1465323566000" expanded="true" signature="296:393" ph="{...}" />
+            <marker date="1465323566000" expanded="true" signature="428:571" ph="{...}" />
+            <marker date="1465323566000" expanded="true" signature="712:811" ph="{...}" />
+            <marker date="1465323566000" expanded="true" signature="726:806" ph="..." />
+            <marker date="1465323566000" expanded="true" signature="851:1363" ph="{...}" />
+            <marker date="1465323566000" expanded="true" signature="1004:1207" ph="..." />
+            <marker date="1465323566000" expanded="true" signature="1234:1301" ph="..." />
+            <marker date="1465323566000" expanded="true" signature="1405:1565" ph="{...}" />
+            <marker date="1465323566000" expanded="true" signature="1419:1560" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Downstream/FCMDownstream.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <marker date="1465582363000" expanded="true" signature="45:251" ph="..." />
+            <marker date="1465582363000" expanded="true" signature="293:746" ph="..." />
+            <marker date="1465582363000" expanded="true" signature="416:557" ph="{...}" />
+            <marker date="1465582363000" expanded="true" signature="587:636" ph="{...}" />
+            <marker date="1465582363000" expanded="true" signature="695:745" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Facades/FCMGroup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <marker date="1465329004000" expanded="true" signature="41:99" ph="..." />
+            <marker date="1465329004000" expanded="true" signature="132:209" ph="..." />
+            <marker date="1465329004000" expanded="true" signature="180:208" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/Response.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding>
+            <marker date="1460577361000" expanded="true" signature="78:114" ph=" PSR-7 response implementation. ..." />
+            <marker date="1460577361000" expanded="true" signature="160:3862" ph="{...}" />
+            <marker date="1460577361000" expanded="true" signature="287:2322" ph="..." />
+            <marker date="1460577361000" expanded="true" signature="2446:2757" ph=" @param int    $status  Status code for the response, if any. ..." />
+            <marker date="1460577361000" expanded="true" signature="2923:3340" ph="..." />
+            <marker date="1460577361000" expanded="true" signature="2997:3053" ph="..." />
+            <marker date="1460577361000" expanded="true" signature="3160:3228" ph="..." />
+            <marker date="1460577361000" expanded="true" signature="3236:3297" ph="..." />
+            <marker date="1460577361000" expanded="true" signature="3378:3424" ph="{...}" />
+            <marker date="1460577361000" expanded="true" signature="3463:3511" ph="{...}" />
+            <marker date="1460577361000" expanded="true" signature="3570:3860" ph="{...}" />
+            <marker date="1460577361000" expanded="true" signature="3717:3788" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Group/FCMGroup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <marker date="1465582699000" expanded="true" signature="39:203" ph="..." />
+            <marker date="1465582699000" expanded="true" signature="239:2743" ph="..." />
+            <marker date="1465582699000" expanded="true" signature="392:546" ph="{...}" />
+            <marker date="1465582699000" expanded="true" signature="620:918" ph="{...}" />
+            <marker date="1465582699000" expanded="true" signature="807:826" ph="..." />
+            <marker date="1465582699000" expanded="true" signature="1008:1321" ph="{...}" />
+            <marker date="1465582699000" expanded="true" signature="1210:1229" ph="..." />
+            <marker date="1465582699000" expanded="true" signature="1416:1732" ph="{...}" />
+            <marker date="1465582699000" expanded="true" signature="1621:1640" ph="..." />
+            <marker date="1465582699000" expanded="true" signature="1762:1812" ph="{...}" />
+            <marker date="1465582699000" expanded="true" signature="1871:1927" ph="{...}" />
+            <marker date="1465582699000" expanded="true" signature="2049:2227" ph="{...}" />
+            <marker date="1465582699000" expanded="true" signature="2063:2222" ph="..." />
+            <marker date="1465582699000" expanded="true" signature="2353:2556" ph="{...}" />
+            <marker date="1465582699000" expanded="true" signature="2367:2551" ph="..." />
+            <marker date="1465582699000" expanded="true" signature="2562:2607" ph=" @param $response ..." />
+            <marker date="1465582699000" expanded="true" signature="2653:2742" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Group/GroupResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding>
+            <element signature="e#36#65#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

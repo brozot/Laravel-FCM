@@ -1,12 +1,13 @@
-<?php namespace LaravelFCM\Response;
+<?php namespace LaravelFCM\Group;
 
 
-use LaravelFCM\Message\Message;
+
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use \GuzzleHttp\Psr7\Response;
 
 
-class Response {
+class DownstreamResponse {
 
 	protected $numberSuccess = 0;
 	protected $numberFailure = 0;
@@ -19,12 +20,14 @@ class Response {
 
 	protected $message;
 
-	public function __construct(array $response, Message $message)
+	public function __construct(Response $response)
 	{
-		$this->message = $message;
 		$this->response =$response;
-		$this->parse();
-		$this->logResults();
+
+		if ($response->getStatusCode() == 200) {
+			$this->parse();
+			$this->logResults();
+		}
 	}
 
 	private function parse()
