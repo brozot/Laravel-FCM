@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2e8c84f-48c1-43a8-90f0-199c1a489a6e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Downstream/FCMDownstream.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Facades/FCMDownstream.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Group/FCMGroup.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Group/GroupResponse.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Request.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FCM.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Message/Message.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Facades/FCM.php" afterPath="$PROJECT_DIR$/src/Facades/FCMGroup.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Response/Response.php" afterPath="$PROJECT_DIR$/src/Downstream/DownstreamResponse.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Facades/FCMDownstream.php" afterPath="$PROJECT_DIR$/src/Facades/FCM.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Group/GroupResponse.php" afterPath="$PROJECT_DIR$/src/Downstream/GroupResponse.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Request.php" afterPath="$PROJECT_DIR$/src/FCMRequest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/fcm.php" afterPath="$PROJECT_DIR$/config/fcm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Downstream/DownstreamResponse.php" afterPath="$PROJECT_DIR$/src/Downstream/DownstreamResponse.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Downstream/FCMDownstream.php" afterPath="$PROJECT_DIR$/src/Downstream/FCMDownstream.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FCMServiceProvider.php" afterPath="$PROJECT_DIR$/src/FCMServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Group/FCMGroup.php" afterPath="$PROJECT_DIR$/src/Group/FCMGroup.php" />
     </list>
     <ignored path="Laravel-FCM.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,14 +34,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GroupResponse.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Group/GroupResponse.php">
+      <file leaf-file-name="FCMGroup.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Group/FCMGroup.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-              <folding>
-                <element signature="e#36#65#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="1886">
+              <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -68,13 +62,15 @@
         <option value="$PROJECT_DIR$/src/Downstram/FCM.php" />
         <option value="$PROJECT_DIR$/src/Downstream/FCM.php" />
         <option value="$PROJECT_DIR$/src/Downstream/Response.php" />
-        <option value="$PROJECT_DIR$/src/Downstream/DownstreamResponse.php" />
         <option value="$PROJECT_DIR$/src/Downstream/FCMGroup.php" />
         <option value="$PROJECT_DIR$/src/Facades/FCMDownstreamphp" />
         <option value="$PROJECT_DIR$/src/Facades/FCMGroup.php" />
         <option value="$PROJECT_DIR$/src/Facades/FCMDownstream.php" />
+        <option value="$PROJECT_DIR$/src/Facades/FCM.php" />
         <option value="$PROJECT_DIR$/src/FCMServiceProvider.php" />
+        <option value="$PROJECT_DIR$/src/FCMRequest.php" />
         <option value="$PROJECT_DIR$/src/Downstream/FCMDownstream.php" />
+        <option value="$PROJECT_DIR$/src/Downstream/DownstreamResponse.php" />
         <option value="$PROJECT_DIR$/src/Group/FCMGroup.php" />
       </list>
     </option>
@@ -233,16 +229,16 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Downstream" />
+      <recent name="$PROJECT_DIR$/src/Facades" />
+      <recent name="$PROJECT_DIR$/src/Group" />
+      <recent name="$PROJECT_DIR$/src/Downstram" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Facades" />
       <recent name="$PROJECT_DIR$/src/Group" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Facades" />
-      <recent name="$PROJECT_DIR$/src/Group" />
-      <recent name="$PROJECT_DIR$/src/Downstream" />
-      <recent name="$PROJECT_DIR$/src/Downstram" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunManager">
@@ -295,23 +291,23 @@
       <workItem from="1465232060903" duration="592000" />
       <workItem from="1465275867296" duration="554000" />
       <workItem from="1465319655297" duration="5996000" />
-      <workItem from="1465580403877" duration="1685000" />
+      <workItem from="1465580403877" duration="2897000" />
+      <workItem from="1466179700503" duration="2342000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13318000" />
+    <option name="totallyTimeSpent" value="16872000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="737" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27382874" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27786753" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -322,6 +318,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -342,14 +339,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Facades/FCMDownstream.php">
+    <entry file="file://$PROJECT_DIR$/src/Group/FCMGroup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Facades/FCM.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding>
-            <marker date="1465329032000" expanded="true" signature="41:99" ph="..." />
-            <marker date="1465329032000" expanded="true" signature="137:219" ph="..." />
-            <marker date="1465329032000" expanded="true" signature="185:218" ph="{...}" />
+            <marker date="1466181031000" expanded="true" signature="41:99" ph="..." />
+            <marker date="1466181031000" expanded="true" signature="127:209" ph="..." />
+            <marker date="1466181031000" expanded="true" signature="175:208" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -408,118 +413,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Downstream/DownstreamResponse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1058">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <marker date="1465328780000" expanded="true" signature="41:122" ph="..." />
-            <marker date="1465328780000" expanded="true" signature="151:2315" ph="..." />
-            <marker date="1465328780000" expanded="true" signature="416:543" ph="{...}" />
-            <marker date="1465328780000" expanded="true" signature="493:539" ph="..." />
-            <marker date="1465328780000" expanded="true" signature="570:843" ph="{...}" />
-            <marker date="1465328780000" expanded="true" signature="811:839" ph="..." />
-            <marker date="1465328780000" expanded="true" signature="876:1382" ph="{...}" />
-            <marker date="1465328780000" expanded="true" signature="981:1378" ph="..." />
-            <marker date="1465328780000" expanded="true" signature="1081:1167" ph="..." />
-            <marker date="1465328780000" expanded="true" signature="1218:1374" ph="..." />
-            <marker date="1465328780000" expanded="true" signature="1308:1369" ph="..." />
-            <marker date="1465328780000" expanded="true" signature="1416:1453" ph="{...}" />
-            <marker date="1465328780000" expanded="true" signature="1487:1524" ph="{...}" />
-            <marker date="1465328780000" expanded="true" signature="1564:1605" ph="{...}" />
-            <marker date="1465328780000" expanded="true" signature="1639:1676" ph="{...}" />
-            <marker date="1465328780000" expanded="true" signature="1710:1747" ph="{...}" />
-            <marker date="1465328780000" expanded="true" signature="1779:2313" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FCMServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/fcm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
-          <folding>
-            <marker date="1465321449000" expanded="true" signature="15:404" ph="..." />
-            <marker date="1465321449000" expanded="true" signature="76:402" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FCMManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding>
-            <marker date="1465189983000" expanded="false" signature="34:84" ph="..." />
-            <marker date="1465189983000" expanded="true" signature="120:376" ph="..." />
-            <marker date="1465189983000" expanded="true" signature="157:208" ph="{...}" />
-            <marker date="1465189983000" expanded="true" signature="249:375" ph="{...}" />
-            <marker date="1465189983000" expanded="true" signature="329:369" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Facades/FCMDownstream.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding>
-            <marker date="1465329032000" expanded="true" signature="41:99" ph="..." />
-            <marker date="1465329032000" expanded="true" signature="137:219" ph="..." />
-            <marker date="1465329032000" expanded="true" signature="185:218" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-          <folding>
-            <marker date="1465323566000" expanded="true" signature="87:1567" ph="..." />
-            <marker date="1465323566000" expanded="true" signature="296:393" ph="{...}" />
-            <marker date="1465323566000" expanded="true" signature="428:571" ph="{...}" />
-            <marker date="1465323566000" expanded="true" signature="712:811" ph="{...}" />
-            <marker date="1465323566000" expanded="true" signature="726:806" ph="..." />
-            <marker date="1465323566000" expanded="true" signature="851:1363" ph="{...}" />
-            <marker date="1465323566000" expanded="true" signature="1004:1207" ph="..." />
-            <marker date="1465323566000" expanded="true" signature="1234:1301" ph="..." />
-            <marker date="1465323566000" expanded="true" signature="1405:1565" ph="{...}" />
-            <marker date="1465323566000" expanded="true" signature="1419:1560" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Downstream/FCMDownstream.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-          <folding>
-            <marker date="1465582363000" expanded="true" signature="45:251" ph="..." />
-            <marker date="1465582363000" expanded="true" signature="293:746" ph="..." />
-            <marker date="1465582363000" expanded="true" signature="416:557" ph="{...}" />
-            <marker date="1465582363000" expanded="true" signature="587:636" ph="{...}" />
-            <marker date="1465582363000" expanded="true" signature="695:745" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Facades/FCMGroup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <marker date="1465329004000" expanded="true" signature="41:99" ph="..." />
-            <marker date="1465329004000" expanded="true" signature="132:209" ph="..." />
-            <marker date="1465329004000" expanded="true" signature="180:208" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -544,39 +441,157 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Group/FCMGroup.php">
+    <entry file="file://$PROJECT_DIR$/src/FCMServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        <state relative-caret-position="253">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
           <folding>
-            <marker date="1465582699000" expanded="true" signature="39:203" ph="..." />
-            <marker date="1465582699000" expanded="true" signature="239:2743" ph="..." />
-            <marker date="1465582699000" expanded="true" signature="392:546" ph="{...}" />
-            <marker date="1465582699000" expanded="true" signature="620:918" ph="{...}" />
-            <marker date="1465582699000" expanded="true" signature="807:826" ph="..." />
-            <marker date="1465582699000" expanded="true" signature="1008:1321" ph="{...}" />
-            <marker date="1465582699000" expanded="true" signature="1210:1229" ph="..." />
-            <marker date="1465582699000" expanded="true" signature="1416:1732" ph="{...}" />
-            <marker date="1465582699000" expanded="true" signature="1621:1640" ph="..." />
-            <marker date="1465582699000" expanded="true" signature="1762:1812" ph="{...}" />
-            <marker date="1465582699000" expanded="true" signature="1871:1927" ph="{...}" />
-            <marker date="1465582699000" expanded="true" signature="2049:2227" ph="{...}" />
-            <marker date="1465582699000" expanded="true" signature="2063:2222" ph="..." />
-            <marker date="1465582699000" expanded="true" signature="2353:2556" ph="{...}" />
-            <marker date="1465582699000" expanded="true" signature="2367:2551" ph="..." />
-            <marker date="1465582699000" expanded="true" signature="2562:2607" ph=" @param $response ..." />
-            <marker date="1465582699000" expanded="true" signature="2653:2742" ph="{...}" />
+            <marker date="1466181257000" expanded="false" signature="33:140" ph="..." />
+            <marker date="1466181257000" expanded="true" signature="192:870" ph="..." />
+            <marker date="1466181257000" expanded="true" signature="217:414" ph="{...}" />
+            <marker date="1466181257000" expanded="true" signature="274:310" ph="..." />
+            <marker date="1466181257000" expanded="true" signature="320:410" ph="..." />
+            <marker date="1466181257000" expanded="true" signature="341:405" ph="..." />
+            <marker date="1466181257000" expanded="true" signature="342:404" ph="..." />
+            <marker date="1466181257000" expanded="true" signature="443:652" ph="{...}" />
+            <marker date="1466181257000" expanded="true" signature="466:525" ph="..." />
+            <marker date="1466181257000" expanded="true" signature="495:524" ph="..." />
+            <marker date="1466181257000" expanded="true" signature="548:617" ph="..." />
+            <marker date="1466181257000" expanded="true" signature="582:616" ph="..." />
+            <marker date="1466181257000" expanded="true" signature="687:798" ph="{...}" />
+            <marker date="1466181257000" expanded="true" signature="715:793" ph="..." />
+            <marker date="1466181257000" expanded="true" signature="745:792" ph="..." />
+            <marker date="1466181257000" expanded="true" signature="829:869" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Group/GroupResponse.php">
+    <entry file="file://$PROJECT_DIR$/config/fcm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+        <state relative-caret-position="161">
+          <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
           <folding>
-            <element signature="e#36#65#0#PHP" expanded="true" />
+            <marker date="1465321449000" expanded="true" signature="15:404" ph="..." />
+            <marker date="1465321449000" expanded="true" signature="76:402" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Downstream/FCMDownstream.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="47" column="55" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
+          <folding>
+            <marker date="1466181607000" expanded="true" signature="45:287" ph="..." />
+            <marker date="1466181607000" expanded="true" signature="329:1321" ph="..." />
+            <marker date="1466181607000" expanded="true" signature="452:651" ph="{...}" />
+            <marker date="1466181607000" expanded="true" signature="804:1021" ph="{...}" />
+            <marker date="1466181607000" expanded="true" signature="1051:1100" ph="{...}" />
+            <marker date="1466181607000" expanded="true" signature="1159:1209" ph="{...}" />
+            <marker date="1466181607000" expanded="true" signature="1264:1320" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Downstream/DownstreamResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1680">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <marker date="1466181633000" expanded="true" signature="46:127" ph="..." />
+            <marker date="1466181633000" expanded="true" signature="156:2320" ph="..." />
+            <marker date="1466181633000" expanded="true" signature="421:548" ph="{...}" />
+            <marker date="1466181633000" expanded="true" signature="498:544" ph="..." />
+            <marker date="1466181633000" expanded="true" signature="575:848" ph="{...}" />
+            <marker date="1466181633000" expanded="true" signature="816:844" ph="..." />
+            <marker date="1466181633000" expanded="true" signature="881:1387" ph="{...}" />
+            <marker date="1466181633000" expanded="true" signature="986:1383" ph="..." />
+            <marker date="1466181633000" expanded="true" signature="1086:1172" ph="..." />
+            <marker date="1466181633000" expanded="true" signature="1223:1379" ph="..." />
+            <marker date="1466181633000" expanded="true" signature="1313:1374" ph="..." />
+            <marker date="1466181633000" expanded="true" signature="1421:1458" ph="{...}" />
+            <marker date="1466181633000" expanded="true" signature="1492:1529" ph="{...}" />
+            <marker date="1466181633000" expanded="true" signature="1569:1610" ph="{...}" />
+            <marker date="1466181633000" expanded="true" signature="1644:1681" ph="{...}" />
+            <marker date="1466181633000" expanded="true" signature="1715:1752" ph="{...}" />
+            <marker date="1466181633000" expanded="true" signature="1784:2318" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Downstream/GroupResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-951">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <marker date="1465323584000" expanded="true" signature="40:120" ph="..." />
+            <marker date="1465323584000" expanded="true" signature="143:2365" ph="..." />
+            <marker date="1465323584000" expanded="true" signature="470:735" ph="{...}" />
+            <marker date="1465323584000" expanded="true" signature="604:730" ph="..." />
+            <marker date="1465323584000" expanded="true" signature="776:1119" ph="{...}" />
+            <marker date="1465323584000" expanded="true" signature="827:880" ph="..." />
+            <marker date="1465323584000" expanded="true" signature="930:983" ph="..." />
+            <marker date="1465323584000" expanded="true" signature="1049:1115" ph="..." />
+            <marker date="1465323584000" expanded="true" signature="1153:1192" ph="{...}" />
+            <marker date="1465323584000" expanded="true" signature="1226:1265" ph="{...}" />
+            <marker date="1465323584000" expanded="true" signature="1308:1354" ph="{...}" />
+            <marker date="1465323584000" expanded="true" signature="1360:1433" ph=" @param $response ..." />
+            <marker date="1465323584000" expanded="true" signature="1509:1684" ph="{...}" />
+            <marker date="1465323584000" expanded="true" signature="1569:1664" ph="..." />
+            <marker date="1465323584000" expanded="true" signature="1733:2082" ph="{...}" />
+            <marker date="1465323584000" expanded="true" signature="2114:2363" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Facades/FCM.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <marker date="1466181031000" expanded="true" signature="41:99" ph="..." />
+            <marker date="1466181031000" expanded="true" signature="127:209" ph="..." />
+            <marker date="1466181031000" expanded="true" signature="175:208" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FCMRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="60" selection-end-column="24" />
+          <folding>
+            <marker date="1466181505000" expanded="true" signature="87:1477" ph="..." />
+            <marker date="1466181505000" expanded="true" signature="296:393" ph="{...}" />
+            <marker date="1466181505000" expanded="true" signature="428:545" ph="{...}" />
+            <marker date="1466181505000" expanded="true" signature="622:721" ph="{...}" />
+            <marker date="1466181505000" expanded="true" signature="636:716" ph="..." />
+            <marker date="1466181505000" expanded="true" signature="761:1273" ph="{...}" />
+            <marker date="1466181505000" expanded="true" signature="914:1117" ph="..." />
+            <marker date="1466181505000" expanded="true" signature="1144:1211" ph="..." />
+            <marker date="1466181505000" expanded="true" signature="1315:1475" ph="{...}" />
+            <marker date="1466181505000" expanded="true" signature="1329:1470" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Facades/FCMGroup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <marker date="1465329004000" expanded="true" signature="41:99" ph="..." />
+            <marker date="1465329004000" expanded="true" signature="132:209" ph="..." />
+            <marker date="1465329004000" expanded="true" signature="180:208" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Group/FCMGroup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1886">
+          <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>

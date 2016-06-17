@@ -3,7 +3,7 @@
 use LaravelFCM\Message;
 use Illuminate\Support\Facades\Facade;
 
-class FCMDownstream extends Facade {
+class FCM extends Facade {
 
 	protected static function getFacadeAccessor()
 	{

@@ -26,11 +26,10 @@ abstract class FCMRequest {
 		$url = $this->getUrl();
 		$response = $this->client->post($url, $this->buildRequest());
 
-		return $this->constructResponse($response);
+		return $response;
 	}
 
 	protected abstract function getUrl();
-	protected abstract function constructResponse(Response $json);
 
 	protected  function buildRequest()
 	{

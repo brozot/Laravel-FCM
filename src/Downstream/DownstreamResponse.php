@@ -1,4 +1,4 @@
-<?php namespace LaravelFCM\Group;
+<?php namespace LaravelFCM\Downstream;
 
 
 

@@ -3,6 +3,7 @@
 
 use LaravelFCM\FCMRequest;
 use LaravelFCM\Group\DownstreamResponse;
+use LaravelFCM\Group\GroupResponse;
 use LaravelFCM\Message\Options;
 use LaravelFCM\Message\PayloadData;
 use LaravelFCM\Message\PayloadNotification;
@@ -17,7 +18,19 @@ class FCMDownstream extends FCMRequest {
 		$this->notification = $notification;
 		$this->data = $data;
 
-		$this->sendRequest();
+		$response = $this->sendRequest();
+		return $this->constructResponse($response);
+	}
+
+	public function sendWithNotificationKey($notificationKey, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null)
+	{
+		$this->to = $notificationKey;
+		$this->options = $options;
+		$this->notification = $notification;
+		$this->data = $data;
+
+		$response = $this->sendRequest();
+		return $this->constructGroupResponse($response);
 	}
 
 	protected function getUrl()
@@ -28,5 +41,10 @@ class FCMDownstream extends FCMRequest {
 	protected function constructResponse(Response $response)
 	{
 		return new DownstreamResponse($response);
+	}
+
+	protected function constructGroupResponse($response)
+	{
+		return new GroupResponse($response, $this->to);
 	}
 }

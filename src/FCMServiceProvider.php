@@ -20,11 +20,11 @@ class FCMServiceProvider extends ServiceProvider {
 
 	public function register()
 	{
-		$this->app->singleton('fcm.group', function($app) {
+		$this->app->bind('fcm.group', function($app) {
 			return new FCMGroup();
 		});
 
-		$this->app->singleton('fcm.downstream', function($app) {
+		$this->app->bind('fcm.downstream', function($app) {
 			return new FCMDownstream();
 		});
 		
