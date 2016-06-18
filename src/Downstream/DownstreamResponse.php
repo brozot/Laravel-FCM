@@ -18,15 +18,19 @@ class DownstreamResponse {
 	protected $tokenToDelete = [];
 	protected $tokenToModify = [];
 
-	protected $message;
+	protected $to;
 
-	public function __construct(Response $response)
+	public function __construct(Response $response, $to)
 	{
-		$this->response =$response;
+		$this->to = $to;
 
 		if ($response->getStatusCode() == 200) {
+			$this->response = json_decode($response, true);
+
 			$this->parse();
-			$this->logResults();
+			if ($this->isLoginResult()) {
+				$this->logResults();
+			}
 		}
 	}
 
@@ -43,19 +47,14 @@ class DownstreamResponse {
 
 	private function parseResult()
 	{
-		$tokens = $this->message->getTokens();
-
-		foreach ($this->response['results'] as $index=>$result) {
-			if (array_key_exists('message_id', $result) && (array_key_exists('registration_id', $result))) {
-				array_add($this->tokenToModify, $tokens[$index], $result['registration_id']);
-			}
-			else if (array_key_exists('error', $result)) {
-				if (in_array('NotRegistered', $result) || in_array('InvalidRegistration', $result)) {
-					array_push($this->tokenToDelete, $tokens[$index]);
-				}
-			}
+		if (is_array($this->to)) {
+			$this->parseMultipleDevices();
+		}
+		else {
+			$this->parseUniqueDevice();
 		}
 	}
+
 
 	public function numberSuccess()
 	{
@@ -87,13 +86,50 @@ class DownstreamResponse {
 		$logger = new Logger('Laravel-FCM');
 		$logger->pushHandler(new StreamHandler(storage_path('logs/laravel-fcm.log')));
 
-		$logMessage =  "notification send to ".count($this->message->getTokens())." devices".PHP_EOL;
+		$logMessage =  "notification send to ".count($this->to)." devices".PHP_EOL;
 		$logMessage .= "success: ".$this->numberSuccess.PHP_EOL;
 		$logMessage .= "failures: ".$this->numberFailure.PHP_EOL;
 		$logMessage .= "number of modified token : ".$this->numberCanonicalId.PHP_EOL;
 		$logMessage .= "canonical_ids : ".implode("|", $this->tokenToModify).PHP_EOL;
 
 		$logger->info($logMessage);
+	}
+
+	private function isLoginResult()
+	{
+		return app('config')['fcm.log_enabled'];
+	}
+
+	private function parseMultipleDevices()
+	{
+		foreach ($this->response[ 'results' ] as $index => $result) {
+			if (array_key_exists('message_id', $result) && (array_key_exists('registration_id', $result) && $this->to[ $index ])) {
+				array_add($this->tokenToModify, $this->to[ $index ], $result[ 'registration_id' ]);
+			}
+			else {
+				if (array_key_exists('error', $result) && $this->to[ $index ]) {
+					if (in_array('NotRegistered', $result) || in_array('InvalidRegistration', $result)) {
+						array_push($this->tokenToDelete, $this->to[ $index ]);
+					}
+				}
+			}
+		}
+	}
+
+	private function parseUniqueDevice()
+	{
+		foreach ($this->response[ 'results' ] as $index => $result) {
+			if (array_key_exists('message_id', $result) && (array_key_exists('registration_id', $result) && $this->to)) {
+				array_add($this->tokenToModify, $this->to, $result[ 'registration_id' ]);
+			}
+			else {
+				if (array_key_exists('error', $result) && $this->to) {
+					if (in_array('NotRegistered', $result) || in_array('InvalidRegistration', $result)) {
+						array_push($this->tokenToDelete, $this->to);
+					}
+				}
+			}
+		}
 	}
 
 }

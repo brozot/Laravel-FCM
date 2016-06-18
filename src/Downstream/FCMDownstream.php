@@ -2,7 +2,6 @@
 
 
 use LaravelFCM\FCMRequest;
-use LaravelFCM\Group\DownstreamResponse;
 use LaravelFCM\Group\GroupResponse;
 use LaravelFCM\Message\Options;
 use LaravelFCM\Message\PayloadData;
@@ -13,13 +12,14 @@ class FCMDownstream extends FCMRequest {
 
 	public function sendTo($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null)
 	{
-		$this->to = $to;
+		$this->determineMultipleOrSingleDevice($to);
 		$this->options = $options;
 		$this->notification = $notification;
 		$this->data = $data;
 
 		$response = $this->sendRequest();
-		return $this->constructResponse($response);
+
+		return $this->constructResponse($response, $to);
 	}
 
 	public function sendWithNotificationKey($notificationKey, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null)
@@ -33,14 +33,24 @@ class FCMDownstream extends FCMRequest {
 		return $this->constructGroupResponse($response);
 	}
 
+	public function determineMultipleOrSingleDevice($to)
+	{
+		if (is_array($to)) {
+			$this->registrationIds = $to;
+		}
+		else {
+			$this->to = $to;
+		}
+	}
+
 	protected function getUrl()
 	{
 		return $this->config['server_send_url'];
 	}
 
-	protected function constructResponse(Response $response)
+	protected function constructResponse(Response $response, $to)
 	{
-		return new DownstreamResponse($response);
+		return new DownstreamResponse($response, $to);
 	}
 
 	protected function constructGroupResponse($response)

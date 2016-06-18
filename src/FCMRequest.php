@@ -31,10 +31,10 @@ abstract class FCMRequest {
 
 	protected abstract function getUrl();
 
-	protected  function buildRequest()
+	protected  function buildHeader()
 	{
 		return [
-			'headers' => $this->buildHeader(),
+			'headers' => $this->buildRequestHeader(),
 			'json' => $this->buildRequestData()
 		];
 	}
@@ -64,7 +64,7 @@ abstract class FCMRequest {
 	protected function buildRequestHeader()
 	{
 		return [
-			'Authorization' => $this->config['server_key'],
+			'Authorization' => "key=".$this->config['server_key'],
 			'Content-Type' => "application/json",
 			'project_id' => $this->config['sender_id']
 		];
