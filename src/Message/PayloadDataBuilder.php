@@ -17,22 +17,30 @@ class PayloadDataBuilder {
 	 * add data to existing data
 	 *
 	 * @param array $data
+	 *
+	 * @return $this
 	 */
 	public function addData(array $data)
 	{
 		$this->data = $this->data ?: [];
 
 		$this->data = array_merge($data, $this->data);
+
+		return $this;
 	}
 
 	/**
 	 * erase data with new data
 	 *
 	 * @param array $data
+	 *
+	 * @return $this
 	 */
 	public function setData(array $data)
 	{
 		$this->data = $data;
+
+		return $this;
 	}
 
 	/**

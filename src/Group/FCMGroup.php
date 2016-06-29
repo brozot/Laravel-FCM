@@ -4,18 +4,17 @@ use LaravelFCM\FCMRequest;
 
 class FCMGroup extends FCMRequest{
 
-	protected $operation;
-	protected $notificationKeyName;
-	protected $notificationKey;
-	protected $notification;
+
+	const CREATE = "create";
+	const ADD = "add";
+	const REMOVE = "remove";
 
 	public function createGroup($notificationKeyName, array $registrationIds)
 	{
-		$this->operation = "create";
-		$this->notificationKeyName = $notificationKeyName;
-		$this->registrationIds = $registrationIds;
+		$url = $this->config['server_group_url'];
+		$data = $this->buildRequest(self::CREATE, $notificationKeyName, null, $registrationIds);
 
-		$response = $this->sendRequest();
+		$response = $this->client->post($url, $data);
 
 		if ($this->isValidResponse($response)) {
 			return null;
@@ -27,12 +26,10 @@ class FCMGroup extends FCMRequest{
 
 	public function addToGroup($notificationKeyName, $notificationKey, array $registrationIds)
 	{
-		$this->operation = "add";
-		$this->notificationKeyName = $notificationKeyName;
-		$this->notificationKey = $notificationKey;
-		$this->registrationIds = $registrationIds;
+		$url = $this->config['server_group_url'];
+		$data = $this->buildRequest(self::ADD, $notificationKeyName, $notificationKey, $registrationIds);
 
-		$response = $this->sendRequest();
+		$response = $this->client->post($url, $data);
 
 		if ($this->isValidResponse($response)) {
 			return null;
@@ -42,14 +39,12 @@ class FCMGroup extends FCMRequest{
 		return $json['notification_key'];
 	}
 
-	public function removeFromGroup($notificationKeyName, $notificationKey, array $registeredId)
+	public function removeFromGroup($notificationKeyName, $notificationKey, array $registeredIds)
 	{
-		$this->operation = "remove";
-		$this->notificationKeyName = $notificationKeyName;
-		$this->notificationKey = $notificationKey;
-		$this->registrationIds = $registeredId;
+		$url = $this->config['server_group_url'];
+		$data = $this->buildRequest(self::REMOVE, $notificationKeyName, $notificationKey, $registeredIds);
 
-		$response = $this->sendRequest();
+		$response = $this->client->post($url, $data);
 
 		if ($this->isValidResponse($response)) {
 			return null;
@@ -59,19 +54,21 @@ class FCMGroup extends FCMRequest{
 		return $json['notification_key'];
 	}
 
-	protected function getUrl()
-	{
-		return $this->config['server_group_url'];
-	}
-
-
-	protected function buildRequestData()
+	protected  function buildRequest($operation, $notificationKeyName, $notificationKey, array $registrationIds)
 	{
 		return [
-			'operation'             => $this->operation,
-			'notification_key_name' => $this->notificationKeyName,
-			'notification_key'      => $this->notificationKey,
-			'registration_ids'      => $this->notification
+			'headers' => $this->buildRequestHeader(),
+			'json' => $this->buildRequestData($operation, $notificationKeyName, $notificationKey, $registrationIds)
+		];
+	}
+
+	protected function buildRequestData($operation, $notificationKeyName, $notificationKey, array $registrationIds)
+	{
+		return [
+			'operation'             => $operation,
+			'notification_key_name' => $notificationKeyName,
+			'notification_key'      => $notificationKey,
+			'registration_ids'      => $registrationIds
 		];
 	}
 

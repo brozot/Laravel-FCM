@@ -13,7 +13,7 @@ class FCMServiceProvider extends ServiceProvider {
 		}
 		else {
 			$this->publishes([
-				__DIR__."../config/fcm.php" => config_path('fcm.php')
+				__DIR__."/../config/fcm.php" => config_path('fcm.php')
 			]);
 		}
 	}

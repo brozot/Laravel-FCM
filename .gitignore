@@ -1,14 +1,22 @@
-vendor/
-node_modules/
+# General
+.DS_Store
+Thumbs.db
 
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
-
-# Laravel 5 & Lumen specific
-bootstrap/cache/
-storage/
-.env.*.php
-.env.php
+# Project
 .env
-.env.example
+composer.phar
+vendor
+build
+node_modules
+resources/assets/bower
+Homestead.yaml
+Homestead.json
+storage/debugbar
+
+# Editors
+.sublime-workspace
+.idea
+.idea/*
+.idea/workspace.xml
+*.iml
+_ide_helper.php

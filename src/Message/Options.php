@@ -30,7 +30,7 @@ class Options implements Arrayable {
 		$delayWhileIdle = $this->delayWhileIdle ? true : null;
 		$dryRun = $this->mocking ? true : null;
 
-		return [
+		$options = [
 			'collapse_key' => $this->collapseKey,
 		    'priority' => $this->priority,
 		    'content_available' => $contentAvailable,
@@ -39,5 +39,7 @@ class Options implements Arrayable {
 		    'restricted_package_name' => $this->restrictedPackageName,
 		    'dry_run' => $dryRun
 		];
+
+		return array_filter($options);
 	}
 }

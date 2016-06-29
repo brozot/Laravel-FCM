@@ -1,17 +1,9 @@
 <?php namespace LaravelFCM;
 
-use GuzzleHttp\Psr7\Response;
-
 abstract class FCMRequest {
 
 	protected $client;
 	protected $config;
-
-	protected $to;
-	protected $registrationIds;
-	protected $options;
-	protected $notification;
-	protected $data;
 
 	protected $conditions;
 
@@ -19,46 +11,6 @@ abstract class FCMRequest {
 	{
 		$this->client = app('fcm.client');
 		$this->config = app('config')->get('fcm.http', []);
-	}
-
-	protected function sendRequest()
-	{
-		$url = $this->getUrl();
-		$response = $this->client->post($url, $this->buildRequest());
-
-		return $response;
-	}
-
-	protected abstract function getUrl();
-
-	protected  function buildHeader()
-	{
-		return [
-			'headers' => $this->buildRequestHeader(),
-			'json' => $this->buildRequestData()
-		];
-	}
-
-	protected function buildRequestData()
-	{
-		$notification = $this->notification ? $this->notification->toArray() : null;
-		$data = $this->data ? $this->data->toArray() : null;
-
-		$message = [
-			'to'               => $this->to,
-			'registration_ids' => $this->registrationIds,
-			'condition'        => $this->conditions,
-			'notification'     => $notification,
-			'data'             => $data
-		];
-
-		if ($this->options) {
-			$message = array_merge($message, $this->options->toArray());
-		}
-
-		$message = array_filter($message);
-
-		return $message;
 	}
 
 	protected function buildRequestHeader()
@@ -69,5 +21,4 @@ abstract class FCMRequest {
 			'project_id' => $this->config['sender_id']
 		];
 	}
-
 }
