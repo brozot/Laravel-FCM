@@ -1,5 +1,7 @@
 # Laravel-FCM
 
+[![Build Status](https://travis-ci.org/brozot/Laravel-FCM.svg?branch=master)](https://travis-ci.org/brozot/Laravel-FCM)
+
 ## Introduction
 
 Laravel-FCM is easy to use package working with Laravel and Lumen for sending push notification with [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/).
@@ -109,7 +111,9 @@ you can find more information with the [official documentation](https://firebase
 **Send a basic notification:**
 
 ```
-$optionBuilder = new 
+$optionBuiler = new OptionsBuilder();
+$optionBuiler->setTimeToLive(60*20);
+$option = $optionBuiler->build();
 
 $notificationBuilder = new PayloadNotificationBuilder('my title')
 $notificationBuilder->setBody('Hello world')
@@ -117,7 +121,7 @@ $notificationBuilder->setBody('Hello world')
 				   
 $notification = $notificationBuilder->build();
 				   
-$repsonse = FCM::sendTo($token, null, $notification);
+$repsonse = FCM::sendTo($token, $option, $notification);
 
 $tokensToDelete = $response->tokenToDelete();
 $tokensToModify = $response->tokenToModify();
@@ -139,7 +143,7 @@ $tokensToModify = $response->tokenToModify();
 
 ```
 
-**Send a basic message with notification and data*
+**Send a basic message with notification and data**
 
 ```
 $notificationBuilder = new PayloadNotificationBuilder('my title')
@@ -235,7 +239,7 @@ You can find more information on the [official documentations](https://firebase.
 
 ## Notification
 
-Notification payload is used to send notification, the behavior is define by the App State and the OS of the receipt device.
+Notification payload is used to send a notification, the behavior is defined by the App State and the OS of the receipt device.
 
 **About notification message**
 
@@ -364,6 +368,8 @@ Indicates the badge on the client app home icon.
 
 --
 
+You can find more information on the [official documentations](https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json)
+
 ## Data
 
 DataPayload is use to send data message.
@@ -399,6 +405,8 @@ Override with new value data key value entry
 
 --
 
+You can find more information on the [official documentations](https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json)
+
 ## Notification & Data
 
 **About both message**
@@ -421,15 +429,13 @@ Send a message to one or more devices and return a response
 
 Send a message to a group of devices and return a response
 
---
-
 ## Resonse
 
-Response is a object create with the reponse in Json give by FCM.
+Response is a object created with the reponse in Json give by FCM.
 
 The response contains information about token validity and sending state.
 
-If your application want to process different case of error, you may catching Followed Exceptions
+If your application want to process more of different case of error, you may catching Followed Exceptions
 
 - NotGivenRecipientException
 - InvalidPackageException
@@ -459,45 +465,49 @@ Return the number of token modified
 
 **tokenToDelete()**
 
-Return an array of token threre are invalid now and that should be removed from your datbase.
+Return an array of token that are invalid and that should be removed from your datbase.
 
 --
 
 **tokenToModify()**
 
-Return an array of token threre are invalid now and must be remplaced by a new one in your database. Key of the array is old token and value is the new one.
+Return an array of token that are invalid and that must be remplaced by a new one in your database. Key of the array is old token and value is the new one.
 
 --
 
 
 **tokenToRetry()**
 
-Return an array of token threre you should retry to resend the notification.
+Return an array of token that you should retry to resend the message.
 
 --
 
 **failedRegistrationIds()**
-is retuned only with sendToGroup
 
-return a array of which cannot be contacted with the group
+>Is returned only with sendToGroup
+
+return a array of token that can't be contacted in the group
 
 ### FCMGroup
 
 **createGroup( (String) $notificationKeyName, (Array) $registrationIds )**
 
-Create a group with a name given in notificationKeyName and a list of token (devices in the group) and return notificationKey
+Create a group with a name given in notificationKeyName and a list of token (devices in the group) and return a notificationKey
 
 --
 
 **addToGroup((String) $notificationKeyName, (String) $notificationKey, (Array) $registrationIds )**
 
-Add devices to an existing group and return notificationKey
+Add devices to an existing group and return a notificationKey
 
 --
 
 **removeFromGroup((String) $notificationKeyName, (String) $notificationKey, (Array) $registrationIds )**
 
-Remove Devices from an existing group and return notificationKey
+Remove Devices from an existing group and return a notificationKey
 
---
+## Liscence
 
+MIT
+
+Some of this documentation is coming from the official documentation. You can find it completly on the firebase cloud messagin website.

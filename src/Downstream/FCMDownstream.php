@@ -110,7 +110,7 @@ class FCMDownstream extends FCMRequest {
 		return new Response($response, $to);
 	}
 
-	private function post($url, $tokens, Options $options, PayloadNotification $notification, PayloadData $data)
+	private function post($url, $tokens, $options, $notification, $data)
 	{
 		$request = $this->buildRequest($tokens, $options, $notification, $data);
 		$requestResponse = $this->client->post($url, $request);
