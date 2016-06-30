@@ -32,6 +32,7 @@ class Response {
 	protected $numberSuccess = 0;
 	protected $numberFailure = 0;
 	protected $numberCanonicalId = 0;
+	protected $hasMissingRegistrationIds = false;
 
 	protected $tokensToDelete = [];
 	protected $tokensToModify = [];
@@ -111,6 +112,11 @@ class Response {
 		return $this->numberCanonicalId;
 	}
 
+	public function hasMissingRegistrationIds()
+	{
+		return $this->hasMissingRegistrationIds;
+	}
+
 	public function tokenToDelete()
 	{
 		return $this->tokensToDelete;
@@ -157,7 +163,7 @@ class Response {
 			if (array_key_exists(self::ERROR, $result)) {
 
 				if (in_array(self::MISSING_REGISTRATION, $result)) {
-					throw new MissingRegistrationException();
+					$this->hasMissingRegistrationIds = true;
 				}
 
 				if (in_array(self::INVALID_PACKAGE_NAME, $result)) {
@@ -195,7 +201,7 @@ class Response {
 			}
 			else {
 				if (array_key_exists(self::ERROR, $result) && $this->to[ $index ]) {
-					if (in_array(self::NOT_REGISTERED, $result) || in_array(self::INVALID_REGISTRATION, $result) || in_array(self::MISSING_REGISTRATION, $result)) {
+					if (in_array(self::NOT_REGISTERED, $result) || in_array(self::INVALID_REGISTRATION, $result)) {
 						array_push($this->tokensToDelete, $this->to[ $index ]);
 					}
 
@@ -227,7 +233,7 @@ class Response {
 			}
 			else {
 				if (array_key_exists(self::ERROR, $result) && $this->to) {
-					if (in_array(self::NOT_REGISTERED, $result) || in_array(self::INVALID_REGISTRATION, $result) || in_array(self::MISSING_REGISTRATION, $result)) {
+					if (in_array(self::NOT_REGISTERED, $result) || in_array(self::INVALID_REGISTRATION, $result)) {
 						array_push($this->tokensToDelete, $this->to);
 					}
 				}
@@ -266,7 +272,7 @@ class Response {
 		return app('config')['fcm.log_enabled'];
 	}
 }
-class MissingRegistrationException extends Exception {}
+
 class InvalidPackageException extends Exception {}
 class InvalidNotificationException extends Exception {}
 class InvalidSenderIdException extends Exception {}

@@ -27,7 +27,7 @@ or you can add it directly in your composer.json file:
 ```
 {
     "require": {
-        "brozot/laravel-fcm": "^0.9.2"
+        "brozot/laravel-fcm": "^0.9.3"
     }
 }
 ```
@@ -437,7 +437,6 @@ The response contains information about token validity and sending state.
 
 If your application want to process more of different case of error, you may catching Followed Exceptions
 
-- MissingRegistrationException
 - InvalidPackageException
 - InvalidNotificationException
 - InvalidSenderIdException
@@ -460,6 +459,14 @@ Return the number of failure
 **numberModifiedToken()**
 
 Return the number of token modified
+
+--
+
+**hasMissingRegistrationIds()**
+
+Return a boolean with true if some token is missing.
+
+If this response is true, clean your database to be sure than not token is empty.
 
 --
 

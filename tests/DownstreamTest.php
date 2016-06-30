@@ -90,6 +90,7 @@ class ResponseTest extends FCMTestCase {
 		$this->assertEquals(0, $downstreamResponse->numberSuccess());
 		$this->assertEquals(1, $downstreamResponse->numberFailure());
 		$this->assertEquals(0, $downstreamResponse->numberModifiedToken());
+		$this->assertFalse($downstreamResponse->hasMissingRegistrationIds());
 
 		$this->assertCount(1, $downstreamResponse->tokenToDelete());
 		$this->assertEquals($token, $downstreamResponse->tokenToDelete()[0]);
@@ -104,7 +105,8 @@ class ResponseTest extends FCMTestCase {
 		$tokens = [
 			"first_token",
 			"second_token",
-			"third_token"
+			"third_token",
+		    "fourth_token"
 		];
 
 		$response = new Response(200, [], "{
@@ -115,7 +117,8 @@ class ResponseTest extends FCMTestCase {
                             \"results\": [
                                  { \"error\": \"NotRegistered\" },
                                  { \"error\": \"InvalidRegistration\" },
-                                 { \"error\": \"NotRegistered\" }
+                                 { \"error\": \"NotRegistered\" },
+                                 { \"error\": \"MissingRegistration\"}
                             ]
 						}" );
 
@@ -124,6 +127,7 @@ class ResponseTest extends FCMTestCase {
 		$this->assertEquals(0, $downstreamResponse->numberSuccess());
 		$this->assertEquals(3, $downstreamResponse->numberFailure());
 		$this->assertEquals(0, $downstreamResponse->numberModifiedToken());
+		$this->assertTrue($downstreamResponse->hasMissingRegistrationIds());
 
 
 		$this->assertCount(3, $downstreamResponse->tokenToDelete());
