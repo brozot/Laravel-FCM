@@ -74,9 +74,7 @@ $app->register(LaravelFCM\FCMServiceProvider::class);
 
 For facades, add the following lines in the "Create The Application" section. FCMGroup facade is only necessary if you want to use group notification in your application.
 
-
 ```
-$app->withFacades(); // should be uncommented
 class_alias(\LaravelFCM\Facades\FCM::class, 'FCM');
 class_alias(\LaravelFCM\Facades\FCMGroup::class, 'FCMGroup');
 ```
@@ -117,13 +115,13 @@ $optionBuiler = new OptionsBuilder();
 $optionBuiler->setTimeToLive(60*20);
 $option = $optionBuiler->build();
 
-$notificationBuilder = new PayloadNotificationBuilder('my title');
+$notificationBuilder = new PayloadNotificationBuilder('my title')
 $notificationBuilder->setBody('Hello world')
-				    ->setSound('default');
+				    ->serSound('default');
 				   
 $notification = $notificationBuilder->build();
 				   
-$response = FCM::sendTo($token, $option, $notification);
+$repsonse = FCM::sendTo($token, $option, $notification);
 
 $tokensToDelete = $response->tokenToDelete();
 $tokensToModify = $response->tokenToModify();
@@ -138,7 +136,7 @@ $dataBuilder->addData(['a_data' => 'my_data']);
 				   
 $data = $dataBuilder->build();
 				   
-$response = FCM::sendTo($token, null, null, $data);
+$repsonse = FCM::sendTo($token, null, null, $data);
 
 $tokensToDelete = $response->tokenToDelete();
 $tokensToModify = $response->tokenToModify();
@@ -148,16 +146,16 @@ $tokensToModify = $response->tokenToModify();
 **Send a basic message with notification and data**
 
 ```
-$notificationBuilder = new PayloadNotificationBuilder('my title');
+$notificationBuilder = new PayloadNotificationBuilder('my title')
 $notificationBuilder->setBody('Hello world')
-				    ->setSound('default');	
+				    ->serSound('default');	
 $notification = $notificationBuilder->build();
 
 $dataBuilder = new PayloadDataBuilder();
 $dataBuilder->addData(['a_data' => 'my_data']);
 $data = $dataBuilder->build();
 				   
-$response = FCM::sendTo($token, null, $notification, $data);
+$repsonse = FCM::sendTo($token, null, $notification, $data);
 
 $tokensToDelete = $response->tokenToDelete();
 $tokensToModify = $response->tokenToModify();
@@ -480,23 +478,7 @@ Return an array of token that are invalid and that must be remplaced by a new on
 
 **tokenToRetry()**
 
-Return a two dimensional array with 3 possible causes of errors
-
-- Unavailable => list of tokens for unavailable devices.
-- InternalServerError => list of token for tokens which were thrown an error in fcm.
-- DeviceMessageRateExceeded => list of tokens which have sent too many messages.
-
-the array returned is composed likes this:
-
-```
-[
-    "Unavailable" => []
-    "InternalServerError" => []
-    "DeviceMessageRateExceeded" => []
- ]
-```
-
-> Note: Be careful with retry, to many attempts can be caused a banishment
+Return an array of token that you should retry to resend the message.
 
 --
 
