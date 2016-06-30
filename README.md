@@ -27,7 +27,7 @@ or you can add it directly in your composer.json file:
 ```
 {
     "require": {
-        "brozot/laravel-fcm": "^0.9.0"
+        "brozot/laravel-fcm": "^0.9.1"
     }
 }
 ```
