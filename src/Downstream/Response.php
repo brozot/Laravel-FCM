@@ -156,10 +156,6 @@ class Response {
 		foreach ($this->response[ self::RESULTS ] as $result) {
 			if (array_key_exists(self::ERROR, $result)) {
 
-				if (in_array(self::MISSING_REGISTRATION, $result)) {
-					throw new NotGivenRecipientException();
-				}
-
 				if (in_array(self::INVALID_PACKAGE_NAME, $result)) {
 					throw new InvalidPackageException();
 				}
@@ -195,7 +191,7 @@ class Response {
 			}
 			else {
 				if (array_key_exists(self::ERROR, $result) && $this->to[ $index ]) {
-					if (in_array(self::NOT_REGISTERED, $result) || in_array(self::INVALID_REGISTRATION, $result)) {
+					if (in_array(self::NOT_REGISTERED, $result) || in_array(self::INVALID_REGISTRATION, $result) || in_array(self::MISSING_REGISTRATION, $result)) {
 						array_push($this->tokensToDelete, $this->to[ $index ]);
 					}
 
@@ -227,7 +223,7 @@ class Response {
 			}
 			else {
 				if (array_key_exists(self::ERROR, $result) && $this->to) {
-					if (in_array(self::NOT_REGISTERED, $result) || in_array(self::INVALID_REGISTRATION, $result)) {
+					if (in_array(self::NOT_REGISTERED, $result) || in_array(self::INVALID_REGISTRATION, $result) || in_array(self::MISSING_REGISTRATION, $result)) {
 						array_push($this->tokensToDelete, $this->to);
 					}
 				}
@@ -267,7 +263,6 @@ class Response {
 	}
 }
 
-class NotGivenRecipientException extends Exception {}
 class InvalidPackageException extends Exception {}
 class InvalidNotificationException extends Exception {}
 class InvalidSenderIdException extends Exception {}
