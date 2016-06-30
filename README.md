@@ -27,7 +27,7 @@ or you can add it directly in your composer.json file:
 ```
 {
     "require": {
-        "brozot/laravel-fcm": "^0.9.1"
+        "brozot/laravel-fcm": "^0.9.2"
     }
 }
 ```
@@ -115,13 +115,13 @@ $optionBuiler = new OptionsBuilder();
 $optionBuiler->setTimeToLive(60*20);
 $option = $optionBuiler->build();
 
-$notificationBuilder = new PayloadNotificationBuilder('my title')
+$notificationBuilder = new PayloadNotificationBuilder('my title');
 $notificationBuilder->setBody('Hello world')
-				    ->serSound('default');
+				    ->setSound('default');
 				   
 $notification = $notificationBuilder->build();
 				   
-$repsonse = FCM::sendTo($token, $option, $notification);
+$response = FCM::sendTo($token, $option, $notification);
 
 $tokensToDelete = $response->tokenToDelete();
 $tokensToModify = $response->tokenToModify();
@@ -136,7 +136,7 @@ $dataBuilder->addData(['a_data' => 'my_data']);
 				   
 $data = $dataBuilder->build();
 				   
-$repsonse = FCM::sendTo($token, null, null, $data);
+$response = FCM::sendTo($token, null, null, $data);
 
 $tokensToDelete = $response->tokenToDelete();
 $tokensToModify = $response->tokenToModify();
@@ -146,16 +146,16 @@ $tokensToModify = $response->tokenToModify();
 **Send a basic message with notification and data**
 
 ```
-$notificationBuilder = new PayloadNotificationBuilder('my title')
+$notificationBuilder = new PayloadNotificationBuilder('my title');
 $notificationBuilder->setBody('Hello world')
-				    ->serSound('default');	
+				    ->setSound('default');
 $notification = $notificationBuilder->build();
 
 $dataBuilder = new PayloadDataBuilder();
 $dataBuilder->addData(['a_data' => 'my_data']);
 $data = $dataBuilder->build();
 				   
-$repsonse = FCM::sendTo($token, null, $notification, $data);
+$response = FCM::sendTo($token, null, $notification, $data);
 
 $tokensToDelete = $response->tokenToDelete();
 $tokensToModify = $response->tokenToModify();
@@ -437,7 +437,7 @@ The response contains information about token validity and sending state.
 
 If your application want to process more of different case of error, you may catching Followed Exceptions
 
-- NotGivenRecipientException
+- MissingRegistrationException
 - InvalidPackageException
 - InvalidNotificationException
 - InvalidSenderIdException
@@ -479,6 +479,22 @@ Return an array of token that are invalid and that must be remplaced by a new on
 **tokenToRetry()**
 
 Return an array of token that you should retry to resend the message.
+
+Return a two dimensional array with 3 possible causes of errors
+
+Unavailable => list of tokens for unavailable devices.
+InternalServerError => list of token for tokens which were thrown an error in fcm.
+DeviceMessageRateExceeded => list of tokens which have sent too many messages.
+the array returned is composed likes this:
+
+```
+[
+    "Unavailable" => []
+    "InternalServerError" => []
+    "DeviceMessageRateExceeded" => []
+]
+```
+>Note: Be careful with retry, to many attempts can be caused a banishment
 
 --
 

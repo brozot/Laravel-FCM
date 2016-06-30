@@ -156,6 +156,10 @@ class Response {
 		foreach ($this->response[ self::RESULTS ] as $result) {
 			if (array_key_exists(self::ERROR, $result)) {
 
+				if (in_array(self::MISSING_REGISTRATION, $result)) {
+					throw new MissingRegistrationException();
+				}
+
 				if (in_array(self::INVALID_PACKAGE_NAME, $result)) {
 					throw new InvalidPackageException();
 				}
@@ -262,7 +266,7 @@ class Response {
 		return app('config')['fcm.log_enabled'];
 	}
 }
-
+class MissingRegistrationException extends Exception {}
 class InvalidPackageException extends Exception {}
 class InvalidNotificationException extends Exception {}
 class InvalidSenderIdException extends Exception {}
