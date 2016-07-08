@@ -1,6 +1,6 @@
 <?php
 
-use LaravelFCM\Downstream\Response as DownstreamResponse;
+use LaravelFCM\Sender\Response as DownstreamResponse;
 
 class GroupResponseTest extends FCMTestCase {
 
@@ -76,7 +76,7 @@ class GroupResponseTest extends FCMTestCase {
 	/**
 	 * @test
 	 */
-	public function it_construct_a_response_withp_partials_invalid_notification_key()
+	public function it_construct_a_response_with_partials_invalid_notification_key()
 	{
 
 		$notificationKey = "notificationKey";

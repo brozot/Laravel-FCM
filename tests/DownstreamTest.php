@@ -2,8 +2,8 @@
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
-use LaravelFCM\Downstream\FCMDownstream;
-use LaravelFCM\Downstream\Response as DownstreamResponse;
+use LaravelFCM\Sender\FCMSender;
+use LaravelFCM\Sender\Response as DownstreamResponse;
 
 class ResponseTest extends FCMTestCase {
 
@@ -466,7 +466,7 @@ class ResponseTest extends FCMTestCase {
 	/**
 	 * @test
 	 */
-	public function it_send_a_notification_to_one_device()
+	public function it_send_a_notification_to_a_device()
 	{
 		$response = new Response(200, [], '{ 
 						  "multicast_id": 216,
@@ -486,7 +486,7 @@ class ResponseTest extends FCMTestCase {
 
 		$tokens = 'uniqueToken';
 
-		$fcm = new FCMDownstream();
+		$fcm = new FCMSender();
 		$fcm->sendTo($tokens);
 	}
 
@@ -522,7 +522,7 @@ class ResponseTest extends FCMTestCase {
 			$tokens[$i] = 'token_'.$i;
 		}
 
-		$fcm = new FCMDownstream();
+		$fcm = new FCMSender();
 		$fcm->sendTo($tokens);
 	}
 
@@ -548,7 +548,7 @@ class ResponseTest extends FCMTestCase {
 
 		$notificationKey = '$notificationKey';
 
-		$fcm = new FCMDownstream();
+		$fcm = new FCMSender();
 		$fcm->sendTo($notificationKey);
 	}
 }

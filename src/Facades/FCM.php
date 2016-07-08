@@ -7,6 +7,6 @@ class FCM extends Facade {
 
 	protected static function getFacadeAccessor()
 	{
-		return 'fcm.downstream';
+		return 'fcm.sender';
 	}
 }

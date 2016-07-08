@@ -20,6 +20,7 @@
         "mockery/mockery" : "0.9.*",
         "phpunit/phpunit" : "4.7.*",
         "laravel/laravel": "5.2.*"
+
     },
     "autoload": {
         "psr-4": {

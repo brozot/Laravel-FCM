@@ -1,24 +1,28 @@
 <?php namespace LaravelFCM\Message;
 
-
+/**
+ * Class PayloadDataBuilder
+ *
+ * Official google documentation :
+ * @link http://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json
+ *
+ * @package LaravelFCM\Message
+ */
 class PayloadDataBuilder {
 
+	/**
+	 * @internal
+	 * @var array
+	 */
 	protected $data;
 
-	/**
-	 * Form more information about options, please refer to google official documentation :
-	 * @link http://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json
-	 */
-	public function __construct()
-	{
-	}
-
+	
 	/**
 	 * add data to existing data
 	 *
 	 * @param array $data
 	 *
-	 * @return $this
+	 * @return PayloadDataBuilder
 	 */
 	public function addData(array $data)
 	{
@@ -34,7 +38,7 @@ class PayloadDataBuilder {
 	 *
 	 * @param array $data
 	 *
-	 * @return $this
+	 * @return PayloadDataBuilder
 	 */
 	public function setData(array $data)
 	{
@@ -52,6 +56,8 @@ class PayloadDataBuilder {
 	}
 
 	/**
+	 * return data
+	 *
 	 * @return array
 	 */
 	public function getData()
@@ -60,6 +66,8 @@ class PayloadDataBuilder {
 	}
 
 	/**
+	 * generate a PayloadData
+	 *
 	 * @return PayloadData new PayloadData instance
 	 */
 	public function build()

@@ -1,25 +1,88 @@
 <?php namespace LaravelFCM\Message;
 
-
+/**
+ * Class PayloadNotificationBuilder
+ *
+ * Official google documentation :
+ * @link http://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json
+ *
+ * @package LaravelFCM\Message
+ */
 class PayloadNotificationBuilder {
 
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $title;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $body;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $icon;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $sound;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $badge;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $tag;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $color;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $clickAction;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $bodyLocationKey;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $bodyLocationArgs;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $titleLocationKey;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $titleLocationArgs;
 
 	/**
-	 * Official google documentation :
-	 * @link http://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json
-	 *
 	 * Title must be present on android notification and ios (watch) notification
 	 *
 	 * @param String $title
@@ -207,6 +270,8 @@ class PayloadNotificationBuilder {
 	}
 
 	/**
+	 * Get title
+	 *
 	 * @return null|String
 	 */
 	public function getTitle()
@@ -215,6 +280,8 @@ class PayloadNotificationBuilder {
 	}
 
 	/**
+	 * Get body
+	 *
 	 * @return null|String
 	 */
 	public function getBody()
@@ -223,6 +290,8 @@ class PayloadNotificationBuilder {
 	}
 
 	/**
+	 * Get Icon
+	 *
 	 * @return null|String
 	 */
 	public function getIcon()
@@ -231,6 +300,8 @@ class PayloadNotificationBuilder {
 	}
 
 	/**
+	 * Get Sound
+	 *
 	 * @return null|String
 	 */
 	public function getSound()
@@ -239,6 +310,8 @@ class PayloadNotificationBuilder {
 	}
 
 	/**
+	 * Get Badge
+	 *
 	 * @return null|String
 	 */
 	public function getBadge()
@@ -247,6 +320,8 @@ class PayloadNotificationBuilder {
 	}
 
 	/**
+	 * Get Tag
+	 *
 	 * @return null|String
 	 */
 	public function getTag()
@@ -255,6 +330,8 @@ class PayloadNotificationBuilder {
 	}
 
 	/**
+	 * Get Color
+	 *
 	 * @return null|String
 	 */
 	public function getColor()
@@ -263,6 +340,8 @@ class PayloadNotificationBuilder {
 	}
 
 	/**
+	 * Get ClickAction
+	 *
 	 * @return null|String
 	 */
 	public function getClickAction()
@@ -271,6 +350,8 @@ class PayloadNotificationBuilder {
 	}
 
 	/**
+	 * Get BodyLocationKey
+	 *
 	 * @return null|String
 	 */
 	public function getBodyLocationKey()
@@ -279,6 +360,8 @@ class PayloadNotificationBuilder {
 	}
 
 	/**
+	 * Get BodyLocationArgs
+	 *
 	 * @return null|String|array
 	 */
 	public function getBodyLocationArgs()
@@ -287,6 +370,8 @@ class PayloadNotificationBuilder {
 	}
 
 	/**
+	 * Get TitleLocationKey
+	 *
 	 * @return string
 	 */
 	public function getTitleLocationKey()
@@ -295,14 +380,14 @@ class PayloadNotificationBuilder {
 	}
 
 	/**
+	 * GetTitleLocationArgs
+	 *
 	 * @return null|String|array
 	 */
 	public function getTitleLocationArgs()
 	{
 		return $this->titleLocationArgs;
 	}
-	
-	
 
 	/**
 	 * Build an PayloadNotification

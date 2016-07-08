@@ -1,8 +1,8 @@
 <?php namespace LaravelFCM;
 
 use Illuminate\Support\ServiceProvider;
-use LaravelFCM\Downstream\FCMDownstream;
-use LaravelFCM\Group\FCMGroup;
+use LaravelFCM\Sender\FCMSender;
+use LaravelFCM\Sender\FCMGroup;
 
 class FCMServiceProvider extends ServiceProvider {
 
@@ -24,8 +24,8 @@ class FCMServiceProvider extends ServiceProvider {
 			return new FCMGroup();
 		});
 
-		$this->app->bind('fcm.downstream', function($app) {
-			return new FCMDownstream();
+		$this->app->bind('fcm.sender', function($app) {
+			return new FCMSender();
 		});
 		
 		$this->registerClient();

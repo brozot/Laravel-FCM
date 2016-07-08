@@ -3,21 +3,90 @@
 
 use Illuminate\Contracts\Support\Arrayable;
 
+/**
+ * Class PayloadNotification
+ *
+ * @package LaravelFCM\Message
+ */
 class PayloadNotification implements Arrayable {
 
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $title;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $body;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $icon;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $sound;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $badge;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $tag;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $color;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $clickAction;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $bodyLocationKey;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $bodyLocationArgs;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $titleLocationKey;
+
+	/**
+	 * @internal
+	 * @var null|String
+	 */
 	protected $titleLocationArgs;
 
+	/**
+	 * PayloadNotification constructor.
+	 *
+	 * @param PayloadNotificationBuilder $builder
+	 */
 	public function __construct(PayloadNotificationBuilder $builder)
 	{
 		$this->title = $builder->getTitle();
@@ -35,6 +104,11 @@ class PayloadNotification implements Arrayable {
 
 	}
 
+	/**
+	 * convert PayloadNotification to array
+	 *
+	 * @return array
+	 */
 	function toArray()
 	{
 		$notification = [

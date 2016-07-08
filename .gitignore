@@ -12,6 +12,9 @@ resources/assets/bower
 Homestead.yaml
 Homestead.json
 storage/debugbar
+doc/generated/*
+generatedoc.sh
+phpdoc.xml
 
 # Editors
 .sublime-workspace

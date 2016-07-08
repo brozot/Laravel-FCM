@@ -1,11 +1,15 @@
-<?php namespace LaravelFCM\Downstream;
+<?php namespace LaravelFCM\Sender;
 
 use Exception;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use GuzzleHttp\Psr7\Response as GuzzleResponse;
 
-
+/**
+ * Class Response
+ *
+ * @package LaravelFCM\Sender
+ */
 class Response {
 
 	const SUCCESS = 'success';
@@ -28,23 +32,84 @@ class Response {
 	const INTERNAL_SERVER_ERROR = "InternalServerError";
 	const DEVICE_MESSAGE_RATE_EXCEEDED = "DeviceMessageRateExceeded";
 	const FAILED_REGISTRATION_IDS = "failed_registration_ids";
+	const TOPIC_MESSAGE_RATE_EXCEEDED = "TopicsMessageRateExceeded";
 
+	/**
+	 * @internal
+	 * @var int
+	 */
 	protected $numberSuccess = 0;
+
+	/**
+	 * @internal
+	 * @var int
+	 */
 	protected $numberFailure = 0;
+
+	/**
+	 * @internal
+	 * @var int
+	 */
 	protected $numberCanonicalId = 0;
+
+	/**
+	 * @internal
+	 * @var bool
+	 */
 	protected $hasMissingRegistrationIds = false;
 
+	/**
+	 * @internal
+	 * @var array
+	 */
 	protected $tokensToDelete = [];
+
+	/**
+	 * @internal
+	 * @var array
+	 */
 	protected $tokensToModify = [];
+
+	/**
+	 * @internal
+	 * @var array
+	 */
 	protected $failedRegistrationIds = [];
+
+	/**
+	 * @internal
+	 * @var array
+	 */
 	protected $tokensToRetry = [
 		self::UNAVAILABLE                  => [],
 		self::INTERNAL_SERVER_ERROR        => [],
 		self::DEVICE_MESSAGE_RATE_EXCEEDED => []
 	];
 
+	/**
+	 * @internal
+	 * @var
+	 */
 	protected $to;
 
+	/**
+	 * @internal
+	 * @var mixed
+	 */
+	protected $response;
+
+	/**
+	 * Response constructor.
+	 *
+	 * @param GuzzleResponse $response
+	 * @param array|string|null $to
+	 * @throws InvalidPackageException
+	 * @throws InvalidNotificationException
+	 * @throws MessageToBigException
+	 * @throws InvalidDataKeyException
+	 * @throws InvalidTTLException
+	 * @throws TopicsMessageRateExceededException
+	 */
 	public function __construct(GuzzleResponse $response, $to)
 	{
 
@@ -64,8 +129,17 @@ class Response {
 		}
 	}
 
+	/**
+	 * @internal
+	 * @throws TopicsMessageRateExceededException
+	 */
 	private function parse()
 	{
+		if (!array_key_exists(self::SUCCESS, $this->response) && !array_key_exists(self::FAILURE, $this->response) && !array_key_exists(self::CANONICAL_IDS, $this->response) && !array_key_exists(self::FAILED_REGISTRATION_IDS, $this->response)) {
+			$this->parseTopic();
+			return;
+		}
+
 		if (array_key_exists(self::SUCCESS, $this->response)) {
 			$this->numberSuccess = $this->response[ self::SUCCESS ];
 		}
@@ -87,6 +161,9 @@ class Response {
 		}
 	}
 
+	/**
+	 * @internal
+	 */
 	private function parseResult()
 	{
 		if (is_array($this->to)) {
@@ -97,46 +174,95 @@ class Response {
 		}
 	}
 
+	/**
+	 * get the number of token where the message was sent with success
+	 * @return int
+	 */
 	public function numberSuccess()
 	{
 		return $this->numberSuccess;
 	}
 
+	/**
+	 * get the number of token where the  message was not be sent
+	 * @return int
+	 */
 	public function numberFailure()
 	{
 		return $this->numberFailure;
 	}
 
+	/**
+	 * get the number of token where the notification was sent but that need to be changed
+	 * @return int
+	 */
 	public function numberModifiedToken()
 	{
 		return $this->numberCanonicalId;
 	}
 
+	/**
+	 * If true, you should check if you database contains some empty tokens and remove they
+	 *
+	 * @internal
+	 * @return bool
+	 */
 	public function hasMissingRegistrationIds()
 	{
 		return $this->hasMissingRegistrationIds;
 	}
 
+	/**
+	 * Get a list of token which must be deleted from the database
+	 *
+	 * @return array
+	 */
 	public function tokenToDelete()
 	{
 		return $this->tokensToDelete;
 	}
 
-	public function failedRegistrationIds()
-	{
-		return $this->failedRegistrationIds;
-	}
-
+	/**
+	 * Get a list of token that must be modified in the database
+	 *
+	 * key: oldToken
+	 * value: new token
+	 *
+	 * @return array
+	 */
 	public function tokenToModify()
 	{
 		return $this->tokensToModify;
 	}
 
+	/**
+	 * Get a list of token that you should retry to send a message
+	 *
+	 * key: oldToken
+	 * value: new token
+	 *
+	 * @return array
+	 */
 	public function tokenToRetry()
 	{
 		return $this->tokensToRetry;
 	}
 
+	/**
+	 * For group get the list of tokens where the notification was sent but that need to be changed
+	 *
+	 * @return array
+	 */
+	public function failedRegistrationIds()
+	{
+		return $this->failedRegistrationIds;
+	}
+
+	/**
+	 * Merge two response
+	 *
+	 * @param Response $response
+	 */
 	public function merge(Response $response)
 	{
 		$this->numberSuccess += $response->numberSuccess();
@@ -153,6 +279,14 @@ class Response {
 		$this->tokensToRetry[ self::DEVICE_MESSAGE_RATE_EXCEEDED ] = array_merge($this->tokensToRetry[ self::DEVICE_MESSAGE_RATE_EXCEEDED ], $this->tokenToRetry()[ self::DEVICE_MESSAGE_RATE_EXCEEDED ]);
 	}
 
+	/**
+	 * @internal
+	 *
+	 * @throws InvalidDataKeyException
+	 * @throws InvalidPackageException
+	 * @throws InvalidTTLException
+	 * @throws MessageToBigException
+	 */
 	private function detectCommonErrors() {
 
 		if (!array_key_exists(self::RESULTS, $this->response)) {
@@ -189,6 +323,9 @@ class Response {
 		}
 	}
 
+	/**
+	 * @internal
+	 */
 	private function parseMultipleDevices()
 	{
 		if (!array_key_exists(self::RESULTS, $this->response)) {
@@ -221,6 +358,9 @@ class Response {
 		}
 	}
 
+	/**
+	 * @internal
+	 */
 	private function parseUniqueDevice()
 	{
 		if (!array_key_exists(self::RESULTS, $this->response)) {
@@ -253,6 +393,9 @@ class Response {
 		}
 	}
 
+	/**
+	 * @internal
+	 */
 	private function logResults()
 	{
 		$logger = new Logger('Laravel-FCM');
@@ -267,16 +410,81 @@ class Response {
 		$logger->info($logMessage);
 	}
 
+	/**
+	 * @internal
+	 *
+	 * @return mixed
+	 */
 	private function isLoginResult()
 	{
 		return app('config')['fcm.log_enabled'];
 	}
+
+	/**
+	 * @internal
+	 *
+	 * @throws TopicsMessageRateExceededException
+	 */
+	private function parseTopic()
+	{
+		if (key_exists('message_id', $this->response)) {
+			$this->numberSuccess = 1;
+		}
+		else if (in_array(self::TOPIC_MESSAGE_RATE_EXCEEDED, $this->response)) {
+			$this->numberFailure = 1;
+			throw new TopicsMessageRateExceededException('To many message was send please wait util retry');
+		}
+		else {
+			$this->numberFailure = 1;
+		}
+	}
 }
 
+/**
+ * Class InvalidPackageException
+ *
+ * @package LaravelFCM\Sender
+ */
 class InvalidPackageException extends Exception {}
+
+/**
+ * Class InvalidNotificationException
+ *
+ * @package LaravelFCM\Sender
+ */
 class InvalidNotificationException extends Exception {}
+
+/**
+ * Class InvalidSenderIdException
+ *
+ * @package LaravelFCM\Sender
+ */
 class InvalidSenderIdException extends Exception {}
 
+/**
+ * Class MessageToBigException
+ *
+ * @package LaravelFCM\Sender
+ */
 class MessageToBigException extends Exception {}
+
+/**
+ * Class InvalidDataKeyException
+ *
+ * @package LaravelFCM\Sender
+ */
 class InvalidDataKeyException extends Exception {}
+
+/**
+ * Class InvalidTTLException
+ *
+ * @package LaravelFCM\Sender
+ */
 class InvalidTTLException extends Exception {}
+
+/**
+ * Class TopicsMessageRateExceededException
+ *
+ * @package LaravelFCM\Sender
+ */
+class TopicsMessageRateExceededException extends Exception {}

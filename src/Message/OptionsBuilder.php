@@ -3,24 +3,60 @@
 use Exception;
 use ReflectionClass;
 
+/**
+ * Builder for creation of options used by FCM
+ *
+ * Class OptionsBuilder
+ *
+ * @package LaravelFCM\Message\OptionsBuilder
+ *
+ * Form more information about options, please refer to google official documentation :
+ * @link http://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json
+ */
 class OptionsBuilder {
 
+	/**
+	 * @internal
+	 * @var string
+	 */
 	protected $collapseKey;
-	protected $priority;
-	protected $contentAvailable = false;
-	protected $delayWhileIdle = false;
-	protected $timeToLive;
-	protected $restrictedPackageName;
-	protected $dryRun = false;
 
 	/**
-	 * Form more information about options, please refer to google official documentation :
-	 * @link http://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json
+	 * @internal
+	 * @var string
+	 *
 	 */
-	public function __construct()
-	{
+	protected $priority;
 
-	}
+	/**
+	 * @internal
+	 * @var boolean
+	 */
+	protected $contentAvailable = false;
+
+	/**
+	 * @internal
+	 * @var boolean
+	 */
+	protected $delayWhileIdle = false;
+
+	/**
+	 * @internal
+	 * @var string
+	 */
+	protected $timeToLive;
+
+	/**
+	 * @internal
+	 * @var string
+	 */
+	protected $restrictedPackageName;
+
+	/**
+	 * @internal
+	 * @var boolean
+	 */
+	protected $dryRun = false;
 
 	/**
 	 * This parameter identifies a group of messages
@@ -28,7 +64,7 @@ class OptionsBuilder {
 	 *
 	 * @param String $collapseKey
 	 *
-	 * @return OptionsBuilder current instance of the builders
+	 * @return \LaravelFCM\Message\OptionsBuilder
 	 */
 	public function setCollapseKey($collapseKey)
 	{
@@ -43,7 +79,8 @@ class OptionsBuilder {
 	 *
 	 * @param String $priority
 	 *
-	 * @return OptionsBuilder current instance of the builder
+	 * @return \LaravelFCM\Message\OptionsBuilder
+	 *
 	 * @throws InvalidOptionException
 	 */
 	public function setPriority($priority)
@@ -66,7 +103,7 @@ class OptionsBuilder {
 	 *
 	 * @param boolean $contentAvailable
 	 *
-	 * @return OptionsBuilder current instance of the builder
+	 * @return \LaravelFCM\Message\OptionsBuilder
 	 */
 	public function setContentAvailable($contentAvailable)
 	{
@@ -80,7 +117,7 @@ class OptionsBuilder {
 	 *
 	 * @param boolean $delayWhileIdle
 	 *
-	 * @return OptionsBuilder current instance of the builder
+	 * @return \LaravelFCM\Message\OptionsBuilder
 	 */
 	public function setDelayWhileIdle($delayWhileIdle)
 	{
@@ -94,7 +131,8 @@ class OptionsBuilder {
 	 *
 	 * @param int $timeToLive (in second) min:0 max:2419200
 	 *
-	 * @return OptionsBuilder current instance of the builder
+	 * @return \LaravelFCM\Message\OptionsBuilder
+	 *
 	 * @throws InvalidOptionException
 	 */
 	public function setTimeToLive($timeToLive)
@@ -112,7 +150,7 @@ class OptionsBuilder {
 	 *
 	 * @param string $restrictedPackageName
 	 *
-	 * @return OptionsBuilder current instance of the builder
+	 * @return \LaravelFCM\Message\OptionsBuilder
 	 */
 	public function setRestrictedPackageName($restrictedPackageName)
 	{
@@ -127,7 +165,7 @@ class OptionsBuilder {
 	 *
 	 * @param boolean $isDryRun
 	 *
-	 * @return OptionsBuilder current instance of the builder
+	 * @return \LaravelFCM\Message\OptionsBuilder
 	 */
 	public function setDryRun($isDryRun)
 	{
@@ -137,6 +175,8 @@ class OptionsBuilder {
 	}
 
 	/**
+	 * Get the collapseKey
+	 *
 	 * @return null|string
 	 */
 	public function getCollapseKey()
@@ -145,6 +185,8 @@ class OptionsBuilder {
 	}
 
 	/**
+	 * Get the priority
+	 *
 	 * @return null|string
 	 */
 	public function getPriority()
@@ -153,6 +195,8 @@ class OptionsBuilder {
 	}
 
 	/**
+	 * is content available
+	 *
 	 * @return boolean
 	 */
 	public function isContentAvailable()
@@ -161,6 +205,8 @@ class OptionsBuilder {
 	}
 
 	/**
+	 * is delay white idle
+	 *
 	 * @return boolean
 	 */
 	public function isDelayWhileIdle()
@@ -169,6 +215,8 @@ class OptionsBuilder {
 	}
 
 	/**
+	 * get time to live
+	 *
 	 * @return null|int
 	 */
 	public function getTimeToLive()
@@ -177,6 +225,8 @@ class OptionsBuilder {
 	}
 
 	/**
+	 * get restricted package name
+	 *
 	 * @return null|string
 	 */
 	public function getRestrictedPackageName()
@@ -185,6 +235,8 @@ class OptionsBuilder {
 	}
 
 	/**
+	 * is dry run
+	 *
 	 * @return boolean
 	 */
 	public function isDryRun()
@@ -204,8 +256,11 @@ class OptionsBuilder {
 
 }
 
-class InvalidOptionException extends Exception {}
-
+/**
+ * Class OptionsPriorities
+ *
+ * @package LaravelFCM\Message\OptionsPriorities
+ */
 final class OptionsPriorities
 {
 
@@ -240,3 +295,11 @@ final class OptionsPriorities
 		return in_array($priority, static::getPriorities());
 	}
 }
+
+/**
+ * Class InvalidOptionException
+ * Exception thrown when the options are invalid
+ *
+ * @package  LaravelFCM\Message\InvalidOptionException
+ */
+class InvalidOptionException extends Exception {}
