@@ -1,6 +1,7 @@
 <?php namespace LaravelFCM\Message;
 
 use Exception;
+use LaravelFCM\Message\Exceptions\InvalidOptionsException;
 use ReflectionClass;
 
 /**
@@ -81,12 +82,12 @@ class OptionsBuilder {
 	 *
 	 * @return \LaravelFCM\Message\OptionsBuilder
 	 *
-	 * @throws InvalidOptionException
+	 * @throws InvalidOptionsException
 	 */
 	public function setPriority($priority)
 	{
 		if (!OptionsPriorities::isValid($priority)) {
-			throw new InvalidOptionException('priority is not valid, please refer to the documentation or use the constants of the class "OptionsPriorities"');
+			throw new InvalidOptionsException('priority is not valid, please refer to the documentation or use the constants of the class "OptionsPriorities"');
 		}
 		$this->priority = $priority;
 
@@ -295,11 +296,3 @@ final class OptionsPriorities
 		return in_array($priority, static::getPriorities());
 	}
 }
-
-/**
- * Class InvalidOptionException
- * Exception thrown when the options are invalid
- *
- * @package  LaravelFCM\Message\InvalidOptionException
- */
-class InvalidOptionException extends Exception {}

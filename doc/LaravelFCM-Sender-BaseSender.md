@@ -14,6 +14,41 @@ Class BaseSender
 
 
 
+Properties
+----------
+
+
+### $client
+
+    protected \Illuminate\Foundation\Application $client
+
+Guzzle Client
+
+
+
+* Visibility: **protected**
+
+
+### $config
+
+    protected array $config
+
+configuration
+
+
+
+* Visibility: **protected**
+
+
+### $url
+
+    protected mixed $url
+
+url
+
+
+
+* Visibility: **protected**
 
 
 Methods

@@ -1,8 +1,22 @@
 <?php namespace LaravelFCM\Request;
 
+/**
+ * Class BaseRequest
+ *
+ * @package LaravelFCM\Request
+ */
 abstract class BaseRequest {
 
+	/**
+	 * @internal
+	 * @var \GuzzleHttp\Client
+	 */
 	protected $client;
+
+	/**
+	 * @internal
+	 * @var array
+	 */
 	protected $config;
 
 	/**

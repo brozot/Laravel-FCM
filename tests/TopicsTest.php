@@ -4,7 +4,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 use LaravelFCM\Message\Topics;
 use LaravelFCM\Sender\FCMSender;
-use LaravelFCM\Sender\Response as DownstreamResponse;
+use LaravelFCM\Message\Exceptions\NoTopicProvidedException;
 
 class TopicsTest extends FCMTestCase {
 
@@ -15,7 +15,7 @@ class TopicsTest extends FCMTestCase {
 	{
 		$topics = new Topics();
 
-		$this->setExpectedException(\LaravelFCM\Message\NoTopicProvided::class);
+		$this->setExpectedException(NoTopicProvidedException::class);
 		$topics->build();
 
 	}
@@ -109,7 +109,7 @@ class TopicsTest extends FCMTestCase {
 	/**
 	 * @test
 	 */
-	public function it_send_a_notification_to_a_group_of_devices()
+	public function it_send_a_notification_to_a_topic()
 	{
 		$response = new Response(200, [], '{"message_id":6177433633397011933}' );
 
@@ -126,8 +126,35 @@ class TopicsTest extends FCMTestCase {
 		$topics->topic('test');
 
 		$response = $fcm->sendToTopic($topics);
-		
-		$this->assertEquals(1, $response->numberSuccess());
-		$this->assertEquals(0, $response->numberFailure());
+
+		$this->assertTrue($response->isSuccess());
+		$this->assertFalse($response->shouldRetry());
+		$this->assertNull($response->error());
+	}
+
+	/**
+	 * @test
+	 */
+	public function it_send_a_notification_to_a_topic_and_return_error()
+	{
+		$response = new Response(200, [], '{"error":"TopicsMessageRateExceeded"}' );
+
+		$client = Mockery::mock(Client::class);
+		$client->shouldReceive('post')->once()->andReturn($response);
+		$this->app->singleton('fcm.client', function($app) use($client) {
+			return $client;
+		});
+
+
+		$fcm = new FCMSender();
+
+		$topics = new Topics();
+		$topics->topic('test');
+
+		$response = $fcm->sendToTopic($topics);
+
+		$this->assertFalse($response->isSuccess());
+		$this->assertTrue($response->shouldRetry());
+		$this->assertEquals('TopicsMessageRateExceeded', $response->error());
 	}
 }

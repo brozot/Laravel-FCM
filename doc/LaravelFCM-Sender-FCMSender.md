@@ -24,6 +24,41 @@ Constants
 
 
 
+Properties
+----------
+
+
+### $client
+
+    protected \Illuminate\Foundation\Application $client
+
+Guzzle Client
+
+
+
+* Visibility: **protected**
+
+
+### $config
+
+    protected array $config
+
+configuration
+
+
+
+* Visibility: **protected**
+
+
+### $url
+
+    protected mixed $url
+
+url
+
+
+
+* Visibility: **protected**
 
 
 Methods
@@ -32,7 +67,7 @@ Methods
 
 ### sendTo
 
-    \LaravelFCM\Sender\Response|null LaravelFCM\Sender\FCMSender::sendTo(String|array $to, \LaravelFCM\Message\Options|null $options, \LaravelFCM\Message\PayloadNotification|null $notification, \LaravelFCM\Message\PayloadData|null $data)
+    \LaravelFCM\Response\DownstreamResponse|null LaravelFCM\Sender\FCMSender::sendTo(String|array $to, \LaravelFCM\Message\Options|null $options, \LaravelFCM\Message\PayloadNotification|null $notification, \LaravelFCM\Message\PayloadData|null $data)
 
 send a downstream message to
 
@@ -52,7 +87,7 @@ send a downstream message to
 
 ### sendToGroup
 
-    \LaravelFCM\Sender\Response LaravelFCM\Sender\FCMSender::sendToGroup($notificationKey, \LaravelFCM\Message\Options|null $options, \LaravelFCM\Message\PayloadNotification|null $notification, \LaravelFCM\Message\PayloadData|null $data)
+    \LaravelFCM\Response\GroupResponse LaravelFCM\Sender\FCMSender::sendToGroup($notificationKey, \LaravelFCM\Message\Options|null $options, \LaravelFCM\Message\PayloadNotification|null $notification, \LaravelFCM\Message\PayloadData|null $data)
 
 Send a message to a group of devices identified with them notification key
 
@@ -71,7 +106,7 @@ Send a message to a group of devices identified with them notification key
 
 ### sendToTopic
 
-    \LaravelFCM\Sender\Response LaravelFCM\Sender\FCMSender::sendToTopic(\LaravelFCM\Message\Topics $topics, \LaravelFCM\Message\Options|null $options, \LaravelFCM\Message\PayloadNotification|null $notification, \LaravelFCM\Message\PayloadData|null $data)
+    \LaravelFCM\Response\TopicResponse LaravelFCM\Sender\FCMSender::sendToTopic(\LaravelFCM\Message\Topics $topics, \LaravelFCM\Message\Options|null $options, \LaravelFCM\Message\PayloadNotification|null $notification, \LaravelFCM\Message\PayloadData|null $data)
 
 Send message devices registered at a or more topics
 
@@ -85,23 +120,6 @@ Send message devices registered at a or more topics
 * $options **[LaravelFCM\Message\Options](LaravelFCM-Message-Options.md)|null**
 * $notification **[LaravelFCM\Message\PayloadNotification](LaravelFCM-Message-PayloadNotification.md)|null**
 * $data **[LaravelFCM\Message\PayloadData](LaravelFCM-Message-PayloadData.md)|null**
-
-
-
-### constructResponse
-
-    \LaravelFCM\Sender\Response LaravelFCM\Sender\FCMSender::constructResponse(\GuzzleHttp\Psr7\Response $response, $to)
-
-Construct a response
-
-
-
-* Visibility: **private**
-
-
-#### Arguments
-* $response **GuzzleHttp\Psr7\Response**
-* $to **mixed**
 
 
 

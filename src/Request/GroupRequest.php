@@ -1,14 +1,34 @@
 <?php namespace LaravelFCM\Request;
 
-
+/**
+ * Class GroupRequest
+ *
+ * @package LaravelFCM\Request
+ */
 class GroupRequest extends BaseRequest{
 
-	protected $client;
-	protected $config;
-
+	/**
+	 * @internal
+	 * @var string
+	 */
 	protected $operation;
+
+	/**
+	 * @internal
+	 * @var string
+	 */
 	protected $notificationKeyName;
+
+	/**
+	 * @internal
+	 * @var string
+	 */
 	protected $notificationKey;
+
+	/**
+	 * @internal
+	 * @var array
+	 */
 	protected $registrationIds;
 
 	/**

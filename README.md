@@ -30,7 +30,7 @@ or you can add it directly in your composer.json file:
 ```
 {
     "require": {
-        "brozot/laravel-fcm": "^0.1.0"
+        "brozot/laravel-fcm": "^1.0.0"
     }
 }
 ```
@@ -134,10 +134,25 @@ $data = $dataBuilder->build();
 
 $token = "a_registration_from_your_database";
 
-$response = FCM::sendTo($token, $option, $notification, $data);
+$downstreamResponse = FCM::sendTo($token, $option, $notification, $data);
 
-$tokensToDelete = $response->tokenToDelete();
-$tokensToModify = $response->tokenToModify();
+$downstreamResponse = new DownstreamResponse($response, $tokens);
+
+$downstreamResponse->numberSuccess());
+$downstreamResponse->numberFailure());
+$downstreamResponse->numberModification());
+
+//return Array - you must remove all this tokens in your database
+$downstreamResponse->tokensToDelete()); 
+
+//return Array (key : oldToken, value : new token - you must change the token in your database )
+$downstreamResponse->tokensToModify()); 
+
+//return Array - you should try to resend the message to the tokens in the array
+$downstreamResponse->tokensToRetry();
+
+// return Array (key:token, value:errror) - in production you should remove from your database the tokens
+
 
 ```
 
@@ -161,10 +176,23 @@ $data = $dataBuilder->build();
 // You must change it to get your tokens
 $tokens = MYDATABASE::pluck('fcm_token')->toArray();
 
-$response = FCM::sendTo($tokens, $option, $notification);
+$downstreamResponse = FCM::sendTo($tokens, $option, $notification);
 
-$tokensToDelete = $response->tokenToDelete();
-$tokensToModify = $response->tokenToModify();
+$downstreamResponse->numberSuccess());
+$downstreamResponse->numberFailure()); 
+$downstreamResponse->numberModification());
+
+//return Array - you must remove all this tokens in your database
+$downstreamResponse->tokensToDelete()); 
+
+//return Array (key : oldToken, value : new token - you must change the token in your database )
+$downstreamResponse->tokensToModify()); 
+
+//return Array - you should try to resend the message to the tokens in the array
+$downstreamResponse->tokensToRetry();
+
+// return Array (key:token, value:errror) - in production you should remove from your database the tokens present in this array 
+$downstreamResponse->tokensWithError(); 
 
 ```
 
@@ -186,11 +214,11 @@ $notification = $notificationBuilder->build();
 $topic = new Topics();
 $topic->topic('news');
 
-$response = FCM::sendToTopic($topic, null, $notification, null)
+$topicResponse = FCM::sendToTopic($topic, null, $notification, null)
 
-if ($response->numberSuccess() == 1) {
-	// Success
-}
+$topicResponse->isSuccess();
+$topicResponse->shouldRetry();
+$topicResponse->error());
 
 ```
 
@@ -217,15 +245,37 @@ $topic->topic('news')->andTopic(function($condition) {
 	
 })
 
-$response = FCM::sendToTopic($topic, null, $notification, null)
+$topicResponse = FCM::sendToTopic($topic, null, $notification, null)
 
-if ($response->numberSuccess() == 1) {
-	// Success
-}
+$topicResponse->isSuccess();
+$topicResponse->shouldRetry();
+$topicResponse->error());
 
 ```
 
 ### Group message
+
+**Send a notification to a group**
+
+```
+$notificationKey = ['a_notification_key'];
+
+
+$notificationBuilder = new PayloadNotificationBuilder('my title');
+$notificationBuilder->setBody('Hello world')
+                        ->setSound('default');
+
+$notification = $notificationBuilder->build();
+
+
+$groupResponse = FCM::sendToGroup($notificationKey, null, $notification, null);
+
+$groupResponse->numberSuccess();
+$groupResponse->numberFailure();
+$groupResponse->tokensFailed();
+
+
+```
 
 **Create a group**
 

@@ -8,19 +8,19 @@
 abstract class BaseSender {
 
 	/**
-	 * @internal
+	 * Guzzle Client
 	 * @var \Illuminate\Foundation\Application|mixed
 	 */
 	protected $client;
 
 	/**
-	 * @internal
+	 * configuration
 	 * @var array
 	 */
 	protected $config;
 
 	/**
-	 * @internal
+	 * url
 	 * @var mixed
 	 */
 	protected $url;

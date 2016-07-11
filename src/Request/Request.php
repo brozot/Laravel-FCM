@@ -12,13 +12,34 @@ use LaravelFCM\Message\Topics;
  */
 class Request extends BaseRequest{
 
-	protected $client;
-	protected $config;
-
+	/**
+	 * @internal
+	 * @var string|array
+	 */
 	protected $to;
+
+	/**
+	 * @internal
+	 * @var Options
+	 */
 	protected $options;
+
+	/**
+	 * @internal
+	 * @var PayloadNotification
+	 */
 	protected $notification;
+
+	/**
+	 * @internal
+	 * @var PayloadData
+	 */
 	protected $data;
+
+	/**
+	 * @internal
+	 * @var Topics|null
+	 */
 	protected $topic;
 
 	/**

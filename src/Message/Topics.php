@@ -2,7 +2,7 @@
 
 
 use Closure;
-use Exception;
+use LaravelFCM\Message\Exceptions\NoTopicProvidedException;
 
 /**
  * Class Topics
@@ -216,19 +216,12 @@ class Topics {
 	/**
 	 * @internal
 	 *
-	 * @throws NoTopicProvided
+	 * @throws NoTopicProvidedException
 	 */
 	private function checkIfOneTopicExist()
 	{
 		if (!count($this->conditions)) {
-			throw new NoTopicProvided('At least one topic must be provided');
+			throw new NoTopicProvidedException('At least one topic must be provided');
 		}
 	}
 }
-
-/**
- * Class NoTopicProvided
- *
- * @package LaravelFCM\Message
- */
-class NoTopicProvided extends Exception {}

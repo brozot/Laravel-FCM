@@ -1,6 +1,7 @@
 <?php namespace LaravelFCM\Sender;
 
 use LaravelFCM\Request\GroupRequest;
+use GuzzleHttp\Psr7\Response as GuzzleResponse;
 
 /**
  * Class FCMGroup
@@ -24,14 +25,10 @@ class FCMGroup extends BaseSender {
 	public function createGroup($notificationKeyName, array $registrationIds)
 	{
 		$request = new GroupRequest(self::CREATE, $notificationKeyName, null, $registrationIds);
-		$response = $this->client->post($this->url, $request);
+		
+		$response = $this->client->post($this->url, $request->build());
 
-		if ($this->isValidResponse($response)) {
-			return null;
-		}
-
-		$json = json_decode($response->getBody(), true);
-		return $json['notification_key'];
+		return $this->getNotificationToken($response);
 	}
 
 	/**
@@ -46,14 +43,9 @@ class FCMGroup extends BaseSender {
 	public function addToGroup($notificationKeyName, $notificationKey, array $registrationIds)
 	{
 		$request = new GroupRequest(self::ADD, $notificationKeyName, $notificationKey, $registrationIds);
-		$response = $this->client->post($this->url, $request);
+		$response = $this->client->post($this->url, $request->build());
 
-		if ($this->isValidResponse($response)) {
-			return null;
-		}
-
-		$json = json_decode($response->getBody(), true);
-		return $json['notification_key'];
+		return $this->getNotificationToken($response);
 	}
 
 	/**
@@ -70,8 +62,20 @@ class FCMGroup extends BaseSender {
 	public function removeFromGroup($notificationKeyName, $notificationKey, array $registeredIds)
 	{
 		$request = new GroupRequest(self::REMOVE, $notificationKeyName, $notificationKey, $registeredIds);
-		$response = $this->client->post($this->url, $request);
+		$response = $this->client->post($this->url, $request->build());
 
+		return $this->getNotificationToken($response);
+	}
+
+	/**
+	 * @internal
+	 *
+	 * @param GuzzleResponse $response
+	 *
+	 * @return null
+	 */
+	private function getNotificationToken(GuzzleResponse $response)
+	{
 		if ($this->isValidResponse($response)) {
 			return null;
 		}
@@ -87,7 +91,7 @@ class FCMGroup extends BaseSender {
 	 *
 	 * @return bool
 	 */
-	public function isValidResponse($response)
+	public function isValidResponse(GuzzleResponse $response)
 	{
 		return $response->getReasonPhrase() != 'OK' || $response->getStatusCode() != 200;
 	}
