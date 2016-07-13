@@ -115,7 +115,7 @@ you can find more information with the [official documentation](https://firebase
 
 Downstream message is a notification message, a data message or both that you send to a target device or to multiple targets devices using it (them) registration_Ids.
 
-The following use statements are required:
+The following use statements are required for the examples below.
 ```
 use LaravelFCM\Message\OptionsBuilder;
 use LaravelFCM\Message\PayloadDataBuilder;
