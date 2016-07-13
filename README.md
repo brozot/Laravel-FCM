@@ -115,6 +115,14 @@ you can find more information with the [official documentation](https://firebase
 
 Downstream message is a notification message, a data message or both that you send to a target device or to multiple targets devices using it (them) registration_Ids.
 
+The following use statements are required for the examples below.
+```
+use LaravelFCM\Message\OptionsBuilder;
+use LaravelFCM\Message\PayloadDataBuilder;
+use LaravelFCM\Message\PayloadNotificationBuilder;
+use FCM;
+```
+
 **Send a downstream message to a device**
 
 ```
@@ -138,15 +146,15 @@ $downstreamResponse = FCM::sendTo($token, $option, $notification, $data);
 
 $downstreamResponse = new DownstreamResponse($response, $tokens);
 
-$downstreamResponse->numberSuccess());
-$downstreamResponse->numberFailure());
-$downstreamResponse->numberModification());
+$downstreamResponse->numberSuccess();
+$downstreamResponse->numberFailure();
+$downstreamResponse->numberModification();
 
 //return Array - you must remove all this tokens in your database
-$downstreamResponse->tokensToDelete()); 
+$downstreamResponse->tokensToDelete(); 
 
 //return Array (key : oldToken, value : new token - you must change the token in your database )
-$downstreamResponse->tokensToModify()); 
+$downstreamResponse->tokensToModify(); 
 
 //return Array - you should try to resend the message to the tokens in the array
 $downstreamResponse->tokensToRetry();
@@ -178,15 +186,15 @@ $tokens = MYDATABASE::pluck('fcm_token')->toArray();
 
 $downstreamResponse = FCM::sendTo($tokens, $option, $notification);
 
-$downstreamResponse->numberSuccess());
-$downstreamResponse->numberFailure()); 
-$downstreamResponse->numberModification());
+$downstreamResponse->numberSuccess();
+$downstreamResponse->numberFailure(); 
+$downstreamResponse->numberModification();
 
 //return Array - you must remove all this tokens in your database
-$downstreamResponse->tokensToDelete()); 
+$downstreamResponse->tokensToDelete(); 
 
 //return Array (key : oldToken, value : new token - you must change the token in your database )
-$downstreamResponse->tokensToModify()); 
+$downstreamResponse->tokensToModify(); 
 
 //return Array - you should try to resend the message to the tokens in the array
 $downstreamResponse->tokensToRetry();
