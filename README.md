@@ -396,6 +396,30 @@ $topics->topic('TopicA')
 ```
 
 
+## Testing
+
+For integration testing, you can mock the responses with mockery and Mocks provided by the package.
+
+There are 3 kinds of "MockResponse" given by the package:
+
+- MockDownstreamResponse
+- MockGroupResponse
+- MockTopicResponse
+
+You can mock the FCM call as in the following example:
+
+```php
+$numberSucess = 2;
+$mockResponse = new \LaravelFCM\Mocks\MockDownstreamResponse(numberSucess);
+
+$mockResponse->addTokenToDelete('token_to_delete');
+$mockResponse->addTokenToModify('token_to_modify', 'token_modified');
+$mockResponse->setMissingToken(true);
+
+$sender = Mockery::mock(\LaravelFCM\Sender\FCMSender::class);
+$sender->shouldReceive('sendTo')->once()->andReturn($mockResponse);
+```
+
 ## API Documentation
 
 You can find more documentation about the API in the [API reference](./doc/Readme.md).
