@@ -418,6 +418,10 @@ $mockResponse->setMissingToken(true);
 
 $sender = Mockery::mock(\LaravelFCM\Sender\FCMSender::class);
 $sender->shouldReceive('sendTo')->once()->andReturn($mockResponse);
+
+$this->app->singleton('fcm.sender', function($app) use($sender) {
+	return $sender;
+});
 ```
 
 ## API Documentation
