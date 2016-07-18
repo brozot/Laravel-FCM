@@ -1,16 +1,14 @@
 <?php namespace LaravelFCM\Sender;
 
-use GuzzleHttp\Exception\ClientException;
-use LaravelFCM\FCMRequest;
-use LaravelFCM\Message\Options;
-use LaravelFCM\Message\PayloadData;
-use LaravelFCM\Message\PayloadNotification;
-use \GuzzleHttp\Psr7\Response as GuzzleResponse;
 use LaravelFCM\Message\Topics;
 use LaravelFCM\Request\Request;
-use LaravelFCM\Response\DownstreamResponse;
+use LaravelFCM\Message\Options;
+use LaravelFCM\Message\PayloadData;
 use LaravelFCM\Response\GroupResponse;
 use LaravelFCM\Response\TopicResponse;
+use GuzzleHttp\Exception\ClientException;
+use LaravelFCM\Response\DownstreamResponse;
+use LaravelFCM\Message\PayloadNotification;
 
 /**
  * Class FCMSender

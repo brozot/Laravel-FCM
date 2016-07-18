@@ -1,10 +1,12 @@
 <?php namespace LaravelFCM;
 
-use Illuminate\Support\ServiceProvider;
-use LaravelFCM\Sender\FCMSender;
 use LaravelFCM\Sender\FCMGroup;
+use LaravelFCM\Sender\FCMSender;
+use Illuminate\Support\ServiceProvider;
 
 class FCMServiceProvider extends ServiceProvider {
+
+	protected $defer = true;
 
 	public function boot()
 	{
@@ -40,6 +42,6 @@ class FCMServiceProvider extends ServiceProvider {
 
 	protected function provide()
 	{
-		return [ 'fcm', 'fcm.client' ];
+		return [ 'fcm.group', 'fcm.sender', 'fcm.client' ];
 	}
 }
