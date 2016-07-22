@@ -15,7 +15,7 @@ use LaravelFCM\Message\PayloadNotification;
  *
  * @package LaravelFCM\Sender
  */
-class FCMSender extends BaseSender {
+class FCMSender extends HTTPSender {
 
 	const MAX_TOKEN_PER_REQUEST = 1000;
 
@@ -36,7 +36,6 @@ class FCMSender extends BaseSender {
 	public function sendTo($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null)
 	{
 		$response = null;
-
 
 		if (is_array($to) && !empty($to)) {
 
@@ -96,23 +95,11 @@ class FCMSender extends BaseSender {
 	 */
 	public function sendToTopic(Topics $topics, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null)
 	{
-
 		$request = new Request(null, $options, $notification, $data, $topics);
 
 		$responseGuzzle = $this->post($request);
 
 		return new TopicResponse($responseGuzzle, $topics);
-	}
-
-
-	/**
-	 * get the url
-	 *
-	 * @return string
-	 */
-	protected function getUrl()
-	{
-		return $this->config[ 'server_send_url' ];
 	}
 
 	/**
