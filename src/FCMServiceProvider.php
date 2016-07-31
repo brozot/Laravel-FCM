@@ -22,26 +22,28 @@ class FCMServiceProvider extends ServiceProvider {
 
 	public function register()
 	{
+		$this->app->singleton('fcm.client', function($app) {
+			return (new FCMManager($app))->driver();
+		});
+
 		$this->app->bind('fcm.group', function($app) {
-			return new FCMGroup();
+			$client = $app[ 'fcm.client' ];
+			$url = $app[ 'config' ]->get('fcm.http.server_group_url');
+
+			return new FCMGroup($client, $url);
 		});
 
 		$this->app->bind('fcm.sender', function($app) {
-			return new FCMSender();
-		});
-		
-		$this->registerClient();
-	}
+			$client = $app[ 'fcm.client' ];
+			$url = $app[ 'config' ]->get('fcm.http.server_send_url');
 
-	public function registerClient()
-	{
-		$this->app->singleton('fcm.client', function($app) {
-			return (new FCMManager($app))->driver();
+			return new FCMSender($client, $url);
 		});
 	}
 
 	protected function provide()
 	{
-		return [ 'fcm.group', 'fcm.sender', 'fcm.client' ];
+		return [ 'fcm.client', 'fcm.group', 'fcm.sender' ];
 	}
+
 }
