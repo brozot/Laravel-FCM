@@ -142,8 +142,6 @@ $token = "a_registration_from_your_database";
 
 $downstreamResponse = FCM::sendTo($token, $option, $notification, $data);
 
-$downstreamResponse = new DownstreamResponse($response, $tokens);
-
 $downstreamResponse->numberSuccess();
 $downstreamResponse->numberFailure();
 $downstreamResponse->numberModification();
