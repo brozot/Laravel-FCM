@@ -61,7 +61,9 @@ class TopicResponse extends BaseResponse implements TopicResponseContract{
 			$this->parseError($responseInJson);
 		}
 
-		$this->logResponse();
+		if ($this->logEnabled) {
+			$this->logResponse();
+		}
 	}
 
 	/**
@@ -76,7 +78,7 @@ class TopicResponse extends BaseResponse implements TopicResponseContract{
 	}
 
 	/**
-	 * @internal 
+	 * @internal
 	 * @param $responseInJson
 	 */
 	private function parseError($responseInJson)
