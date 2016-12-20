@@ -59,6 +59,10 @@ class GroupResponse extends BaseResponse implements GroupResponseContract{
 		if ($this->parse($responseInJson)) {
 			$this->parseFailed($responseInJson);
 		}
+
+		if ($this->logEnabled) {
+			$this->logResponse();
+		}
 	}
 
 	/**
@@ -71,7 +75,7 @@ class GroupResponse extends BaseResponse implements GroupResponseContract{
 
 		$logMessage = "notification send to group: $this->to";
 		$logMessage .= "with $this->numberTokensSuccess success and $this->Failure failure";
-		
+
 		$logger->info($logMessage);
 	}
 

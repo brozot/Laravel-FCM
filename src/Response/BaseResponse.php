@@ -18,6 +18,11 @@ abstract class BaseResponse {
 	const MESSAGE_ID = "message_id";
 
 	/**
+	 * @var bool
+	 */
+	protected $logEnabled = false;
+
+	/**
 	 * BaseResponse constructor.
 	 *
 	 * @param GuzzleResponse $response
@@ -25,7 +30,7 @@ abstract class BaseResponse {
 	public function __construct(GuzzleResponse $response)
 	{
 		$this->isJsonResponse($response);
-
+		$this->logEnabled = app('config')->get('fcm.log_enabled', false);
 		$responseInJson = json_decode($response->getBody(), true);
 		$this->parseResponse($responseInJson);
 	}

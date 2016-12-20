@@ -120,7 +120,9 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
 			$this->parseResult($responseInJson);
 		}
 
-		$this->logResponse();
+		if ($this->logEnabled) {
+			$this->logResponse();
+		}
 	}
 
 	/**
