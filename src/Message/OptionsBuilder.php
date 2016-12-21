@@ -83,7 +83,7 @@ class OptionsBuilder {
 	 *
 	 * @throws InvalidOptionsException
 	 */
-	public function setPriority($priority)
+	public function setPriority($priority = OptionsPriorities::normal)
 	{
 		if (!OptionsPriorities::isValid($priority)) {
 			throw new InvalidOptionsException('priority is not valid, please refer to the documentation or use the constants of the class "OptionsPriorities"');
