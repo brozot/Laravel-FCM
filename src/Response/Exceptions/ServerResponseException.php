@@ -1,14 +1,14 @@
 <?php namespace LaravelFCM\Response\Exceptions;
 
-use Exception;
 use GuzzleHttp\Psr7\Response as GuzzleResponse;
+use LaravelFCM\FCMException;
 
 /**
  * Class ServerResponseException
  *
  * @package LaravelFCM\Response\Exceptions
  */
-class ServerResponseException extends Exception {
+class ServerResponseException extends FCMException {
 
 	/**
 	 * retry after
@@ -31,6 +31,6 @@ class ServerResponseException extends Exception {
 			$this->retryAfter = $responseHeader["Retry-After"];
 		}
 
-		parent::__construct($responseBody, $code);
+		parent::__construct($responseBody, $code, $responseHeader);
 	}
 }

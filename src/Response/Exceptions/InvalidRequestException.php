@@ -1,14 +1,14 @@
 <?php namespace LaravelFCM\Response\Exceptions;
 
-use Exception;
 use GuzzleHttp\Psr7\Response as GuzzleResponse;
+use LaravelFCM\FCMException;
 
 /**
  * Class InvalidRequestException
  *
  * @package LaravelFCM\Response\Exceptions
  */
-class InvalidRequestException extends Exception {
+class InvalidRequestException extends FCMException {
 
 	/**
 	 * InvalidRequestException constructor.
