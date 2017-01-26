@@ -82,4 +82,11 @@ interface DownstreamResponseContract {
 	 */
 	public function hasMissingToken();
 
+    /**
+     * Aggregate two response
+     *
+     * @param DownstreamResponse $response
+     */
+    public function aggregate(DownstreamResponse $response);
+
 }

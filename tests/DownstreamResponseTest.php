@@ -459,4 +459,65 @@ class DownstreamResponseTest extends FCMTestCase {
 		$this->assertEquals("MessageTooBig", $downstreamResponse->tokensWithError()[$tokens[6]]);
 		$this->assertEquals("MessageTooBig", $downstreamResponse->tokensWithError()[$tokens1[6]]);
 	}
+
+    /**
+     * @test
+     */
+    public function it_aggregates_two_responses()
+    {
+        $tokens = [
+            "first_token",
+            "second_token",
+            "third_token",
+            "fourth_token",
+            "fifth_token",
+            "sixth_token"
+        ];
+
+        $firstResponse = new Response(200, [], '{
+						  "multicast_id": 216,
+						  "success": 0,
+						  "failure": 6,
+						  "canonical_ids": 0,
+						  "results": [
+                                { "error": "DeviceMessageRateExceeded" },
+							    { "error": "InternalServerError" },
+							    { "error": "Unavailable" },
+							    { "error": "DeviceMessageRateExceeded" },
+							    { "error": "InternalServerError" },
+							    { "error": "Unavailable" }
+	                      ]
+					}');
+
+        $firstDownstreamResponse = new DownstreamResponse($firstResponse, $tokens);
+
+        $secondResponse = new Response(200, [], '{
+						  "multicast_id": 216,
+						  "success": 3,
+						  "failure": 3,
+						  "canonical_ids": 1,
+						  "results": [
+							    { "message_id": "1:0408" },
+							    { "error": "Unavailable" },
+							    { "error": "InvalidRegistration" },
+							    { "message_id": "1:1516" },
+							    { "message_id": "1:2342", "registration_id": "32" },
+							    { "error": "NotRegistered"}
+	                      ]
+					}');
+
+        // Simulate retry
+        $secondDownstreamResponse = new DownstreamResponse($secondResponse, $firstDownstreamResponse->tokensToRetry());
+
+        // Aggregate second response to first response
+        $firstDownstreamResponse->aggregate($secondDownstreamResponse);
+
+        $this->assertEquals(3, $firstDownstreamResponse->numberSuccess());
+        $this->assertEquals(3, $firstDownstreamResponse->numberFailure());
+        $this->assertEquals(1, $firstDownstreamResponse->numberModification());
+        $this->assertCount(2, $firstDownstreamResponse->tokensToDelete());
+        $this->assertCount(1, $firstDownstreamResponse->tokensToModify());
+        $this->assertCount(1, $firstDownstreamResponse->tokensToRetry());
+        $this->assertCount(0, $firstDownstreamResponse->tokensWithError());
+    }
 }

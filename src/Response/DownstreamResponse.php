@@ -409,4 +409,21 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
 	{
 		return $this->hasMissingToken;
 	}
+
+    /**
+     * Aggregate two response
+     *
+     * @param DownstreamResponse $response
+     */
+    public function aggregate(DownstreamResponse $response)
+    {
+        $this->numberTokensSuccess += $response->numberSuccess();
+        $this->numberTokensFailure = $response->numberFailure();
+        $this->numberTokenModify = $response->numberModification();
+
+        $this->tokensToDelete = $response->tokensToDelete();
+        $this->tokensToModify = $response->tokensToModify();
+        $this->tokensToRetry = $response->tokensToRetry();
+        $this->tokensWithError = $response->tokensWithError();
+    }
 }
