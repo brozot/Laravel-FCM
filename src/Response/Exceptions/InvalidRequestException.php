@@ -8,7 +8,7 @@ use LaravelFCM\FCMException;
 /**
  * Class InvalidRequestException.
  */
-class InvalidRequestException extends Exception
+class InvalidRequestException extends FCMException
 {
     /**
      * InvalidRequestException constructor.

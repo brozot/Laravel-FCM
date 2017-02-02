@@ -8,7 +8,7 @@ use LaravelFCM\FCMException;
 /**
  * Class UnauthorizedRequestException.
  */
-class UnauthorizedRequestException extends Exception
+class UnauthorizedRequestException extends FCMException
 {
     /**
      * UnauthorizedRequestException constructor.

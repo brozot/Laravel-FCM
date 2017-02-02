@@ -7,6 +7,6 @@ use LaravelFCM\FCMException;
 /**
  * Class InvalidOptionsException.
  */
-class InvalidOptionsException extends Exception
+class InvalidOptionsException extends FCMException
 {
 }
