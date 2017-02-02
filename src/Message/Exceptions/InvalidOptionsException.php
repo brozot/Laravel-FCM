@@ -1,12 +1,12 @@
-<?php namespace LaravelFCM\Message\Exceptions;
+<?php
+
+namespace LaravelFCM\Message\Exceptions;
 
 use LaravelFCM\FCMException;
 
 /**
- * Class InvalidOptionsException
- *
- * @package LaravelFCM\Response\Exceptions
+ * Class InvalidOptionsException.
  */
-class InvalidOptionsException extends FCMException {
-
+class InvalidOptionsException extends Exception
+{
 }
