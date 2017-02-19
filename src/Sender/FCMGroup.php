@@ -3,7 +3,7 @@
 namespace LaravelFCM\Sender;
 
 use LaravelFCM\Request\GroupRequest;
-use GuzzleHttp\Psr7\Response as GuzzleResponse;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class FCMGroup.
@@ -68,10 +68,10 @@ class FCMGroup extends HTTPSender
     /**
      * @internal
      *
-     * @param GuzzleResponse $response
+     * @param \Psr\Http\Message\ResponseInterface $response
      * @return null|string notification_key
      */
-    private function getNotificationToken(GuzzleResponse $response)
+    private function getNotificationToken(ResponseInterface $response)
     {
         if ($this->isValidResponse($response)) {
             return null;
@@ -85,11 +85,11 @@ class FCMGroup extends HTTPSender
     /**
      * @internal
      *
-     * @param $response
+     * @param \Psr\Http\Message\ResponseInterface $response
      *
      * @return bool
      */
-    public function isValidResponse(GuzzleResponse $response)
+    public function isValidResponse(ResponseInterface $response)
     {
         return $response->getReasonPhrase() != 'OK' || $response->getStatusCode() != 200;
     }
