@@ -19,6 +19,8 @@ class FCMGroup extends HTTPSender
      *
      * @param       $notificationKeyName
      * @param array $registrationIds
+     *
+     * @return null|string notification_key
      */
     public function createGroup($notificationKeyName, array $registrationIds)
     {
@@ -35,6 +37,7 @@ class FCMGroup extends HTTPSender
      * @param       $notificationKeyName
      * @param       $notificationKey
      * @param array $registrationIds     registrationIds to add
+     * @return null|string notification_key
      */
     public function addToGroup($notificationKeyName, $notificationKey, array $registrationIds)
     {
@@ -52,6 +55,7 @@ class FCMGroup extends HTTPSender
      * @param       $notificationKeyName
      * @param       $notificationKey
      * @param array $registeredIds       registrationIds to remove
+     * @return null|string notification_key
      */
     public function removeFromGroup($notificationKeyName, $notificationKey, array $registeredIds)
     {
@@ -65,6 +69,7 @@ class FCMGroup extends HTTPSender
      * @internal
      *
      * @param GuzzleResponse $response
+     * @return null|string notification_key
      */
     private function getNotificationToken(GuzzleResponse $response)
     {
