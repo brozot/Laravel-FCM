@@ -73,24 +73,22 @@ class FCMGroup extends HTTPSender
      */
     private function getNotificationToken(ResponseInterface $response)
     {
-        if ($this->isValidResponse($response)) {
+        if (! $this->isValidResponse($response)) {
             return null;
         }
 
-        $json = json_decode($response->getBody(), true);
+        $json = json_decode($response->getBody()->getContents(), true);
 
         return $json['notification_key'];
     }
 
     /**
-     * @internal
-     *
      * @param \Psr\Http\Message\ResponseInterface $response
      *
      * @return bool
      */
     public function isValidResponse(ResponseInterface $response)
     {
-        return $response->getReasonPhrase() != 'OK' || $response->getStatusCode() != 200;
+        return $response->getStatusCode() === 200;
     }
 }
