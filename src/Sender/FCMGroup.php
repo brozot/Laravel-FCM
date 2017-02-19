@@ -24,7 +24,7 @@ class FCMGroup extends HTTPSender
     {
         $request = new GroupRequest(self::CREATE, $notificationKeyName, null, $registrationIds);
 
-        $response = $this->client->post($this->url, $request->build());
+        $response = $this->client->request('post', $this->url, $request->build());
 
         return $this->getNotificationToken($response);
     }
@@ -39,7 +39,7 @@ class FCMGroup extends HTTPSender
     public function addToGroup($notificationKeyName, $notificationKey, array $registrationIds)
     {
         $request = new GroupRequest(self::ADD, $notificationKeyName, $notificationKey, $registrationIds);
-        $response = $this->client->post($this->url, $request->build());
+        $response = $this->client->request('post', $this->url, $request->build());
 
         return $this->getNotificationToken($response);
     }
@@ -56,7 +56,7 @@ class FCMGroup extends HTTPSender
     public function removeFromGroup($notificationKeyName, $notificationKey, array $registeredIds)
     {
         $request = new GroupRequest(self::REMOVE, $notificationKeyName, $notificationKey, $registeredIds);
-        $response = $this->client->post($this->url, $request->build());
+        $response = $this->client->request('post', $this->url, $request->build());
 
         return $this->getNotificationToken($response);
     }
