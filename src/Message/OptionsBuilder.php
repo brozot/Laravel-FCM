@@ -37,6 +37,12 @@ class OptionsBuilder
 
     /**
      * @internal
+     * @var bool
+     */
+    protected $mutableContent;
+
+    /**
+     * @internal
      *
      * @var bool
      */
@@ -113,6 +119,22 @@ class OptionsBuilder
     public function setContentAvailable($contentAvailable)
     {
         $this->contentAvailable = $contentAvailable;
+
+        return $this;
+    }
+
+    /**
+     * support iOS 10+
+     *
+     * When a notification is sent and this is set to true,
+     * the content of the notification can be modified before it is displayed.
+     *
+     * @param String $isMutableContent
+     * @return OptionsBuilder
+     */
+    public function setMutableContent($isMutableContent)
+    {
+        $this->mutableContent = $isMutableContent;
 
         return $this;
     }
@@ -207,6 +229,16 @@ class OptionsBuilder
     public function isContentAvailable()
     {
         return $this->contentAvailable;
+    }
+
+    /**
+     * is mutable content
+     *
+     * @return bool
+     */
+    public function isMutableContent()
+    {
+        return $this->mutableContent;
     }
 
     /**
