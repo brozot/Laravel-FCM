@@ -35,6 +35,13 @@ class Options implements Arrayable
      *
      * @var bool
      */
+    protected $isMutableContent = false;
+
+    /**
+     * @internal
+     *
+     * @var bool
+     */
     protected $delayWhileIdle;
 
     /**
@@ -68,6 +75,7 @@ class Options implements Arrayable
         $this->collapseKey = $builder->getCollapseKey();
         $this->priority = $builder->getPriority();
         $this->contentAvailable = $builder->isContentAvailable();
+        $this->isMutableContent = $builder->isMutableContent();
         $this->delayWhileIdle = $builder->isDelayWhileIdle();
         $this->timeToLive = $builder->getTimeToLive();
         $this->restrictedPackageName = $builder->getRestrictedPackageName();
@@ -82,6 +90,7 @@ class Options implements Arrayable
     public function toArray()
     {
         $contentAvailable = $this->contentAvailable ? true : null;
+        $mutableContent = $this->isMutableContent ? true : null;
         $delayWhileIdle = $this->delayWhileIdle ? true : null;
         $dryRun = $this->isDryRun ? true : null;
 
@@ -89,6 +98,7 @@ class Options implements Arrayable
             'collapse_key' => $this->collapseKey,
             'priority' => $this->priority,
             'content_available' => $contentAvailable,
+            'mutable_content' => $mutableContent,
             'delay_while_idle' => $delayWhileIdle,
             'time_to_live' => $this->timeToLive,
             'restricted_package_name' => $this->restrictedPackageName,
