@@ -29,7 +29,7 @@ Or you can add it directly in your composer.json file:
 
 	{
     	"require": {
-        	"brozot/laravel-fcm": "^1.2.0"
+        	"brozot/laravel-fcm": "1.2.*"
     	}
 	}
 
@@ -203,6 +203,12 @@ A topics message is a notification message, data message, or both, that you send
 
 > Note: Topic names must be managed by your app and known by your server. The Laravel-FCM package or fcm doesn't provide an easy way to do that.
 
+The following use statement is required for the examples below:
+
+```php
+use LaravelFCM\Message\Topics;
+```
+
 #### Sending a Message to a Topic
 
 ```php
@@ -243,9 +249,9 @@ $topic->topic('news')->andTopic(function($condition) {
 
 	$condition->topic('economic')->orTopic('cultural');
 	
-})
+});
 
-$topicResponse = FCM::sendToTopic($topic, null, $notification, null)
+$topicResponse = FCM::sendToTopic($topic, null, $notification, null);
 
 $topicResponse->isSuccess();
 $topicResponse->shouldRetry();
