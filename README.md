@@ -178,7 +178,7 @@ $data = $dataBuilder->build();
 // You must change it to get your tokens
 $tokens = MYDATABASE::pluck('fcm_token')->toArray();
 
-$downstreamResponse = FCM::sendTo($tokens, $option, $notification);
+$downstreamResponse = FCM::sendTo($tokens, $option, $notification, $data);
 
 $downstreamResponse->numberSuccess();
 $downstreamResponse->numberFailure(); 
