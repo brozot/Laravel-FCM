@@ -2,11 +2,11 @@
 
 namespace LaravelFCM\Message\Exceptions;
 
-use Exception;
+use LaravelFCM\FCMException;
 
 /**
  * Class NoTopicProvidedException.
  */
-class NoTopicProvidedException extends Exception
+class NoTopicProvidedException extends FCMException
 {
 }

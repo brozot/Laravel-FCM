@@ -2,13 +2,13 @@
 
 namespace LaravelFCM\Response\Exceptions;
 
-use Exception;
 use GuzzleHttp\Psr7\Response as GuzzleResponse;
+use LaravelFCM\FCMException;
 
 /**
  * Class UnauthorizedRequestException.
  */
-class UnauthorizedRequestException extends Exception
+class UnauthorizedRequestException extends FCMException
 {
     /**
      * UnauthorizedRequestException constructor.

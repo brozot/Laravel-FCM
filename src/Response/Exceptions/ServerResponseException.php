@@ -2,13 +2,13 @@
 
 namespace LaravelFCM\Response\Exceptions;
 
-use Exception;
 use GuzzleHttp\Psr7\Response as GuzzleResponse;
+use LaravelFCM\FCMException;
 
 /**
  * Class ServerResponseException.
  */
-class ServerResponseException extends Exception
+class ServerResponseException extends FCMException
 {
     /**
      * retry after.
