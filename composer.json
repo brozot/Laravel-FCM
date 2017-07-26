@@ -33,6 +33,17 @@
             "tests/"
         ]
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelFCM\\FCMServiceProvider"
+            ],
+            "aliases": {
+                "FCM": "LaravelFCM\\Facades\\FCM",
+                "FCMGroup": "LaravelFCM\\Facades\\FCMGroup"
+            }
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
