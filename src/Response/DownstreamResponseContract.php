@@ -76,6 +76,13 @@ interface DownstreamResponseContract
     public function tokensWithError();
 
     /**
+     * Aggregate two response
+     *
+     * @param DownstreamResponse $response
+     */
+    public function aggregate(DownstreamResponse $response);
+
+    /*
      * check if missing tokens was given to the request
      * If true, remove all the empty token in your database.
      *
