@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Laravel-FCM is an easy to use package working with both Laravel and Lumen for sending push notification with [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/) (FCM). 
+Laravel-FCM is an easy to use package working with both Laravel and Lumen for sending push notification with [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/) (FCM).
 
 It currently **only supports HTTP protocol** for :
 
@@ -41,8 +41,8 @@ Register the provider directly in your app configuration file config/app.php `co
 ```php
 'providers' => [
 	// ...
-	
-	LaravelFCM\FCMServiceProvider::class 
+
+	LaravelFCM\FCMServiceProvider::class
 ]
 ```
 
@@ -68,7 +68,7 @@ Publish the package config file using the following command:
 
 Register the provider in your boostrap app file ```boostrap/app.php```
 
-Add the following line in the "Register Service Providers"  section at the bottom of the file. 
+Add the following line in the "Register Service Providers"  section at the bottom of the file.
 
 ```php
 $app->register(LaravelFCM\FCMServiceProvider::class);
@@ -130,7 +130,7 @@ $optionBuilder->setTimeToLive(60*20);
 $notificationBuilder = new PayloadNotificationBuilder('my title');
 $notificationBuilder->setBody('Hello world')
 				    ->setSound('default');
-				    
+
 $dataBuilder = new PayloadDataBuilder();
 $dataBuilder->addData(['a_data' => 'my_data']);
 
@@ -147,10 +147,10 @@ $downstreamResponse->numberFailure();
 $downstreamResponse->numberModification();
 
 //return Array - you must remove all this tokens in your database
-$downstreamResponse->tokensToDelete(); 
+$downstreamResponse->tokensToDelete();
 
 //return Array (key : oldToken, value : new token - you must change the token in your database )
-$downstreamResponse->tokensToModify(); 
+$downstreamResponse->tokensToModify();
 
 //return Array - you should try to resend the message to the tokens in the array
 $downstreamResponse->tokensToRetry();
@@ -167,7 +167,7 @@ $optionBuilder->setTimeToLive(60*20);
 $notificationBuilder = new PayloadNotificationBuilder('my title');
 $notificationBuilder->setBody('Hello world')
 				    ->setSound('default');
-				    
+
 $dataBuilder = new PayloadDataBuilder();
 $dataBuilder->addData(['a_data' => 'my_data']);
 
@@ -181,20 +181,20 @@ $tokens = MYDATABASE::pluck('fcm_token')->toArray();
 $downstreamResponse = FCM::sendTo($tokens, $option, $notification, $data);
 
 $downstreamResponse->numberSuccess();
-$downstreamResponse->numberFailure(); 
+$downstreamResponse->numberFailure();
 $downstreamResponse->numberModification();
 
 //return Array - you must remove all this tokens in your database
-$downstreamResponse->tokensToDelete(); 
+$downstreamResponse->tokensToDelete();
 
 //return Array (key : oldToken, value : new token - you must change the token in your database )
-$downstreamResponse->tokensToModify(); 
+$downstreamResponse->tokensToModify();
 
 //return Array - you should try to resend the message to the tokens in the array
 $downstreamResponse->tokensToRetry();
 
-// return Array (key:token, value:errror) - in production you should remove from your database the tokens present in this array 
-$downstreamResponse->tokensWithError(); 
+// return Array (key:token, value:errror) - in production you should remove from your database the tokens present in this array
+$downstreamResponse->tokensWithError();
 ```
 
 ### Topics Messages
@@ -215,17 +215,17 @@ use LaravelFCM\Message\Topics;
 $notificationBuilder = new PayloadNotificationBuilder('my title');
 $notificationBuilder->setBody('Hello world')
 				    ->setSound('default');
-				    
+
 $notification = $notificationBuilder->build();
 
 $topic = new Topics();
 $topic->topic('news');
 
-$topicResponse = FCM::sendToTopic($topic, null, $notification, null)
+$topicResponse = FCM::sendToTopic($topic, null, $notification, null);
 
 $topicResponse->isSuccess();
 $topicResponse->shouldRetry();
-$topicResponse->error());
+$topicResponse->error();
 ```
 
 #### Sending a Message to Multiple Topics
@@ -241,14 +241,14 @@ It sends notification to devices registered at the following topics:
 $notificationBuilder = new PayloadNotificationBuilder('my title');
 $notificationBuilder->setBody('Hello world')
 				    ->setSound('default');
-				    
+
 $notification = $notificationBuilder->build();
 
 $topic = new Topics();
 $topic->topic('news')->andTopic(function($condition) {
 
 	$condition->topic('economic')->orTopic('cultural');
-	
+
 });
 
 $topicResponse = FCM::sendToTopic($topic, null, $notification, null);
