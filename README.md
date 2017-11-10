@@ -29,7 +29,7 @@ Or you can add it directly in your composer.json file:
 
 	{
     	"require": {
-        	"brozot/laravel-fcm": "1.2.*"
+        	    "brozot/laravel-fcm": "1.2.*"
     	}
 	}
 
@@ -66,7 +66,7 @@ Publish the package config file using the following command:
 
 ### Lumen
 
-Register the provider in your boostrap app file ```boostrap/app.php```
+Register the provider in your bootstrap app file ```boostrap/app.php```
 
 Add the following line in the "Register Service Providers"  section at the bottom of the file.
 
