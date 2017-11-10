@@ -42,7 +42,7 @@ Register the provider directly in your app configuration file config/app.php `co
 'providers' => [
 	// ...
 	
-	LaravelFCM\FCMServiceProvider::class 
+	LaravelFCM\FCMServiceProvider::class,
 ]
 ```
 
