@@ -38,11 +38,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LaravelFCM\FCMServiceProvider"
+                "LaravelFCM\\FCMServiceProvider"
             ],
             "aliases": {
-                "FCM" : "LaravelFCM\Facades\FCM"
-                "FCMGroup" : "LaravelFCM\Facades\FCMGroup"
+                "FCM": "LaravelFCM\\Facades\\FCM",
+                "FCMGroup": "LaravelFCM\\Facades\\FCMGroup"
             }
         }
     }
