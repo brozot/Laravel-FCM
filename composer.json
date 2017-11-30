@@ -34,5 +34,16 @@
         ]
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelFCM\\FCMServiceProvider"
+            ],
+            "aliases": {
+                "FCM": "LaravelFCM\\Facades\\FCM",
+                "FCMGroup": "LaravelFCM\\Facades\\FCMGroup"
+            }
+        }
+    }
 }
