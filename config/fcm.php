@@ -11,4 +11,9 @@ return [
         'server_group_url' => 'https://android.googleapis.com/gcm/notification',
         'timeout' => 30.0, // in second
     ],
+	
+	'events'=>[
+		'updateToken'	=> \LaravelFCM\Events\UpdateToken::class,
+		'deleteToken'	=> \LaravelFCM\Events\DeleteToken::class,
+	],
 ];

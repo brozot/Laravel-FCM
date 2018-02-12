@@ -104,6 +104,9 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
         $this->tokens = is_string($tokens) ? [$tokens] : $tokens;
 
         parent::__construct($response);
+		
+		//Dispatch events
+		$this->dispatchEvents();
     }
 
     /**
@@ -410,4 +413,39 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     {
         return $this->hasMissingToken;
     }
+	
+	/**
+	* Dispatch the events
+	**/
+	protected function dispatchEvents(){
+		// To be deleted
+		$cl = config('fcm.events.deleteToken');
+		if($cl){
+			foreach($this->tokensToDelete() AS $token){
+				emit(new $cl($token));
+			}
+		}
+		// To be updated
+		$cl = config('fcm.events.updateToken');
+		if($cl){
+			foreach($this->tokensToModify() AS $oldToken=>$newToken){
+				emit(new $cl($oldToken,$newToken));
+			}
+		}
+		// To be resended
+		$cl = config('fcm.events.resend');
+		if($cl){
+			foreach($this->tokensToRetry() AS $token){
+				emit(new $cl($token));
+			}
+		}
+		// With errors
+		$cl = config('fcm.events.withErrors');
+		if($cl){
+			foreach($this->tokensWithError() AS $token=>$errors){
+				emit(new $cl($token,$errors));
+			}
+		}
+	
+	}
 }
