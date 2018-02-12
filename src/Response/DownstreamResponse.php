@@ -410,42 +410,4 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     {
         return $this->hasMissingToken;
     }
-<<<<<<< HEAD
-
-	/**
-	* Dispatch the events
-	**/
-	protected function dispatchEvents(){
-		// To be deleted
-		$cl = config('fcm.events.deleteToken');
-		if($cl){
-			foreach($this->tokensToDelete() AS $token){
-				event(new $cl($token));
-			}
-		}
-		// To be updated
-		$cl = config('fcm.events.updateToken');
-		if($cl){
-			foreach($this->tokensToModify() AS $oldToken=>$newToken){
-                event(new $cl($oldToken,$newToken));
-			}
-		}
-		// To be resended
-		$cl = config('fcm.events.resend');
-		if($cl){
-			foreach($this->tokensToRetry() AS $token){
-                event(new $cl($token));
-			}
-		}
-		// With errors
-		$cl = config('fcm.events.withErrors');
-		if($cl){
-			foreach($this->tokensWithError() AS $token=>$errors){
-                event(new $cl($token,$errors));
-			}
-		}
-
-	}
-=======
->>>>>>> parent of 429fb80... Added events stub
 }
