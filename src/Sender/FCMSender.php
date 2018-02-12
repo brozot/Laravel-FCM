@@ -57,7 +57,7 @@ class FCMSender extends HTTPSender
 
             $response = new DownstreamResponse($responseGuzzle, $to);
         }
-        $this->dispatchEvents($response);
+        $this->dispatchEvents($response,$options,$notification,$data);
         return $response;
     }
 
@@ -77,7 +77,7 @@ class FCMSender extends HTTPSender
 
         $responseGuzzle = $this->post($request);
         $response = new GroupResponse($responseGuzzle, $notificationKey);
-        $this->dispatchEvents($response);
+        $this->dispatchEvents($response,$options,$notification,$data);
         return $response;
     }
 
@@ -97,7 +97,7 @@ class FCMSender extends HTTPSender
 
         $responseGuzzle = $this->post($request);
         $response =  new TopicResponse($responseGuzzle, $topics);
-        $this->dispatchEvents($response);
+        $this->dispatchEvents($response,$options,$notification,$data);
         return $response;
     }
 
@@ -123,33 +123,40 @@ class FCMSender extends HTTPSender
     /**
      * Dispatch the events
      **/
-    protected function dispatchEvents(BaseResponse $response){
-        // To be deleted
-        $cl = config('fcm.events.deleteToken');
-        if($cl){
-            foreach($response->tokensToDelete() AS $token){
-                event(new $cl($token));
+    protected function dispatchEvents(BaseResponse $response,Options $options = null, PayloadNotification $notification = null, PayloadData $data = null){
+        //Only implemented on downstreamresponse
+        if($response instanceof DownstreamResponse){
+
+            // To be deleted
+            $cl = config('fcm.events.deleteToken');
+            if($cl){
+                foreach($response->tokensToDelete() AS $token){
+                    event(new $cl($token));
+                }
             }
-        }
-        // To be updated
-        $cl = config('fcm.events.updateToken');
-        if($cl){
-            foreach($response->tokensToModify() AS $oldToken=>$newToken){
-                event(new $cl($oldToken,$newToken));
+
+            // To be updated
+            $cl = config('fcm.events.updateToken');
+            if($cl){
+                foreach($response->tokensToModify() AS $oldToken=>$newToken){
+                    event(new $cl($oldToken,$newToken));
+                }
             }
-        }
-        // To be resended
-        $cl = config('fcm.events.resend');
-        if($cl){
-            foreach($response->tokensToRetry() AS $token){
-                event(new $cl($token));
+
+            // To be resended
+            $cl = config('fcm.events.resend');
+            if($cl){
+                foreach($response->tokensToRetry() AS $token){
+                    event(new $cl($token,$options,$notification,$data));
+                }
             }
-        }
-        // With errors
-        $cl = config('fcm.events.withErrors');
-        if($cl){
-            foreach($response->tokensWithError() AS $token=>$errors){
-                event(new $cl($token,$errors));
+
+            // With errors
+            $cl = config('fcm.events.withErrors');
+            if($cl){
+                foreach($response->tokensWithError() AS $token=>$errors){
+                    event(new $cl($token,$errors));
+                }
             }
         }
 
