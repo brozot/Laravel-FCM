@@ -15,5 +15,7 @@ return [
 	'events'=>[
 		'updateToken'	=> \LaravelFCM\Events\UpdateToken::class,
 		'deleteToken'	=> \LaravelFCM\Events\DeleteToken::class,
+		'resend'		=> \LaravelFCM\Events\Resend::class,
+		'withErrors'	=> \LaravelFCM\Events\WithErrors::class,
 	],
 ];
