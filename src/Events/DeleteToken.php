@@ -4,15 +4,16 @@ namespace LaravelFCM\Events;
 class DeleteToken
 {
 	public
-		/**@var string**/
+		/**
+         * Token that should be deleted
+         * @var string*
+         */
 		$tokenToBeDeleted;
 
 
     /**
-     * Create a new event instance.
-     *
-     * @param  Order  $order
-     * @return void
+     * DeleteToken constructor.
+     * @param string $token Token to be deleted
      */
     public function __construct(string $token)
     {

@@ -7,12 +7,9 @@ class Resend
 		/**@var string**/
 		$token;
 
-
     /**
-     * Create a new event instance.
-     *
-     * @param  Order  $order
-     * @return void
+     * Resend constructor.
+     * @param string $token Token that should be resended
      */
     public function __construct(string $token)
     {

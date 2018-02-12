@@ -4,17 +4,22 @@ namespace LaravelFCM\Events;
 class UpdateToken
 {
 	public
-		/**@var string**/
+		/**
+         * Original token to be replaced
+         * @var string*
+         */
 		$originalToken,
-		/**@var string**/
+		/**
+         * New token that should be used
+         * @var string*
+         */
 		$newToken;
 
 
     /**
-     * Create a new event instance.
-     *
-     * @param  Order  $order
-     * @return void
+     * UpdateToken constructor.
+     * @param string $originalToken Original token (to be replaced with $newToken)
+     * @param string $newToken Updated token
      */
     public function __construct(string $originalToken,string $newToken)
     {

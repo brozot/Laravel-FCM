@@ -4,16 +4,22 @@ namespace LaravelFCM\Events;
 class WithErrors
 {
 	public
-		/**@var string**/
+		/**
+         * Token that generated the errors
+         * @var string
+         **/
 		$token,
+        /**
+         * Errors
+         * @var mixed
+         */
 		$errors;
 
 
     /**
-     * Create a new event instance.
-     *
-     * @param  Order  $order
-     * @return void
+     * WithErrors constructor.
+     * @param string $token Token with errors
+     * @param mixed $errors Errors encountered
      */
     public function __construct(string $token,$errors)
     {
