@@ -6,6 +6,7 @@ use LaravelFCM\Message\Topics;
 use LaravelFCM\Request\Request;
 use LaravelFCM\Message\Options;
 use LaravelFCM\Message\PayloadData;
+use LaravelFCM\Response\BaseResponse;
 use LaravelFCM\Response\GroupResponse;
 use LaravelFCM\Response\TopicResponse;
 use GuzzleHttp\Exception\ClientException;
@@ -56,7 +57,7 @@ class FCMSender extends HTTPSender
 
             $response = new DownstreamResponse($responseGuzzle, $to);
         }
-
+        $this->dispatchEvents($response);
         return $response;
     }
 
@@ -75,8 +76,9 @@ class FCMSender extends HTTPSender
         $request = new Request($notificationKey, $options, $notification, $data);
 
         $responseGuzzle = $this->post($request);
-
-        return new GroupResponse($responseGuzzle, $notificationKey);
+        $response = new GroupResponse($responseGuzzle, $notificationKey);
+        $this->dispatchEvents($response);
+        return $response;
     }
 
     /**
@@ -94,8 +96,9 @@ class FCMSender extends HTTPSender
         $request = new Request(null, $options, $notification, $data, $topics);
 
         $responseGuzzle = $this->post($request);
-
-        return new TopicResponse($responseGuzzle, $topics);
+        $response =  new TopicResponse($responseGuzzle, $topics);
+        $this->dispatchEvents($response);
+        return $response;
     }
 
     /**
@@ -114,5 +117,41 @@ class FCMSender extends HTTPSender
         }
 
         return $responseGuzzle;
+    }
+
+
+    /**
+     * Dispatch the events
+     **/
+    protected function dispatchEvents(BaseResponse $response){
+        // To be deleted
+        $cl = config('fcm.events.deleteToken');
+        if($cl){
+            foreach($response->tokensToDelete() AS $token){
+                event(new $cl($token));
+            }
+        }
+        // To be updated
+        $cl = config('fcm.events.updateToken');
+        if($cl){
+            foreach($response->tokensToModify() AS $oldToken=>$newToken){
+                event(new $cl($oldToken,$newToken));
+            }
+        }
+        // To be resended
+        $cl = config('fcm.events.resend');
+        if($cl){
+            foreach($response->tokensToRetry() AS $token){
+                event(new $cl($token));
+            }
+        }
+        // With errors
+        $cl = config('fcm.events.withErrors');
+        if($cl){
+            foreach($response->tokensWithError() AS $token=>$errors){
+                event(new $cl($token,$errors));
+            }
+        }
+
     }
 }
