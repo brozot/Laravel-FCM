@@ -104,9 +104,6 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
         $this->tokens = is_string($tokens) ? [$tokens] : $tokens;
 
         parent::__construct($response);
-		
-		//Dispatch events
-		$this->dispatchEvents();
     }
 
     /**
@@ -413,6 +410,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     {
         return $this->hasMissingToken;
     }
+<<<<<<< HEAD
 
 	/**
 	* Dispatch the events
@@ -448,4 +446,6 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
 		}
 
 	}
+=======
+>>>>>>> parent of 429fb80... Added events stub
 }
