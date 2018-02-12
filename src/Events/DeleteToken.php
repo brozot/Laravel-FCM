@@ -15,7 +15,7 @@ class DeleteToken
      * DeleteToken constructor.
      * @param string $token Token to be deleted
      */
-    public function __construct(string $token)
+    public function __construct($token)
     {
 		$this->tokenToBeDeleted=$token;
     }

@@ -21,7 +21,7 @@ class Resend
      * @param PayloadNotification|null $notification
      * @param PayloadData|null $data
      */
-    public function __construct(string $token, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null)
+    public function __construct($token, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null)
     {
 		$this->token = $token;
 		$this->options = $options;

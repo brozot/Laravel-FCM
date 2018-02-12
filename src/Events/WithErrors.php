@@ -21,7 +21,7 @@ class WithErrors
      * @param string $token Token with errors
      * @param mixed $errors Errors encountered
      */
-    public function __construct(string $token,$errors)
+    public function __construct($token,$errors)
     {
 		$this->token	= $token;
 		$this->errors 	= $errors;

@@ -21,7 +21,7 @@ class UpdateToken
      * @param string $originalToken Original token (to be replaced with $newToken)
      * @param string $newToken Updated token
      */
-    public function __construct(string $originalToken,string $newToken)
+    public function __construct($originalToken,$newToken)
     {
 		$this->originalToken=$originalToken;
 		$this->newToken=$newToken;
