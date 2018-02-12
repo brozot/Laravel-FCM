@@ -160,12 +160,12 @@ class OptionsBuilder
      *
      * @return \LaravelFCM\Message\OptionsBuilder
      *
-     * @throws InvalidOptionException
+     * @throws InvalidOptionsException
      */
     public function setTimeToLive($timeToLive)
     {
         if ($timeToLive < 0 || $timeToLive > 2419200) {
-            throw new InvalidOptionException("time to live must be between 0 and 2419200, current value is: {$timeToLive}");
+            throw new InvalidOptionsException("time to live must be between 0 and 2419200, current value is: {$timeToLive}");
         }
         $this->timeToLive = $timeToLive;
 
