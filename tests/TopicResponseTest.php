@@ -13,11 +13,14 @@ class TopicsResponseTest extends FCMTestCase
         $topic = new \LaravelFCM\Message\Topics();
         $topic->topic('topicName');
 
-        $response = new Response(200, [], '{ 
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $response = new Response(200, [], '{
 				"message_id": "1234"
 		}');
 
-        $topicResponse = new TopicResponse($response, $topic);
+        $topicResponse = new TopicResponse($response, $topic, $logger);
 
         $this->assertTrue($topicResponse->isSuccess());
         $this->assertFalse($topicResponse->shouldRetry());
@@ -32,11 +35,14 @@ class TopicsResponseTest extends FCMTestCase
         $topic = new \LaravelFCM\Message\Topics();
         $topic->topic('topicName');
 
-        $response = new Response(200, [], '{ 
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $response = new Response(200, [], '{
 				"error": "MessageTooBig"
 		}');
 
-        $topicResponse = new TopicResponse($response, $topic);
+        $topicResponse = new TopicResponse($response, $topic, $logger);
 
         $this->assertFalse($topicResponse->isSuccess());
         $this->assertFalse($topicResponse->shouldRetry());
@@ -51,11 +57,14 @@ class TopicsResponseTest extends FCMTestCase
         $topic = new \LaravelFCM\Message\Topics();
         $topic->topic('topicName');
 
-        $response = new Response(200, [], '{ 
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $response = new Response(200, [], '{
 				"error": "TopicsMessageRateExceeded"
 		}');
 
-        $topicResponse = new TopicResponse($response, $topic);
+        $topicResponse = new TopicResponse($response, $topic, $logger);
 
         $this->assertFalse($topicResponse->isSuccess());
         $this->assertTrue($topicResponse->shouldRetry());

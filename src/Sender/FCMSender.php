@@ -43,7 +43,7 @@ class FCMSender extends HTTPSender
 
                 $responseGuzzle = $this->post($request);
 
-                $responsePartial = new DownstreamResponse($responseGuzzle, $tokens);
+                $responsePartial = new DownstreamResponse($responseGuzzle, $tokens, $this->logger);
                 if (!$response) {
                     $response = $responsePartial;
                 } else {
@@ -54,7 +54,7 @@ class FCMSender extends HTTPSender
             $request = new Request($to, $options, $notification, $data);
             $responseGuzzle = $this->post($request);
 
-            $response = new DownstreamResponse($responseGuzzle, $to);
+            $response = new DownstreamResponse($responseGuzzle, $to, $this->logger);
         }
 
         return $response;
@@ -76,7 +76,7 @@ class FCMSender extends HTTPSender
 
         $responseGuzzle = $this->post($request);
 
-        return new GroupResponse($responseGuzzle, $notificationKey);
+        return new GroupResponse($responseGuzzle, $notificationKey, $this->logger);
     }
 
     /**
@@ -95,7 +95,7 @@ class FCMSender extends HTTPSender
 
         $responseGuzzle = $this->post($request);
 
-        return new TopicResponse($responseGuzzle, $topics);
+        return new TopicResponse($responseGuzzle, $topics, $this->logger);
     }
 
     /**

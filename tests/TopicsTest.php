@@ -113,7 +113,10 @@ class TopicsTest extends FCMTestCase
         $client = Mockery::mock(Client::class);
         $client->shouldReceive('request')->once()->andReturn($response);
 
-        $fcm = new FCMSender($client, 'http://test.test');
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $fcm = new FCMSender($client, 'http://test.test', $logger);
 
         $topics = new Topics();
         $topics->topic('test');
@@ -135,7 +138,10 @@ class TopicsTest extends FCMTestCase
         $client = Mockery::mock(Client::class);
         $client->shouldReceive('request')->once()->andReturn($response);
 
-        $fcm = new FCMSender($client, 'http://test.test');
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $fcm = new FCMSender($client, 'http://test.test', $logger);
 
         $topics = new Topics();
         $topics->topic('test');
