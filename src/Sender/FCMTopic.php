@@ -28,8 +28,12 @@ class FCMTopic extends HTTPSender
         if(is_array($registration_id)){
             return null;
         }
-        return $this->client->request('post', $this->url.$registration_id."/rel/topics/".$topic_id, $request->build());
+        $response = $this->client->request('post', $this->url.$registration_id."/rel/topics/".$topic_id, $request->build());
 
+        if($this->isValidResponse($response)){
+            return true;
+        }
+        return false;
         // return $this->getNotificationToken($response);
     }
 
