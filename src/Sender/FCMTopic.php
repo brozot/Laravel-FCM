@@ -49,7 +49,10 @@ class FCMTopic extends HTTPSender
         $request = new TopicRequest('subscribe', $topic_id, $recipients_tokens);
         $response = $this->client->request('post', $this->add_subscription_url, $request->build());
 
-        return $this->getNotificationToken($response);
+        if($this->isValidResponse($response)){
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -65,7 +68,10 @@ class FCMTopic extends HTTPSender
         $request = new TopicRequest('unsubscribe', $topic_id, $recipients_tokens);
         $response = $this->client->request('post', $this->remove_subscription_url, $request->build());
 
-        return $this->getNotificationToken($response);
+        if($this->isValidResponse($response)){
+            return true;
+        }
+        return false;
     }
 
     /**
