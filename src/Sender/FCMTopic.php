@@ -30,7 +30,7 @@ class FCMTopic extends HTTPSender
         }
         $response = $this->client->request('post', $this->url.$registration_id."/rel/topics/".$topic_id, $request->build());
 
-        return $this->getNotificationToken($response);
+        // return $this->getNotificationToken($response);
     }
 
     /**
