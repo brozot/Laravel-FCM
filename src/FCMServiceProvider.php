@@ -3,6 +3,7 @@
 namespace LaravelFCM;
 
 use LaravelFCM\Sender\FCMGroup;
+use LaravelFCM\Sender\FCMTopic;
 use LaravelFCM\Sender\FCMSender;
 use Illuminate\Support\ServiceProvider;
 

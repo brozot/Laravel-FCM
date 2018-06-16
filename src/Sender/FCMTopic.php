@@ -2,7 +2,7 @@
 
 namespace LaravelFCM\Sender;
 
-use LaravelFCM\Request\GroupRequest;
+use LaravelFCM\Request\TopicRequest;
 use Psr\Http\Message\ResponseInterface;
 
 /**
