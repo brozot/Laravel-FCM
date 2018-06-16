@@ -1,7 +1,8 @@
 # Laravel-FCM
 
-[![Build Status](https://travis-ci.org/brozot/Laravel-FCM.svg?branch=master)](https://travis-ci.org/brozot/Laravel-FCM) [![Coverage Status](https://coveralls.io/repos/github/brozot/Laravel-FCM/badge.svg?branch=master)](https://coveralls.io/github/brozot/Laravel-FCM?branch=master) [![Latest Stable Version](https://poser.pugx.org/brozot/laravel-fcm/v/stable)](https://packagist.org/packages/brozot/laravel-fcm) [![Total Downloads](https://poser.pugx.org/brozot/laravel-fcm/downloads)](https://packagist.org/packages/brozot/laravel-fcm)
-[![License](https://poser.pugx.org/brozot/laravel-fcm/license)](https://packagist.org/packages/brozot/laravel-fcm)
+## FORKED
+
+This repo is forked from [https://github.com/brozot/Laravel-FCM](https://github.com/brozot/Laravel-FCM). The main repo is lacking Topic creation and subscription feature. Adding the features here. 
 
 ## Introduction
 
@@ -79,6 +80,7 @@ For facades, add the following lines in the section "Create The Application" . F
 ```php
 class_alias(\LaravelFCM\Facades\FCM::class, 'FCM');
 class_alias(\LaravelFCM\Facades\FCMGroup::class, 'FCMGroup');
+class_alias(\LaravelFCM\Facades\FCMTopic::class, 'FCMTopic');
 ```
 
 Copy the config file ```fcm.php``` manually from the directory ```/vendor/brozot/laravel-fcm/config``` to the directory ```/config ``` (you may need to create this directory).
@@ -201,7 +203,6 @@ $downstreamResponse->tokensWithError();
 
 A topics message is a notification message, data message, or both, that you send to all the devices registered to this topic.
 
-> Note: Topic names must be managed by your app and known by your server. The Laravel-FCM package or fcm doesn't provide an easy way to do that.
 
 The following use statement is required for the examples below:
 
@@ -258,6 +259,35 @@ $topicResponse->shouldRetry();
 $topicResponse->error());
 
 ```
+
+#### Creating a Topic
+
+```php
+$token = 'device_id';
+$topic_id = "a_group"; //unique topic id.
+
+// Save notification key in your database you must use it to send messages or for managing this group
+$notification_key = FCMTopic::createTopic($topic_id, $token);
+```
+
+#### Subscribe to a Topic
+
+```php
+$recipients_tokens = ['device_id', '...'];
+$topic_id = "a_group";
+
+$key = FCMTopic::subscribeTopic($topic_id, $recipients_tokens);
+```
+
+#### UnSubscribe to a Topic
+
+```php
+$recipients_tokens = ['device_id', '...'];
+$topic_id = "a_group";
+
+$key = FCMTopic::unsubscribeTopic($topic_id, $recipients_tokens);
+```
+
 
 ### Group Messages
 
