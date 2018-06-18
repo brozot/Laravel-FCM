@@ -262,7 +262,7 @@ $topicResponse->error());
 
 ```php
 $token = 'device_id';
-$topic_id = "a_group"; //unique topic id.
+$topic_id = "unique_topic_id"; //unique topic id.
 
 // Save notification key in your database you must use it to send messages or for managing this group
 $notification_key = FCMTopic::createTopic($topic_id, $token);
@@ -272,7 +272,7 @@ $notification_key = FCMTopic::createTopic($topic_id, $token);
 
 ```php
 $recipients_tokens = ['device_id', '...'];
-$topic_id = "a_group";
+$topic_id = "unique_topic_id";
 
 $key = FCMTopic::subscribeTopic($topic_id, $recipients_tokens);
 ```
@@ -281,7 +281,7 @@ $key = FCMTopic::subscribeTopic($topic_id, $recipients_tokens);
 
 ```php
 $recipients_tokens = ['device_id', '...'];
-$topic_id = "a_group";
+$topic_id = "unique_topic_id";
 
 $key = FCMTopic::unsubscribeTopic($topic_id, $recipients_tokens);
 ```
