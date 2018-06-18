@@ -34,7 +34,6 @@ class FCMTopic extends HTTPSender
             return true;
         }
         return false;
-        // return $this->getNotificationToken($response);
     }
 
     /**
@@ -72,23 +71,6 @@ class FCMTopic extends HTTPSender
             return true;
         }
         return false;
-    }
-
-    /**
-     * @internal
-     *
-     * @param \Psr\Http\Message\ResponseInterface $response
-     * @return null|string notification_key
-     */
-    private function getNotificationToken(ResponseInterface $response)
-    {
-        if (! $this->isValidResponse($response)) {
-            return null;
-        }
-
-        $json = json_decode($response->getBody()->getContents(), true);
-
-        return $json['notification_key'];
     }
 
     /**
