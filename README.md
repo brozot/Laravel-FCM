@@ -258,6 +258,35 @@ $topicResponse->shouldRetry();
 $topicResponse->error());
 
 ```
+#### Creating a Topic
+
+```php
+$token = 'device_id';
+$topic_id = "a_group"; //unique topic id.
+
+// Save notification key in your database you must use it to send messages or for managing this group
+$notification_key = FCMTopic::createTopic($topic_id, $token);
+```
+
+#### Subscribe to a Topic
+
+```php
+$recipients_tokens = ['device_id', '...'];
+$topic_id = "a_group";
+
+$key = FCMTopic::subscribeTopic($topic_id, $recipients_tokens);
+```
+
+#### UnSubscribe to a Topic
+
+```php
+$recipients_tokens = ['device_id', '...'];
+$topic_id = "a_group";
+
+$key = FCMTopic::unsubscribeTopic($topic_id, $recipients_tokens);
+```
+
+
 
 ### Group Messages
 
