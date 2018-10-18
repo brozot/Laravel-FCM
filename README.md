@@ -61,7 +61,7 @@ Add the facade aliases in the same file:
 Publish the package config file using the following command:
 
 
-	$ php artisan vendor:publish
+	$ php artisan vendor:publish --provider="LaravelFCM\FCMServiceProvider"
 
 
 ### Lumen
