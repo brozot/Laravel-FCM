@@ -33,14 +33,14 @@ class FCMServiceProvider extends ServiceProvider
 
         $this->app->bind('fcm.group', function ($app) {
             $client = $app[ 'fcm.client' ];
-            $url = $app[ 'config' ]->get('fcm.http.server_group_url');
+            $url = $app[ 'config' ]->get('fcm.server_group_url');
 
             return new FCMGroup($client, $url);
         });
 
         $this->app->bind('fcm.sender', function ($app) {
             $client = $app[ 'fcm.client' ];
-            $url = $app[ 'config' ]->get('fcm.http.server_send_url');
+            $url = $app[ 'config' ]->get('fcm.server_send_url');
 
             return new FCMSender($client, $url);
         });

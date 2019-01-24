@@ -29,10 +29,11 @@ class FCMSender extends HTTPSender
      * @param Options|null             $options
      * @param PayloadNotification|null $notification
      * @param PayloadData|null         $data
+     * @param array|string|null        $httpConfig
      *
      * @return DownstreamResponse|null
      */
-    public function sendTo($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null)
+    public function sendTo($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, $httpConfig = null)
     {
         $response = null;
 
@@ -41,7 +42,7 @@ class FCMSender extends HTTPSender
             foreach ($partialTokens as $tokens) {
                 $request = new Request($tokens, $options, $notification, $data);
 
-                $responseGuzzle = $this->post($request);
+                $responseGuzzle = $this->send($request, $httpConfig);
 
                 $responsePartial = new DownstreamResponse($responseGuzzle, $tokens);
                 if (!$response) {
@@ -52,7 +53,7 @@ class FCMSender extends HTTPSender
             }
         } else {
             $request = new Request($to, $options, $notification, $data);
-            $responseGuzzle = $this->post($request);
+            $responseGuzzle = $this->send($request, $httpConfig);
 
             $response = new DownstreamResponse($responseGuzzle, $to);
         }
@@ -67,14 +68,15 @@ class FCMSender extends HTTPSender
      * @param Options|null             $options
      * @param PayloadNotification|null $notification
      * @param PayloadData|null         $data
-     *
+     * @param array|string|null        $httpConfig
+     * 
      * @return GroupResponse
      */
-    public function sendToGroup($notificationKey, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null)
+    public function sendToGroup($notificationKey, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, $httpConfig = null)
     {
         $request = new Request($notificationKey, $options, $notification, $data);
 
-        $responseGuzzle = $this->post($request);
+        $responseGuzzle = $this->send($request, $httpConfig);
 
         return new GroupResponse($responseGuzzle, $notificationKey);
     }
@@ -86,33 +88,16 @@ class FCMSender extends HTTPSender
      * @param Options|null             $options
      * @param PayloadNotification|null $notification
      * @param PayloadData|null         $data
+     * @param array|string|null        $httpConfig
      *
      * @return TopicResponse
      */
-    public function sendToTopic(Topics $topics, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null)
+    public function sendToTopic(Topics $topics, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, $httpConfig = null)
     {
         $request = new Request(null, $options, $notification, $data, $topics);
 
-        $responseGuzzle = $this->post($request);
+        $responseGuzzle = $this->send($request, $httpConfig);
 
         return new TopicResponse($responseGuzzle, $topics);
-    }
-
-    /**
-     * @internal
-     *
-     * @param \LaravelFCM\Request\Request $request
-     *
-     * @return null|\Psr\Http\Message\ResponseInterface
-     */
-    private function post($request)
-    {
-        try {
-            $responseGuzzle = $this->client->request('post', $this->url, $request->build());
-        } catch (ClientException $e) {
-            $responseGuzzle = $e->getResponse();
-        }
-
-        return $responseGuzzle;
     }
 }
