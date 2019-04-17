@@ -298,6 +298,10 @@ class OptionsBuilder
 final class OptionsPriorities
 {
     /**
+     * @const urgent: bugfix to doze mode in marshmallow
+     */
+    const urgent = 10;
+    /**
      * @const high priority : iOS, these correspond to APNs priorities 10.
      */
     const high = 'high';
