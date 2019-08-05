@@ -38,6 +38,8 @@ Or you can add it directly in your composer.json file:
 
 Register the provider directly in your app configuration file config/app.php `config/app.php`:
 
+Laravel >= 5.5 provides package auto-discovery, thanks to rasmuscnielsen and luiztessadri who help to implement this feature in Laravel-FCM, the registration of the provider and the facades should not be necessary anymore.
+
 ```php
 'providers' => [
 	// ...
