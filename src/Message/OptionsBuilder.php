@@ -93,6 +93,7 @@ class OptionsBuilder
      * @return \LaravelFCM\Message\OptionsBuilder
      *
      * @throws InvalidOptionsException
+     * @throws \ReflectionException
      */
     public function setPriority($priority)
     {
@@ -309,6 +310,8 @@ final class OptionsPriorities
 
     /**
      * @return array priorities available in fcm
+     *
+     * @throws \ReflectionException
      */
     public static function getPriorities()
     {
@@ -323,6 +326,8 @@ final class OptionsPriorities
      * @param $priority
      *
      * @return bool
+     *
+     * @throws \ReflectionException
      */
     public static function isValid($priority)
     {
