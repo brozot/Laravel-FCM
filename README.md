@@ -26,12 +26,13 @@ To get the latest version of Laravel-FCM on your project, require it from "compo
 
 Or you can add it directly in your composer.json file:
 
-
-	{
-    	"require": {
-        	    "brozot/laravel-fcm": "1.2.*"
-    	}
-	}
+```json
+{
+    "require": {
+        "brozot/laravel-fcm": "1.2.*"
+    }
+}
+```
 
 
 ### Laravel
@@ -148,16 +149,17 @@ $downstreamResponse->numberSuccess();
 $downstreamResponse->numberFailure();
 $downstreamResponse->numberModification();
 
-//return Array - you must remove all this tokens in your database
+// return Array - you must remove all this tokens in your database
 $downstreamResponse->tokensToDelete();
 
-//return Array (key : oldToken, value : new token - you must change the token in your database )
+// return Array (key : oldToken, value : new token - you must change the token in your database)
 $downstreamResponse->tokensToModify();
 
-//return Array - you should try to resend the message to the tokens in the array
+// return Array - you should try to resend the message to the tokens in the array
 $downstreamResponse->tokensToRetry();
 
-// return Array (key:token, value:errror) - in production you should remove from your database the tokens
+// return Array (key:token, value:error) - in production you should remove from your database the tokens
+$downstreamResponse->tokensWithError();
 ```
 
 #### Sending a Downstream Message to Multiple Devices
@@ -186,18 +188,20 @@ $downstreamResponse->numberSuccess();
 $downstreamResponse->numberFailure();
 $downstreamResponse->numberModification();
 
-//return Array - you must remove all this tokens in your database
+// return Array - you must remove all this tokens in your database
 $downstreamResponse->tokensToDelete();
 
-//return Array (key : oldToken, value : new token - you must change the token in your database )
+// return Array (key : oldToken, value : new token - you must change the token in your database)
 $downstreamResponse->tokensToModify();
 
-//return Array - you should try to resend the message to the tokens in the array
+// return Array - you should try to resend the message to the tokens in the array
 $downstreamResponse->tokensToRetry();
 
-// return Array (key:token, value:errror) - in production you should remove from your database the tokens present in this array
+// return Array (key:token, value:error) - in production you should remove from your database the tokens present in this array
 $downstreamResponse->tokensWithError();
 ```
+
+> Kindly refer [Downstream message error response codes](https://firebase.google.com/docs/cloud-messaging/http-server-ref#error-codes) documentation for more information.
 
 ### Topics Messages
 
