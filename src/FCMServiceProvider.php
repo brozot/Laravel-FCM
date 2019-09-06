@@ -24,7 +24,7 @@ class FCMServiceProvider extends ServiceProvider
 
     public function register()
     {
-		if (!str_contains($this->app->version(), 'Lumen')) {
+		if (!Str::contains($this->app->version(), 'Lumen')) {
             $this->mergeConfigFrom(__DIR__.'/../config/fcm.php', 'fcm');
         }
 
