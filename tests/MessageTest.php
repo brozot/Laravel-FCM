@@ -134,7 +134,7 @@ class PayloadTest extends FCMTestCase
      */
     public function it_throws_an_invalidoptionsexception_if_the_interval_is_too_big()
     {
-        $this->setExpectedException(InvalidOptionsException::class);
+        $this->expectException(InvalidOptionsException::class);
 
         $optionBuilder = new OptionsBuilder();
         $optionBuilder->setTimeToLive(2419200 * 10);
