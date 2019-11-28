@@ -55,8 +55,10 @@ class Request extends BaseRequest
      * @param PayloadNotification $notification
      * @param PayloadData         $data
      * @param Topics|null         $topic
+     * @param string|null         $server_key // overwrites the one in .env file
+     * @param string|null         $sender_id  // overwrites the one in .env file
      */
-    public function __construct($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, Topics $topic = null)
+    public function __construct($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, Topics $topic = null, $server_key = null, $sender_id = null)
     {
         parent::__construct();
 
@@ -65,6 +67,12 @@ class Request extends BaseRequest
         $this->notification = $notification;
         $this->data = $data;
         $this->topic = $topic;
+
+       // If $server_key and $sender_id are passed, overwrite the ones in config
+       // allows for multiple senders
+       if ($server_key && $sender_id) {
+           $this->overwriteServerKeyAndSenderId($server_key, $sender_id);
+       }
     }
 
     /**
