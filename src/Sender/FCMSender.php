@@ -24,22 +24,26 @@ class FCMSender extends HTTPSender
      *
      * - a unique device with is registration Token
      * - or to multiples devices with an array of registrationIds
+     * - added support to multiple senders, by allowing to overwrite the sender_id and server_key that is in the .env file
+     * for one that comes from the database.
      *
      * @param string|array             $to
      * @param Options|null             $options
      * @param PayloadNotification|null $notification
      * @param PayloadData|null         $data
+     * @param string|null              $server_key // overwrites the one in .env file
+     * @param string|null              $sender_id  // overwrites the one in .env file
      *
      * @return DownstreamResponse|null
      */
-    public function sendTo($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null)
+    public function sendTo($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, $server_key = null, $sender_id = null)
     {
         $response = null;
 
         if (is_array($to) && !empty($to)) {
             $partialTokens = array_chunk($to, self::MAX_TOKEN_PER_REQUEST, false);
             foreach ($partialTokens as $tokens) {
-                $request = new Request($tokens, $options, $notification, $data);
+                $request = new Request($tokens, $options, $notification, $data, null, $server_key, $sender_id);
 
                 $responseGuzzle = $this->post($request);
 
@@ -51,7 +55,7 @@ class FCMSender extends HTTPSender
                 }
             }
         } else {
-            $request = new Request($to, $options, $notification, $data);
+            $request = new Request($to, $options, $notification, $data, null, $server_key, $sender_id);
             $responseGuzzle = $this->post($request);
 
             $response = new DownstreamResponse($responseGuzzle, $to);
