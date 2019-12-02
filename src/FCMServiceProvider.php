@@ -4,6 +4,7 @@ namespace LaravelFCM;
 
 use Illuminate\Support\Str;
 use LaravelFCM\Sender\FCMGroup;
+use LaravelFCM\Sender\FCMTopic;
 use LaravelFCM\Sender\FCMSender;
 use Illuminate\Support\ServiceProvider;
 
@@ -39,6 +40,13 @@ class FCMServiceProvider extends ServiceProvider
             return new FCMGroup($client, $url);
         });
 
+        $this->app->bind('fcm.topic', function ($app) {
+            $client = $app[ 'fcm.client' ];
+            $url = $app[ 'config' ]->get('fcm.http.server_topic_url');
+
+            return new FCMTopic($client, $url);
+        });
+
         $this->app->bind('fcm.sender', function ($app) {
             $client = $app[ 'fcm.client' ];
             $url = $app[ 'config' ]->get('fcm.http.server_send_url');
@@ -49,6 +57,6 @@ class FCMServiceProvider extends ServiceProvider
 
     public function provides()
     {
-        return ['fcm.client', 'fcm.group', 'fcm.sender'];
+        return ['fcm.client', 'fcm.group', 'fcm.sender', 'fcm.topic'];
     }
 }
