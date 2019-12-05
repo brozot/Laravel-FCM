@@ -404,7 +404,34 @@ $topics->topic('TopicA')
 	       $condition->topic('TopicB')->orTopic('TopicC');
        });
 ```
+## Events
+Instead of reading the response result you can listen to FCM response events:
 
+first add a listener for the events you want to your `App\Providers\EventServiceProvider`
+```php
+//....
+    protected $listen = [
+	//....
+	//Token that must be deleted
+        \LaravelFCM\Events\DeleteToken::class=>[
+            'App\Listeners\DeleteTokenListener',
+        ],
+	//Token that must be updated
+        \LaravelFCM\Events\UpdateToken::class=>[
+            'App\Listeners\UpdateTokenListener',
+        ],
+	//Message that has to be resended
+        \LaravelFCM\Events\Resend::class=>[
+            'App\Listeners\ResendFCMListener',
+        ],
+	//Messages with errors, in production you should delete this tokens
+        \LaravelFCM\Events\WithErrors::class=>[
+            'App\Listeners\FCMWithErrorsListener',
+        ],
+	//....
+   ]
+//....
+```
 
 ## Testing
 
