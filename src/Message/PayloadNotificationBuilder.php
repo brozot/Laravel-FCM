@@ -228,7 +228,7 @@ class PayloadNotificationBuilder
      *
      * @return PayloadNotificationBuilder current instance of the builder
      */
-    public function setSound($image)
+    public function setImage($image)
     {
         $this->image = $image;
 
