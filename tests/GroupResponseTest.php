@@ -16,7 +16,10 @@ class GroupResponseTest extends FCMTestCase
 					"failure": 0
 					}');
 
-        $responseGroup = new GroupResponse($response, $notificationKey);
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $responseGroup = new GroupResponse($response, $notificationKey, $logger);
 
         $this->assertEquals(2, $responseGroup->numberSuccess());
         $this->assertEquals(0, $responseGroup->numberFailure());
@@ -38,7 +41,10 @@ class GroupResponseTest extends FCMTestCase
 					   "regId2"
 					]}');
 
-        $responseGroup = new GroupResponse($response, $notificationKey);
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $responseGroup = new GroupResponse($response, $notificationKey, $logger);
 
         $this->assertEquals(0, $responseGroup->numberSuccess());
         $this->assertEquals(2, $responseGroup->numberFailure());
@@ -63,7 +69,10 @@ class GroupResponseTest extends FCMTestCase
 					   "regId2"
 					]}');
 
-        $responseGroup = new GroupResponse($response, $notificationKey);
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $responseGroup = new GroupResponse($response, $notificationKey, $logger);
 
         $this->assertEquals(1, $responseGroup->numberSuccess());
         $this->assertEquals(2, $responseGroup->numberFailure());
