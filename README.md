@@ -143,7 +143,7 @@ $data = $dataBuilder->build();
 
 $token = "a_registration_from_your_database";
 
-$downstreamResponse = FCM::sendTo($token, $option, $notification, $data, $appKey);
+$downstreamResponse = FCM::sendTo($token, $option, $notification, $data, $configKey);
 
 $downstreamResponse->numberSuccess();
 $downstreamResponse->numberFailure();
@@ -182,7 +182,7 @@ $data = $dataBuilder->build();
 // You must change it to get your tokens
 $tokens = MYDATABASE::pluck('fcm_token')->toArray();
 
-$downstreamResponse = FCM::sendTo($tokens, $option, $notification, $data);
+$downstreamResponse = FCM::sendTo($tokens, $option, $notification, $data, $configKey);
 
 $downstreamResponse->numberSuccess();
 $downstreamResponse->numberFailure();
@@ -227,7 +227,7 @@ $notification = $notificationBuilder->build();
 $topic = new Topics();
 $topic->topic('news');
 
-$topicResponse = FCM::sendToTopic($topic, null, $notification, null);
+$topicResponse = FCM::sendToTopic($topic, null, $notification, null, $configKey);
 
 $topicResponse->isSuccess();
 $topicResponse->shouldRetry();
@@ -257,7 +257,7 @@ $topic->topic('news')->andTopic(function($condition) {
 
 });
 
-$topicResponse = FCM::sendToTopic($topic, null, $notification, null);
+$topicResponse = FCM::sendToTopic($topic, null, $notification, null, $configKey);
 
 $topicResponse->isSuccess();
 $topicResponse->shouldRetry();
@@ -280,7 +280,7 @@ $notificationBuilder->setBody('Hello world')
 $notification = $notificationBuilder->build();
 
 
-$groupResponse = FCM::sendToGroup($notificationKey, null, $notification, null);
+$groupResponse = FCM::sendToGroup($notificationKey, null, $notification, null, $configKey);
 
 $groupResponse->numberSuccess();
 $groupResponse->numberFailure();
