@@ -48,6 +48,13 @@ class Request extends BaseRequest
     protected $topic;
 
     /**
+     * @internal
+     *
+     * @var string
+     */
+    protected $configKey;
+
+    /**
      * Request constructor.
      *
      * @param                     $to
@@ -56,9 +63,9 @@ class Request extends BaseRequest
      * @param PayloadData         $data
      * @param Topics|null         $topic
      */
-    public function __construct($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, Topics $topic = null)
+    public function __construct($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, Topics $topic = null, $configKey = null)
     {
-        parent::__construct();
+        parent::__construct($configKey);
 
         $this->to = $to;
         $this->options = $options;

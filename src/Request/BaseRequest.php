@@ -24,9 +24,14 @@ abstract class BaseRequest
     /**
      * BaseRequest constructor.
      */
-    public function __construct()
+    public function __construct($configKey)
     {
-        $this->config = app('config')->get('fcm.http', []);
+        if($configKey){
+            $this->config = app('config')->get('fcm.http.'.$configKey, []);
+        }else{
+            $this->config = app('config')->get('fcm.http.key', []);
+        }
+        
     }
 
     /**
