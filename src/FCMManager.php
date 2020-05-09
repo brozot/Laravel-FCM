@@ -14,8 +14,8 @@ class FCMManager extends Manager
 
     protected function createHttpDriver()
     {
-        $config = $this->app[ 'config' ]->get('fcm.http', []);
+        //$config = $this->app[ 'config' ]->get('fcm.http', []);
 
-        return new Client(['timeout' => $config[ 'timeout' ]]);
+        return new Client(['timeout' => $this->app[ 'config' ][ 'fcm.timeout' ]]);
     }
 }
