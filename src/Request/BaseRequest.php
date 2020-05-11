@@ -29,7 +29,7 @@ abstract class BaseRequest
         if($configKey){
             $this->config = app('config')->get('fcm.http.'.$configKey, []);
         }else{
-            $this->config = app('config')->get('fcm.http.key', []);
+            $this->config = app('config')->get('fcm.http.key_1', []);
         }
         
     }
