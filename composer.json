@@ -1,5 +1,5 @@
 {
-    "name": "mathieu21/laravel-fcm",
+    "name": "brozot/laravel-fcm",
     "description": "Laravel / Lumen package for Firebase Cloud Messaging ",
     "keywords": ["laravel", "lumen", "firebase", "notification", "push", "fcm", "firebase cloud messaging"],
     "type": "library",
