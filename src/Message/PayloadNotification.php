@@ -144,7 +144,7 @@ class PayloadNotification implements Arrayable
             'sound' => $this->sound,
             'badge' => $this->badge,
             'tag' => $this->tag,
-            'image' => $this->image
+            'image' => $this->image,
             'color' => $this->color,
             'click_action' => $this->clickAction,
             'body_loc_key' => $this->bodyLocationKey,
