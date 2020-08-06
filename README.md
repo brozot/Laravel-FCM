@@ -1,4 +1,4 @@
-# Laravel-FCM
+# Laravel-FCM (maintained version of the official repository)
 
 ![Run tests](https://github.com/code-lts/Laravel-FCM/workflows/Run%20tests/badge.svg?branch=main)
 [![Coverage Status](https://codecov.io/gh/code-lts/laravel-fcm/branch/main/graph/badge.svg)](https://codecov.io/gh/code-lts/laravel-fcm)
@@ -23,9 +23,9 @@ It currently **only supports HTTP protocol** for :
 
 To get the latest version of Laravel-FCM on your project, require it from "composer":
 
-
-	$ composer require code-lts/laravel-fcm
-
+```bash
+composer require code-lts/laravel-fcm
+```
 
 Or you can add it directly in your composer.json file:
 
