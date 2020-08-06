@@ -9,6 +9,17 @@
 		convertWarningsToExceptions="true"
 		processIsolation="false"
 		stopOnFailure="false">
+
+    <filter>
+        <whitelist>
+            <directory>src</directory>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+    </logging>
+
 	<testsuites>
 		<testsuite name="Package Test Suite">
 			<directory suffix="Test.php">./tests</directory>
