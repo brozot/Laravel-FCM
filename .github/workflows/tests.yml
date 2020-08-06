@@ -1,0 +1,36 @@
+name: Run tests
+
+on: [push]
+
+jobs:
+    test-php:
+        name: Test on php ${{ matrix.php-version }} and ${{ matrix.os }}
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                php-version: ["5.5", "5.6", "7.1", "7.2", "7.3", "7.4", "8.0"]
+                os: [ubuntu-latest]
+        steps:
+            - uses: actions/checkout@v1
+            - name: Use php ${{ matrix.php-version }}
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: ${{ matrix.php-version }}
+                  extensions: posix, mbstring
+                  coverage: xdebug
+                  tools: composer:v2
+            - name: Cache module
+              uses: actions/cache@v2
+              with:
+                  path: ~/.composer/cache/
+                  key: composer-cache
+            - name: Install dependencies
+              if: ${{ matrix.php-version != '8.0' }}
+              run: composer install --no-interaction --prefer-dist --no-progress --no-suggest
+            - name: Install dependencies for php 8.0
+              if: ${{ matrix.php-version == '8.0' }}
+              run: composer install --no-interaction --prefer-dist --no-progress --no-suggest --ignore-platform-reqs
+            - name: Run php tests
+              run: composer run test
+            - name: Send coverage
+              uses: codecov/codecov-action@v1
