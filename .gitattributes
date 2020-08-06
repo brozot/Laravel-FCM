@@ -1,0 +1,4 @@
+# Any change here will affect the distributed archive for Debian and other providers..
+/.github export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
