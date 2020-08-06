@@ -1,6 +1,9 @@
 # Laravel-FCM
 
-[![Build Status](https://travis-ci.org/code-lts/Laravel-FCM.svg?branch=master)](https://travis-ci.org/code-lts/Laravel-FCM) [![Coverage Status](https://coveralls.io/repos/github/code-lts/Laravel-FCM/badge.svg?branch=master)](https://coveralls.io/github/code-lts/Laravel-FCM?branch=master) [![Latest Stable Version](https://poser.pugx.org/code-lts/laravel-fcm/v/stable)](https://packagist.org/packages/code-lts/laravel-fcm) [![Total Downloads](https://poser.pugx.org/code-lts/laravel-fcm/downloads)](https://packagist.org/packages/code-lts/laravel-fcm)
+![Run tests](https://github.com/code-lts/Laravel-FCM/workflows/Run%20tests/badge.svg?branch=main)
+[![Coverage Status](https://codecov.io/gh/code-lts/laravel-fcm/branch/main/graph/badge.svg)](https://codecov.io/gh/code-lts/laravel-fcm)
+[![Latest Stable Version](https://poser.pugx.org/code-lts/laravel-fcm/v/stable)](https://packagist.org/packages/code-lts/laravel-fcm)
+[![Total Downloads](https://poser.pugx.org/code-lts/laravel-fcm/downloads)](https://packagist.org/packages/code-lts/laravel-fcm)
 [![License](https://poser.pugx.org/code-lts/laravel-fcm/license)](https://packagist.org/packages/code-lts/laravel-fcm)
 
 ## Introduction
