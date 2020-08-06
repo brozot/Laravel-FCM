@@ -36,6 +36,12 @@
             "tests/"
         ]
     },
+    "scripts": {
+        "phpunit": "./vendor/bin/phpunit",
+        "test": [
+            "@phpunit"
+        ]
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
