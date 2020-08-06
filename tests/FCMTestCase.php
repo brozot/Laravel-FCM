@@ -19,4 +19,19 @@ abstract class FCMTestCase extends TestCase
 
         return $app;
     }
+
+    public function getPhpUnitVersion() {
+        if (class_exists(PHPUnit_Runner_Version::class)) {
+            return (int) explode('.', PHPUnit_Runner_Version::id())[0];
+        }
+        return (int) explode('.', PHPUnit\Runner\Version::id())[0];
+    }
+
+    public function setExceptionExpected($className) {
+        if ($this->getPhpUnitVersion() <= 5) {
+            return $this->setExpectedException($className);
+        }
+        return $this->expectException($className);
+    }
+
 }

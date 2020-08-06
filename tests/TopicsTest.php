@@ -15,7 +15,7 @@ class TopicsTest extends FCMTestCase
     {
         $topics = new Topics();
 
-        $this->setExpectedException(NoTopicProvidedException::class);
+        $this->setExceptionExpected(NoTopicProvidedException::class);
         $topics->build();
     }
 

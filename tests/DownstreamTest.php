@@ -86,7 +86,7 @@ class ResponseTest extends FCMTestCase
         $client->shouldReceive('request')->once()->andReturn($response);
 
         $fcm = new FCMSender($client, 'http://test.test');
-        $this->setExpectedException(\LaravelFCM\Response\Exceptions\InvalidRequestException::class);
+        $this->setExceptionExpected(\LaravelFCM\Response\Exceptions\InvalidRequestException::class);
         $fcm->sendTo([]);
     }
 }
