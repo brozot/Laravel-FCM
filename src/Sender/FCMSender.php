@@ -100,4 +100,22 @@ class FCMSender extends HTTPSender
 
         return new TopicResponse($responseGuzzle, $topics);
     }
+
+    /**
+     * @internal
+     *
+     * @param \LaravelFCM\Request\Request $request
+     *
+     * @return null|\Psr\Http\Message\ResponseInterface
+     */
+    protected function post($request)
+    {
+        try {
+            $responseGuzzle = $this->client->request('post', $this->url, $request->build());
+        } catch (ClientException $e) {
+            $responseGuzzle = $e->getResponse();
+        }
+
+        return $responseGuzzle;
+    }
 }
