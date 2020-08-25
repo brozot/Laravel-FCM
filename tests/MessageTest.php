@@ -85,7 +85,8 @@ class PayloadTest extends FCMTestCase
 					"title":"test_title",
 					"body":"test_body",
 					"badge":"test_badge",
-					"sound":"test_sound"
+					"sound":"test_sound",
+					"image":"test_image"
 				}';
 
         $targetFull = '{
@@ -101,7 +102,8 @@ class PayloadTest extends FCMTestCase
 					"body_loc_args":"[ body0, body1 ]",
 					"title_loc_key":"test_title_key",
 					"title_loc_args":"[ title0, title1 ]",
-					"icon":"test_icon"
+					"icon":"test_icon",
+					"image":"test_image"
 				}';
 
         $notificationBuilder = new PayloadNotificationBuilder();
@@ -109,7 +111,8 @@ class PayloadTest extends FCMTestCase
         $notificationBuilder->setTitle('test_title')
                     ->setBody('test_body')
                     ->setSound('test_sound')
-                    ->setBadge('test_badge');
+                    ->setBadge('test_badge')
+                    ->setImage('test_image');
 
         $json = json_encode($notificationBuilder->build()->toArray());
         $this->assertJsonStringEqualsJsonString($targetPartial, $json);
@@ -123,7 +126,8 @@ class PayloadTest extends FCMTestCase
                     ->setBodyLocationArgs('[ body0, body1 ]')
                     ->setTitleLocationKey('test_title_key')
                     ->setTitleLocationArgs('[ title0, title1 ]')
-                    ->setIcon('test_icon');
+                    ->setIcon('test_icon')
+                    ->setImage('test_image');
 
         $json = json_encode($notificationBuilder->build()->toArray());
         $this->assertJsonStringEqualsJsonString($targetFull, $json);
