@@ -3,6 +3,7 @@
 namespace LaravelFCM\Sender;
 
 use GuzzleHttp\ClientInterface;
+use Monolog\Logger;
 
 /**
  * Class BaseSender.
@@ -24,14 +25,22 @@ abstract class HTTPSender
     protected $url;
 
     /**
+     * The logger.
+     *
+     * @var \Monolog\Logger
+     */
+    protected $logger;
+
+    /**
      * Initializes a new sender object.
      *
      * @param \GuzzleHttp\ClientInterface $client
      * @param string                     $url
      */
-    public function __construct(ClientInterface $client, $url)
+    public function __construct(ClientInterface $client, $url, Logger $logger)
     {
         $this->client = $client;
         $this->url = $url;
+        $this->logger = $logger;
     }
 }

@@ -11,7 +11,7 @@ class ResponseTest extends FCMTestCase
      */
     public function it_send_a_notification_to_a_device()
     {
-        $response = new Response(200, [], '{ 
+        $response = new Response(200, [], '{
 						  "multicast_id": 216,
 						  "success": 3,
 						  "failure": 3,
@@ -26,7 +26,10 @@ class ResponseTest extends FCMTestCase
 
         $tokens = 'uniqueToken';
 
-        $fcm = new FCMSender($client, 'http://test.test');
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $fcm = new FCMSender($client, 'http://test.test', $logger);
         $fcm->sendTo($tokens);
     }
 
@@ -35,7 +38,7 @@ class ResponseTest extends FCMTestCase
      */
     public function it_send_a_notification_to_more_than_1000_devices()
     {
-        $response = new Response(200, [], '{ 
+        $response = new Response(200, [], '{
 						  "multicast_id": 216,
 						  "success": 3,
 						  "failure": 3,
@@ -58,7 +61,10 @@ class ResponseTest extends FCMTestCase
             $tokens[$i] = 'token_'.$i;
         }
 
-        $fcm = new FCMSender($client, 'http://test.test');
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $fcm = new FCMSender($client, 'http://test.test', $logger);
         $fcm->sendTo($tokens);
     }
 
@@ -67,7 +73,7 @@ class ResponseTest extends FCMTestCase
      */
     public function an_empty_array_of_tokens_thrown_an_exception()
     {
-        $response = new Response(400, [], '{ 
+        $response = new Response(400, [], '{
 						  "multicast_id": 216,
 						  "success": 3,
 						  "failure": 3,
@@ -85,7 +91,10 @@ class ResponseTest extends FCMTestCase
         $client = Mockery::mock(Client::class);
         $client->shouldReceive('request')->once()->andReturn($response);
 
-        $fcm = new FCMSender($client, 'http://test.test');
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $fcm = new FCMSender($client, 'http://test.test', $logger);
         $this->setExceptionExpected(\LaravelFCM\Response\Exceptions\InvalidRequestException::class);
         $fcm->sendTo([]);
     }
