@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Add support for images on PayloadNotificationBuilder
 - Fix phpdoc errors reported on phpstan level 2 and 3
+- Add logger injection
 
 ## [v1.4.0]
 
