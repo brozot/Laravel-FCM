@@ -14,7 +14,7 @@ class PayloadDataBuilder
     /**
      * @internal
      *
-     * @var array
+     * @var array|null
      */
     protected $data;
 

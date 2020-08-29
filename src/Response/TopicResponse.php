@@ -17,7 +17,7 @@ class TopicResponse extends BaseResponse implements TopicResponseContract
     /**
      * @internal
      *
-     * @var string
+     * @var Topics
      */
     protected $topic;
 
@@ -57,7 +57,7 @@ class TopicResponse extends BaseResponse implements TopicResponseContract
     /**
      * parse the response.
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      */
     protected function parseResponse($responseInJson)
     {
@@ -73,7 +73,7 @@ class TopicResponse extends BaseResponse implements TopicResponseContract
     /**
      * @internal
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      */
     private function parseSuccess($responseInJson)
     {
@@ -85,7 +85,7 @@ class TopicResponse extends BaseResponse implements TopicResponseContract
     /**
      * @internal
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      */
     private function parseError($responseInJson)
     {

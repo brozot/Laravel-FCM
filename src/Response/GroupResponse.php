@@ -45,7 +45,7 @@ class GroupResponse extends BaseResponse implements GroupResponseContract
      * GroupResponse constructor.
      *
      * @param \Psr\Http\Message\ResponseInterface $response
-     * @param                $to
+     * @param string                              $to
      */
     public function __construct(ResponseInterface $response, $to)
     {
@@ -56,7 +56,7 @@ class GroupResponse extends BaseResponse implements GroupResponseContract
     /**
      * parse the response.
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      */
     protected function parseResponse($responseInJson)
     {
@@ -86,7 +86,7 @@ class GroupResponse extends BaseResponse implements GroupResponseContract
     /**
      * @internal
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      *
      * @return bool
      */
@@ -105,7 +105,7 @@ class GroupResponse extends BaseResponse implements GroupResponseContract
     /**
      * @internal
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      */
     private function parseFailed($responseInJson)
     {

@@ -51,7 +51,7 @@ class OptionsBuilder
     /**
      * @internal
      *
-     * @var string
+     * @var int
      */
     protected $timeToLive;
 
@@ -130,7 +130,7 @@ class OptionsBuilder
      * When a notification is sent and this is set to true,
      * the content of the notification can be modified before it is displayed.
      *
-     * @param String $isMutableContent
+     * @param bool $isMutableContent
      * @return OptionsBuilder
      */
     public function setMutableContent($isMutableContent)
@@ -323,7 +323,7 @@ final class OptionsPriorities
     /**
      * check if this priority is supported by fcm.
      *
-     * @param $priority
+     * @param string $priority
      *
      * @return bool
      *

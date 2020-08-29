@@ -50,7 +50,7 @@ class Request extends BaseRequest
     /**
      * Request constructor.
      *
-     * @param                     $to
+     * @param string|array        $to
      * @param Options             $options
      * @param PayloadNotification $notification
      * @param PayloadData         $data

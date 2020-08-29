@@ -38,10 +38,10 @@ class GroupRequest extends BaseRequest
     /**
      * GroupRequest constructor.
      *
-     * @param $operation
-     * @param $notificationKeyName
-     * @param $notificationKey
-     * @param $registrationIds
+     * @param string $operation
+     * @param string $notificationKeyName
+     * @param string $notificationKey
+     * @param array $registrationIds
      */
     public function __construct($operation, $notificationKeyName, $notificationKey, $registrationIds)
     {

@@ -63,7 +63,7 @@ class FCMSender extends HTTPSender
     /**
      * Send a message to a group of devices identified with them notification key.
      *
-     * @param                          $notificationKey
+     * @param string                   $notificationKey
      * @param Options|null             $options
      * @param PayloadNotification|null $notification
      * @param PayloadData|null         $data

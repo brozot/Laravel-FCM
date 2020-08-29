@@ -48,7 +48,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @var
+     * @var string
      */
     protected $messageId;
 
@@ -97,7 +97,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
      * DownstreamResponse constructor.
      *
      * @param \Psr\Http\Message\ResponseInterface $response
-     * @param                $tokens
+     * @param array|string $tokens
      */
     public function __construct(ResponseInterface $response, $tokens)
     {
@@ -109,7 +109,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * Parse the response.
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      */
     protected function parseResponse($responseInJson)
     {
@@ -127,7 +127,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      */
     private function parse($responseInJson)
     {
@@ -151,7 +151,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      */
     private function parseResult($responseInJson)
     {
@@ -169,7 +169,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      *
      * @return bool
      */
@@ -181,7 +181,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $results
+     * @param array $results
      *
      * @return bool
      */
@@ -193,8 +193,8 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $index
-     * @param $result
+     * @param string $index
+     * @param array $result
      *
      * @return bool
      */
@@ -214,8 +214,8 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $index
-     * @param $result
+     * @param string $index
+     * @param array $result
      *
      * @return bool
      */
@@ -236,8 +236,8 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $index
-     * @param $result
+     * @param string $index
+     * @param array $result
      *
      * @return bool
      */
@@ -257,7 +257,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $result
+     * @param array $result
      *
      * @return bool
      */
@@ -273,8 +273,8 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $index
-     * @param $result
+     * @param string $index
+     * @param array $result
      */
     private function needToAddError($index, $result)
     {
