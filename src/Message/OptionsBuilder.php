@@ -70,6 +70,13 @@ class OptionsBuilder
     protected $dryRun = false;
 
     /**
+     * @internal
+     *
+     * @var bool
+     */
+    protected $directBootOk;
+
+    /**
      * This parameter identifies a group of messages
      * A maximum of 4 different collapse keys is allowed at any given time.
      *
@@ -80,6 +87,23 @@ class OptionsBuilder
     public function setCollapseKey($collapseKey)
     {
         $this->collapseKey = $collapseKey;
+
+        return $this;
+    }
+
+    /**
+     * If set to true, messages will be allowed to be delivered to the app while the device is in direct boot mode.
+     * See Support Direct Boot mode (https://developer.android.com/training/articles/direct-boot).
+     *
+     * @see https://developer.android.com/training/articles/direct-boot
+     *
+     * @param true $directBootOk (only true is valid, do not use for false it is pointless)
+     *
+     * @return \LaravelFCM\Message\OptionsBuilder
+     */
+    public function setDirectBootOk($directBootOk)
+    {
+        $this->directBootOk = $directBootOk;
 
         return $this;
     }
@@ -175,6 +199,7 @@ class OptionsBuilder
 
     /**
      * This parameter specifies the package name of the application where the registration tokens must match in order to receive the message.
+     * (Android only)
      *
      * @param string $restrictedPackageName
      *
@@ -191,6 +216,7 @@ class OptionsBuilder
      * This parameter, when set to true, allows developers to test a request without actually sending a message.
      * It should only be used for the development.
      *
+     * @deprecated v1 (https://stackoverflow.com/a/53885050/5155484)
      * @param bool $isDryRun
      *
      * @return \LaravelFCM\Message\OptionsBuilder
@@ -280,6 +306,16 @@ class OptionsBuilder
     public function isDryRun()
     {
         return $this->dryRun;
+    }
+
+    /**
+     * is direct boot ok
+     *
+     * @return bool
+     */
+    public function isDirectBootOk()
+    {
+        return $this->directBootOk;
     }
 
     /**

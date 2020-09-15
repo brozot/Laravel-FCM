@@ -46,6 +46,43 @@ class PayloadTest extends FCMTestCase
         $this->assertJsonStringEqualsJsonString($targetFull, $json);
     }
 
+    public function testBuildOptionsDirectBootOk()
+    {
+        $targetPartial = '{
+					"direct_boot_ok": true,
+					"content_available":true
+				}';
+
+        $targetFull = '{
+					"collapse_key":"collapseKey",
+					"content_available":true,
+					"priority":"high",
+					"delay_while_idle":true,
+					"time_to_live":200,
+					"restricted_package_name":"customPackageName",
+					"dry_run": true,
+					"direct_boot_ok": true
+				}';
+
+        $optionBuilder = new OptionsBuilder();
+
+        $optionBuilder->setDirectBootOk(true);
+        $optionBuilder->setContentAvailable(true);
+
+        $json = json_encode($optionBuilder->build()->toArray());
+        $this->assertJsonStringEqualsJsonString($targetPartial, $json);
+
+        $optionBuilder->setPriority(OptionsPriorities::high)
+            ->setCollapseKey('collapseKey')
+            ->setDelayWhileIdle(true)
+            ->setDryRun(true)
+            ->setRestrictedPackageName('customPackageName')
+            ->setTimeToLive(200);
+
+        $json = json_encode($optionBuilder->build()->toArray());
+        $this->assertJsonStringEqualsJsonString($targetFull, $json);
+    }
+
     /**
      * @test
      */
