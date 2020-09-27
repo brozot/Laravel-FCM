@@ -4,8 +4,10 @@ namespace LaravelFCM;
 
 use Illuminate\Support\Str;
 use LaravelFCM\Sender\FCMGroup;
+use LaravelFCM\Sender\FCMTopic;
 use LaravelFCM\Sender\FCMSender;
 use Illuminate\Support\ServiceProvider;
+use LaravelFCM\Validator\FCMValidator;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\NullHandler;
@@ -53,6 +55,14 @@ class FCMServiceProvider extends ServiceProvider
             return new FCMGroup($client, $url, $logger);
         });
 
+        $this->app->bind('fcm.topic', function ($app) {
+            $client = $app[ 'fcm.client' ];
+            $url = $app[ 'config' ]->get('fcm.http.server_topic_url');
+            $logger = $app[ 'fcm.logger' ];
+
+            return new FCMTopic($client, $url,$logger);
+        });
+
         $this->app->bind('fcm.sender', function ($app) {
             $client = $app[ 'fcm.client' ];
             $url = $app[ 'config' ]->get('fcm.http.server_send_url');
@@ -60,10 +70,19 @@ class FCMServiceProvider extends ServiceProvider
 
             return new FCMSender($client, $url, $logger);
         });
+
+        $this->app->bind('fcm.validator',function ($app){
+            $client = $app[ 'fcm.client' ];
+            $url = $app[ 'config' ]->get('fcm.http.server_send_url');
+            $logger = $app[ 'fcm.logger' ];
+
+
+            return new FCMValidator($client, $url, $logger);
+        });
     }
 
     public function provides()
     {
-        return ['fcm.client', 'fcm.group', 'fcm.sender', 'fcm.logger'];
+        return ['fcm.client', 'fcm.group', 'fcm.sender', 'fcm.logger', 'fcm.topic' , 'fcm.validator'];
     }
 }
