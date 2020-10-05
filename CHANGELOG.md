@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Support `guzzlehttp/guzzle` 7
 - Add support for setDirectBootOk on OptionsBuilder
 - Mark setDryRun as deprecated v1 FCM on OptionsBuilder
+- Add Topics Creation And Subscription
 
 ## [v1.5.0]
 
