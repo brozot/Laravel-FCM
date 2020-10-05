@@ -9,13 +9,27 @@ class FCMManager extends Manager
 {
     public function getDefaultDriver()
     {
-        return $this->app[ 'config' ][ 'fcm.driver' ];
+        return $this->getContainer()[ 'config' ][ 'fcm.driver' ];
     }
 
     protected function createHttpDriver()
     {
-        $config = $this->app[ 'config' ]->get('fcm.http', []);
+        $config = $this->getContainer()[ 'config' ]->get('fcm.http', []);
 
         return new Client(['timeout' => $config[ 'timeout' ]]);
+    }
+
+    /**
+     * Get the app container
+     *
+     * @return \Illuminate\Contracts\Container\Container
+     */
+    private function getContainer()
+    {
+        if (isset($this->container)) {// Laravel 7.x, 8.x support
+            return $this->container;
+        }
+        // "app" Does not exist anymore in 8.x
+        return $this->app;
     }
 }
