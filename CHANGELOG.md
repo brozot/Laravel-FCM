@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [v1.x.x]
 
 - Support laravel 8
+- Support `illuminate/support` 8
 - Add support for setDirectBootOk on OptionsBuilder
 - Mark setDryRun as deprecated v1 FCM on OptionsBuilder
 
