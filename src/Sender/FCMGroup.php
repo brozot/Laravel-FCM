@@ -29,7 +29,7 @@ class FCMGroup extends HTTPSender
     }
 
     /**
-     * add registrationId to a existing group.
+     * Add registrationIds to an existing group.
      *
      * @param string $notificationKeyName
      * @param string $notificationKey
@@ -45,13 +45,13 @@ class FCMGroup extends HTTPSender
     }
 
     /**
-     * remove registrationId to a existing group.
+     * Remove registeredIds from an existing group.
      *
      * >Note: if you remove all registrationIds the group is automatically deleted
      *
      * @param string $notificationKeyName
      * @param string $notificationKey
-     * @param array  $registeredIds       registrationIds to remove
+     * @param array  $registeredIds registrationIds to remove
      * @return null|string notification_key
      */
     public function removeFromGroup($notificationKeyName, $notificationKey, array $registeredIds)
