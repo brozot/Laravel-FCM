@@ -16,7 +16,7 @@ class FCMValidator extends HTTPSender {
      *
      * @return bool
      */
-    public function validateToken(string $token) {
+    public function validateToken($token) {
         $request = new ValidateRequest();
         try {
             $build = $request->build();
