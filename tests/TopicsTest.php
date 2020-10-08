@@ -5,6 +5,7 @@ use GuzzleHttp\Psr7\Response;
 use LaravelFCM\Message\Topics;
 use LaravelFCM\Sender\FCMSender;
 use LaravelFCM\Message\Exceptions\NoTopicProvidedException;
+use LaravelFCM\Sender\FCMTopic;
 
 class TopicsTest extends FCMTestCase
 {
@@ -127,5 +128,85 @@ class TopicsTest extends FCMTestCase
         $this->assertFalse($response->isSuccess());
         $this->assertTrue($response->shouldRetry());
         $this->assertEquals('TopicsMessageRateExceeded', $response->error());
+    }
+
+    public function testCreateTopic()
+    {
+        $response = new Response(200, [], json_encode([]));
+
+        $client = Mockery::mock(Client::class);
+        $client->shouldReceive('request')->once()->andReturn($response);
+
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $fcm = new FCMTopic($client, 'http://test.test', $logger);
+
+        $response = $fcm->createTopic('id_1', 'abcd');
+        $this->assertTrue($response);
+    }
+
+    public function testSubscribeTopic()
+    {
+        $response = new Response(200, [], json_encode([]));
+
+        $client = Mockery::mock(Client::class);
+        $client->shouldReceive('request')->once()->andReturn($response);
+
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $fcm = new FCMTopic($client, 'http://test.test', $logger);
+
+        $response = $fcm->subscribeTopic('id_1', 'token1');
+        $this->assertTrue($response);
+    }
+
+    public function testSubscribeTopicMultipleTokens()
+    {
+        $response = new Response(200, [], json_encode([]));
+
+        $client = Mockery::mock(Client::class);
+        $client->shouldReceive('request')->once()->andReturn($response);
+
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $fcm = new FCMTopic($client, 'http://test.test', $logger);
+
+        $response = $fcm->subscribeTopic('id_1', ['token1', 'token2']);
+        $this->assertTrue($response);
+    }
+
+    public function testUnSubscribeTopic()
+    {
+        $response = new Response(200, [], json_encode([]));
+
+        $client = Mockery::mock(Client::class);
+        $client->shouldReceive('request')->once()->andReturn($response);
+
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $fcm = new FCMTopic($client, 'http://test.test', $logger);
+
+        $response = $fcm->unSubscribeTopic('id_1', 'token1');
+        $this->assertTrue($response);
+    }
+
+    public function testUnSubscribeTopicMultipleTokens()
+    {
+        $response = new Response(200, [], json_encode([]));
+
+        $client = Mockery::mock(Client::class);
+        $client->shouldReceive('request')->once()->andReturn($response);
+
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $fcm = new FCMTopic($client, 'http://test.test', $logger);
+
+        $response = $fcm->unSubscribeTopic('id_1', ['token1', 'token2']);
+        $this->assertTrue($response);
     }
 }

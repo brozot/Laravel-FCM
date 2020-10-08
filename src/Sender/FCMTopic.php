@@ -7,6 +7,10 @@ use Psr\Http\Message\ResponseInterface;
 
 class FCMTopic extends HTTPSender {
 
+    const CREATE = 'create';
+    const SUBSCRIBE = 'subscribe';
+    const UNSUBSCRIBE = 'unsubscribe';
+
     private $add_subscription_url = 'https://iid.googleapis.com/iid/v1:batchAdd';
     private $remove_subscription_url = 'https://iid.googleapis.com/iid/v1:batchRemove';
 
@@ -20,7 +24,7 @@ class FCMTopic extends HTTPSender {
      */
     public function createTopic($topicId, $registrationId)
     {
-        $request = new TopicRequest('create', $topicId);
+        $request = new TopicRequest(self::CREATE, $topicId);
         if (is_array($registrationId)) {
             return null;
         }
@@ -43,7 +47,7 @@ class FCMTopic extends HTTPSender {
      */
     public function subscribeTopic($topicId, $recipientsTokens)
     {
-        $request = new TopicRequest('subscribe', $topicId, $recipientsTokens);
+        $request = new TopicRequest(self::SUBSCRIBE, $topicId, $recipientsTokens);
         $response = $this->client->request('post', $this->add_subscription_url, $request->build());
 
         if ($this->isValidResponse($response)) {
@@ -62,7 +66,7 @@ class FCMTopic extends HTTPSender {
      */
     public function unsubscribeTopic($topicId, $recipientsTokens)
     {
-        $request = new TopicRequest('unsubscribe', $topicId, $recipientsTokens);
+        $request = new TopicRequest(self::UNSUBSCRIBE, $topicId, $recipientsTokens);
         $response = $this->client->request('post', $this->remove_subscription_url, $request->build());
 
         if ($this->isValidResponse($response)) {
