@@ -97,7 +97,7 @@ Send a message to a group of devices identified with them notification key
 
 
 #### Arguments
-* $notificationKey **mixed**
+* $notificationKey **string|string[]**
 * $options **[LaravelFCM\Message\Options](LaravelFCM-Message-Options.md)|null**
 * $notification **[LaravelFCM\Message\PayloadNotification](LaravelFCM-Message-PayloadNotification.md)|null**
 * $data **[LaravelFCM\Message\PayloadData](LaravelFCM-Message-PayloadData.md)|null**

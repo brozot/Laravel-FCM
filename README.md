@@ -299,7 +299,6 @@ $key = FCMTopic::unsubscribeTopic($topic_id, $recipients_tokens);
 #### Sending a Notification to a Group
 
 ```php
-$notificationKey = ['a_notification_key'];
 
 
 $notificationBuilder = new PayloadNotificationBuilder('my title');
@@ -308,6 +307,7 @@ $notificationBuilder->setBody('Hello world')
 
 $notification = $notificationBuilder->build();
 
+$notificationKey = ['a_notification_key'];
 
 $groupResponse = FCM::sendToGroup($notificationKey, null, $notification, null);
 
