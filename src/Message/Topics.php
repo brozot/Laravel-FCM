@@ -28,9 +28,9 @@ class Topics
      */
     public function topic($first)
     {
-        $this->conditions[] = array(
+        $this->conditions[] = [
             'first' => $first
-        );
+        ];
 
         return $this;
     }
@@ -117,10 +117,10 @@ class Topics
             return $this->nest($first, $condition);
         }
 
-        $this->conditions[] = array(
+        $this->conditions[] = [
             'first' => $first,
             'condition' => $condition
-        );
+        ];
 
         return $this;
     }
@@ -140,12 +140,12 @@ class Topics
         $callback($topic);
         if (count($topic->conditions)) {
 
-            $this->conditions[] = array(
+            $this->conditions[] = [
                 'condition' => $condition,
                 'open_parenthesis' => '(',
                 'topic' => $topic->conditions,
                 'close_parenthesis' => ')'
-            );
+            ];
         }
 
         return $this;
