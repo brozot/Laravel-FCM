@@ -4,9 +4,6 @@ namespace LaravelFCM\Mocks;
 
 use LaravelFCM\Response\GroupResponseContract;
 
-/**
- * Class MockGroupResponse **Only use it for testing**.
- */
 class MockGroupResponse implements GroupResponseContract
 {
     /**

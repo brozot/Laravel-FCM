@@ -2,9 +2,6 @@
 
 namespace LaravelFCM\Request;
 
-/**
- * Class TopicRequest.
- */
 class TopicRequest extends BaseRequest
 {
     /**

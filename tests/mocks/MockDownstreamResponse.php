@@ -5,9 +5,6 @@ namespace LaravelFCM\Mocks;
 use LaravelFCM\Response\DownstreamResponse;
 use LaravelFCM\Response\DownstreamResponseContract;
 
-/**
- * Class MockDownstreamResponse **Only use it for testing**.
- */
 class MockDownstreamResponse implements DownstreamResponseContract
 {
     /**

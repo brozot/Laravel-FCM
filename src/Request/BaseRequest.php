@@ -2,9 +2,6 @@
 
 namespace LaravelFCM\Request;
 
-/**
- * Class BaseRequest.
- */
 abstract class BaseRequest
 {
     /**

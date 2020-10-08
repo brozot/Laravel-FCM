@@ -5,9 +5,6 @@ namespace LaravelFCM\Response;
 use Psr\Http\Message\ResponseInterface;
 use Monolog\Logger;
 
-/**
- * Class DownstreamResponse.
- */
 class DownstreamResponse extends BaseResponse implements DownstreamResponseContract
 {
     const MULTICAST_ID = 'multicast_id';

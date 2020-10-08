@@ -5,9 +5,6 @@ namespace LaravelFCM\Response;
 use Psr\Http\Message\ResponseInterface;
 use Monolog\Logger;
 
-/**
- * Class GroupResponse.
- */
 class GroupResponse extends BaseResponse implements GroupResponseContract
 {
     const FAILED_REGISTRATION_IDS = 'failed_registration_ids';

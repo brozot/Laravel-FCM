@@ -5,9 +5,6 @@ namespace LaravelFCM\Sender;
 use LaravelFCM\Request\GroupRequest;
 use Psr\Http\Message\ResponseInterface;
 
-/**
- * Class FCMGroup.
- */
 class FCMGroup extends HTTPSender
 {
     const CREATE = 'create';

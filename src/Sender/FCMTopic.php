@@ -5,9 +5,6 @@ namespace LaravelFCM\Sender;
 use LaravelFCM\Request\TopicRequest;
 use Psr\Http\Message\ResponseInterface;
 
-/**
- * Class FCMGroup.
- */
 class FCMTopic extends HTTPSender {
 
     private $add_subscription_url = 'https://iid.googleapis.com/iid/v1:batchAdd';

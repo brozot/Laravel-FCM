@@ -6,8 +6,6 @@ use Closure;
 use LaravelFCM\Message\Exceptions\NoTopicProvidedException;
 
 /**
- * Class Topics.
- *
  * Create topic or a topic condition
  */
 class Topics

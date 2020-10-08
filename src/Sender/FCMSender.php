@@ -12,9 +12,6 @@ use GuzzleHttp\Exception\ClientException;
 use LaravelFCM\Response\DownstreamResponse;
 use LaravelFCM\Message\PayloadNotification;
 
-/**
- * Class FCMSender.
- */
 class FCMSender extends HTTPSender
 {
     const MAX_TOKEN_PER_REQUEST = 1000;

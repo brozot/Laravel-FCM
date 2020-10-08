@@ -5,9 +5,6 @@ namespace LaravelFCM\Sender;
 use GuzzleHttp\ClientInterface;
 use Monolog\Logger;
 
-/**
- * Class BaseSender.
- */
 abstract class HTTPSender
 {
     /**

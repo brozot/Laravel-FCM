@@ -6,9 +6,6 @@ use LaravelFCM\Message\Topics;
 use Psr\Http\Message\ResponseInterface;
 use Monolog\Logger;
 
-/**
- * Class TopicResponse.
- */
 class TopicResponse extends BaseResponse implements TopicResponseContract
 {
     const LIMIT_RATE_TOPICS_EXCEEDED = 'TopicsMessageRateExceeded';

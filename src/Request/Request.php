@@ -7,9 +7,6 @@ use LaravelFCM\Message\Options;
 use LaravelFCM\Message\PayloadData;
 use LaravelFCM\Message\PayloadNotification;
 
-/**
- * Class Request.
- */
 class Request extends BaseRequest
 {
     /**

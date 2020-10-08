@@ -8,8 +8,6 @@ use ReflectionClass;
 /**
  * Builder for creation of options used by FCM.
  *
- * Class OptionsBuilder
- *
  * @link http://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json
  */
 class OptionsBuilder
@@ -329,9 +327,6 @@ class OptionsBuilder
     }
 }
 
-/**
- * Class OptionsPriorities.
- */
 final class OptionsPriorities
 {
     /**

@@ -2,9 +2,6 @@
 
 namespace LaravelFCM\Request;
 
-/**
- * Class GroupRequest.
- */
 class GroupRequest extends BaseRequest
 {
     /**

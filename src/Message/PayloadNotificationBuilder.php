@@ -3,7 +3,6 @@
 namespace LaravelFCM\Message;
 
 /**
- * Class PayloadNotificationBuilder.
  *
  * Official google documentation :
  *

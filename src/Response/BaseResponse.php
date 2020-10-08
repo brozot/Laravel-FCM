@@ -8,9 +8,6 @@ use LaravelFCM\Response\Exceptions\InvalidRequestException;
 use LaravelFCM\Response\Exceptions\UnauthorizedRequestException;
 use Monolog\Logger;
 
-/**
- * Class BaseResponse.
- */
 abstract class BaseResponse
 {
     const SUCCESS = 'success';

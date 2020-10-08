@@ -4,9 +4,6 @@ namespace LaravelFCM\Mocks;
 
 use LaravelFCM\Response\TopicResponseContract;
 
-/**
- * Class MockTopicResponse **Only use it for testing**.
- */
 class MockTopicResponse implements TopicResponseContract
 {
     /**
