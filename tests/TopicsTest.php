@@ -8,10 +8,7 @@ use LaravelFCM\Message\Exceptions\NoTopicProvidedException;
 
 class TopicsTest extends FCMTestCase
 {
-    /**
-     * @test
-     */
-    public function it_throw_an_exception_if_no_topic_is_provided()
+    public function testItThrowAnExceptionIfNoTopicIsProvided()
     {
         $topics = new Topics();
 
@@ -19,10 +16,7 @@ class TopicsTest extends FCMTestCase
         $topics->build();
     }
 
-    /**
-     * @test
-     */
-    public function it_has_only_one_topic()
+    public function testItHasOnlyOneTopic()
     {
         $target = '/topics/myTopic';
 
@@ -33,10 +27,7 @@ class TopicsTest extends FCMTestCase
         $this->assertEquals($target, $topics->build());
     }
 
-    /**
-     * @test
-     */
-    public function it_has_two_topics_and()
+    public function testItHasTwoTopicsAnd()
     {
         $target = [
             'condition' => "'firstTopic' in topics && 'secondTopic' in topics",
@@ -49,10 +40,7 @@ class TopicsTest extends FCMTestCase
         $this->assertEquals($target, $topics->build());
     }
 
-    /**
-     * @test
-     */
-    public function it_has_two_topics_or()
+    public function testItHasTwoTopicsOr()
     {
         $target = [
             'condition' => "'firstTopic' in topics || 'secondTopic' in topics",
@@ -65,10 +53,7 @@ class TopicsTest extends FCMTestCase
         $this->assertEquals($target, $topics->build());
     }
 
-    /**
-     * @test
-     */
-    public function it_has_two_topics_or_and_one_and()
+    public function testItHasTwoTopicsOrAndOneAnd()
     {
         $target = [
             'condition' => "'firstTopic' in topics || 'secondTopic' in topics && 'thirdTopic' in topics",
@@ -81,10 +66,7 @@ class TopicsTest extends FCMTestCase
         $this->assertEquals($target, $topics->build());
     }
 
-    /**
-     * @test
-     */
-    public function it_has_a_complex_topic_condition()
+    public function testItHasAComplexTopicCondition()
     {
         $target = [
             'condition' => "'TopicA' in topics && ('TopicB' in topics || 'TopicC' in topics) || ('TopicD' in topics && 'TopicE' in topics)",
@@ -103,10 +85,7 @@ class TopicsTest extends FCMTestCase
         $this->assertEquals($target, $topics->build());
     }
 
-    /**
-     * @test
-     */
-    public function it_send_a_notification_to_a_topic()
+    public function testItSendsANotificationToATopic()
     {
         $response = new Response(200, [], '{"message_id":6177433633397011933}');
 
@@ -128,10 +107,7 @@ class TopicsTest extends FCMTestCase
         $this->assertNull($response->error());
     }
 
-    /**
-     * @test
-     */
-    public function it_send_a_notification_to_a_topic_and_return_error()
+    public function testItSendsANotificationToATopicAndReturnError()
     {
         $response = new Response(200, [], '{"error":"TopicsMessageRateExceeded"}');
 
