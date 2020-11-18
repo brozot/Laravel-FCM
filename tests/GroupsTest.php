@@ -1,6 +1,8 @@
 <?php
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use LaravelFCM\Sender\FCMGroup;
 
@@ -12,8 +14,8 @@ class GroupsTest extends FCMTestCase {
             'notification_key' => 'notification_keyId',
         ]));
 
-        $client = Mockery::mock(Client::class);
-        $client->shouldReceive('request')->once()->andReturn($response);
+        $handlerStack = HandlerStack::create(new MockHandler([$response]));
+        $client = new Client(['handler' => $handlerStack]);
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -30,8 +32,8 @@ class GroupsTest extends FCMTestCase {
             'notification_key' => 'notification_keyId',
         ]));
 
-        $client = Mockery::mock(Client::class);
-        $client->shouldReceive('request')->once()->andReturn($response);
+        $handlerStack = HandlerStack::create(new MockHandler([$response]));
+        $client = new Client(['handler' => $handlerStack]);
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -48,8 +50,8 @@ class GroupsTest extends FCMTestCase {
             'notification_key' => 'notification_keyId',
         ]));
 
-        $client = Mockery::mock(Client::class);
-        $client->shouldReceive('request')->once()->andReturn($response);
+        $handlerStack = HandlerStack::create(new MockHandler([$response]));
+        $client = new Client(['handler' => $handlerStack]);
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());

@@ -1,6 +1,8 @@
 <?php
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use LaravelFCM\Message\Topics;
 use LaravelFCM\Sender\FCMSender;
@@ -90,8 +92,8 @@ class TopicsTest extends FCMTestCase
     {
         $response = new Response(200, [], '{"message_id":6177433633397011933}');
 
-        $client = Mockery::mock(Client::class);
-        $client->shouldReceive('request')->once()->andReturn($response);
+        $handlerStack = HandlerStack::create(new MockHandler([$response]));
+        $client = new Client(['handler' => $handlerStack]);
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -112,8 +114,8 @@ class TopicsTest extends FCMTestCase
     {
         $response = new Response(200, [], '{"error":"TopicsMessageRateExceeded"}');
 
-        $client = Mockery::mock(Client::class);
-        $client->shouldReceive('request')->once()->andReturn($response);
+        $handlerStack = HandlerStack::create(new MockHandler([$response]));
+        $client = new Client(['handler' => $handlerStack]);
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -134,8 +136,8 @@ class TopicsTest extends FCMTestCase
     {
         $response = new Response(200, [], json_encode([]));
 
-        $client = Mockery::mock(Client::class);
-        $client->shouldReceive('request')->once()->andReturn($response);
+        $handlerStack = HandlerStack::create(new MockHandler([$response]));
+        $client = new Client(['handler' => $handlerStack]);
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -150,8 +152,8 @@ class TopicsTest extends FCMTestCase
     {
         $response = new Response(200, [], json_encode([]));
 
-        $client = Mockery::mock(Client::class);
-        $client->shouldReceive('request')->once()->andReturn($response);
+        $handlerStack = HandlerStack::create(new MockHandler([$response]));
+        $client = new Client(['handler' => $handlerStack]);
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -166,8 +168,8 @@ class TopicsTest extends FCMTestCase
     {
         $response = new Response(200, [], json_encode([]));
 
-        $client = Mockery::mock(Client::class);
-        $client->shouldReceive('request')->once()->andReturn($response);
+        $handlerStack = HandlerStack::create(new MockHandler([$response]));
+        $client = new Client(['handler' => $handlerStack]);
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -182,8 +184,8 @@ class TopicsTest extends FCMTestCase
     {
         $response = new Response(200, [], json_encode([]));
 
-        $client = Mockery::mock(Client::class);
-        $client->shouldReceive('request')->once()->andReturn($response);
+        $handlerStack = HandlerStack::create(new MockHandler([$response]));
+        $client = new Client(['handler' => $handlerStack]);
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -198,8 +200,8 @@ class TopicsTest extends FCMTestCase
     {
         $response = new Response(200, [], json_encode([]));
 
-        $client = Mockery::mock(Client::class);
-        $client->shouldReceive('request')->once()->andReturn($response);
+        $handlerStack = HandlerStack::create(new MockHandler([$response]));
+        $client = new Client(['handler' => $handlerStack]);
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());

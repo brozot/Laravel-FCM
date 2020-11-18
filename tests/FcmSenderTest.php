@@ -12,15 +12,13 @@ class FcmSenderTest extends FCMTestCase
 
     public function testSendToGroupArray()
     {
-        $mock = new MockHandler([
-            new Response(200, [], json_encode([
-                "success" => 6,
-                "failure" => 3,
-                "results" => []
-            ])),
-        ]);
+        $response = new Response(200, [], json_encode([
+            "success" => 6,
+            "failure" => 3,
+            "results" => []
+        ]));
 
-        $handlerStack = HandlerStack::create($mock);
+        $handlerStack = HandlerStack::create(new MockHandler([$response]));
         $client = new Client(['handler' => $handlerStack]);
 
         $notificationKey = ['a_notification_key'];
