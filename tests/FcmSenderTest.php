@@ -1,11 +1,10 @@
 <?php
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use LaravelFCM\Facades\FCM;
-use LaravelFCM\Message\Topics;
 use LaravelFCM\Sender\FCMSender;
-use LaravelFCM\Message\Exceptions\NoTopicProvidedException;
 use LaravelFCM\Message\PayloadNotificationBuilder;
 
 class FcmSenderTest extends FCMTestCase
@@ -13,18 +12,16 @@ class FcmSenderTest extends FCMTestCase
 
     public function testSendToGroupArray()
     {
-        $response = new Response(
-            200,
-            [],
-            json_encode([
+        $mock = new MockHandler([
+            new Response(200, [], json_encode([
                 "success" => 6,
                 "failure" => 3,
                 "results" => []
-            ])
-        );
+            ])),
+        ]);
 
-        $client = Mockery::mock(Client::class);
-        $client->shouldReceive('request')->once()->andReturn($response);
+        $handlerStack = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handlerStack]);
 
         $notificationKey = ['a_notification_key'];
 
