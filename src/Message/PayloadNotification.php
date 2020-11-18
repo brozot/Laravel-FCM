@@ -23,7 +23,7 @@ class PayloadNotification implements Arrayable
     /**
      * @internal
      *
-     * @var null/string
+     * @var null|string
      */
     protected $channelId;
 
