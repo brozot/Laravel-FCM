@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add support for setDirectBootOk on OptionsBuilder
 - Mark setDryRun as deprecated v1 FCM on OptionsBuilder
 - Add Topics Creation And Subscription
+- Drop dev dependency `mockery/mockery`
 
 ## [v1.5.0]
 
