@@ -472,7 +472,7 @@ $this->app->singleton('fcm.sender', function($app) use($sender) {
 
 ## API Documentation
 
-You can find more documentation about the API in the [API reference](./doc/Readme.md).
+You can find more documentation about the API in the [API reference](./doc/index.md).
 
 
 ## Licence

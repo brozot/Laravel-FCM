@@ -1,0 +1,252 @@
+{% extends "layout/layout.twig" %}
+{% from "macros.twig" import render_classes, breadcrumbs, namespace_link, class_link, property_link, method_link, hint_link, source_link, method_source_link, deprecated, deprecations, todo, todos, class_category_name %}
+{% block title %}{{ class|raw }} | {{ parent() }}{% endblock %}
+{% block body_class 'class' %}
+{% block page_id 'class:' ~ (class.name|replace({'\\': '_'})) %}
+
+{% block below_menu %}
+    {%- if class.namespace %}
+> {{- class_category_name(class.getCategoryId()) }}
+
+> {{- breadcrumbs(class.namespace) -}}
+
+({{- class.shortname|raw -}})
+
+    {%- endif %}
+{% endblock %}
+
+{% block page_content %}
+
+## {{ class.name|split('\\')|last|raw }}{{ deprecated(class) }}
+
+{{ block('class_signature') }}
+
+{{ deprecations(class) }}
+
+    {%- if class.shortdesc or class.longdesc %}
+            {%- if class.shortdesc -%}
+                {{ class.shortdesc|desc(class) }}
+            {%- endif %}
+            {%- if class.longdesc -%}
+                {{ class.longdesc|desc(class) }}
+            {%- endif %}
+            {%- if project.config('insert_todos') == true %}
+                {{ todos(class) }}
+            {%- endif %}
+    {%- endif %}
+
+    {% if traits %}
+{#      #}### {% trans 'Traits' %}
+
+{#      #}{{- render_classes(traits) }}
+{#  #}{%- endif -%}
+
+{{ "\n" }}
+{#  #}{%- if constants -%}
+{#      #}### {% trans 'Constants' %}
+
+{#      #}{{- block('constants') -}}
+    {%- endif -%}
+
+    {%- if properties %}
+{#      #}### {% trans 'Properties' %}
+
+{#      #}{{- block('properties') }}
+    {%- endif -%}
+
+    {%- if methods %}
+{#      #}### {% trans 'Methods' %}
+
+{#      #}{{- block('methods') }}
+
+{#      #}### {% trans 'Details' %}
+
+{#      #}{{- block('methods_details') }}
+    {%- endif -%}
+
+{% endblock %}
+
+{% block class_signature -%}
+    {% if not class.interface and class.abstract %}abstract {% endif %}
+    {{- class_category_name(class.getCategoryId()) }} **{{ class.shortname|raw }}**
+    {%- if class.parent %}
+        extends {{ class_link(class.parent)|replace({'.html': '.md'})|raw }}
+    {%- endif %}
+    {%- if class.interfaces|length > 0 %}
+        implements
+        {% for interface in class.interfaces %}
+            {{- class_link(interface)|replace({'.html': '.md'})|raw }}
+            {%- if not loop.last %}, {% endif %}
+        {%- endfor %}
+    {%- endif %}
+    {{- source_link(project, class) }}
+{% endblock %}
+
+{% block method_signature -%}
+{{ "\n" }}
+###{{ " " }}
+{#  #}{%- if method.final -%}final{%- endif -%}
+{#  #}{%- if method.abstract -%}abstract{%- endif -%}
+{#  #}{%- if method.static -%}static{%- endif -%}
+{#  #}{%- if method.protected -%}protected{%- endif -%}
+{#  #}{%- if method.private -%}private{%- endif -%}
+{#  #}{{- " " -}}{{- hint_link(method.hint) -}}
+{{- " " -}}**{{- method.name|raw -}}**{{ block('method_parameters_signature') }}
+
+{%- endblock %}
+
+{% block method_parameters_signature -%}
+    {%- from "macros.twig" import method_parameters_signature -%}
+    {{- method_parameters_signature(method) -}}
+    {{- deprecated(method) -}}
+{%- endblock %}
+
+{% block parameters %}
+
+|   |   |   |
+|---|---|---|
+{% for parameter in method.parameters %}
+|{%- if parameter.hint %}{{ hint_link(parameter.hint) }}{% endif -%}
+|{%- if parameter.variadic %}...{% endif %}${{ parameter.name|raw -}}
+|{{- parameter.shortdesc|desc(class) -}}
+{% endfor %}
+{% endblock %}
+
+{% block return %}
+
+|   |   |
+|---|---|
+|{{ hint_link(method.hint) }}|{{ method.hintDesc|desc(class) }}
+{% endblock %}
+
+{% block exceptions %}
+
+|   |   |
+|---|---|
+{% for exception in method.exceptions %}
+|{{ class_link(exception[0]) }}|{{ exception[1]|desc(class) }}|
+{% endfor %}
+{% endblock %}
+
+{% block see %}
+|   |   |
+|---|---|
+{% for see in method.see %}
+|{% if see[4] -%}
+    [{{see[4]}}]({{see[4]}})
+{%- elseif see[3] -%}
+    {{- method_link(see[3], false, false) -}}
+{%- elseif see[2] -%}
+    {{- class_link(see[2]) -}}
+{%- else -%}
+    {{- see[0]|raw -}}
+{%- endif -%}
+|{{ see[1]|raw }}
+{% endfor %}
+{% endblock %}
+
+{% block constants %}
+
+|   |   |
+|---|---|
+{% for constant in constants %}
+{#  #}|{{ constant.name|raw }}|{{ constant.shortdesc|desc(class) }}{{ constant.longdesc|desc(class) }}|
+{% endfor %}
+
+{% endblock %}
+
+{% block properties %}
+
+|   |   |   |   |
+|---|---|---|---|
+{#  #}{% for property in properties %}
+|<a name="property_{{ property.name|raw }}"></a>
+            {%- if property.static -%}static{%- endif -%}
+            {%- if property.protected -%}protected{%- endif -%}
+            {%- if property.private -%}private{%- endif -%}
+            {{ " " }}{{- hint_link(property.hint) -}}
+        |${{- property.name|raw -}}
+        |{{- property.shortdesc|desc(class) -}}
+        |{%- if property.class is not same as(class) -%}
+                    <small>{{ 'from&nbsp;%s'|trans|format(property_link(property, false, true))|replace({'.html': '.md'})|raw }}</small>
+        {%- endif -%}|
+{#  #}{%- endfor %}
+{% endblock %}
+
+{% block methods %}
+
+|   |   |   |   |
+|---|---|---|---|
+{% for method in methods %}
+|{% if method.static %}static&nbsp;{% endif %}{{ hint_link(method.hint) -}}
+|<a name="#method_{{ method.name|raw }}"></a>{{ method.name|raw }}{{ block('method_parameters_signature') -}}
+|{% if not method.shortdesc %}
+    {%- trans 'No description' -%}
+{% else %}
+    {{- method.shortdesc|desc(class)|replace({"\n": ". "}) }}
+{%- endif %}
+|{%- if method.class is not same as(class) -%}
+{{ 'from&nbsp;%s'|trans|format(method_link(method, false, true))|replace({'.html': '.md'})|raw }}
+{%- endif -%}|
+{% endfor %}
+{% endblock %}
+
+{% block methods_details %}
+{% for method in methods %}
+{{- block('method') -}}
+{%- endfor %}
+{% endblock %}
+
+{% block method %}
+<a name id="method_{{ method.name|raw }}"></a>
+{{- block('method_signature') -}}
+{% if method.class is not same as(class) %}{{ 'in %s'|trans|format(method_link(method, false, true))|replace({'.html': '.md'})|raw }}{% endif %}
+{{ "\n" }}
+{{ method_source_link(method) -}}
+{{- deprecations(method) -}}
+{{ "\n" }}
+{% if method.shortdesc or method.longdesc %}
+    {%- if not method.shortdesc and not method.longdesc -%}
+        {%- trans 'No description' -%}
+    {%- else -%}
+        {%- if method.shortdesc -%}
+            {{- method.shortdesc|desc(class) -}}
+        {%- endif %}
+        {% if method.longdesc -%}
+            {{- method.longdesc|desc(class) -}}
+        {%- endif -%}
+    {%- endif -%}
+    {%- if project.config('insert_todos') == true -%}
+        {{- todos(method) -}}
+    {%- endif -%}
+{%- endif -%}
+
+{%- if method.parameters -%}
+{{ "\n" }}
+{#  #}#### {% trans 'Parameters' %}
+
+{#  #}{{- block('parameters') -}}
+{%- endif %}
+
+{%- if method.hintDesc or method.hint -%}
+{{ "\n" }}
+{#  #}#### {% trans 'Return Value' %}
+
+{#  #}{{- block('return') -}}
+{%- endif %}
+
+{%- if method.exceptions -%}
+{{ "\n" }}
+{#  #}#### {% trans 'Exceptions' %}
+
+{#  #}{{- block('exceptions') -}}
+{%- endif %}
+
+{%- if method.tags('see') -%}
+{{ "\n" }}
+{#  #}#### {% trans 'See also' %}
+
+{#  #}{{- block('see') -}}
+{%- endif %}
+
+{% endblock %}

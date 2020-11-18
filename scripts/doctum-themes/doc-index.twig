@@ -1,0 +1,47 @@
+{% extends "layout/layout.twig" %}
+{% from "macros.twig" import class_link, namespace_link, method_link, property_link %}
+{% block title %}{% trans 'Index' %} | {{ parent() }}{% endblock %}
+{% block body_class 'doc-index' %}
+
+{% block page_content %}
+## {% trans 'Index' %}
+
+
+{% for letter in 'A'..'Z' %}
+{#  #}{% if items[letter] is defined and items[letter]|length > 1 %}
+- [{{ letter|raw }}](#letter{{ letter|raw }})
+{#  #}{% else %}
+- ~~[{{ letter|raw }}](#letter{{ letter|raw }})~~
+{#  #}{% endif %}
+{% endfor %}
+
+    {% for letter, elements in items -%}
+        {{ letter|raw }}<a name="letter{{ letter|raw }}"></a>
+        <a name="index{{ letter|raw }}"></a>
+            {%- for element in elements %}
+                {%- set type = element[0] %}
+                {%- set value = element[1] %}
+
+{{ "\n" }}
+                {%- if 'class' == type -%}
+                    - {{ class_link(value)|replace({'.html': '.md'})|raw }}{% if has_namespaces %} &mdash; <em>{{'Class in namespace %s'|trans|format(
+                        namespace_link(value.namespace)|replace({'.html': '.md'})
+                    )|raw}}{% endif %}
+{#                  #}({{ value.shortdesc|desc(value) }})
+                {%- elseif 'method' == type -%}
+                    - {{ method_link(value)|replace({'.html': '.md'})|raw }}() &mdash; <em>{{ 'Method in class %s'|trans|format(
+                        class_link(value.class)|replace({'.html': '.md'})
+                    )|raw }}
+{#                  #}({{ value.shortdesc|desc(value.class) }})
+                {%- elseif 'property' == type -%}
+                    - ${{ property_link(value)|replace({'.html': '.md'})|raw }} &mdash; <em>{{ 'Property in class %s'|trans|format(
+                        class_link(value.class)|replace({'.html': '.md'})
+                    )|raw}}
+{#                  #}({{ value.shortdesc|desc(value.class) }})
+                {%- endif %}
+            {%- endfor %}
+
+    {%- endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+name: markdown
+parent: default
+
+static:
+    'css/doctum.css': '.delete-me'
+    'css/bootstrap.min.css': '.delete-me'
+    'css/bootstrap-theme.min.css': '.delete-me'
+    'fonts/doctum-font.css': '.delete-me'
+    'fonts/doctum.woff': '.delete-me'
+    'fonts/doctum.woff2': '.delete-me'
+    'fonts/doctum.ttf': '.delete-me'
+    'fonts/doctum.svg': '.delete-me'
+    'fonts/doctum.eot': '.delete-me'
+    'js/jquery-3.5.1.slim.min.js': '.delete-me'
+    'js/bootstrap.min.js': '.delete-me'
+    'js/typeahead.min.js': '.delete-me'
+
+global:
+    'index.twig':      'index.md'
+    'doc-index.twig':  'doc-index.md'
+    'namespaces.twig': 'namespaces.md'
+    'classes.twig':    'classes.md'
+    'interfaces.twig': 'interfaces.md'
+    'traits.twig':     'traits.md'
+    'opensearch.twig': '.delete-me'
+    'search.twig':     'search.md'
+    'doctum.js.twig':    '.delete-me'
+
+namespace:
+    'namespace.twig': '%s.md'
+
+class:
+    'class.twig': '%s.md'

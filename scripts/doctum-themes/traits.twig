@@ -1,0 +1,16 @@
+{% extends "layout/layout.twig" %}
+{% from "macros.twig" import class_link %}
+{% block title %}{% trans 'Traits' %} | {{ parent() }}{% endblock %}
+{% block body_class 'traits' %}
+
+{% block page_content %}
+## {% trans 'Traits' %}
+
+
+{#      #}{% for class in classes %}
+{#          #}{% if class.trait %}
+{#              #}- {{ class_link(class, true)|replace({'.html': '.md'})|raw }} ({{ class.shortdesc|desc(class) }})
+{#          #}{% endif %}
+{#      #}{% endfor %}
+
+{% endblock %}

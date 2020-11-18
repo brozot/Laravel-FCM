@@ -1,0 +1,10 @@
+{% extends "layout/layout.twig" %}
+{% from "macros.twig" import render_classes %}
+{% block title %}{% trans 'Interfaces' %} | {{ parent() }}{% endblock %}
+{% block body_class 'interfaces' %}
+
+{% block page_content %}
+## {% trans 'Interfaces' %}
+
+{{ render_classes(interfaces) }}
+{% endblock %}

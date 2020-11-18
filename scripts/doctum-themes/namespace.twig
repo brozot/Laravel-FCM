@@ -1,0 +1,53 @@
+{% extends "layout/layout.twig" %}
+{% from "macros.twig" import breadcrumbs, render_classes, class_link, namespace_link, hint_link, deprecated %}
+{% block title %}{{ namespace|raw }} | {{ parent() }}{% endblock %}
+{% block body_class 'namespace' %}
+{% block page_id 'namespace:' ~ (namespace|replace({'\\': '_'})) %}
+
+{% block below_menu %}
+> {% trans 'Namespace' -%}{{ " / " }}{{- breadcrumbs(namespace) -}}{{ "\n" }}
+{% endblock %}
+
+{% block function_signature -%}
+    {% if function.final %}final{% endif %}
+    {% if function.abstract %}abstract{% endif %}
+    {% if function.static %}static{% endif %}
+    {% if function.protected %}protected{% endif %}
+    {% if function.private %}private{% endif %}
+    {{ hint_link(function.hint) }}
+    <strong>{{ function.name|raw }}</strong>{{ block('function_parameters_signature') }}
+{%- endblock %}
+
+{% block function_parameters_signature -%}
+    {%- from "macros.twig" import function_parameters_signature -%}
+    {{ function_parameters_signature(function) }}
+    {{ deprecated(function) }}
+{%- endblock %}
+
+{% block page_content %}
+## {{ namespace|raw }}
+
+{#  #}{% if subnamespaces %}
+{#      #}### {% trans 'Namespaces' %}
+
+
+{#      #}- {% for ns in subnamespaces %}[{{ ns|raw }}]({{ namespace_path(ns)|replace({'.html': '.md'}) }}){% endfor %}
+{#  #}{% endif %}
+
+
+{#  #}{% if classes %}
+{#      #}### {% trans 'Classes' %}
+{#      #}{{- render_classes(classes) -}}
+{#  #}{% endif %}
+
+{#  #}{% if interfaces %}
+{#      #}### {% trans 'Interfaces' %}
+{#      #}{{- render_classes(interfaces) -}}
+{#  #}{% endif %}
+
+{#  #}{% if exceptions %}
+{#      #}### {% trans 'Exceptions' %}
+{#      #}{{- render_classes(exceptions) -}}
+{#  #}{% endif %}
+
+{% endblock %}

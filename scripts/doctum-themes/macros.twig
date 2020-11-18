@@ -1,0 +1,156 @@
+
+{% macro class_category_name(categoryId) -%}
+{% if categoryId == 1 %}{% trans 'class' %}{% endif %}
+{% if categoryId == 2 %}{% trans 'interface' %}{% endif %}
+{% if categoryId == 3 %}{% trans 'trait' %}{% endif %}
+{%- endmacro %}
+
+{% macro namespace_link(namespace) -%}
+[{{ namespace|raw }}]({{ namespace_path(namespace) }})
+{%- endmacro %}
+
+{% macro class_link(class, absolute) -%}
+    {%- if class.isProjectClass() or class.isPhpClass() %}[{% endif %}
+    {{- abbr_class(class, absolute|default(false)) -}}
+    {%- if class.isProjectClass() or class.isPhpClass() %}]{% endif %}
+    {%- if class.isProjectClass() -%}
+        ({{ class_path(class) }})
+    {%- elseif class.isPhpClass() -%}
+        (https://www.php.net/{{ class|raw }})
+    {%- endif -%}
+{%- endmacro %}
+
+{% macro method_link(method, absolute, classonly) -%}
+[{{ method_path(method) }}]({{- abbr_class(method.class) }}{% if not classonly|default(false) %}::{{ method.name|raw }}{% endif -%})
+{%- endmacro %}
+
+{% macro property_link(property, absolute, classonly) -%}
+[{{ property_path(property) }}]({{- abbr_class(property.class) }}{% if not classonly|default(false) %}#{{ property.name|raw }}{% endif -%})
+{%- endmacro %}
+
+{% macro hint_link(hints) -%}
+    {%- from _self import class_link %}
+
+    {%- if hints %}
+        {%- for hint in hints %}
+            {%- if hint.class %}
+                {{- class_link(hint.name)|replace({'.html': '.md'})|raw -}}
+            {%- elseif hint.name %}
+                {{- abbr_class(hint.name) -}}
+            {%- endif %}
+            {%- if hint.array %}[]{% endif %}
+            {%- if not loop.last %}|{% endif %}
+        {%- endfor %}
+    {%- endif %}
+{%- endmacro %}
+
+{% macro source_link(project, class) -%}
+{#  #}{% if class.sourcepath %}
+{#      #}[{% trans 'View source'%}]({{ class.sourcepath }})
+{#  #}{%- endif %}
+{%- endmacro %}
+
+{% macro method_source_link(method) -%}
+    {% if method.sourcepath %}
+        {#- l10n: Method at line %s -#}
+        [{{'at line %s'|trans|format(
+            method.line
+        )|raw }}]({{ method.sourcepath }})
+    {%- else %}
+        {#- l10n: Method at line %s -#}
+        {{- 'at line %s'|trans|format(
+            method.line
+        )|raw -}}
+    {%- endif %}
+{%- endmacro %}
+
+{% macro method_parameters_signature(method) -%}
+    {%- from "macros.twig" import hint_link -%}
+    (
+        {%- for parameter in method.parameters %}
+            {%- if parameter.hashint %}{{ hint_link(parameter.hint) }} {% endif -%}
+            {%- if parameter.variadic %}...{% endif %}${{ parameter.name|raw }}
+            {%- if parameter.default is not null %} = {{ parameter.default }}{% endif %}
+            {%- if not loop.last %}, {% endif %}
+        {%- endfor -%}
+    )
+{%- endmacro %}
+
+{% macro function_parameters_signature(method) -%}
+    {%- from "macros.twig" import hint_link -%}
+    (
+        {%- for parameter in method.parameters %}
+            {%- if parameter.hashint %}{{ hint_link(parameter.hint) }} {% endif -%}
+            {%- if parameter.variadic %}...{% endif %}${{ parameter.name|raw }}
+            {%- if parameter.default is not null %} = {{ parameter.default }}{% endif %}
+            {%- if not loop.last %}, {% endif %}
+        {%- endfor -%}
+    )
+{%- endmacro %}
+
+{% macro render_classes(classes) -%}
+    {% from _self import class_link, deprecated %}
+    {{- "\n" -}}{{- "\n" -}}
+        {% for class in classes %}
+                    {%- if class.isInterface -%}
+{#                  #}- {{ class_link(class, true)|replace({'.html': '.md'})|raw -}}
+                    {%- else -%}
+{#                  #}- {{ class_link(class, true)|replace({'.html': '.md'})|raw -}}
+                    {%- endif -%}
+                    {%- set shortDesc = class.shortdesc|desc(class) -%}
+                    {{- deprecated(class) -}}
+                    {{- shortDesc ? ' (' ~ shortDesc ~ ')' : '' -}}{{- "\n" -}}
+        {% endfor %}
+{%- endmacro %}
+
+{% macro breadcrumbs(namespace) %}
+    {%- set current_ns = '' %}
+    {% for ns in namespace|split('\\') %}
+        {%- if current_ns -%}
+            {% set current_ns = current_ns ~ '\\' ~ ns %}
+        {%- else -%}
+            {% set current_ns = ns %}
+        {%- endif -%}
+{#  #}[{{ ns|raw }}]({{ namespace_path(current_ns)|replace({'.html': '.md'}) }})` / `
+    {%- endfor %}
+{% endmacro %}
+
+{% macro deprecated(reflection) %}
+{#  #}{% if reflection.deprecated %}**{% trans 'deprecated' %}**{% endif %}
+{% endmacro %}
+
+{% macro deprecations(reflection) %}
+    {% from _self import deprecated %}
+
+    {% if reflection.deprecated %}
+        <p>
+            {{ deprecated(reflection )}}
+            {% for tag in reflection.deprecated %}
+                <tr>
+                    <td>{{ tag[0]|raw }}</td>
+                    <td>{{ tag[1:]|join(' ')|raw }}</td>
+                </tr>
+            {% endfor %}
+        </p>
+    {% endif %}
+{% endmacro %}
+
+{% macro todo(reflection) %}
+        {% if reflection.todo %}_{% trans 'todo' %}_{% endif %}
+{% endmacro %}
+
+{% macro todos(reflection) %}
+        {% from _self import todo %}
+
+        {% if reflection.todo %}
+            <p>
+                {{ todo(reflection )}}
+                {% for tag in reflection.todo %}
+                    <tr>
+                        <td>{{ tag[0]|raw }}</td>
+                        <td>{{ tag[1:]|join(' ')|raw }}</td>
+                        </tr>
+                {% endfor %}
+            </p>
+        {% endif %}
+{% endmacro %}

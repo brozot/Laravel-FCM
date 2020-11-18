@@ -1,0 +1,23 @@
+{% extends "layout/layout.twig" %}
+{% block title %}{% trans 'Namespaces' %} | {{ parent() -}}{% endblock %}
+{% block body_class 'namespaces' %}
+
+{% block page_content %}
+## {% trans 'Namespaces' %}
+
+
+{#  #}{% if namespaces %}
+{#      #}{% set last_name = '' %}
+{#      #}{% for namespace in namespaces %}
+{#          #}{% set top_level = namespace|split('\\')|first %}
+{#          #}{% if top_level != last_name %}
+{#              #}{% if last_name %}{% endif %}
+{#              #}### {{ top_level|raw }}
+
+{#              #}{% set last_name = top_level %}
+{#          #}{% endif %}
+{#          #}- [{{ namespace|raw }}]({{ namespace_path(namespace)|replace({'.html': '.md'})|raw }})
+{#      #}{% endfor %}
+{#  #}{% endif %}
+
+{% endblock %}
