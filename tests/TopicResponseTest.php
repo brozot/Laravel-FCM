@@ -5,10 +5,7 @@ use LaravelFCM\Response\TopicResponse;
 
 class TopicsResponseTest extends FCMTestCase
 {
-    /**
-     * @test
-     */
-    public function it_construct_a_topic_response_with_success()
+    public function testItConstructATopicResponse_with_success()
     {
         $topic = new \LaravelFCM\Message\Topics();
         $topic->topic('topicName');
@@ -27,10 +24,7 @@ class TopicsResponseTest extends FCMTestCase
         $this->assertNull($topicResponse->error());
     }
 
-    /**
-     * @test
-     */
-    public function it_construct_a_topic_response_with_error()
+    public function testItConstructATopicResponseWithError()
     {
         $topic = new \LaravelFCM\Message\Topics();
         $topic->topic('topicName');
@@ -49,10 +43,7 @@ class TopicsResponseTest extends FCMTestCase
         $this->assertEquals('MessageTooBig', $topicResponse->error());
     }
 
-    /**
-     * @test
-     */
-    public function it_construct_a_topic_response_with_error_and_it_should_retry()
+    public function testItConstructATopicResponseWithErrorAndItShouldRetry()
     {
         $topic = new \LaravelFCM\Message\Topics();
         $topic->topic('topicName');

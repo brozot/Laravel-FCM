@@ -8,10 +8,7 @@ use LaravelFCM\Message\PayloadNotificationBuilder;
 
 class PayloadTest extends FCMTestCase
 {
-    /**
-     * @test
-     */
-    public function it_construct_a_valid_json_with_option()
+    public function testItConstructAValidJsonWithOption()
     {
         $targetPartial = '{
 					"collapse_key":"collapseKey",
@@ -83,10 +80,7 @@ class PayloadTest extends FCMTestCase
         $this->assertJsonStringEqualsJsonString($targetFull, $json);
     }
 
-    /**
-     * @test
-     */
-    public function it_construct_a_valid_json_with_data()
+    public function testItConstructAValidJson_with_data()
     {
         $targetAdd = '{
 				"first_data":"first",
@@ -113,10 +107,7 @@ class PayloadTest extends FCMTestCase
         $this->assertJsonStringEqualsJsonString($targetSet, $json);
     }
 
-    /**
-     * @test
-     */
-    public function it_construct_a_valid_json_with_notification()
+    public function testItConstructAValidJsonWithNotification()
     {
         $targetPartial = '{
 					"title":"test_title",
@@ -170,10 +161,7 @@ class PayloadTest extends FCMTestCase
         $this->assertJsonStringEqualsJsonString($targetFull, $json);
     }
 
-    /**
-     * @test
-     */
-    public function it_throws_an_invalidoptionsexception_if_the_interval_is_too_big()
+    public function testItThrowsAnInvalidOptionsExceptionIfTheIntervalIsTooBig()
     {
         $this->setExceptionExpected(InvalidOptionsException::class);
 

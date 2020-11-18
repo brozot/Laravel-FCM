@@ -4,10 +4,7 @@ use LaravelFCM\Response\GroupResponse;
 
 class GroupResponseTest extends FCMTestCase
 {
-    /**
-     * @test
-     */
-    public function it_construct_a_response_with_successes()
+    public function testItConstructAResponseWithSuccesses()
     {
         $notificationKey = 'notificationKey';
 
@@ -26,10 +23,7 @@ class GroupResponseTest extends FCMTestCase
         $this->assertCount(0, $responseGroup->tokensFailed());
     }
 
-    /**
-     * @test
-     */
-    public function it_construct_a_response_with_failures()
+    public function testItConstructAResponseWithFailures()
     {
         $notificationKey = 'notificationKey';
 
@@ -54,10 +48,7 @@ class GroupResponseTest extends FCMTestCase
         $this->assertEquals('regId2', $responseGroup->tokensFailed()[ 1]);
     }
 
-    /**
-     * @test
-     */
-    public function it_construct_a_response_with_partials_failures()
+    public function testItConstructAResponseWithPartialsFailures()
     {
         $notificationKey = 'notificationKey';
 
