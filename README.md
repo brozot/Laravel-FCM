@@ -23,7 +23,7 @@ It currently **only supports HTTP protocol** for :
 
 To get the latest version of Laravel-FCM on your project, require it from "composer":
 
-```bash
+```sh
 composer require code-lts/laravel-fcm
 ```
 
@@ -31,9 +31,9 @@ Or you can add it directly in your composer.json file:
 
 ```json
 {
-    "require": {
-        "code-lts/laravel-fcm": "1.5.*"
-    }
+	"require": {
+		"code-lts/laravel-fcm": "1.5.*"
+	}
 }
 ```
 
@@ -66,9 +66,9 @@ Add the facade aliases in the same file:
 
 Publish the package config file using the following command:
 
-
-	$ php artisan vendor:publish --provider="LaravelFCM\FCMServiceProvider"
-
+```sh
+$ php artisan vendor:publish --provider="LaravelFCM\FCMServiceProvider"
+```
 
 ### Lumen
 
@@ -135,7 +135,7 @@ $optionBuilder->setTimeToLive(60*20);
 
 $notificationBuilder = new PayloadNotificationBuilder('my title');
 $notificationBuilder->setBody('Hello world')
-				    ->setSound('default');
+					->setSound('default');
 
 $dataBuilder = new PayloadDataBuilder();
 $dataBuilder->addData(['a_data' => 'my_data']);
@@ -173,7 +173,7 @@ $optionBuilder->setTimeToLive(60*20);
 
 $notificationBuilder = new PayloadNotificationBuilder('my title');
 $notificationBuilder->setBody('Hello world')
-				    ->setSound('default');
+					->setSound('default');
 
 $dataBuilder = new PayloadDataBuilder();
 $dataBuilder->addData(['a_data' => 'my_data']);
@@ -223,7 +223,7 @@ use LaravelFCM\Message\Topics;
 ```php
 $notificationBuilder = new PayloadNotificationBuilder('my title');
 $notificationBuilder->setBody('Hello world')
-				    ->setSound('default');
+					->setSound('default');
 
 $notification = $notificationBuilder->build();
 
@@ -249,7 +249,7 @@ It sends notification to devices registered at the following topics:
 ```php
 $notificationBuilder = new PayloadNotificationBuilder('my title');
 $notificationBuilder->setBody('Hello world')
-				    ->setSound('default');
+					->setSound('default');
 
 $notification = $notificationBuilder->build();
 
@@ -303,7 +303,7 @@ $key = FCMTopic::unsubscribeTopic($topic_id, $recipients_tokens);
 
 $notificationBuilder = new PayloadNotificationBuilder('my title');
 $notificationBuilder->setBody('Hello world')
-                        ->setSound('default');
+						->setSound('default');
 
 $notification = $notificationBuilder->build();
 
@@ -361,7 +361,7 @@ You can construct an option as follows:
 $optionsBuilder = new OptionsBuilder();
 
 $optionsBuilder->setTimeToLive(42*60)
-                ->setCollapseKey('a_collapse_key');
+				->setCollapseKey('a_collapse_key');
 
 $options = $optionsBuilder->build();
 ```
@@ -381,9 +381,9 @@ See the [official documentation](https://firebase.google.com/docs/cloud-messagin
 ```php
 $notificationBuilder = new PayloadNotificationBuilder();
 $notificationBuilder->setTitle('title')
-            		->setBody('body')
-            		->setSound('sound')
-            		->setBadge('badge');
+					->setBody('body')
+					->setSound('sound')
+					->setBadge('badge');
 
 $notification = $notificationBuilder->build();
 ```
@@ -429,9 +429,9 @@ For topics message, Laravel-FCM offers an easy to use api which abstract firebas
 $topics = new Topics();
 
 $topics->topic('TopicA')
-       ->andTopic(function($condition) {
-	       $condition->topic('TopicB')->orTopic('TopicC');
-       });
+	   ->andTopic(function($condition) {
+		   $condition->topic('TopicB')->orTopic('TopicC');
+	   });
 ```
 
 ## Validating
@@ -440,7 +440,7 @@ $topics->topic('TopicA')
 
 ```php
 $isValid = FCMValidator::validateToken($token);
-``` 
+```
 
 ## Testing
 
@@ -455,8 +455,8 @@ There are 3 kinds of "MockResponse" given by the package:
 You can mock the FCM call as in the following example:
 
 ```php
-$numberSucess = 2;
-$mockResponse = new \LaravelFCM\Mocks\MockDownstreamResponse(numberSucess);
+$numberSuccess = 2;
+$mockResponse = new \LaravelFCM\Mocks\MockDownstreamResponse($numberSuccess);
 
 $mockResponse->addTokenToDelete('token_to_delete');
 $mockResponse->addTokenToModify('token_to_modify', 'token_modified');
