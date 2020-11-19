@@ -4,7 +4,7 @@ use Doctum\Doctum;
 use Doctum\RemoteRepository\GitHubRemoteRepository;
 use Symfony\Component\Finder\Finder;
 
-$dir = __DIR__ . '/../src';
+$dir = realpath(__DIR__ . '/../src');
 $iterator = Finder::create()
     ->files()
     ->name('*.php')
@@ -16,5 +16,5 @@ return new Doctum($iterator, [
     'title'                => 'Laravel / Lumen package for Firebase Cloud Messaging',
     'build_dir'            => __DIR__ . '/../doc/',
     'cache_dir'            => __DIR__ . '/../build/cache/',
-    'remote_repository'    => new GitHubRemoteRepository('code-lts/Laravel-FCM', $dir),
+    'remote_repository'    => new GitHubRemoteRepository('code-lts/Laravel-FCM', realpath($dir . '/../')),
 ]);

@@ -46,7 +46,7 @@
 
 {% macro source_link(project, class) -%}
 {#  #}{% if class.sourcepath %}
-{#      #}[{% trans 'View source'%}]({{ class.sourcepath }})
+{#      #}{{ " " }}[{% trans 'View source'%}]({{ class.sourcepath }})
 {#  #}{%- endif %}
 {%- endmacro %}
 
