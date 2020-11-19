@@ -15,7 +15,7 @@
 ## TopicResponse
 
 class **TopicResponse**        extends [<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>](../../LaravelFCM/Response/BaseResponse.md)        implements
-        [<abbr title="LaravelFCM\Response\TopicResponseContract">TopicResponseContract</abbr>](../../LaravelFCM/Response/TopicResponseContract.md)[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Response/TopicResponse.php)
+        [<abbr title="LaravelFCM\Response\TopicResponseContract">TopicResponseContract</abbr>](../../LaravelFCM/Response/TopicResponseContract.md) [View source](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php)
 
 
 
@@ -60,7 +60,7 @@ class **TopicResponse**        extends [<abbr title="LaravelFCM\Response\BaseRes
 ### 
   **__construct**(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response, [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) $topic, <abbr title="Monolog\Logger">Logger</abbr> $logger)
 
-[at line 47](https://github.com/code-lts/Laravel-FCM/blob/main/Response/TopicResponse.php#L47)
+[at line 47](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php#L47)
 
 TopicResponse constructor.        
 
@@ -74,7 +74,7 @@ TopicResponse constructor.
 ### 
 protected  **parseResponse**(array $responseInJson)
 
-[at line 58](https://github.com/code-lts/Laravel-FCM/blob/main/Response/TopicResponse.php#L58)
+[at line 58](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php#L58)
 
 parse the response.        
 
@@ -88,7 +88,7 @@ parse the response.
 ### 
 protected  **logResponse**()
 
-[at line 100](https://github.com/code-lts/Laravel-FCM/blob/main/Response/TopicResponse.php#L100)
+[at line 100](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php#L100)
 
 Log the response.        
 <a name id="method_isSuccess"></a>
@@ -96,7 +96,7 @@ Log the response.
 ### 
  bool **isSuccess**()
 
-[at line 119](https://github.com/code-lts/Laravel-FCM/blob/main/Response/TopicResponse.php#L119)
+[at line 119](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php#L119)
 
 true if topic sent with success.        
 
@@ -111,7 +111,7 @@ true if topic sent with success.
 ### 
  string **error**()
 
-[at line 130](https://github.com/code-lts/Laravel-FCM/blob/main/Response/TopicResponse.php#L130)
+[at line 130](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php#L130)
 
 return error message
 you should test if it's necessary to resent it.        
@@ -127,7 +127,7 @@ you should test if it's necessary to resent it.
 ### 
  bool **shouldRetry**()
 
-[at line 140](https://github.com/code-lts/Laravel-FCM/blob/main/Response/TopicResponse.php#L140)
+[at line 140](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php#L140)
 
 return true if it's necessary resent it using exponential backoff.        
 

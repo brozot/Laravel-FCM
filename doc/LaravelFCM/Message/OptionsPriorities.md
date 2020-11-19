@@ -14,7 +14,7 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Message](../../LaravelFCM/Message.md)` / `(OptionsPriorities)
 ## OptionsPriorities
 
-class **OptionsPriorities**[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php)
+class **OptionsPriorities** [View source](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/OptionsBuilder.php)
 
 
 
@@ -42,7 +42,7 @@ class **OptionsPriorities**[View source](https://github.com/code-lts/Laravel-FCM
 ### 
 static array **getPriorities**()
 
-[at line 347](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L347)
+[at line 347](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/OptionsBuilder.php#L347)
 
 
 
@@ -64,7 +64,7 @@ static array **getPriorities**()
 ### 
 static bool **isValid**(string $priority)
 
-[at line 363](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L363)
+[at line 363](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/OptionsBuilder.php#L363)
 
 check if this priority is supported by fcm.        
 

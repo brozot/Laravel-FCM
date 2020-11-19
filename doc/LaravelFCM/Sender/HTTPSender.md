@@ -14,7 +14,7 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Sender](../../LaravelFCM/Sender.md)` / `(HTTPSender)
 ## HTTPSender
 
-abstract class **HTTPSender**[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/HTTPSender.php)
+abstract class **HTTPSender** [View source](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/HTTPSender.php)
 
 
 
@@ -41,7 +41,7 @@ abstract class **HTTPSender**[View source](https://github.com/code-lts/Laravel-F
 ### 
   **__construct**(<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr> $client, $url, <abbr title="Monolog\Logger">Logger</abbr> $logger)
 
-[at line 37](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/HTTPSender.php#L37)
+[at line 37](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/HTTPSender.php#L37)
 
 Initializes a new sender object.        
 

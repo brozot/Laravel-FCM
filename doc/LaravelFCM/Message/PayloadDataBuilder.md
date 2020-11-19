@@ -14,7 +14,7 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Message](../../LaravelFCM/Message.md)` / `(PayloadDataBuilder)
 ## PayloadDataBuilder
 
-class **PayloadDataBuilder**[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadDataBuilder.php)
+class **PayloadDataBuilder** [View source](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadDataBuilder.php)
 
 
 
@@ -43,7 +43,7 @@ Official google documentation :
 ### 
  PayloadDataBuilder **addData**(array $data)
 
-[at line 26](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadDataBuilder.php#L26)
+[at line 26](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadDataBuilder.php#L26)
 
 add data to existing data.        
 
@@ -64,7 +64,7 @@ add data to existing data.
 ### 
  PayloadDataBuilder **setData**(array $data)
 
-[at line 42](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadDataBuilder.php#L42)
+[at line 42](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadDataBuilder.php#L42)
 
 erase data with new data.        
 
@@ -85,7 +85,7 @@ erase data with new data.
 ### 
   **removeAllData**()
 
-[at line 52](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadDataBuilder.php#L52)
+[at line 52](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadDataBuilder.php#L52)
 
 Remove all data.        
 <a name id="method_getData"></a>
@@ -93,7 +93,7 @@ Remove all data.
 ### 
  array **getData**()
 
-[at line 62](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadDataBuilder.php#L62)
+[at line 62](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadDataBuilder.php#L62)
 
 return data.        
 
@@ -108,7 +108,7 @@ return data.
 ### 
  PayloadData **build**()
 
-[at line 72](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadDataBuilder.php#L72)
+[at line 72](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadDataBuilder.php#L72)
 
 generate a PayloadData.        
 

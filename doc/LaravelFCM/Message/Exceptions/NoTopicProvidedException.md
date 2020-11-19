@@ -14,7 +14,7 @@
 >    [LaravelFCM](../../../LaravelFCM.md)` / `[Message](../../../LaravelFCM/Message.md)` / `[Exceptions](../../../LaravelFCM/Message/Exceptions.md)` / `(NoTopicProvidedException)
 ## NoTopicProvidedException
 
-class **NoTopicProvidedException**        extends [Exception](https://www.php.net/Exception)[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Message/Exceptions/NoTopicProvidedException.php)
+class **NoTopicProvidedException**        extends [Exception](https://www.php.net/Exception) [View source](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Exceptions/NoTopicProvidedException.php)
 
 
 

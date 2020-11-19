@@ -14,7 +14,7 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Response](../../LaravelFCM/Response.md)` / `(GroupResponseContract)
 ## GroupResponseContract
 
-interface **GroupResponseContract**[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Response/GroupResponseContract.php)
+interface **GroupResponseContract** [View source](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/GroupResponseContract.php)
 
 
 
@@ -36,7 +36,7 @@ Interface GroupResponseContract.
 ### 
  int **numberSuccess**()
 
-[at line 15](https://github.com/code-lts/Laravel-FCM/blob/main/Response/GroupResponseContract.php#L15)
+[at line 15](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/GroupResponseContract.php#L15)
 
 Get the number of device reached with success.        
 
@@ -51,7 +51,7 @@ Get the number of device reached with success.
 ### 
  int **numberFailure**()
 
-[at line 22](https://github.com/code-lts/Laravel-FCM/blob/main/Response/GroupResponseContract.php#L22)
+[at line 22](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/GroupResponseContract.php#L22)
 
 Get the number of device which thrown an error.        
 
@@ -66,7 +66,7 @@ Get the number of device which thrown an error.
 ### 
  array **tokensFailed**()
 
-[at line 29](https://github.com/code-lts/Laravel-FCM/blob/main/Response/GroupResponseContract.php#L29)
+[at line 29](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/GroupResponseContract.php#L29)
 
 Get all token in group that fcm cannot reach.        
 

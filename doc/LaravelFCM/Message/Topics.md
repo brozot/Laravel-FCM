@@ -14,7 +14,7 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Message](../../LaravelFCM/Message.md)` / `(Topics)
 ## Topics
 
-class **Topics**[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Message/Topics.php)
+class **Topics** [View source](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php)
 
 
 
@@ -44,7 +44,7 @@ Create topic or a topic condition
 ### 
  [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) **topic**(string $first)
 
-[at line 27](https://github.com/code-lts/Laravel-FCM/blob/main/Message/Topics.php#L27)
+[at line 27](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L27)
 
 Add a topic, this method should be called before any conditional topic.        
 
@@ -65,7 +65,7 @@ Add a topic, this method should be called before any conditional topic.
 ### 
  Topics **orTopic**(string|[Closure](https://www.php.net/Closure) $first)
 
-[at line 65](https://github.com/code-lts/Laravel-FCM/blob/main/Message/Topics.php#L65)
+[at line 65](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L65)
 
 Add a or condition to the precedent topic set.        Parenthesis is a closure</p>
 
@@ -107,7 +107,7 @@ Add a or condition to the precedent topic set.        Parenthesis is a closure</
 ### 
  Topics **andTopic**(string|[Closure](https://www.php.net/Closure) $first)
 
-[at line 99](https://github.com/code-lts/Laravel-FCM/blob/main/Message/Topics.php#L99)
+[at line 99](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L99)
 
 Add a and condition to the precedent topic set.        Parenthesis is a closure</p>
 
@@ -149,7 +149,7 @@ Add a and condition to the precedent topic set.        Parenthesis is a closure<
 ### 
  [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) **nest**([Closure](https://www.php.net/Closure) $callback, string $condition)
 
-[at line 134](https://github.com/code-lts/Laravel-FCM/blob/main/Message/Topics.php#L134)
+[at line 134](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L134)
 
 
 
@@ -170,7 +170,7 @@ Add a and condition to the precedent topic set.        Parenthesis is a closure<
 ### 
  array|string **build**()
 
-[at line 159](https://github.com/code-lts/Laravel-FCM/blob/main/Message/Topics.php#L159)
+[at line 159](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L159)
 
 Transform to array.        
 
@@ -192,7 +192,7 @@ Transform to array.
 ### 
  bool **hasOnlyOneTopic**()
 
-[at line 215](https://github.com/code-lts/Laravel-FCM/blob/main/Message/Topics.php#L215)
+[at line 215](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L215)
 
 Check if only one topic was set.        
 

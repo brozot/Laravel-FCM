@@ -14,7 +14,7 @@
 >    [LaravelFCM](../../../LaravelFCM.md)` / `[Response](../../../LaravelFCM/Response.md)` / `[Exceptions](../../../LaravelFCM/Response/Exceptions.md)` / `(ServerResponseException)
 ## ServerResponseException
 
-class **ServerResponseException**        extends [Exception](https://www.php.net/Exception)[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Response/Exceptions/ServerResponseException.php)
+class **ServerResponseException**        extends [Exception](https://www.php.net/Exception) [View source](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/Exceptions/ServerResponseException.php)
 
 
 
@@ -39,7 +39,7 @@ class **ServerResponseException**        extends [Exception](https://www.php.net
 ### 
   **__construct**(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response)
 
-[at line 22](https://github.com/code-lts/Laravel-FCM/blob/main/Response/Exceptions/ServerResponseException.php#L22)
+[at line 22](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/Exceptions/ServerResponseException.php#L22)
 
 ServerResponseException constructor.        
 

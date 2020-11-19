@@ -14,7 +14,7 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Request](../../LaravelFCM/Request.md)` / `(GroupRequest)
 ## GroupRequest
 
-class **GroupRequest**        extends [<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>](../../LaravelFCM/Request/BaseRequest.md)[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Request/GroupRequest.php)
+class **GroupRequest**        extends [<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>](../../LaravelFCM/Request/BaseRequest.md) [View source](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/GroupRequest.php)
 
 
 
@@ -47,7 +47,7 @@ class **GroupRequest**        extends [<abbr title="LaravelFCM\Request\BaseReque
 ### 
   **__construct**(string $operation, string $notificationKeyName, string $notificationKey, array $registrationIds)
 
-[at line 43](https://github.com/code-lts/Laravel-FCM/blob/main/Request/GroupRequest.php#L43)
+[at line 43](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/GroupRequest.php#L43)
 
 GroupRequest constructor.        
 
@@ -61,7 +61,7 @@ GroupRequest constructor.
 ### 
 protected array **buildRequestHeader**()in [../../LaravelFCM/Request/BaseRequest.md#method_buildRequestHeader](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
 
-[at line 34](https://github.com/code-lts/Laravel-FCM/blob/main/Request/BaseRequest.php#L34)
+[at line 34](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L34)
 
 Build the header for the request.        
 
@@ -76,7 +76,7 @@ Build the header for the request.
 ### 
 protected mixed **buildBody**()
 
-[at line 58](https://github.com/code-lts/Laravel-FCM/blob/main/Request/GroupRequest.php#L58)
+[at line 58](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/GroupRequest.php#L58)
 
 Build the header for the request.        
 
@@ -91,7 +91,7 @@ Build the header for the request.
 ### 
  array **build**()in [../../LaravelFCM/Request/BaseRequest.md#method_build](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
 
-[at line 55](https://github.com/code-lts/Laravel-FCM/blob/main/Request/BaseRequest.php#L55)
+[at line 55](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L55)
 
 Return the request in array form.        
 

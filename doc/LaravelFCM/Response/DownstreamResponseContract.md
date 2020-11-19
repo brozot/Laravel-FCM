@@ -14,7 +14,7 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Response](../../LaravelFCM/Response.md)` / `(DownstreamResponseContract)
 ## DownstreamResponseContract
 
-interface **DownstreamResponseContract**[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Response/DownstreamResponseContract.php)
+interface **DownstreamResponseContract** [View source](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponseContract.php)
 
 
 
@@ -42,7 +42,7 @@ Interface DownstreamResponseContract.
 ### 
   **merge**([<abbr title="LaravelFCM\Response\DownstreamResponse">DownstreamResponse</abbr>](../../LaravelFCM/Response/DownstreamResponse.md) $response)
 
-[at line 15](https://github.com/code-lts/Laravel-FCM/blob/main/Response/DownstreamResponseContract.php#L15)
+[at line 15](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponseContract.php#L15)
 
 Merge two response.        
 
@@ -56,7 +56,7 @@ Merge two response.
 ### 
  int **numberSuccess**()
 
-[at line 22](https://github.com/code-lts/Laravel-FCM/blob/main/Response/DownstreamResponseContract.php#L22)
+[at line 22](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponseContract.php#L22)
 
 Get the number of device reached with success.        
 
@@ -71,7 +71,7 @@ Get the number of device reached with success.
 ### 
  int **numberFailure**()
 
-[at line 29](https://github.com/code-lts/Laravel-FCM/blob/main/Response/DownstreamResponseContract.php#L29)
+[at line 29](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponseContract.php#L29)
 
 Get the number of device which thrown an error.        
 
@@ -86,7 +86,7 @@ Get the number of device which thrown an error.
 ### 
  int **numberModification**()
 
-[at line 36](https://github.com/code-lts/Laravel-FCM/blob/main/Response/DownstreamResponseContract.php#L36)
+[at line 36](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponseContract.php#L36)
 
 Get the number of device that you need to modify their token.        
 
@@ -101,7 +101,7 @@ Get the number of device that you need to modify their token.
 ### 
  array **tokensToDelete**()
 
-[at line 45](https://github.com/code-lts/Laravel-FCM/blob/main/Response/DownstreamResponseContract.php#L45)
+[at line 45](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponseContract.php#L45)
 
 get token to delete.        remove all tokens returned by this method in your database
 
@@ -116,7 +116,7 @@ get token to delete.        remove all tokens returned by this method in your da
 ### 
  array **tokensToModify**()
 
-[at line 57](https://github.com/code-lts/Laravel-FCM/blob/main/Response/DownstreamResponseContract.php#L57)
+[at line 57](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponseContract.php#L57)
 
 get token to modify.        key: oldToken
 value: new token</p>
@@ -134,7 +134,7 @@ value: new token</p>
 ### 
  array **tokensToRetry**()
 
-[at line 64](https://github.com/code-lts/Laravel-FCM/blob/main/Response/DownstreamResponseContract.php#L64)
+[at line 64](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponseContract.php#L64)
 
 Get tokens that you should resend using exponential backoof.        
 
@@ -149,7 +149,7 @@ Get tokens that you should resend using exponential backoof.
 ### 
  array **tokensWithError**()
 
-[at line 76](https://github.com/code-lts/Laravel-FCM/blob/main/Response/DownstreamResponseContract.php#L76)
+[at line 76](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponseContract.php#L76)
 
 Get tokens that thrown an error.        key : token
 value : error</p>
@@ -167,7 +167,7 @@ value : error</p>
 ### 
  bool **hasMissingToken**()
 
-[at line 84](https://github.com/code-lts/Laravel-FCM/blob/main/Response/DownstreamResponseContract.php#L84)
+[at line 84](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponseContract.php#L84)
 
 check if missing tokens was given to the request
 If true, remove all the empty token in your database.        

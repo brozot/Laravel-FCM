@@ -14,7 +14,7 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Request](../../LaravelFCM/Request.md)` / `(TopicRequest)
 ## TopicRequest
 
-class **TopicRequest**        extends [<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>](../../LaravelFCM/Request/BaseRequest.md)[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Request/TopicRequest.php)
+class **TopicRequest**        extends [<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>](../../LaravelFCM/Request/BaseRequest.md) [View source](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/TopicRequest.php)
 
 
 
@@ -46,7 +46,7 @@ class **TopicRequest**        extends [<abbr title="LaravelFCM\Request\BaseReque
 ### 
   **__construct**(string $operation, string $topic_id, array|string $recipients_tokens = [])
 
-[at line 35](https://github.com/code-lts/Laravel-FCM/blob/main/Request/TopicRequest.php#L35)
+[at line 35](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/TopicRequest.php#L35)
 
 TopicRequest constructor.        
 
@@ -60,7 +60,7 @@ TopicRequest constructor.
 ### 
 protected array **buildRequestHeader**()in [../../LaravelFCM/Request/BaseRequest.md#method_buildRequestHeader](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
 
-[at line 34](https://github.com/code-lts/Laravel-FCM/blob/main/Request/BaseRequest.php#L34)
+[at line 34](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L34)
 
 Build the header for the request.        
 
@@ -75,7 +75,7 @@ Build the header for the request.
 ### 
 protected mixed **buildBody**()
 
-[at line 53](https://github.com/code-lts/Laravel-FCM/blob/main/Request/TopicRequest.php#L53)
+[at line 53](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/TopicRequest.php#L53)
 
 Build the header for the request.        
 
@@ -90,7 +90,7 @@ Build the header for the request.
 ### 
  array **build**()in [../../LaravelFCM/Request/BaseRequest.md#method_build](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
 
-[at line 55](https://github.com/code-lts/Laravel-FCM/blob/main/Request/BaseRequest.php#L55)
+[at line 55](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L55)
 
 Return the request in array form.        
 

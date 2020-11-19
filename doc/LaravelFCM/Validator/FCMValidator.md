@@ -14,7 +14,7 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Validator](../../LaravelFCM/Validator.md)` / `(FCMValidator)
 ## FCMValidator
 
-class **FCMValidator**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>](../../LaravelFCM/Sender/HTTPSender.md)[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Validator/FCMValidator.php)
+class **FCMValidator**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>](../../LaravelFCM/Sender/HTTPSender.md) [View source](https://github.com/code-lts/Laravel-FCM/blob/main/src/Validator/FCMValidator.php)
 
 
 
@@ -43,7 +43,7 @@ class **FCMValidator**        extends [<abbr title="LaravelFCM\Sender\HTTPSender
 ### 
   **__construct**(<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr> $client, $url, <abbr title="Monolog\Logger">Logger</abbr> $logger)in [../../LaravelFCM/Sender/HTTPSender.md#method___construct](<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>)
 
-[at line 37](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/HTTPSender.php#L37)
+[at line 37](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/HTTPSender.php#L37)
 
 Initializes a new sender object.        
 
@@ -57,7 +57,7 @@ Initializes a new sender object.
 ### 
  bool **validateToken**(string $token)
 
-[at line 21](https://github.com/code-lts/Laravel-FCM/blob/main/Validator/FCMValidator.php#L21)
+[at line 21](https://github.com/code-lts/Laravel-FCM/blob/main/src/Validator/FCMValidator.php#L21)
 
 
 
@@ -84,7 +84,7 @@ Initializes a new sender object.
 ### 
  bool **isValidResponse**(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response)
 
-[at line 39](https://github.com/code-lts/Laravel-FCM/blob/main/Validator/FCMValidator.php#L39)
+[at line 39](https://github.com/code-lts/Laravel-FCM/blob/main/src/Validator/FCMValidator.php#L39)
 
 
 
