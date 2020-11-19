@@ -15,12 +15,12 @@
 ## PayloadNotification
 
 class **PayloadNotification**        implements
-        <abbr title="Illuminate\Contracts\Support\Arrayable">Arrayable</abbr>
+        <abbr title="Illuminate\Contracts\Support\Arrayable">Arrayable</abbr>[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotification.php)
 
 
-    
-    
-    
+
+
+
 
 ### Properties
 
@@ -54,8 +54,7 @@ class **PayloadNotification**        implements
 ### 
   **__construct**([<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md) $builder)
 
-at line 112    
-    
+[at line 112](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotification.php#L112)
 
 PayloadNotification constructor.        
 
@@ -69,8 +68,7 @@ PayloadNotification constructor.
 ### 
  array **toArray**()
 
-at line 135    
-    
+[at line 135](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotification.php#L135)
 
 convert PayloadNotification to array.        
 

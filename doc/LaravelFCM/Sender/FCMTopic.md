@@ -14,12 +14,12 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Sender](../../LaravelFCM/Sender.md)` / `(FCMTopic)
 ## FCMTopic
 
-class **FCMTopic**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>](../../LaravelFCM/Sender/HTTPSender.md)
+class **FCMTopic**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>](../../LaravelFCM/Sender/HTTPSender.md)[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/FCMTopic.php)
 
 
-    
-    
-    
+
+
+
 
 ### Constants
 
@@ -53,8 +53,7 @@ class **FCMTopic**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">HT
 ### 
   **__construct**(<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr> $client, $url, <abbr title="Monolog\Logger">Logger</abbr> $logger)in [../../LaravelFCM/Sender/HTTPSender.md#method___construct](<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>)
 
-at line 37    
-    
+[at line 37](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/HTTPSender.php#L37)
 
 Initializes a new sender object.        
 
@@ -68,8 +67,7 @@ Initializes a new sender object.
 ### 
  bool **createTopic**(string $topicId, string $registrationId)
 
-at line 25    
-    
+[at line 25](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/FCMTopic.php#L25)
 
 Create a topic.        
 
@@ -90,8 +88,7 @@ Create a topic.
 ### 
  bool **subscribeTopic**(string $topicId, array|string $recipientsTokens)
 
-at line 48    
-    
+[at line 48](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/FCMTopic.php#L48)
 
 Add subscription to a topic.        
 
@@ -112,8 +109,7 @@ Add subscription to a topic.
 ### 
  bool **unsubscribeTopic**(string $topicId, array|string $recipientsTokens)
 
-at line 67    
-    
+[at line 67](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/FCMTopic.php#L67)
 
 Remove subscription from a topic.        
 
@@ -134,8 +130,7 @@ Remove subscription from a topic.
 ### 
  bool **isValidResponse**(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response)
 
-at line 83    
-    
+[at line 83](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/FCMTopic.php#L83)
 
 
 

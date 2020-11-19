@@ -14,12 +14,12 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Request](../../LaravelFCM/Request.md)` / `(Request)
 ## Request
 
-class **Request**        extends [<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>](../../LaravelFCM/Request/BaseRequest.md)
+class **Request**        extends [<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>](../../LaravelFCM/Request/BaseRequest.md)[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Request/Request.php)
 
 
-    
-    
-    
+
+
+
 
 ### Properties
 
@@ -53,8 +53,7 @@ class **Request**        extends [<abbr title="LaravelFCM\Request\BaseRequest">B
 ### 
   **__construct**(string|array $to, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null, [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) $topic = null)
 
-at line 56    
-    
+[at line 56](https://github.com/code-lts/Laravel-FCM/blob/main/Request/Request.php#L56)
 
 Request constructor.        
 
@@ -68,8 +67,7 @@ Request constructor.
 ### 
 protected array **buildRequestHeader**()in [../../LaravelFCM/Request/BaseRequest.md#method_buildRequestHeader](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
 
-at line 34    
-    
+[at line 34](https://github.com/code-lts/Laravel-FCM/blob/main/Request/BaseRequest.php#L34)
 
 Build the header for the request.        
 
@@ -84,8 +82,7 @@ Build the header for the request.
 ### 
 protected mixed **buildBody**()
 
-at line 72    
-    
+[at line 72](https://github.com/code-lts/Laravel-FCM/blob/main/Request/Request.php#L72)
 
 Build the body for the request.        
 
@@ -100,8 +97,7 @@ Build the body for the request.
 ### 
  array **build**()in [../../LaravelFCM/Request/BaseRequest.md#method_build](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
 
-at line 55    
-    
+[at line 55](https://github.com/code-lts/Laravel-FCM/blob/main/Request/BaseRequest.php#L55)
 
 Return the request in array form.        
 
@@ -116,8 +112,7 @@ Return the request in array form.
 ### 
 protected array|null|string **getTo**()
 
-at line 92    
-    
+[at line 92](https://github.com/code-lts/Laravel-FCM/blob/main/Request/Request.php#L92)
 
 get to key transformed.        
 
@@ -132,8 +127,7 @@ get to key transformed.
 ### 
 protected array|null **getRegistrationIds**()
 
-at line 108    
-    
+[at line 108](https://github.com/code-lts/Laravel-FCM/blob/main/Request/Request.php#L108)
 
 get registrationIds transformed.        
 
@@ -148,8 +142,7 @@ get registrationIds transformed.
 ### 
 protected array **getOptions**()
 
-at line 118    
-    
+[at line 118](https://github.com/code-lts/Laravel-FCM/blob/main/Request/Request.php#L118)
 
 get Options transformed.        
 
@@ -164,8 +157,7 @@ get Options transformed.
 ### 
 protected array|null **getNotification**()
 
-at line 134    
-    
+[at line 134](https://github.com/code-lts/Laravel-FCM/blob/main/Request/Request.php#L134)
 
 get notification transformed.        
 
@@ -180,8 +172,7 @@ get notification transformed.
 ### 
 protected array|null **getData**()
 
-at line 144    
-    
+[at line 144](https://github.com/code-lts/Laravel-FCM/blob/main/Request/Request.php#L144)
 
 get data transformed.        
 

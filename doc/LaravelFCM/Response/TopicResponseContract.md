@@ -14,12 +14,12 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Response](../../LaravelFCM/Response.md)` / `(TopicResponseContract)
 ## TopicResponseContract
 
-interface **TopicResponseContract**
+interface **TopicResponseContract**[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Response/TopicResponseContract.php)
 
 
-    
-    Interface TopicResponseContract.
-    
+
+Interface TopicResponseContract.
+
 
 ### Methods
 
@@ -36,8 +36,7 @@ interface **TopicResponseContract**
 ### 
  bool **isSuccess**()
 
-at line 15    
-    
+[at line 15](https://github.com/code-lts/Laravel-FCM/blob/main/Response/TopicResponseContract.php#L15)
 
 true if topic sent with success.        
 
@@ -52,8 +51,7 @@ true if topic sent with success.
 ### 
  string **error**()
 
-at line 23    
-    
+[at line 23](https://github.com/code-lts/Laravel-FCM/blob/main/Response/TopicResponseContract.php#L23)
 
 return error message
 you should test if it's necessary to resent it.        
@@ -69,8 +67,7 @@ you should test if it's necessary to resent it.
 ### 
  bool **shouldRetry**()
 
-at line 30    
-    
+[at line 30](https://github.com/code-lts/Laravel-FCM/blob/main/Response/TopicResponseContract.php#L30)
 
 return true if it's necessary resent it using exponential backoff.        
 

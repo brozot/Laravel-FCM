@@ -14,12 +14,12 @@
 >    [LaravelFCM](../../../LaravelFCM.md)` / `[Response](../../../LaravelFCM/Response.md)` / `[Exceptions](../../../LaravelFCM/Response/Exceptions.md)` / `(UnauthorizedRequestException)
 ## UnauthorizedRequestException
 
-class **UnauthorizedRequestException**        extends [Exception](https://www.php.net/Exception)
+class **UnauthorizedRequestException**        extends [Exception](https://www.php.net/Exception)[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Response/Exceptions/UnauthorizedRequestException.php)
 
 
-    
-    
-    
+
+
+
 
 ### Methods
 
@@ -34,8 +34,7 @@ class **UnauthorizedRequestException**        extends [Exception](https://www.ph
 ### 
   **__construct**(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response)
 
-at line 15    
-    
+[at line 15](https://github.com/code-lts/Laravel-FCM/blob/main/Response/Exceptions/UnauthorizedRequestException.php#L15)
 
 UnauthorizedRequestException constructor.        
 

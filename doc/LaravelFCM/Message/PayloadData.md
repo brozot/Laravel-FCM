@@ -15,12 +15,12 @@
 ## PayloadData
 
 class **PayloadData**        implements
-        <abbr title="Illuminate\Contracts\Support\Arrayable">Arrayable</abbr>
+        <abbr title="Illuminate\Contracts\Support\Arrayable">Arrayable</abbr>[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadData.php)
 
 
-    
-    
-    
+
+
+
 
 ### Properties
 
@@ -41,8 +41,7 @@ class **PayloadData**        implements
 ### 
   **__construct**([<abbr title="LaravelFCM\Message\PayloadDataBuilder">PayloadDataBuilder</abbr>](../../LaravelFCM/Message/PayloadDataBuilder.md) $builder)
 
-at line 21    
-    
+[at line 21](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadData.php#L21)
 
 PayloadData constructor.        
 
@@ -56,8 +55,7 @@ PayloadData constructor.
 ### 
  array **toArray**()
 
-at line 31    
-    
+[at line 31](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadData.php#L31)
 
 Transform payloadData to array.        
 

@@ -14,12 +14,12 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Sender](../../LaravelFCM/Sender.md)` / `(FCMSender)
 ## FCMSender
 
-class **FCMSender**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>](../../LaravelFCM/Sender/HTTPSender.md)
+class **FCMSender**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>](../../LaravelFCM/Sender/HTTPSender.md)[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/FCMSender.php)
 
 
-    
-    
-    
+
+
+
 
 ### Constants
 
@@ -51,8 +51,7 @@ class **FCMSender**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">H
 ### 
   **__construct**(<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr> $client, $url, <abbr title="Monolog\Logger">Logger</abbr> $logger)in [../../LaravelFCM/Sender/HTTPSender.md#method___construct](<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>)
 
-at line 37    
-    
+[at line 37](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/HTTPSender.php#L37)
 
 Initializes a new sender object.        
 
@@ -66,8 +65,7 @@ Initializes a new sender object.
 ### 
  DownstreamResponse|null **sendTo**(string|array $to, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null)
 
-at line 32    
-    
+[at line 32](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/FCMSender.php#L32)
 
 send a downstream message to.        <ul>
 <li>a unique device with is registration Token</li>
@@ -92,8 +90,7 @@ send a downstream message to.        <ul>
 ### 
  GroupResponse **sendToGroup**(string|string[] $notificationKey, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null)
 
-at line 70    
-    
+[at line 70](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/FCMSender.php#L70)
 
 Send a message to a group of devices identified with them notification key.        
 
@@ -114,8 +111,7 @@ Send a message to a group of devices identified with them notification key.
 ### 
  TopicResponse **sendToTopic**([<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) $topics, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null)
 
-at line 89    
-    
+[at line 89](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/FCMSender.php#L89)
 
 Send message devices registered at a or more topics.        
 
@@ -136,8 +132,7 @@ Send message devices registered at a or more topics.
 ### 
 protected null|<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> **post**([<abbr title="LaravelFCM\Request\Request">Request</abbr>](../../LaravelFCM/Request/Request.md) $request)
 
-at line 105    
-    
+[at line 105](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/FCMSender.php#L105)
 
 
 

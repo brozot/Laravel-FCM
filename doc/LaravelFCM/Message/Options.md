@@ -15,12 +15,12 @@
 ## Options
 
 class **Options**        implements
-        <abbr title="Illuminate\Contracts\Support\Arrayable">Arrayable</abbr>
+        <abbr title="Illuminate\Contracts\Support\Arrayable">Arrayable</abbr>[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Message/Options.php)
 
 
-    
-    
-    
+
+
+
 
 ### Properties
 
@@ -49,8 +49,7 @@ class **Options**        implements
 ### 
   **__construct**([<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md) $builder)
 
-at line 77    
-    
+[at line 77](https://github.com/code-lts/Laravel-FCM/blob/main/Message/Options.php#L77)
 
 Options constructor.        
 
@@ -64,8 +63,7 @@ Options constructor.
 ### 
  array **toArray**()
 
-at line 95    
-    
+[at line 95](https://github.com/code-lts/Laravel-FCM/blob/main/Message/Options.php#L95)
 
 Transform Option to array.        
 

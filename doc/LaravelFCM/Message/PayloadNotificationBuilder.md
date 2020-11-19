@@ -14,12 +14,12 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Message](../../LaravelFCM/Message.md)` / `(PayloadNotificationBuilder)
 ## PayloadNotificationBuilder
 
-class **PayloadNotificationBuilder**
+class **PayloadNotificationBuilder**[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php)
 
 
-    
-    Official google documentation :
-    
+
+Official google documentation :
+
 
 ### Properties
 
@@ -81,8 +81,7 @@ class **PayloadNotificationBuilder**
 ### 
   **__construct**(string $title = null)
 
-at line 116    
-    
+[at line 116](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L116)
 
 Title must be present on android notification and ios (watch) notification.        
 
@@ -96,8 +95,7 @@ Title must be present on android notification and ios (watch) notification.
 ### 
  PayloadNotificationBuilder **setTitle**(string $title)
 
-at line 129    
-    
+[at line 129](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L129)
 
 Indicates notification title. This field is not visible on iOS phones and tablets.        but it is required for android.
 
@@ -118,8 +116,7 @@ Indicates notification title. This field is not visible on iOS phones and tablet
 ### 
  PayloadNotificationBuilder **setBody**(string $body)
 
-at line 143    
-    
+[at line 143](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L143)
 
 Indicates notification body text.        
 
@@ -140,8 +137,7 @@ Indicates notification body text.
 ### 
  PayloadNotificationBuilder **setChannelId**(string $channelId)
 
-at line 157    
-    
+[at line 157](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L157)
 
 Set a channel ID for android API >= 26.        
 
@@ -162,8 +158,7 @@ Set a channel ID for android API >= 26.
 ### 
  PayloadNotificationBuilder **setIcon**(string $icon)
 
-at line 172    
-    
+[at line 172](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L172)
 
 Supported Android
 Indicates notification icon. example : Sets value to myicon for drawable resource myicon.        
@@ -185,8 +180,7 @@ Indicates notification icon. example : Sets value to myicon for drawable resourc
 ### 
  PayloadNotificationBuilder **setImage**(null|string $image)
 
-at line 188    
-    
+[at line 188](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L188)
 
 Supported Android
 Indicates the image that can be displayed in the notification
@@ -209,8 +203,7 @@ Supports an url or internal image.
 ### 
  PayloadNotificationBuilder **setSound**(string $sound)
 
-at line 203    
-    
+[at line 203](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L203)
 
 Indicates a sound to play when the device receives a notification.        Supports default or the filename of a sound resource bundled in the app.
 
@@ -231,8 +224,7 @@ Indicates a sound to play when the device receives a notification.        Suppor
 ### 
  PayloadNotificationBuilder **setBadge**(string $badge)
 
-at line 219    
-    
+[at line 219](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L219)
 
 Supported Ios.        Indicates the badge on the client app home icon.
 
@@ -253,8 +245,7 @@ Supported Ios.        Indicates the badge on the client app home icon.
 ### 
  PayloadNotificationBuilder **setTag**(string $tag)
 
-at line 237    
-    
+[at line 237](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L237)
 
 Supported Android.        Indicates whether each notification results in a new entry in the notification drawer on Android.
 If not set, each request creates a new notification.
@@ -277,8 +268,7 @@ If set, and a notification with the same tag is already being shown, the new not
 ### 
  PayloadNotificationBuilder **setColor**(string $color)
 
-at line 253    
-    
+[at line 253](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L253)
 
 Supported Android.        Indicates color of the icon, expressed in #rrggbb format
 
@@ -299,8 +289,7 @@ Supported Android.        Indicates color of the icon, expressed in #rrggbb form
 ### 
  PayloadNotificationBuilder **setClickAction**(string $action)
 
-at line 267    
-    
+[at line 267](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L267)
 
 Indicates the action associated with a user click on the notification.        
 
@@ -321,8 +310,7 @@ Indicates the action associated with a user click on the notification.
 ### 
  PayloadNotificationBuilder **setTitleLocationKey**(string $titleKey)
 
-at line 281    
-    
+[at line 281](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L281)
 
 Indicates the key to the title string for localization.        
 
@@ -343,8 +331,7 @@ Indicates the key to the title string for localization.
 ### 
  PayloadNotificationBuilder **setTitleLocationArgs**(mixed $titleArgs)
 
-at line 295    
-    
+[at line 295](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L295)
 
 Indicates the string value to replace format specifiers in the title string for localization.        
 
@@ -365,8 +352,7 @@ Indicates the string value to replace format specifiers in the title string for 
 ### 
  PayloadNotificationBuilder **setBodyLocationKey**(string $bodyKey)
 
-at line 309    
-    
+[at line 309](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L309)
 
 Indicates the key to the body string for localization.        
 
@@ -387,8 +373,7 @@ Indicates the key to the body string for localization.
 ### 
  PayloadNotificationBuilder **setBodyLocationArgs**(mixed $bodyArgs)
 
-at line 323    
-    
+[at line 323](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L323)
 
 Indicates the string value to replace format specifiers in the body string for localization.        
 
@@ -409,8 +394,7 @@ Indicates the string value to replace format specifiers in the body string for l
 ### 
  null|string **getTitle**()
 
-at line 335    
-    
+[at line 335](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L335)
 
 Get title.        
 
@@ -425,8 +409,7 @@ Get title.
 ### 
  null|string **getBody**()
 
-at line 345    
-    
+[at line 345](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L345)
 
 Get body.        
 
@@ -441,8 +424,7 @@ Get body.
 ### 
  null|string **getChannelId**()
 
-at line 355    
-    
+[at line 355](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L355)
 
 Get channel id for android api >= 26        
 
@@ -457,8 +439,7 @@ Get channel id for android api >= 26
 ### 
  null|string **getIcon**()
 
-at line 365    
-    
+[at line 365](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L365)
 
 Get Icon.        
 
@@ -473,8 +454,7 @@ Get Icon.
 ### 
  string|null **getImage**()
 
-at line 375    
-    
+[at line 375](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L375)
 
 Get Image.        
 
@@ -489,8 +469,7 @@ Get Image.
 ### 
  null|string **getSound**()
 
-at line 385    
-    
+[at line 385](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L385)
 
 Get Sound.        
 
@@ -505,8 +484,7 @@ Get Sound.
 ### 
  null|string **getBadge**()
 
-at line 395    
-    
+[at line 395](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L395)
 
 Get Badge.        
 
@@ -521,8 +499,7 @@ Get Badge.
 ### 
  null|string **getTag**()
 
-at line 405    
-    
+[at line 405](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L405)
 
 Get Tag.        
 
@@ -537,8 +514,7 @@ Get Tag.
 ### 
  null|string **getColor**()
 
-at line 415    
-    
+[at line 415](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L415)
 
 Get Color.        
 
@@ -553,8 +529,7 @@ Get Color.
 ### 
  null|string **getClickAction**()
 
-at line 425    
-    
+[at line 425](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L425)
 
 Get ClickAction.        
 
@@ -569,8 +544,7 @@ Get ClickAction.
 ### 
  null|string **getBodyLocationKey**()
 
-at line 435    
-    
+[at line 435](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L435)
 
 Get BodyLocationKey.        
 
@@ -585,8 +559,7 @@ Get BodyLocationKey.
 ### 
  null|string|array **getBodyLocationArgs**()
 
-at line 445    
-    
+[at line 445](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L445)
 
 Get BodyLocationArgs.        
 
@@ -601,8 +574,7 @@ Get BodyLocationArgs.
 ### 
  string **getTitleLocationKey**()
 
-at line 455    
-    
+[at line 455](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L455)
 
 Get TitleLocationKey.        
 
@@ -617,8 +589,7 @@ Get TitleLocationKey.
 ### 
  null|string|array **getTitleLocationArgs**()
 
-at line 465    
-    
+[at line 465](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L465)
 
 GetTitleLocationArgs.        
 
@@ -633,8 +604,7 @@ GetTitleLocationArgs.
 ### 
  PayloadNotification **build**()
 
-at line 475    
-    
+[at line 475](https://github.com/code-lts/Laravel-FCM/blob/main/Message/PayloadNotificationBuilder.php#L475)
 
 Build an PayloadNotification.        
 

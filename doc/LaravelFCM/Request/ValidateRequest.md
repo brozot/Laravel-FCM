@@ -14,12 +14,12 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Request](../../LaravelFCM/Request.md)` / `(ValidateRequest)
 ## ValidateRequest
 
-class **ValidateRequest**        extends [<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>](../../LaravelFCM/Request/BaseRequest.md)
+class **ValidateRequest**        extends [<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>](../../LaravelFCM/Request/BaseRequest.md)[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Request/ValidateRequest.php)
 
 
-    
-    
-    
+
+
+
 
 ### Properties
 
@@ -43,8 +43,7 @@ class **ValidateRequest**        extends [<abbr title="LaravelFCM\Request\BaseRe
 ### 
   **__construct**()in [../../LaravelFCM/Request/BaseRequest.md#method___construct](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
 
-at line 24    
-    
+[at line 24](https://github.com/code-lts/Laravel-FCM/blob/main/Request/BaseRequest.php#L24)
 
 BaseRequest constructor.        
 <a name id="method_buildRequestHeader"></a>
@@ -52,8 +51,7 @@ BaseRequest constructor.
 ### 
 protected array **buildRequestHeader**()in [../../LaravelFCM/Request/BaseRequest.md#method_buildRequestHeader](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
 
-at line 34    
-    
+[at line 34](https://github.com/code-lts/Laravel-FCM/blob/main/Request/BaseRequest.php#L34)
 
 Build the header for the request.        
 
@@ -68,8 +66,7 @@ Build the header for the request.
 ### 
 protected mixed **buildBody**()
 
-at line 12    
-    
+[at line 12](https://github.com/code-lts/Laravel-FCM/blob/main/Request/ValidateRequest.php#L12)
 
 
 
@@ -84,8 +81,7 @@ at line 12
 ### 
  array **build**()in [../../LaravelFCM/Request/BaseRequest.md#method_build](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
 
-at line 55    
-    
+[at line 55](https://github.com/code-lts/Laravel-FCM/blob/main/Request/BaseRequest.php#L55)
 
 Return the request in array form.        
 

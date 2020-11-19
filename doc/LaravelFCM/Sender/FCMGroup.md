@@ -14,12 +14,12 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Sender](../../LaravelFCM/Sender.md)` / `(FCMGroup)
 ## FCMGroup
 
-class **FCMGroup**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>](../../LaravelFCM/Sender/HTTPSender.md)
+class **FCMGroup**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>](../../LaravelFCM/Sender/HTTPSender.md)[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/FCMGroup.php)
 
 
-    
-    
-    
+
+
+
 
 ### Constants
 
@@ -53,8 +53,7 @@ class **FCMGroup**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">HT
 ### 
   **__construct**(<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr> $client, $url, <abbr title="Monolog\Logger">Logger</abbr> $logger)in [../../LaravelFCM/Sender/HTTPSender.md#method___construct](<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>)
 
-at line 37    
-    
+[at line 37](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/HTTPSender.php#L37)
 
 Initializes a new sender object.        
 
@@ -68,8 +67,7 @@ Initializes a new sender object.
 ### 
  null|string **createGroup**(string $notificationKeyName, array $registrationIds)
 
-at line 22    
-    
+[at line 22](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/FCMGroup.php#L22)
 
 Create a group.        
 
@@ -90,8 +88,7 @@ Create a group.
 ### 
  null|string **addToGroup**(string $notificationKeyName, string $notificationKey, array $registrationIds)
 
-at line 39    
-    
+[at line 39](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/FCMGroup.php#L39)
 
 Add registrationIds to an existing group.        
 
@@ -112,8 +109,7 @@ Add registrationIds to an existing group.
 ### 
  null|string **removeFromGroup**(string $notificationKeyName, string $notificationKey, array $registeredIds)
 
-at line 57    
-    
+[at line 57](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/FCMGroup.php#L57)
 
 Remove registeredIds from an existing group.        <blockquote>
   <p>Note: if you remove all registrationIds the group is automatically deleted</p>
@@ -137,8 +133,7 @@ Remove registeredIds from an existing group.        <blockquote>
 ### 
  bool **isValidResponse**(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response)
 
-at line 87    
-    
+[at line 87](https://github.com/code-lts/Laravel-FCM/blob/main/Sender/FCMGroup.php#L87)
 
 
 

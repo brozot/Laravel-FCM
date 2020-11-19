@@ -14,12 +14,12 @@
 >    [LaravelFCM](../../LaravelFCM.md)` / `[Message](../../LaravelFCM/Message.md)` / `(OptionsBuilder)
 ## OptionsBuilder
 
-class **OptionsBuilder**
+class **OptionsBuilder**[View source](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php)
 
 
-    
-    Builder for creation of options used by FCM.
-    
+
+Builder for creation of options used by FCM.
+
 
 ### Properties
 
@@ -65,8 +65,7 @@ class **OptionsBuilder**
 ### 
  [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md) **setCollapseKey**(string $collapseKey)
 
-at line 85    
-    
+[at line 85](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L85)
 
 This parameter identifies a group of messages
 A maximum of 4 different collapse keys is allowed at any given time.        
@@ -88,8 +87,7 @@ A maximum of 4 different collapse keys is allowed at any given time.
 ### 
  [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md) **setDirectBootOk**(bool $directBootOk)
 
-at line 102    
-    
+[at line 102](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L102)
 
 If set to true, messages will be allowed to be delivered to the app while the device is in direct boot mode.        See Support Direct Boot mode (https://developer.android.com/training/articles/direct-boot).
 
@@ -116,8 +114,7 @@ If set to true, messages will be allowed to be delivered to the app while the de
 ### 
  [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md) **setPriority**(string $priority)
 
-at line 120    
-    
+[at line 120](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L120)
 
 Sets the priority of the message. Valid values are "normal" and "high."
 By default, messages are sent with normal priority.        
@@ -147,8 +144,7 @@ By default, messages are sent with normal priority.
 ### 
  [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md) **setContentAvailable**(bool $contentAvailable)
 
-at line 142    
-    
+[at line 142](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L142)
 
 support only Android and Ios.        An inactive client app is awoken.
 On iOS, use this field to represent content-available in the APNS payload.
@@ -172,8 +168,7 @@ On Chrome, currently not supported.
 ### 
  OptionsBuilder **setMutableContent**(bool $isMutableContent)
 
-at line 158    
-    
+[at line 158](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L158)
 
 support iOS 10+        When a notification is sent and this is set to true,
 the content of the notification can be modified before it is displayed.
@@ -195,8 +190,7 @@ the content of the notification can be modified before it is displayed.
 ### 
  [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md) **setDelayWhileIdle**(bool $delayWhileIdle)
 
-at line 172    
-    
+[at line 172](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L172)
 
 When this parameter is set to true, it indicates that the message should not be sent until the device becomes active.        
 
@@ -217,8 +211,7 @@ When this parameter is set to true, it indicates that the message should not be 
 ### 
  [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md) **setTimeToLive**(int $timeToLive)
 
-at line 188    
-    
+[at line 188](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L188)
 
 This parameter specifies how long the message should be kept in FCM storage if the device is offline.        
 
@@ -246,8 +239,7 @@ This parameter specifies how long the message should be kept in FCM storage if t
 ### 
  [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md) **setRestrictedPackageName**(string $restrictedPackageName)
 
-at line 206    
-    
+[at line 206](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L206)
 
 This parameter specifies the package name of the application where the registration tokens must match in order to receive the message.        (Android only)
 
@@ -268,15 +260,11 @@ This parameter specifies the package name of the application where the registrat
 ### 
  [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md) **setDryRun**(bool $isDryRun)**deprecated**
 
-at line 222    
-            <p>
-            **deprecated**
-                            <tr>
-                    <td></td>
-                    <td>v1 (https://stackoverflow.com/a/53885050/5155484)</td>
-                </tr>
-                    </p>
-    
+[at line 222](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L222)|   |   |
+|---|---|
+**deprecated**
+||v1 (https://stackoverflow.com/a/53885050/5155484)|
+
 
 This parameter, when set to true, allows developers to test a request without actually sending a message.        It should only be used for the development.
 
@@ -297,8 +285,7 @@ This parameter, when set to true, allows developers to test a request without ac
 ### 
  null|string **getCollapseKey**()
 
-at line 234    
-    
+[at line 234](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L234)
 
 Get the collapseKey.        
 
@@ -313,8 +300,7 @@ Get the collapseKey.
 ### 
  null|string **getPriority**()
 
-at line 244    
-    
+[at line 244](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L244)
 
 Get the priority.        
 
@@ -329,8 +315,7 @@ Get the priority.
 ### 
  bool **isContentAvailable**()
 
-at line 254    
-    
+[at line 254](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L254)
 
 is content available.        
 
@@ -345,8 +330,7 @@ is content available.
 ### 
  bool **isMutableContent**()
 
-at line 264    
-    
+[at line 264](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L264)
 
 is mutable content        
 
@@ -361,8 +345,7 @@ is mutable content
 ### 
  bool **isDelayWhileIdle**()
 
-at line 274    
-    
+[at line 274](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L274)
 
 is delay white idle.        
 
@@ -377,8 +360,7 @@ is delay white idle.
 ### 
  null|int **getTimeToLive**()
 
-at line 284    
-    
+[at line 284](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L284)
 
 get time to live.        
 
@@ -393,8 +375,7 @@ get time to live.
 ### 
  null|string **getRestrictedPackageName**()
 
-at line 294    
-    
+[at line 294](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L294)
 
 get restricted package name.        
 
@@ -409,8 +390,7 @@ get restricted package name.
 ### 
  bool **isDryRun**()
 
-at line 304    
-    
+[at line 304](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L304)
 
 is dry run.        
 
@@ -425,8 +405,7 @@ is dry run.
 ### 
  bool **isDirectBootOk**()
 
-at line 314    
-    
+[at line 314](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L314)
 
 is direct boot ok        
 
@@ -441,8 +420,7 @@ is direct boot ok
 ### 
  Options **build**()
 
-at line 324    
-    
+[at line 324](https://github.com/code-lts/Laravel-FCM/blob/main/Message/OptionsBuilder.php#L324)
 
 build an instance of Options.        
 
