@@ -23,19 +23,19 @@
 
 {{ deprecations(class) }}
 
-    {%- if class.shortdesc or class.longdesc %}
-            {%- if class.shortdesc -%}
-                {{ class.shortdesc|desc(class) }}
-            {%- endif %}
-            {%- if class.longdesc -%}
-                {{ class.longdesc|desc(class) }}
-            {%- endif %}
-            {%- if project.config('insert_todos') == true %}
-                {{ todos(class) }}
-            {%- endif %}
+{%- if class.shortdesc or class.longdesc %}
+    {%- if class.shortdesc -%}
+        {{- class.shortdesc|desc(class) -}}
     {%- endif %}
+    {%- if class.longdesc -%}
+        {{- class.longdesc|desc(class) -}}
+    {%- endif %}
+    {%- if project.config('insert_todos') == true %}
+        {{- todos(class) -}}
+    {%- endif %}
+{%- endif %}
 
-    {% if traits %}
+{#  #}{% if traits %}
 {#      #}### {% trans 'Traits' %}
 
 {#      #}{{- render_classes(traits) }}
