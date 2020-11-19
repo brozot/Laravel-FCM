@@ -1,0 +1,647 @@
+# LaravelFCM\Message\PayloadNotificationBuilder | Laravel / Lumen package for Firebase Cloud Messaging    
+
+## [Laravel / Lumen package for Firebase Cloud Messaging](../../index.md)
+
+- [Classes](../../classes.md)
+- [Namespaces](../../namespaces.md)
+- [Interfaces](../../interfaces.md)
+- [Traits](../../traits.md)
+- [Index](../../doc-index.md)
+- [Search](../../search.md)
+
+>class
+
+>    [LaravelFCM](../../LaravelFCM.md)` / `[Message](../../LaravelFCM/Message.md)` / `(PayloadNotificationBuilder)
+## PayloadNotificationBuilder
+
+class **PayloadNotificationBuilder**
+
+
+    
+    Official google documentation :
+    
+
+### Properties
+
+|   |   |   |   |
+|---|---|---|---|
+|<a name="property_title"></a>protected null|string|$title|||
+|<a name="property_body"></a>protected null|string|$body|||
+|<a name="property_icon"></a>protected null|string|$icon|||
+|<a name="property_image"></a>protected null|string|$image|||
+|<a name="property_sound"></a>protected null|string|$sound|||
+|<a name="property_channelId"></a>protected null|string|$channelId|||
+|<a name="property_badge"></a>protected null|string|$badge|||
+|<a name="property_tag"></a>protected null|string|$tag|||
+|<a name="property_color"></a>protected null|string|$color|||
+|<a name="property_clickAction"></a>protected null|string|$clickAction|||
+|<a name="property_bodyLocationKey"></a>protected null|string|$bodyLocationKey|||
+|<a name="property_bodyLocationArgs"></a>protected null|string|$bodyLocationArgs|||
+|<a name="property_titleLocationKey"></a>protected null|string|$titleLocationKey|||
+|<a name="property_titleLocationArgs"></a>protected null|string|$titleLocationArgs|||
+### Methods
+
+|   |   |   |   |
+|---|---|---|---|
+||<a name="#method___construct"></a>__construct(string $title = null)|Title must be present on android notification and ios (watch) notification.||
+|PayloadNotificationBuilder|<a name="#method_setTitle"></a>setTitle(string $title)|Indicates notification title. This field is not visible on iOS phones and tablets.||
+|PayloadNotificationBuilder|<a name="#method_setBody"></a>setBody(string $body)|Indicates notification body text.||
+|PayloadNotificationBuilder|<a name="#method_setChannelId"></a>setChannelId(string $channelId)|Set a channel ID for android API &gt;= 26.||
+|PayloadNotificationBuilder|<a name="#method_setIcon"></a>setIcon(string $icon)|Supported Android. Indicates notification icon. example : Sets value to myicon for drawable resource myicon.||
+|PayloadNotificationBuilder|<a name="#method_setImage"></a>setImage(null|string $image)|Supported Android. Indicates the image that can be displayed in the notification. Supports an url or internal image.||
+|PayloadNotificationBuilder|<a name="#method_setSound"></a>setSound(string $sound)|Indicates a sound to play when the device receives a notification.||
+|PayloadNotificationBuilder|<a name="#method_setBadge"></a>setBadge(string $badge)|Supported Ios.||
+|PayloadNotificationBuilder|<a name="#method_setTag"></a>setTag(string $tag)|Supported Android.||
+|PayloadNotificationBuilder|<a name="#method_setColor"></a>setColor(string $color)|Supported Android.||
+|PayloadNotificationBuilder|<a name="#method_setClickAction"></a>setClickAction(string $action)|Indicates the action associated with a user click on the notification.||
+|PayloadNotificationBuilder|<a name="#method_setTitleLocationKey"></a>setTitleLocationKey(string $titleKey)|Indicates the key to the title string for localization.||
+|PayloadNotificationBuilder|<a name="#method_setTitleLocationArgs"></a>setTitleLocationArgs(mixed $titleArgs)|Indicates the string value to replace format specifiers in the title string for localization.||
+|PayloadNotificationBuilder|<a name="#method_setBodyLocationKey"></a>setBodyLocationKey(string $bodyKey)|Indicates the key to the body string for localization.||
+|PayloadNotificationBuilder|<a name="#method_setBodyLocationArgs"></a>setBodyLocationArgs(mixed $bodyArgs)|Indicates the string value to replace format specifiers in the body string for localization.||
+|null|string|<a name="#method_getTitle"></a>getTitle()|Get title.||
+|null|string|<a name="#method_getBody"></a>getBody()|Get body.||
+|null|string|<a name="#method_getChannelId"></a>getChannelId()|Get channel id for android api &gt;= 26||
+|null|string|<a name="#method_getIcon"></a>getIcon()|Get Icon.||
+|string|null|<a name="#method_getImage"></a>getImage()|Get Image.||
+|null|string|<a name="#method_getSound"></a>getSound()|Get Sound.||
+|null|string|<a name="#method_getBadge"></a>getBadge()|Get Badge.||
+|null|string|<a name="#method_getTag"></a>getTag()|Get Tag.||
+|null|string|<a name="#method_getColor"></a>getColor()|Get Color.||
+|null|string|<a name="#method_getClickAction"></a>getClickAction()|Get ClickAction.||
+|null|string|<a name="#method_getBodyLocationKey"></a>getBodyLocationKey()|Get BodyLocationKey.||
+|null|string|array|<a name="#method_getBodyLocationArgs"></a>getBodyLocationArgs()|Get BodyLocationArgs.||
+|string|<a name="#method_getTitleLocationKey"></a>getTitleLocationKey()|Get TitleLocationKey.||
+|null|string|array|<a name="#method_getTitleLocationArgs"></a>getTitleLocationArgs()|GetTitleLocationArgs.||
+|PayloadNotification|<a name="#method_build"></a>build()|Build an PayloadNotification.||
+
+
+### Details
+<a name id="method___construct"></a>
+
+### 
+  **__construct**(string $title = null)
+
+at line 116    
+    
+
+Title must be present on android notification and ios (watch) notification.        
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|string|$title|
+<a name id="method_setTitle"></a>
+
+### 
+ PayloadNotificationBuilder **setTitle**(string $title)
+
+at line 129    
+    
+
+Indicates notification title. This field is not visible on iOS phones and tablets.        but it is required for android.
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|string|$title|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|PayloadNotificationBuilder|current instance of the builder
+
+<a name id="method_setBody"></a>
+
+### 
+ PayloadNotificationBuilder **setBody**(string $body)
+
+at line 143    
+    
+
+Indicates notification body text.        
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|string|$body|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|PayloadNotificationBuilder|current instance of the builder
+
+<a name id="method_setChannelId"></a>
+
+### 
+ PayloadNotificationBuilder **setChannelId**(string $channelId)
+
+at line 157    
+    
+
+Set a channel ID for android API >= 26.        
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|string|$channelId|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|PayloadNotificationBuilder|current instance of the builder
+
+<a name id="method_setIcon"></a>
+
+### 
+ PayloadNotificationBuilder **setIcon**(string $icon)
+
+at line 172    
+    
+
+Supported Android
+Indicates notification icon. example : Sets value to myicon for drawable resource myicon.        
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|string|$icon|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|PayloadNotificationBuilder|current instance of the builder
+
+<a name id="method_setImage"></a>
+
+### 
+ PayloadNotificationBuilder **setImage**(null|string $image)
+
+at line 188    
+    
+
+Supported Android
+Indicates the image that can be displayed in the notification
+Supports an url or internal image.        
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|null|string|$image|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|PayloadNotificationBuilder|current instance of the builder
+
+<a name id="method_setSound"></a>
+
+### 
+ PayloadNotificationBuilder **setSound**(string $sound)
+
+at line 203    
+    
+
+Indicates a sound to play when the device receives a notification.        Supports default or the filename of a sound resource bundled in the app.
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|string|$sound|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|PayloadNotificationBuilder|current instance of the builder
+
+<a name id="method_setBadge"></a>
+
+### 
+ PayloadNotificationBuilder **setBadge**(string $badge)
+
+at line 219    
+    
+
+Supported Ios.        Indicates the badge on the client app home icon.
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|string|$badge|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|PayloadNotificationBuilder|current instance of the builder
+
+<a name id="method_setTag"></a>
+
+### 
+ PayloadNotificationBuilder **setTag**(string $tag)
+
+at line 237    
+    
+
+Supported Android.        Indicates whether each notification results in a new entry in the notification drawer on Android.
+If not set, each request creates a new notification.
+If set, and a notification with the same tag is already being shown, the new notification replaces the existing one in the notification drawer.
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|string|$tag|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|PayloadNotificationBuilder|current instance of the builder
+
+<a name id="method_setColor"></a>
+
+### 
+ PayloadNotificationBuilder **setColor**(string $color)
+
+at line 253    
+    
+
+Supported Android.        Indicates color of the icon, expressed in #rrggbb format
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|string|$color|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|PayloadNotificationBuilder|current instance of the builder
+
+<a name id="method_setClickAction"></a>
+
+### 
+ PayloadNotificationBuilder **setClickAction**(string $action)
+
+at line 267    
+    
+
+Indicates the action associated with a user click on the notification.        
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|string|$action|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|PayloadNotificationBuilder|current instance of the builder
+
+<a name id="method_setTitleLocationKey"></a>
+
+### 
+ PayloadNotificationBuilder **setTitleLocationKey**(string $titleKey)
+
+at line 281    
+    
+
+Indicates the key to the title string for localization.        
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|string|$titleKey|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|PayloadNotificationBuilder|current instance of the builder
+
+<a name id="method_setTitleLocationArgs"></a>
+
+### 
+ PayloadNotificationBuilder **setTitleLocationArgs**(mixed $titleArgs)
+
+at line 295    
+    
+
+Indicates the string value to replace format specifiers in the title string for localization.        
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|mixed|$titleArgs|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|PayloadNotificationBuilder|current instance of the builder
+
+<a name id="method_setBodyLocationKey"></a>
+
+### 
+ PayloadNotificationBuilder **setBodyLocationKey**(string $bodyKey)
+
+at line 309    
+    
+
+Indicates the key to the body string for localization.        
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|string|$bodyKey|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|PayloadNotificationBuilder|current instance of the builder
+
+<a name id="method_setBodyLocationArgs"></a>
+
+### 
+ PayloadNotificationBuilder **setBodyLocationArgs**(mixed $bodyArgs)
+
+at line 323    
+    
+
+Indicates the string value to replace format specifiers in the body string for localization.        
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|mixed|$bodyArgs|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|PayloadNotificationBuilder|current instance of the builder
+
+<a name id="method_getTitle"></a>
+
+### 
+ null|string **getTitle**()
+
+at line 335    
+    
+
+Get title.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|null|string|
+
+<a name id="method_getBody"></a>
+
+### 
+ null|string **getBody**()
+
+at line 345    
+    
+
+Get body.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|null|string|
+
+<a name id="method_getChannelId"></a>
+
+### 
+ null|string **getChannelId**()
+
+at line 355    
+    
+
+Get channel id for android api >= 26        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|null|string|
+
+<a name id="method_getIcon"></a>
+
+### 
+ null|string **getIcon**()
+
+at line 365    
+    
+
+Get Icon.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|null|string|
+
+<a name id="method_getImage"></a>
+
+### 
+ string|null **getImage**()
+
+at line 375    
+    
+
+Get Image.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|string|null|
+
+<a name id="method_getSound"></a>
+
+### 
+ null|string **getSound**()
+
+at line 385    
+    
+
+Get Sound.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|null|string|
+
+<a name id="method_getBadge"></a>
+
+### 
+ null|string **getBadge**()
+
+at line 395    
+    
+
+Get Badge.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|null|string|
+
+<a name id="method_getTag"></a>
+
+### 
+ null|string **getTag**()
+
+at line 405    
+    
+
+Get Tag.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|null|string|
+
+<a name id="method_getColor"></a>
+
+### 
+ null|string **getColor**()
+
+at line 415    
+    
+
+Get Color.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|null|string|
+
+<a name id="method_getClickAction"></a>
+
+### 
+ null|string **getClickAction**()
+
+at line 425    
+    
+
+Get ClickAction.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|null|string|
+
+<a name id="method_getBodyLocationKey"></a>
+
+### 
+ null|string **getBodyLocationKey**()
+
+at line 435    
+    
+
+Get BodyLocationKey.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|null|string|
+
+<a name id="method_getBodyLocationArgs"></a>
+
+### 
+ null|string|array **getBodyLocationArgs**()
+
+at line 445    
+    
+
+Get BodyLocationArgs.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|null|string|array|
+
+<a name id="method_getTitleLocationKey"></a>
+
+### 
+ string **getTitleLocationKey**()
+
+at line 455    
+    
+
+Get TitleLocationKey.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|string|
+
+<a name id="method_getTitleLocationArgs"></a>
+
+### 
+ null|string|array **getTitleLocationArgs**()
+
+at line 465    
+    
+
+GetTitleLocationArgs.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|null|string|array|
+
+<a name id="method_build"></a>
+
+### 
+ PayloadNotification **build**()
+
+at line 475    
+    
+
+Build an PayloadNotification.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|PayloadNotification|
+
+_Generated by [Doctum, a API Documentation generator and fork of Sami](https://github.com/code-lts/doctum)._
