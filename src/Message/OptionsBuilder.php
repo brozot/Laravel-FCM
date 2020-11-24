@@ -75,6 +75,13 @@ class OptionsBuilder
     protected $directBootOk;
 
     /**
+     * @internal
+     *
+     * @var string|null
+     */
+    protected $analyticsLabel = null;
+
+    /**
      * This parameter identifies a group of messages
      * A maximum of 4 different collapse keys is allowed at any given time.
      *
@@ -227,6 +234,22 @@ class OptionsBuilder
     }
 
     /**
+     * This parameter sets the Analytics label
+     *
+     * @see https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#AndroidFcmOptions
+     *
+     * @param string $analyticsLabel
+     *
+     * @return \LaravelFCM\Message\OptionsBuilder
+     */
+    public function setFcmOptionsAnalyticsLabel($analyticsLabel)
+    {
+        $this->analyticsLabel = $analyticsLabel;
+
+        return $this;
+    }
+
+    /**
      * Get the collapseKey.
      *
      * @return null|string
@@ -244,6 +267,18 @@ class OptionsBuilder
     public function getPriority()
     {
         return $this->priority;
+    }
+
+    /**
+     * Get the Analytics label
+     *
+     * @see https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#AndroidFcmOptions
+     *
+     * @return null|string
+     */
+    public function getFcmOptionsAnalyticsLabel()
+    {
+        return $this->analyticsLabel;
     }
 
     /**
