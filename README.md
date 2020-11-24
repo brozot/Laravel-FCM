@@ -32,7 +32,7 @@ Or you can add it directly in your composer.json file:
 ```json
 {
 	"require": {
-		"code-lts/laravel-fcm": "1.5.*"
+		"code-lts/laravel-fcm": "1.6.*"
 	}
 }
 ```
