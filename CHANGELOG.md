@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Drop dev dependency `mockery/mockery`
 - Update rendered documentation
 - Exclude `doc` folder from composer tarballs
+- Add support for fcmOptions (#3)
 
 ## [v1.5.0]
 
