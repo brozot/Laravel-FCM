@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Mark setDryRun as deprecated v1 FCM on OptionsBuilder
 - Add Topics Creation And Subscription
 - Drop dev dependency `mockery/mockery`
+- Update rendered documentation
+- Exclude `doc` folder from composer tarballs
 
 ## [v1.5.0]
 
