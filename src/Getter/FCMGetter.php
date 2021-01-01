@@ -23,7 +23,7 @@ class FCMGetter extends HTTPGetter
      */
     public function getDeviceType($token = '')
     {
-        $header = $this->buidAppInstancesHeader();
+        $header = $this->buildAppInstancesHeader();
         $responseGuzzle = $this->client->request('post', "$this->url/$token", $header);
         // get body of this response
         $content = $responseGuzzle->getBody()->getContents();
