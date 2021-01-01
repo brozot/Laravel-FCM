@@ -3,6 +3,7 @@
 namespace LaravelFCM;
 
 use Illuminate\Support\Str;
+use LaravelFCM\Getter\FCMGetter;
 use LaravelFCM\Sender\FCMGroup;
 use LaravelFCM\Sender\FCMSender;
 use Illuminate\Support\ServiceProvider;
@@ -44,6 +45,15 @@ class FCMServiceProvider extends ServiceProvider
             $url = $app[ 'config' ]->get('fcm.http.server_send_url');
 
             return new FCMSender($client, $url);
+        });
+
+        $this->app->bind('fcm.getter', function ($app) {
+            $client = $app[ 'fcm.client' ];
+            // to avoid a major release , we can check if the config file has this key
+            // otherwise , we use the supported key from firebase app instances
+            $url = $app[ 'config' ]->get('fcm.http.server_get_app_instance_url')
+                ?? 'https://iid.googleapis.com/iid/info';
+            return new FCMGetter($client, $url);
         });
     }
 
