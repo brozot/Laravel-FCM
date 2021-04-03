@@ -24,7 +24,7 @@ class FCMManager extends Manager
      *
      * @return \Illuminate\Contracts\Container\Container
      */
-    private function getContainer()
+    public function getContainer()
     {
         if (isset($this->container)) {// Laravel 7.x, 8.x support
             return $this->container;
