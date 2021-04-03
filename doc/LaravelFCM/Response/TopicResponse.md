@@ -38,7 +38,7 @@ class **TopicResponse**        extends [<abbr title="LaravelFCM\Response\BaseRes
 |---|---|---|---|
 |<a name="property_logEnabled"></a>protected bool|$logEnabled||<small>from&nbsp;[../../LaravelFCM/Response/BaseResponse.md#property_logEnabled](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)</small>|
 |<a name="property_logger"></a>protected <abbr title="Monolog\Logger">Logger</abbr>|$logger|The logger.|<small>from&nbsp;[../../LaravelFCM/Response/BaseResponse.md#property_logger](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)</small>|
-|<a name="property_topic"></a>protected Topics|$topic|||
+|<a name="property_topic"></a>protected [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md)|$topic|||
 |<a name="property_messageId"></a>protected string|$messageId|||
 |<a name="property_error"></a>protected string|$error|||
 |<a name="property_needRetry"></a>protected bool|$needRetry|||

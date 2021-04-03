@@ -31,8 +31,8 @@ Create topic or a topic condition
 |   |   |   |   |
 |---|---|---|---|
 |[<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md)|<a name="#method_topic"></a>topic(string $first)|Add a topic, this method should be called before any conditional topic.||
-|Topics|<a name="#method_orTopic"></a>orTopic(string|[Closure](https://www.php.net/Closure) $first)|Add a or condition to the precedent topic set.||
-|Topics|<a name="#method_andTopic"></a>andTopic(string|[Closure](https://www.php.net/Closure) $first)|Add a and condition to the precedent topic set.||
+|[<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md)|<a name="#method_orTopic"></a>orTopic(string|[Closure](https://www.php.net/Closure) $first)|Add a or condition to the precedent topic set.||
+|[<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md)|<a name="#method_andTopic"></a>andTopic(string|[Closure](https://www.php.net/Closure) $first)|Add a and condition to the precedent topic set.||
 |[<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md)|<a name="#method_nest"></a>nest([Closure](https://www.php.net/Closure) $callback, string $condition)|No description||
 |array|string|<a name="#method_build"></a>build()|Transform to array.||
 |bool|<a name="#method_hasOnlyOneTopic"></a>hasOnlyOneTopic()|Check if only one topic was set.||
@@ -63,7 +63,7 @@ Add a topic, this method should be called before any conditional topic.
 <a name id="method_orTopic"></a>
 
 ### 
- Topics **orTopic**(string|[Closure](https://www.php.net/Closure) $first)
+ [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) **orTopic**(string|[Closure](https://www.php.net/Closure) $first)
 
 [at line 65](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L65)
 
@@ -100,12 +100,12 @@ Add a or condition to the precedent topic set.        Parenthesis is a closure</
 
 |   |   |
 |---|---|
-|Topics|
+|[<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md)|
 
 <a name id="method_andTopic"></a>
 
 ### 
- Topics **andTopic**(string|[Closure](https://www.php.net/Closure) $first)
+ [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) **andTopic**(string|[Closure](https://www.php.net/Closure) $first)
 
 [at line 99](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L99)
 
@@ -142,7 +142,7 @@ Add a and condition to the precedent topic set.        Parenthesis is a closure<
 
 |   |   |
 |---|---|
-|Topics|
+|[<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md)|
 
 <a name id="method_nest"></a>
 
@@ -185,7 +185,7 @@ Transform to array.
 
 |   |   |
 |---|---|
-|NoTopicProvidedException||
+|[<abbr title="LaravelFCM\Message\Exceptions\NoTopicProvidedException">NoTopicProvidedException</abbr>](../../LaravelFCM/Message/Exceptions/NoTopicProvidedException.html)||
 
 <a name id="method_hasOnlyOneTopic"></a>
 

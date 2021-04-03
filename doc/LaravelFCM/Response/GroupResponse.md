@@ -46,7 +46,7 @@ class **GroupResponse**        extends [<abbr title="LaravelFCM\Response\BaseRes
 
 |   |   |   |   |
 |---|---|---|---|
-||<a name="#method___construct"></a>__construct(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response, $to, <abbr title="Monolog\Logger">Logger</abbr> $logger)|GroupResponse constructor.||
+||<a name="#method___construct"></a>__construct(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response, string $to, <abbr title="Monolog\Logger">Logger</abbr> $logger)|GroupResponse constructor.||
 ||<a name="#method_parseResponse"></a>parseResponse(array $responseInJson)|parse the response.||
 ||<a name="#method_logResponse"></a>logResponse()|Log the response.||
 |int|<a name="#method_numberSuccess"></a>numberSuccess()|Get the number of device reached with success.||
@@ -58,7 +58,7 @@ class **GroupResponse**        extends [<abbr title="LaravelFCM\Response\BaseRes
 <a name id="method___construct"></a>
 
 ### 
-  **__construct**(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response, $to, <abbr title="Monolog\Logger">Logger</abbr> $logger)
+  **__construct**(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response, string $to, <abbr title="Monolog\Logger">Logger</abbr> $logger)
 
 [at line 46](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/GroupResponse.php#L46)
 
@@ -68,7 +68,7 @@ GroupResponse constructor.
 
 |   |   |   |
 |---|---|---|
-|<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr>|$response|||$to||<abbr title="Monolog\Logger">Logger</abbr>|$logger|
+|<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr>|$response||string|$to||<abbr title="Monolog\Logger">Logger</abbr>|$logger|
 <a name id="method_parseResponse"></a>
 
 ### 

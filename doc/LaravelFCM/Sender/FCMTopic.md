@@ -40,7 +40,7 @@ class **FCMTopic**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">HT
 
 |   |   |   |   |
 |---|---|---|---|
-||<a name="#method___construct"></a>__construct(<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr> $client, $url, <abbr title="Monolog\Logger">Logger</abbr> $logger)|Initializes a new sender object.|from&nbsp;[../../LaravelFCM/Sender/HTTPSender.md#method___construct](<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>)|
+||<a name="#method___construct"></a>__construct(<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr> $client, string $url, <abbr title="Monolog\Logger">Logger</abbr> $logger)|Initializes a new sender object.|from&nbsp;[../../LaravelFCM/Sender/HTTPSender.md#method___construct](<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>)|
 |bool|<a name="#method_createTopic"></a>createTopic(string $topicId, string $registrationId)|Create a topic.||
 |bool|<a name="#method_subscribeTopic"></a>subscribeTopic(string $topicId, array|string $recipientsTokens)|Add subscription to a topic.||
 |bool|<a name="#method_unsubscribeTopic"></a>unsubscribeTopic(string $topicId, array|string $recipientsTokens)|Remove subscription from a topic.||
@@ -51,7 +51,7 @@ class **FCMTopic**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">HT
 <a name id="method___construct"></a>
 
 ### 
-  **__construct**(<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr> $client, $url, <abbr title="Monolog\Logger">Logger</abbr> $logger)in [../../LaravelFCM/Sender/HTTPSender.md#method___construct](<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>)
+  **__construct**(<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr> $client, string $url, <abbr title="Monolog\Logger">Logger</abbr> $logger)in [../../LaravelFCM/Sender/HTTPSender.md#method___construct](<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>)
 
 [at line 37](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/HTTPSender.php#L37)
 
@@ -61,7 +61,7 @@ Initializes a new sender object.
 
 |   |   |   |
 |---|---|---|
-|<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr>|$client|||$url||<abbr title="Monolog\Logger">Logger</abbr>|$logger|
+|<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr>|$client||string|$url||<abbr title="Monolog\Logger">Logger</abbr>|$logger|
 <a name id="method_createTopic"></a>
 
 ### 

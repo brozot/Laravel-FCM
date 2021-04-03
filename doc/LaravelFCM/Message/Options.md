@@ -35,6 +35,7 @@ class **Options**        implements
 |<a name="property_restrictedPackageName"></a>protected null|string|$restrictedPackageName|||
 |<a name="property_isDryRun"></a>protected bool|$isDryRun|||
 |<a name="property_directBootOk"></a>protected bool|$directBootOk|||
+|<a name="property_analyticsLabel"></a>protected string|null|$analyticsLabel|||
 ### Methods
 
 |   |   |   |   |
@@ -49,7 +50,7 @@ class **Options**        implements
 ### 
   **__construct**([<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md) $builder)
 
-[at line 77](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Options.php#L77)
+[at line 84](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Options.php#L84)
 
 Options constructor.        
 
@@ -63,7 +64,7 @@ Options constructor.
 ### 
  array **toArray**()
 
-[at line 95](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Options.php#L95)
+[at line 103](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Options.php#L103)
 
 Transform Option to array.        
 

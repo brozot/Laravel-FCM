@@ -44,20 +44,20 @@ Official google documentation :
 |   |   |   |   |
 |---|---|---|---|
 ||<a name="#method___construct"></a>__construct(string $title = null)|Title must be present on android notification and ios (watch) notification.||
-|PayloadNotificationBuilder|<a name="#method_setTitle"></a>setTitle(string $title)|Indicates notification title. This field is not visible on iOS phones and tablets.||
-|PayloadNotificationBuilder|<a name="#method_setBody"></a>setBody(string $body)|Indicates notification body text.||
-|PayloadNotificationBuilder|<a name="#method_setChannelId"></a>setChannelId(string $channelId)|Set a channel ID for android API &gt;= 26.||
-|PayloadNotificationBuilder|<a name="#method_setIcon"></a>setIcon(string $icon)|Supported Android. Indicates notification icon. example : Sets value to myicon for drawable resource myicon.||
-|PayloadNotificationBuilder|<a name="#method_setImage"></a>setImage(null|string $image)|Supported Android. Indicates the image that can be displayed in the notification. Supports an url or internal image.||
-|PayloadNotificationBuilder|<a name="#method_setSound"></a>setSound(string $sound)|Indicates a sound to play when the device receives a notification.||
-|PayloadNotificationBuilder|<a name="#method_setBadge"></a>setBadge(string $badge)|Supported Ios.||
-|PayloadNotificationBuilder|<a name="#method_setTag"></a>setTag(string $tag)|Supported Android.||
-|PayloadNotificationBuilder|<a name="#method_setColor"></a>setColor(string $color)|Supported Android.||
-|PayloadNotificationBuilder|<a name="#method_setClickAction"></a>setClickAction(string $action)|Indicates the action associated with a user click on the notification.||
-|PayloadNotificationBuilder|<a name="#method_setTitleLocationKey"></a>setTitleLocationKey(string $titleKey)|Indicates the key to the title string for localization.||
-|PayloadNotificationBuilder|<a name="#method_setTitleLocationArgs"></a>setTitleLocationArgs(mixed $titleArgs)|Indicates the string value to replace format specifiers in the title string for localization.||
-|PayloadNotificationBuilder|<a name="#method_setBodyLocationKey"></a>setBodyLocationKey(string $bodyKey)|Indicates the key to the body string for localization.||
-|PayloadNotificationBuilder|<a name="#method_setBodyLocationArgs"></a>setBodyLocationArgs(mixed $bodyArgs)|Indicates the string value to replace format specifiers in the body string for localization.||
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|<a name="#method_setTitle"></a>setTitle(string $title)|Indicates notification title. This field is not visible on iOS phones and tablets.||
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|<a name="#method_setBody"></a>setBody(string $body)|Indicates notification body text.||
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|<a name="#method_setChannelId"></a>setChannelId(string $channelId)|Set a channel ID for android API &gt;= 26.||
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|<a name="#method_setIcon"></a>setIcon(string $icon)|Supported Android. Indicates notification icon. example : Sets value to myicon for drawable resource myicon.||
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|<a name="#method_setImage"></a>setImage(null|string $image)|Supported Android. Indicates the image that can be displayed in the notification. Supports an url or internal image.||
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|<a name="#method_setSound"></a>setSound(string $sound)|Indicates a sound to play when the device receives a notification.||
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|<a name="#method_setBadge"></a>setBadge(string $badge)|Supported Ios.||
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|<a name="#method_setTag"></a>setTag(string $tag)|Supported Android.||
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|<a name="#method_setColor"></a>setColor(string $color)|Supported Android.||
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|<a name="#method_setClickAction"></a>setClickAction(string $action)|Indicates the action associated with a user click on the notification.||
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|<a name="#method_setTitleLocationKey"></a>setTitleLocationKey(string $titleKey)|Indicates the key to the title string for localization.||
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|<a name="#method_setTitleLocationArgs"></a>setTitleLocationArgs(mixed $titleArgs)|Indicates the string value to replace format specifiers in the title string for localization.||
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|<a name="#method_setBodyLocationKey"></a>setBodyLocationKey(string $bodyKey)|Indicates the key to the body string for localization.||
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|<a name="#method_setBodyLocationArgs"></a>setBodyLocationArgs(mixed $bodyArgs)|Indicates the string value to replace format specifiers in the body string for localization.||
 |null|string|<a name="#method_getTitle"></a>getTitle()|Get title.||
 |null|string|<a name="#method_getBody"></a>getBody()|Get body.||
 |null|string|<a name="#method_getChannelId"></a>getChannelId()|Get channel id for android api &gt;= 26||
@@ -72,7 +72,7 @@ Official google documentation :
 |null|string|array|<a name="#method_getBodyLocationArgs"></a>getBodyLocationArgs()|Get BodyLocationArgs.||
 |string|<a name="#method_getTitleLocationKey"></a>getTitleLocationKey()|Get TitleLocationKey.||
 |null|string|array|<a name="#method_getTitleLocationArgs"></a>getTitleLocationArgs()|GetTitleLocationArgs.||
-|PayloadNotification|<a name="#method_build"></a>build()|Build an PayloadNotification.||
+|[<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md)|<a name="#method_build"></a>build()|Build an PayloadNotification.||
 
 
 ### Details
@@ -93,7 +93,7 @@ Title must be present on android notification and ios (watch) notification.
 <a name id="method_setTitle"></a>
 
 ### 
- PayloadNotificationBuilder **setTitle**(string $title)
+ [<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md) **setTitle**(string $title)
 
 [at line 129](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadNotificationBuilder.php#L129)
 
@@ -109,12 +109,12 @@ Indicates notification title. This field is not visible on iOS phones and tablet
 
 |   |   |
 |---|---|
-|PayloadNotificationBuilder|current instance of the builder
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|current instance of the builder
 
 <a name id="method_setBody"></a>
 
 ### 
- PayloadNotificationBuilder **setBody**(string $body)
+ [<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md) **setBody**(string $body)
 
 [at line 143](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadNotificationBuilder.php#L143)
 
@@ -130,12 +130,12 @@ Indicates notification body text.
 
 |   |   |
 |---|---|
-|PayloadNotificationBuilder|current instance of the builder
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|current instance of the builder
 
 <a name id="method_setChannelId"></a>
 
 ### 
- PayloadNotificationBuilder **setChannelId**(string $channelId)
+ [<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md) **setChannelId**(string $channelId)
 
 [at line 157](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadNotificationBuilder.php#L157)
 
@@ -151,12 +151,12 @@ Set a channel ID for android API >= 26.
 
 |   |   |
 |---|---|
-|PayloadNotificationBuilder|current instance of the builder
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|current instance of the builder
 
 <a name id="method_setIcon"></a>
 
 ### 
- PayloadNotificationBuilder **setIcon**(string $icon)
+ [<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md) **setIcon**(string $icon)
 
 [at line 172](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadNotificationBuilder.php#L172)
 
@@ -173,12 +173,12 @@ Indicates notification icon. example : Sets value to myicon for drawable resourc
 
 |   |   |
 |---|---|
-|PayloadNotificationBuilder|current instance of the builder
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|current instance of the builder
 
 <a name id="method_setImage"></a>
 
 ### 
- PayloadNotificationBuilder **setImage**(null|string $image)
+ [<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md) **setImage**(null|string $image)
 
 [at line 188](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadNotificationBuilder.php#L188)
 
@@ -196,12 +196,12 @@ Supports an url or internal image.
 
 |   |   |
 |---|---|
-|PayloadNotificationBuilder|current instance of the builder
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|current instance of the builder
 
 <a name id="method_setSound"></a>
 
 ### 
- PayloadNotificationBuilder **setSound**(string $sound)
+ [<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md) **setSound**(string $sound)
 
 [at line 203](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadNotificationBuilder.php#L203)
 
@@ -217,12 +217,12 @@ Indicates a sound to play when the device receives a notification.        Suppor
 
 |   |   |
 |---|---|
-|PayloadNotificationBuilder|current instance of the builder
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|current instance of the builder
 
 <a name id="method_setBadge"></a>
 
 ### 
- PayloadNotificationBuilder **setBadge**(string $badge)
+ [<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md) **setBadge**(string $badge)
 
 [at line 219](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadNotificationBuilder.php#L219)
 
@@ -238,12 +238,12 @@ Supported Ios.        Indicates the badge on the client app home icon.
 
 |   |   |
 |---|---|
-|PayloadNotificationBuilder|current instance of the builder
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|current instance of the builder
 
 <a name id="method_setTag"></a>
 
 ### 
- PayloadNotificationBuilder **setTag**(string $tag)
+ [<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md) **setTag**(string $tag)
 
 [at line 237](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadNotificationBuilder.php#L237)
 
@@ -261,12 +261,12 @@ If set, and a notification with the same tag is already being shown, the new not
 
 |   |   |
 |---|---|
-|PayloadNotificationBuilder|current instance of the builder
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|current instance of the builder
 
 <a name id="method_setColor"></a>
 
 ### 
- PayloadNotificationBuilder **setColor**(string $color)
+ [<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md) **setColor**(string $color)
 
 [at line 253](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadNotificationBuilder.php#L253)
 
@@ -282,12 +282,12 @@ Supported Android.        Indicates color of the icon, expressed in #rrggbb form
 
 |   |   |
 |---|---|
-|PayloadNotificationBuilder|current instance of the builder
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|current instance of the builder
 
 <a name id="method_setClickAction"></a>
 
 ### 
- PayloadNotificationBuilder **setClickAction**(string $action)
+ [<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md) **setClickAction**(string $action)
 
 [at line 267](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadNotificationBuilder.php#L267)
 
@@ -303,12 +303,12 @@ Indicates the action associated with a user click on the notification.
 
 |   |   |
 |---|---|
-|PayloadNotificationBuilder|current instance of the builder
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|current instance of the builder
 
 <a name id="method_setTitleLocationKey"></a>
 
 ### 
- PayloadNotificationBuilder **setTitleLocationKey**(string $titleKey)
+ [<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md) **setTitleLocationKey**(string $titleKey)
 
 [at line 281](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadNotificationBuilder.php#L281)
 
@@ -324,12 +324,12 @@ Indicates the key to the title string for localization.
 
 |   |   |
 |---|---|
-|PayloadNotificationBuilder|current instance of the builder
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|current instance of the builder
 
 <a name id="method_setTitleLocationArgs"></a>
 
 ### 
- PayloadNotificationBuilder **setTitleLocationArgs**(mixed $titleArgs)
+ [<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md) **setTitleLocationArgs**(mixed $titleArgs)
 
 [at line 295](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadNotificationBuilder.php#L295)
 
@@ -345,12 +345,12 @@ Indicates the string value to replace format specifiers in the title string for 
 
 |   |   |
 |---|---|
-|PayloadNotificationBuilder|current instance of the builder
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|current instance of the builder
 
 <a name id="method_setBodyLocationKey"></a>
 
 ### 
- PayloadNotificationBuilder **setBodyLocationKey**(string $bodyKey)
+ [<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md) **setBodyLocationKey**(string $bodyKey)
 
 [at line 309](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadNotificationBuilder.php#L309)
 
@@ -366,12 +366,12 @@ Indicates the key to the body string for localization.
 
 |   |   |
 |---|---|
-|PayloadNotificationBuilder|current instance of the builder
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|current instance of the builder
 
 <a name id="method_setBodyLocationArgs"></a>
 
 ### 
- PayloadNotificationBuilder **setBodyLocationArgs**(mixed $bodyArgs)
+ [<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md) **setBodyLocationArgs**(mixed $bodyArgs)
 
 [at line 323](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadNotificationBuilder.php#L323)
 
@@ -387,7 +387,7 @@ Indicates the string value to replace format specifiers in the body string for l
 
 |   |   |
 |---|---|
-|PayloadNotificationBuilder|current instance of the builder
+|[<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](../../LaravelFCM/Message/PayloadNotificationBuilder.md)|current instance of the builder
 
 <a name id="method_getTitle"></a>
 
@@ -602,7 +602,7 @@ GetTitleLocationArgs.
 <a name id="method_build"></a>
 
 ### 
- PayloadNotification **build**()
+ [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) **build**()
 
 [at line 475](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadNotificationBuilder.php#L475)
 
@@ -612,6 +612,6 @@ Build an PayloadNotification.
 
 |   |   |
 |---|---|
-|PayloadNotification|
+|[<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md)|
 
 _Generated by [Doctum, a API Documentation generator and fork of Sami](https://github.com/code-lts/doctum)._

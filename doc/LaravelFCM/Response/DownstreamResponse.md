@@ -60,7 +60,7 @@ class **DownstreamResponse**        extends [<abbr title="LaravelFCM\Response\Ba
 
 |   |   |   |   |
 |---|---|---|---|
-||<a name="#method___construct"></a>__construct(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response, $tokens, <abbr title="Monolog\Logger">Logger</abbr> $logger)|DownstreamResponse constructor.||
+||<a name="#method___construct"></a>__construct(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response, array|string $tokens, <abbr title="Monolog\Logger">Logger</abbr> $logger)|DownstreamResponse constructor.||
 ||<a name="#method_parseResponse"></a>parseResponse(array $responseInJson)|Parse the response.||
 ||<a name="#method_logResponse"></a>logResponse()|No description||
 ||<a name="#method_merge"></a>merge([<abbr title="LaravelFCM\Response\DownstreamResponse">DownstreamResponse</abbr>](../../LaravelFCM/Response/DownstreamResponse.md) $response)|Merge two response.||
@@ -78,7 +78,7 @@ class **DownstreamResponse**        extends [<abbr title="LaravelFCM\Response\Ba
 <a name id="method___construct"></a>
 
 ### 
-  **__construct**(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response, $tokens, <abbr title="Monolog\Logger">Logger</abbr> $logger)
+  **__construct**(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response, array|string $tokens, <abbr title="Monolog\Logger">Logger</abbr> $logger)
 
 [at line 98](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L98)
 
@@ -88,7 +88,7 @@ DownstreamResponse constructor.
 
 |   |   |   |
 |---|---|---|
-|<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr>|$response|||$tokens||<abbr title="Monolog\Logger">Logger</abbr>|$logger|
+|<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr>|$response||array|string|$tokens||<abbr title="Monolog\Logger">Logger</abbr>|$logger|
 <a name id="method_parseResponse"></a>
 
 ### 

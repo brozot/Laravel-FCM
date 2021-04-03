@@ -41,6 +41,12 @@
     A<a name="letterA"></a>
         <a name="indexA"></a>
 
+- $[LaravelFCM/Message/Options.md#property_analyticsLabel](<abbr title="LaravelFCM\Message\Options">Options</abbr>#analyticsLabel) &mdash; <em>Property in class [<abbr title="LaravelFCM\Message\Options">Options</abbr>](LaravelFCM/Message/Options.md)
+()
+
+- $[LaravelFCM/Message/OptionsBuilder.md#property_analyticsLabel](<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>#analyticsLabel) &mdash; <em>Property in class [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](LaravelFCM/Message/OptionsBuilder.md)
+()
+
 - [LaravelFCM/Message/PayloadDataBuilder.md#method_addData](<abbr title="LaravelFCM\Message\PayloadDataBuilder">PayloadDataBuilder</abbr>::addData)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\PayloadDataBuilder">PayloadDataBuilder</abbr>](LaravelFCM/Message/PayloadDataBuilder.md)
 (add data to existing data.)
 
@@ -236,6 +242,9 @@ you should test if it's necessary to resent it.)F<a name="letterF"></a>
 - [LaravelFCM/FCMManager.md#method_getDefaultDriver](<abbr title="LaravelFCM\FCMManager">FCMManager</abbr>::getDefaultDriver)() &mdash; <em>Method in class [<abbr title="LaravelFCM\FCMManager">FCMManager</abbr>](LaravelFCM/FCMManager.md)
 ()
 
+- [LaravelFCM/FCMManager.md#method_getContainer](<abbr title="LaravelFCM\FCMManager">FCMManager</abbr>::getContainer)() &mdash; <em>Method in class [<abbr title="LaravelFCM\FCMManager">FCMManager</abbr>](LaravelFCM/FCMManager.md)
+(Get the app container)
+
 - [LaravelFCM/Facades/FCM.md#method_getFacadeAccessor](<abbr title="LaravelFCM\Facades\FCM">FCM</abbr>::getFacadeAccessor)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Facades\FCM">FCM</abbr>](LaravelFCM/Facades/FCM.md)
 ()
 
@@ -253,6 +262,9 @@ you should test if it's necessary to resent it.)F<a name="letterF"></a>
 
 - [LaravelFCM/Message/OptionsBuilder.md#method_getPriority](<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>::getPriority)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](LaravelFCM/Message/OptionsBuilder.md)
 (Get the priority.)
+
+- [LaravelFCM/Message/OptionsBuilder.md#method_getFcmOptionsAnalyticsLabel](<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>::getFcmOptionsAnalyticsLabel)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](LaravelFCM/Message/OptionsBuilder.md)
+(Get the Analytics label)
 
 - [LaravelFCM/Message/OptionsBuilder.md#method_getTimeToLive](<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>::getTimeToLive)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](LaravelFCM/Message/OptionsBuilder.md)
 (get time to live.)
@@ -611,6 +623,9 @@ By default, messages are sent with normal priority.)
 
 - [LaravelFCM/Message/OptionsBuilder.md#method_setDryRun](<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>::setDryRun)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](LaravelFCM/Message/OptionsBuilder.md)
 (This parameter, when set to true, allows developers to test a request without actually sending a message.)
+
+- [LaravelFCM/Message/OptionsBuilder.md#method_setFcmOptionsAnalyticsLabel](<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>::setFcmOptionsAnalyticsLabel)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](LaravelFCM/Message/OptionsBuilder.md)
+(This parameter sets the Analytics label)
 
 - [LaravelFCM/Message/PayloadDataBuilder.md#method_setData](<abbr title="LaravelFCM\Message\PayloadDataBuilder">PayloadDataBuilder</abbr>::setData)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\PayloadDataBuilder">PayloadDataBuilder</abbr>](LaravelFCM/Message/PayloadDataBuilder.md)
 (erase data with new data.)

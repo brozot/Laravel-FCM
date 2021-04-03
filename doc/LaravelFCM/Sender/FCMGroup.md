@@ -40,7 +40,7 @@ class **FCMGroup**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">HT
 
 |   |   |   |   |
 |---|---|---|---|
-||<a name="#method___construct"></a>__construct(<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr> $client, $url, <abbr title="Monolog\Logger">Logger</abbr> $logger)|Initializes a new sender object.|from&nbsp;[../../LaravelFCM/Sender/HTTPSender.md#method___construct](<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>)|
+||<a name="#method___construct"></a>__construct(<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr> $client, string $url, <abbr title="Monolog\Logger">Logger</abbr> $logger)|Initializes a new sender object.|from&nbsp;[../../LaravelFCM/Sender/HTTPSender.md#method___construct](<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>)|
 |null|string|<a name="#method_createGroup"></a>createGroup(string $notificationKeyName, array $registrationIds)|Create a group.||
 |null|string|<a name="#method_addToGroup"></a>addToGroup(string $notificationKeyName, string $notificationKey, array $registrationIds)|Add registrationIds to an existing group.||
 |null|string|<a name="#method_removeFromGroup"></a>removeFromGroup(string $notificationKeyName, string $notificationKey, array $registeredIds)|Remove registeredIds from an existing group.||
@@ -51,7 +51,7 @@ class **FCMGroup**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">HT
 <a name id="method___construct"></a>
 
 ### 
-  **__construct**(<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr> $client, $url, <abbr title="Monolog\Logger">Logger</abbr> $logger)in [../../LaravelFCM/Sender/HTTPSender.md#method___construct](<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>)
+  **__construct**(<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr> $client, string $url, <abbr title="Monolog\Logger">Logger</abbr> $logger)in [../../LaravelFCM/Sender/HTTPSender.md#method___construct](<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>)
 
 [at line 37](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/HTTPSender.php#L37)
 
@@ -61,7 +61,7 @@ Initializes a new sender object.
 
 |   |   |   |
 |---|---|---|
-|<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr>|$client|||$url||<abbr title="Monolog\Logger">Logger</abbr>|$logger|
+|<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr>|$client||string|$url||<abbr title="Monolog\Logger">Logger</abbr>|$logger|
 <a name id="method_createGroup"></a>
 
 ### 

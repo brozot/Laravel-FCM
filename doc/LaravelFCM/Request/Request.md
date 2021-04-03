@@ -28,10 +28,10 @@ class **Request**        extends [<abbr title="LaravelFCM\Request\BaseRequest">B
 |<a name="property_client"></a>protected <abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr>|$client||<small>from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#property_client](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)</small>|
 |<a name="property_config"></a>protected array|$config||<small>from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#property_config](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)</small>|
 |<a name="property_to"></a>protected string|array|$to|||
-|<a name="property_options"></a>protected Options|$options|||
-|<a name="property_notification"></a>protected PayloadNotification|$notification|||
-|<a name="property_data"></a>protected PayloadData|$data|||
-|<a name="property_topic"></a>protected Topics|null|$topic|||
+|<a name="property_options"></a>protected [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md)|$options|||
+|<a name="property_notification"></a>protected [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md)|$notification|||
+|<a name="property_data"></a>protected [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md)|$data|||
+|<a name="property_topic"></a>protected [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md)|null|$topic|||
 ### Methods
 
 |   |   |   |   |
