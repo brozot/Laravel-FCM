@@ -5,7 +5,8 @@
 
 ## Introduction
 
-Laravel-FCM is an easy to use package working with both Laravel and Lumen for sending push notification with [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/) (FCM).
+Own copy Laravel-FCM is an easy to use package working with both Laravel and Lumen for sending push notification with [Firebase Cloud Messaging]
+(https://firebase.google.com/docs/cloud-messaging/) (FCM).
 
 It currently **only supports HTTP protocol** for :
 
