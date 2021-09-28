@@ -2,9 +2,6 @@
 
 namespace LaravelFCM\Request;
 
-/**
- * Class BaseRequest.
- */
 abstract class BaseRequest
 {
     /**
@@ -30,8 +27,7 @@ abstract class BaseRequest
             $this->config = app('config')->get('fcm.http.'.$configKey, []);
         }else{
             $this->config = app('config')->get('fcm.http.key_1', []);
-        }
-        
+        }        
     }
 
     /**

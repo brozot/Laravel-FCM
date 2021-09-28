@@ -4,9 +4,6 @@ namespace LaravelFCM\Message;
 
 use Illuminate\Contracts\Support\Arrayable;
 
-/**
- * Class Options.
- */
 class Options implements Arrayable
 {
     /**
@@ -66,6 +63,20 @@ class Options implements Arrayable
     protected $isDryRun = false;
 
     /**
+     * @internal
+     *
+     * @var bool
+     */
+    protected $directBootOk = false;
+
+    /**
+     * @internal
+     *
+     * @var string|null
+     */
+    protected $analyticsLabel = null;
+
+    /**
      * Options constructor.
      *
      * @param OptionsBuilder $builder
@@ -80,6 +91,8 @@ class Options implements Arrayable
         $this->timeToLive = $builder->getTimeToLive();
         $this->restrictedPackageName = $builder->getRestrictedPackageName();
         $this->isDryRun = $builder->isDryRun();
+        $this->directBootOk = $builder->isDirectBootOk();
+        $this->analyticsLabel = $builder->getFcmOptionsAnalyticsLabel();
     }
 
     /**
@@ -93,6 +106,10 @@ class Options implements Arrayable
         $mutableContent = $this->isMutableContent ? true : null;
         $delayWhileIdle = $this->delayWhileIdle ? true : null;
         $dryRun = $this->isDryRun ? true : null;
+        $directBootOk = $this->directBootOk ? true : null;
+        $fcmOptions = $this->analyticsLabel !== null ? [
+            'analytics_label' => $this->analyticsLabel
+        ] : null;
 
         $options = [
             'collapse_key' => $this->collapseKey,
@@ -103,6 +120,8 @@ class Options implements Arrayable
             'time_to_live' => $this->timeToLive,
             'restricted_package_name' => $this->restrictedPackageName,
             'dry_run' => $dryRun,
+            'direct_boot_ok' => $directBootOk,
+            'fcm_options' => $fcmOptions,
         ];
 
         return array_filter($options);

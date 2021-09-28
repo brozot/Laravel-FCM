@@ -12,9 +12,6 @@ use GuzzleHttp\Exception\ClientException;
 use LaravelFCM\Response\DownstreamResponse;
 use LaravelFCM\Message\PayloadNotification;
 
-/**
- * Class FCMSender.
- */
 class FCMSender extends HTTPSender
 {
     const MAX_TOKEN_PER_REQUEST = 1000;
@@ -40,11 +37,11 @@ class FCMSender extends HTTPSender
         if (is_array($to) && !empty($to)) {
             $partialTokens = array_chunk($to, self::MAX_TOKEN_PER_REQUEST, false);
             foreach ($partialTokens as $tokens) {
-                $request = new Request($tokens, $options, $notification, $data, null, $configKey);
+                $request = new Request($tokens, $options, $notification, $data, $configKey);
 
                 $responseGuzzle = $this->post($request);
 
-                $responsePartial = new DownstreamResponse($responseGuzzle, $tokens);
+                $responsePartial = new DownstreamResponse($responseGuzzle, $tokens, $this->logger);
                 if (!$response) {
                     $response = $responsePartial;
                 } else {
@@ -52,10 +49,10 @@ class FCMSender extends HTTPSender
                 }
             }
         } else {
-            $request = new Request($to, $options, $notification, $data, null, $configKey);
+            $request = new Request($to, $options, $notification, $data, $configKey);
             $responseGuzzle = $this->post($request);
 
-            $response = new DownstreamResponse($responseGuzzle, $to);
+            $response = new DownstreamResponse($responseGuzzle, $to, $this->logger);
         }
 
         return $response;
@@ -64,7 +61,7 @@ class FCMSender extends HTTPSender
     /**
      * Send a message to a group of devices identified with them notification key.
      *
-     * @param                          $notificationKey
+     * @param string|string[]          $notificationKey
      * @param Options|null             $options
      * @param PayloadNotification|null $notification
      * @param PayloadData|null         $data
@@ -73,11 +70,11 @@ class FCMSender extends HTTPSender
      */
     public function sendToGroup($notificationKey, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, $configKey)
     {
-        $request = new Request($notificationKey, $options, $notification, $data, null, $configKey);
+        $request = new Request($notificationKey, $options, $notification, $data, $configKey);
 
         $responseGuzzle = $this->post($request);
 
-        return new GroupResponse($responseGuzzle, $notificationKey);
+        return new GroupResponse($responseGuzzle, $notificationKey, $this->logger);
     }
 
     /**
@@ -90,13 +87,13 @@ class FCMSender extends HTTPSender
      *
      * @return TopicResponse
      */
-    public function sendToTopic(Topics $topics, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, $configKey = null)
+    public function sendToTopic(Topics $topics, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, $configKey)
     {
         $request = new Request(null, $options, $notification, $data, $topics, $configKey);
 
         $responseGuzzle = $this->post($request);
 
-        return new TopicResponse($responseGuzzle, $topics);
+        return new TopicResponse($responseGuzzle, $topics, $this->logger);
     }
 
     /**

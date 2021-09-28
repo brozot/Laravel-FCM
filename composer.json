@@ -15,16 +15,14 @@
         }
     ],
     "require": {
-        "php": ">=5.5.9",
-        "illuminate/support": "5.*|^6",
-        "guzzlehttp/guzzle": "~6.0",
+        "php": "^5.5.9 || ^7.0 || ^8.0",
+        "illuminate/support": "5.* || ^6 || ^7 || ^8",
+        "guzzlehttp/guzzle": "^6 || ^7",
         "monolog/monolog": "^1.12|^2.0"
     },
     "require-dev": {
-        "mockery/mockery" : "0.9.*",
-        "phpunit/phpunit" : "4.7.*",
-        "satooshi/php-coveralls": "dev-master",
-        "laravel/laravel": "5.2.*"
+        "phpunit/phpunit" : "^4 || ^5 || ^6 || ^7 || ^8 || ^9",
+        "laravel/laravel": "5.* || ^6 || ^7 || ^8"
     },
     "autoload": {
         "psr-4": {

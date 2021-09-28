@@ -2,13 +2,9 @@
 
 namespace LaravelFCM\Response;
 
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
 use Psr\Http\Message\ResponseInterface;
+use Monolog\Logger;
 
-/**
- * Class GroupResponse.
- */
 class GroupResponse extends BaseResponse implements GroupResponseContract
 {
     const FAILED_REGISTRATION_IDS = 'failed_registration_ids';
@@ -45,18 +41,18 @@ class GroupResponse extends BaseResponse implements GroupResponseContract
      * GroupResponse constructor.
      *
      * @param \Psr\Http\Message\ResponseInterface $response
-     * @param                $to
+     * @param string                              $to
      */
-    public function __construct(ResponseInterface $response, $to)
+    public function __construct(ResponseInterface $response, $to, Logger $logger)
     {
         $this->to = $to;
-        parent::__construct($response);
+        parent::__construct($response, $logger);
     }
 
     /**
      * parse the response.
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      */
     protected function parseResponse($responseInJson)
     {
@@ -74,19 +70,16 @@ class GroupResponse extends BaseResponse implements GroupResponseContract
      */
     protected function logResponse()
     {
-        $logger = new Logger('Laravel-FCM');
-        $logger->pushHandler(new StreamHandler(storage_path('logs/laravel-fcm.log')));
-
         $logMessage = "notification send to group: $this->to";
         $logMessage .= "with $this->numberTokensSuccess success and $this->numberTokensFailure";
 
-        $logger->info($logMessage);
+        $this->logger->info($logMessage);
     }
 
     /**
      * @internal
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      *
      * @return bool
      */
@@ -105,7 +98,7 @@ class GroupResponse extends BaseResponse implements GroupResponseContract
     /**
      * @internal
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      */
     private function parseFailed($responseInJson)
     {

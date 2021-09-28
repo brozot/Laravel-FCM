@@ -7,9 +7,6 @@ use LaravelFCM\Message\Options;
 use LaravelFCM\Message\PayloadData;
 use LaravelFCM\Message\PayloadNotification;
 
-/**
- * Class Request.
- */
 class Request extends BaseRequest
 {
     /**
@@ -57,11 +54,12 @@ class Request extends BaseRequest
     /**
      * Request constructor.
      *
-     * @param                     $to
+     * @param string|array        $to
      * @param Options             $options
      * @param PayloadNotification $notification
      * @param PayloadData         $data
      * @param Topics|null         $topic
+     * @param configKey           $configKey
      */
     public function __construct($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, Topics $topic = null, $configKey = null)
     {

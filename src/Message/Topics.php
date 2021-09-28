@@ -6,8 +6,6 @@ use Closure;
 use LaravelFCM\Message\Exceptions\NoTopicProvidedException;
 
 /**
- * Class Topics.
- *
  * Create topic or a topic condition
  */
 class Topics
@@ -24,11 +22,13 @@ class Topics
      *
      * @param string $first topicName
      *
-     * @return $this
+     * @return self
      */
     public function topic($first)
     {
-        $this->conditions[] = compact('first');
+        $this->conditions[] = [
+            'first' => $first
+        ];
 
         return $this;
     }
@@ -104,10 +104,10 @@ class Topics
     /**
      * @internal
      *
-     * @param $first
-     * @param $condition
+     * @param string $first
+     * @param string $condition
      *
-     * @return $this|Topics
+     * @return self
      */
     private function on($first, $condition)
     {
@@ -115,7 +115,10 @@ class Topics
             return $this->nest($first, $condition);
         }
 
-        $this->conditions[] = compact('condition', 'first');
+        $this->conditions[] = [
+            'first' => $first,
+            'condition' => $condition
+        ];
 
         return $this;
     }
@@ -124,9 +127,9 @@ class Topics
      * @internal
      *
      * @param Closure $callback
-     * @param         $condition
+     * @param string $condition
      *
-     * @return $this
+     * @return self
      */
     public function nest(Closure $callback, $condition)
     {
@@ -134,11 +137,13 @@ class Topics
 
         $callback($topic);
         if (count($topic->conditions)) {
-            $open_parenthesis = '(';
-            $topic = $topic->conditions;
-            $close_parenthesis = ')';
 
-            $this->conditions[] = compact('condition', 'open_parenthesis', 'topic', 'close_parenthesis');
+            $this->conditions[] = [
+                'condition' => $condition,
+                'open_parenthesis' => '(',
+                'topic' => $topic->conditions,
+                'close_parenthesis' => ')'
+            ];
         }
 
         return $this;
@@ -149,7 +154,7 @@ class Topics
      *
      * @return array|string
      *
-     * @throws NoTopicProvided
+     * @throws NoTopicProvidedException
      */
     public function build()
     {
@@ -169,7 +174,7 @@ class Topics
     /**
      * @internal
      *
-     * @param $conditions
+     * @param array $conditions
      *
      * @return string
      */
