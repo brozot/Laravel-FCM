@@ -5,9 +5,6 @@ namespace LaravelFCM\Response\Exceptions;
 use Exception;
 use Psr\Http\Message\ResponseInterface;
 
-/**
- * Class UnauthorizedRequestException.
- */
 class UnauthorizedRequestException extends Exception
 {
     /**

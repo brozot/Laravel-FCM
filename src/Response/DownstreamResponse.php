@@ -2,13 +2,9 @@
 
 namespace LaravelFCM\Response;
 
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
 use Psr\Http\Message\ResponseInterface;
+use Monolog\Logger;
 
-/**
- * Class DownstreamResponse.
- */
 class DownstreamResponse extends BaseResponse implements DownstreamResponseContract
 {
     const MULTICAST_ID = 'multicast_id';
@@ -48,7 +44,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @var
+     * @var string
      */
     protected $messageId;
 
@@ -97,19 +93,19 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
      * DownstreamResponse constructor.
      *
      * @param \Psr\Http\Message\ResponseInterface $response
-     * @param                $tokens
+     * @param array|string $tokens
      */
-    public function __construct(ResponseInterface $response, $tokens)
+    public function __construct(ResponseInterface $response, $tokens, Logger $logger)
     {
         $this->tokens = is_string($tokens) ? [$tokens] : $tokens;
 
-        parent::__construct($response);
+        parent::__construct($response, $logger);
     }
 
     /**
      * Parse the response.
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      */
     protected function parseResponse($responseInJson)
     {
@@ -127,7 +123,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      */
     private function parse($responseInJson)
     {
@@ -151,7 +147,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      */
     private function parseResult($responseInJson)
     {
@@ -169,7 +165,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $responseInJson
+     * @param array $responseInJson
      *
      * @return bool
      */
@@ -181,7 +177,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $results
+     * @param array $results
      *
      * @return bool
      */
@@ -193,8 +189,8 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $index
-     * @param $result
+     * @param string $index
+     * @param array $result
      *
      * @return bool
      */
@@ -214,8 +210,8 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $index
-     * @param $result
+     * @param string $index
+     * @param array $result
      *
      * @return bool
      */
@@ -236,8 +232,8 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $index
-     * @param $result
+     * @param string $index
+     * @param array $result
      *
      * @return bool
      */
@@ -257,7 +253,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $result
+     * @param array $result
      *
      * @return bool
      */
@@ -273,8 +269,8 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * @internal
      *
-     * @param $index
-     * @param $result
+     * @param string $index
+     * @param array $result
      */
     private function needToAddError($index, $result)
     {
@@ -290,15 +286,12 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
      */
     protected function logResponse()
     {
-        $logger = new Logger('Laravel-FCM');
-        $logger->pushHandler(new StreamHandler(storage_path('logs/laravel-fcm.log')));
-
         $logMessage = 'notification send to '.count($this->tokens).' devices'.PHP_EOL;
         $logMessage .= 'success: '.$this->numberTokensSuccess.PHP_EOL;
         $logMessage .= 'failures: '.$this->numberTokensFailure.PHP_EOL;
         $logMessage .= 'number of modified token : '.$this->numberTokenModify.PHP_EOL;
 
-        $logger->info($logMessage);
+        $this->logger->info($logMessage);
     }
 
     /**

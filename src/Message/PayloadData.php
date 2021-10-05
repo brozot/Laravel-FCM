@@ -4,9 +4,6 @@ namespace LaravelFCM\Message;
 
 use Illuminate\Contracts\Support\Arrayable;
 
-/**
- * Class PayloadData.
- */
 class PayloadData implements Arrayable
 {
     /**

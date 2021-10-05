@@ -1,6 +1,6 @@
-# Laravel-FCM
+# Laravel-FCM (mutliple Firebase projects)
 
-[![Build Status](https://travis-ci.org/brozot/Laravel-FCM.svg?branch=master)](https://travis-ci.org/brozot/Laravel-FCM) [![Coverage Status](https://coveralls.io/repos/github/brozot/Laravel-FCM/badge.svg?branch=master)](https://coveralls.io/github/brozot/Laravel-FCM?branch=master) [![Latest Stable Version](https://poser.pugx.org/brozot/laravel-fcm/v/stable)](https://packagist.org/packages/brozot/laravel-fcm) [![Total Downloads](https://poser.pugx.org/brozot/laravel-fcm/downloads)](https://packagist.org/packages/brozot/laravel-fcm)
+[![Build Status](https://travis-ci.org/brozot/Laravel-FCM.svg?branch=master)](https://travis-ci.org/brozot/Laravel-FCM) [![Coverage Status](https://coveralls.io/repos/github/brozot/Laravel-FCM/badge.svg?branch=master)](https://coveralls.io/github/brozot/Laravel-FCM?branch=master) [![Latest Stable Version](https://poser.pugx.org/brozot/laravel-fcm/v/stable)](https://packagist.org/packages/hilalalmansour/laravel-fcm) [![Total Downloads](https://poser.pugx.org/brozot/laravel-fcm/downloads)](https://packagist.org/hilalalmansour/brozot/laravel-fcm)
 [![License](https://poser.pugx.org/brozot/laravel-fcm/license)](https://packagist.org/packages/brozot/laravel-fcm)
 
 ## Introduction
@@ -21,7 +21,7 @@ It currently **only supports HTTP protocol** for :
 To get the latest version of Laravel-FCM on your project, require it from "composer":
 
 
-	$ composer require brozot/laravel-fcm
+	$ composer require hilalalmansour/laravel-fcm
 
 
 Or you can add it directly in your composer.json file:
@@ -29,7 +29,7 @@ Or you can add it directly in your composer.json file:
 ```json
 {
     "require": {
-        "brozot/laravel-fcm": "1.3.*"
+        "hilalalmansour/laravel-fcm": "1.4.*"
     }
 }
 ```
@@ -143,7 +143,7 @@ $data = $dataBuilder->build();
 
 $token = "a_registration_from_your_database";
 
-$downstreamResponse = FCM::sendTo($token, $option, $notification, $data);
+$downstreamResponse = FCM::sendTo($token, $option, $notification, $data, $configKey);
 
 $downstreamResponse->numberSuccess();
 $downstreamResponse->numberFailure();
@@ -182,7 +182,7 @@ $data = $dataBuilder->build();
 // You must change it to get your tokens
 $tokens = MYDATABASE::pluck('fcm_token')->toArray();
 
-$downstreamResponse = FCM::sendTo($tokens, $option, $notification, $data);
+$downstreamResponse = FCM::sendTo($tokens, $option, $notification, $data, $configKey);
 
 $downstreamResponse->numberSuccess();
 $downstreamResponse->numberFailure();
@@ -227,7 +227,7 @@ $notification = $notificationBuilder->build();
 $topic = new Topics();
 $topic->topic('news');
 
-$topicResponse = FCM::sendToTopic($topic, null, $notification, null);
+$topicResponse = FCM::sendToTopic($topic, null, $notification, null, $configKey);
 
 $topicResponse->isSuccess();
 $topicResponse->shouldRetry();
@@ -257,7 +257,7 @@ $topic->topic('news')->andTopic(function($condition) {
 
 });
 
-$topicResponse = FCM::sendToTopic($topic, null, $notification, null);
+$topicResponse = FCM::sendToTopic($topic, null, $notification, null, $configKey);
 
 $topicResponse->isSuccess();
 $topicResponse->shouldRetry();
@@ -280,7 +280,7 @@ $notificationBuilder->setBody('Hello world')
 $notification = $notificationBuilder->build();
 
 
-$groupResponse = FCM::sendToGroup($notificationKey, null, $notification, null);
+$groupResponse = FCM::sendToGroup($notificationKey, null, $notification, null, $configKey);
 
 $groupResponse->numberSuccess();
 $groupResponse->numberFailure();

@@ -3,8 +3,6 @@
 namespace LaravelFCM\Message;
 
 /**
- * Class PayloadDataBuilder.
- *
  * Official google documentation :
  *
  * @link http://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json
@@ -14,7 +12,7 @@ class PayloadDataBuilder
     /**
      * @internal
      *
-     * @var array
+     * @var array|null
      */
     protected $data;
 
