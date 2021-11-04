@@ -178,7 +178,7 @@ class Topics
      *
      * @return string
      */
-    private function topicsForFcm($conditions)
+    protected function topicsForFcm($conditions)
     {
         $condition = '';
         foreach ($conditions as $partial) {
@@ -224,7 +224,7 @@ class Topics
      *
      * @throws NoTopicProvidedException
      */
-    private function checkIfOneTopicExist()
+    protected function checkIfOneTopicExist()
     {
         if (!count($this->conditions)) {
             throw new NoTopicProvidedException('At least one topic must be provided');
