@@ -88,6 +88,33 @@ class TopicsTest extends FCMTestCase
         $this->assertEquals($target, $topics->build());
     }
 
+    /**
+     * @param string $condition
+     * @return string
+     */
+    private function getResultTest($condition) {
+        return (new Topics())->topic('helo')->nest(
+            function (Topics $item) {
+                return $item->topic('s')->orTopic('s2');
+            }, $condition
+        )->build()['condition'];
+    }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testTransformConditionOperators()
+    {
+        $this->assertEquals('\'helo\' in topics && (\'s\' in topics || \'s2\' in topics)', $this->getResultTest(' && '));
+        $this->assertEquals('\'helo\' in topics || (\'s\' in topics || \'s2\' in topics)', $this->getResultTest(' || '));
+        $this->assertEquals('\'helo\' in topics && (\'s\' in topics || \'s2\' in topics)', $this->getResultTest('&&'));
+        $this->assertEquals('\'helo\' in topics || (\'s\' in topics || \'s2\' in topics)', $this->getResultTest('||'));
+        $this->assertEquals($this->getResultTest('&&'), $this->getResultTest(' && '));
+        $this->assertEquals($this->getResultTest('||'), $this->getResultTest(' || '));
+    }
+
     public function testItSendsANotificationToATopic()
     {
         $response = new Response(200, [], '{"message_id":6177433633397011933}');
