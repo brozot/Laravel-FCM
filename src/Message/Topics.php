@@ -183,7 +183,9 @@ class Topics
         $condition = '';
         foreach ($conditions as $partial) {
             if (array_key_exists('condition', $partial)) {
-                $condition .= $partial['condition'];
+                // Add spaces if they where forgotten, remove them in case they exist
+                // And add them back
+                $condition .= ' ' . trim($partial['condition'], ' ') . ' ';
             }
 
             if (array_key_exists('first', $partial)) {
