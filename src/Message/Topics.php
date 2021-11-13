@@ -4,6 +4,7 @@ namespace LaravelFCM\Message;
 
 use Closure;
 use LaravelFCM\Message\Exceptions\NoTopicProvidedException;
+use LogicException;
 
 /**
  * Create topic or a topic condition
@@ -128,15 +129,22 @@ class Topics
      *
      * @param Closure $callback
      * @param string $condition
+     * @param bool $strict Controls if the operators checking is enabled (default to true)
      *
      * @return self
      */
-    public function nest(Closure $callback, $condition)
+    public function nest(Closure $callback, $condition, $strict = true)
     {
         $topic = new static();
 
         $callback($topic);
         if (count($topic->conditions)) {
+
+            if ($strict === true && ! in_array(trim($condition, ' '), array('||', '&&'))) {
+                throw new LogicException(
+                    'You must use either one of \'||\' or \'&&\' as a condition'
+                );
+            }
 
             $this->conditions[] = [
                 'condition' => $condition,
@@ -178,12 +186,14 @@ class Topics
      *
      * @return string
      */
-    private function topicsForFcm($conditions)
+    protected function topicsForFcm($conditions)
     {
         $condition = '';
         foreach ($conditions as $partial) {
             if (array_key_exists('condition', $partial)) {
-                $condition .= $partial['condition'];
+                // Add spaces if they where forgotten, remove them in case they exist
+                // And add them back
+                $condition .= ' ' . trim($partial['condition'], ' ') . ' ';
             }
 
             if (array_key_exists('first', $partial)) {
@@ -222,7 +232,7 @@ class Topics
      *
      * @throws NoTopicProvidedException
      */
-    private function checkIfOneTopicExist()
+    protected function checkIfOneTopicExist()
     {
         if (!count($this->conditions)) {
             throw new NoTopicProvidedException('At least one topic must be provided');

@@ -34,4 +34,10 @@ abstract class FCMTestCase extends TestCase
         return $this->expectException($className);
     }
 
+    public function setExceptionExpectedMessage($className) {
+        if ($this->getPhpUnitVersion() <= 4) {
+            return $this->setExpectedExceptionRegExp($className);
+        }
+        return $this->expectExceptionMessage($className);
+    }
 }
