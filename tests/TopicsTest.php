@@ -90,29 +90,77 @@ class TopicsTest extends FCMTestCase
 
     /**
      * @param string $condition
+     * @param bool $strict
      * @return string
      */
-    private function getResultTest($condition) {
+    private function getResultTest($condition, $strict) {
         return (new Topics())->topic('helo')->nest(
             function (Topics $item) {
                 return $item->topic('s')->orTopic('s2');
-            }, $condition
+            }, $condition, $strict
         )->build()['condition'];
     }
 
     /**
-     * A basic feature test example.
+     * Test condition operators with and without spaces
      *
      * @return void
      */
     public function testTransformConditionOperators()
     {
-        $this->assertEquals('\'helo\' in topics && (\'s\' in topics || \'s2\' in topics)', $this->getResultTest(' && '));
-        $this->assertEquals('\'helo\' in topics || (\'s\' in topics || \'s2\' in topics)', $this->getResultTest(' || '));
-        $this->assertEquals('\'helo\' in topics && (\'s\' in topics || \'s2\' in topics)', $this->getResultTest('&&'));
-        $this->assertEquals('\'helo\' in topics || (\'s\' in topics || \'s2\' in topics)', $this->getResultTest('||'));
-        $this->assertEquals($this->getResultTest('&&'), $this->getResultTest(' && '));
-        $this->assertEquals($this->getResultTest('||'), $this->getResultTest(' || '));
+        $this->assertEquals('\'helo\' in topics && (\'s\' in topics || \'s2\' in topics)', $this->getResultTest(' && ', false));
+        $this->assertEquals('\'helo\' in topics || (\'s\' in topics || \'s2\' in topics)', $this->getResultTest(' || ', false));
+        $this->assertEquals('\'helo\' in topics && (\'s\' in topics || \'s2\' in topics)', $this->getResultTest('&&', true));
+        $this->assertEquals('\'helo\' in topics || (\'s\' in topics || \'s2\' in topics)', $this->getResultTest('||', true));
+        $this->assertEquals($this->getResultTest('&&', true), $this->getResultTest(' && ', false));
+        $this->assertEquals($this->getResultTest('||', true), $this->getResultTest(' || ', false));
+    }
+
+    /**
+     * @return array[]
+     */
+    public function dataProviderInvalidConditionOperators()
+    {
+        return array(
+            array(
+                ':=',
+            ),
+            array(
+                '||!',
+            ),
+            array(
+                '| |',
+            ),
+            array(
+                '>=',
+            ),
+            array(
+                '!=',
+            ),
+            array(
+                '=>',
+            )
+        );
+    }
+
+    /**
+     * Test that invalid operators throw an exception
+     *
+     * @dataProvider dataProviderInvalidConditionOperators
+     *
+     * @param string $condition The condition to test
+     * @return void
+     */
+    public function testTransformConditionOperatorsStrictCheck($condition)
+    {
+        $this->setExceptionExpectedMessage('You must use either one of \'||\' or \'&&\' as a condition');
+        $this->setExceptionExpected(LogicException::class);
+
+        (new Topics())->topic('helo')->nest(
+            function (Topics $item) {
+                return $item->topic('s')->orTopic('s2');
+            }, $condition
+        );
     }
 
     public function testItSendsANotificationToATopic()
