@@ -1,10 +1,16 @@
 <?php
 
+use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Middleware;
+use GuzzleHttp\Psr7\Response;
 use LaravelFCM\Message\Exceptions\InvalidOptionsException;
 use LaravelFCM\Message\OptionsBuilder;
 use LaravelFCM\Message\OptionsPriorities;
 use LaravelFCM\Message\PayloadDataBuilder;
 use LaravelFCM\Message\PayloadNotificationBuilder;
+use LaravelFCM\Sender\FCMSender;
 
 class PayloadTest extends FCMTestCase
 {
@@ -118,6 +124,70 @@ class PayloadTest extends FCMTestCase
         $this->assertSame('UA-xxxxxxx', $optionBuilder->getFcmOptionsAnalyticsLabel());
         $json = json_encode($optionBuilder->build()->toArray());
         $this->assertJsonStringEqualsJsonString($targetFull, $json);
+    }
+
+    public function testFullWithAnalytics()
+    {
+        $response = new Response(200, [], json_encode(
+            [
+                'multicast_id' => 216,
+                'success' => 3,
+                'failure' => 3,
+                'canonical_ids' => 1,
+                'results' => [
+                    ['message_id' => '1:0408'],
+                ]
+            ]
+        ));
+
+        $handlerStack = HandlerStack::create(new MockHandler([$response]));
+        $container = [];
+        $history = Middleware::history($container);
+        $handlerStack->push($history);
+        $client = new Client(['handler' => $handlerStack]);
+
+        $tokens = 'uniqueToken';
+
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $fcm = new FCMSender($client, 'http://test.test', $logger);
+
+        $optionBuilder = new OptionsBuilder();
+        $optionBuilder->setDirectBootOk(true);
+        $optionBuilder->setContentAvailable(true);
+        $optionBuilder->setPriority(OptionsPriorities::high)
+            ->setCollapseKey('collapseKey')
+            ->setDelayWhileIdle(true)
+            ->setDryRun(true)
+            ->setFcmOptionsAnalyticsLabel('UA-xxxxxxx')
+            ->setTimeToLive(200);
+
+        $dataBuilder = new PayloadDataBuilder();
+        $payloadData = ['foo' => 'bar'];
+        $dataBuilder->addData($payloadData);
+        $data = $dataBuilder->build();// You must change it to get your tokens
+
+        $this->assertNotNull($fcm->sendTo($tokens, $optionBuilder->build(), null, $data));
+
+        /** @var \GuzzleHttp\Psr7\Request $request */
+        $request = $container[0]['request'];
+        $this->assertSame([
+              'to' => 'uniqueToken',
+              'data' => [
+                'foo' => 'bar',
+              ],
+              'collapse_key' => 'collapseKey',
+              'priority' => 'high',
+              'content_available' => true,
+              'delay_while_idle' => true,
+              'time_to_live' => 200,
+              'dry_run' => true,
+              'direct_boot_ok' => true,
+              'fcm_options' => [
+                'analytics_label' => 'UA-xxxxxxx'
+              ]
+        ], json_decode($request->getBody()->__toString(), true));
     }
 
     public function testItConstructAValidJsonWithData()
