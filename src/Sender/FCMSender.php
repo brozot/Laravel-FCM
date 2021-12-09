@@ -17,10 +17,7 @@ class FCMSender extends HTTPSender
     const MAX_TOKEN_PER_REQUEST = 1000;
 
     /**
-     * send a downstream message to.
-     *
-     * - a unique device with is registration Token
-     * - or to multiples devices with an array of registrationIds
+     * Send a downstream message to a unique device with is registration Token or to multiples devices with an array of registrationIds
      *
      * @param string|array             $to
      * @param Options|null             $options
