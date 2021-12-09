@@ -18,7 +18,7 @@ class **Topics** [View source](https://github.com/code-lts/Laravel-FCM/blob/main
 
 
 
-<p>Create topic or a topic condition</p>
+Create topic or a topic condition
 
 
 ### Properties
@@ -48,7 +48,7 @@ class **Topics** [View source](https://github.com/code-lts/Laravel-FCM/blob/main
 
 [at line 28](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L28)
 
-<p>Add a topic, this method should be called before any conditional topic.</p>        
+Add a topic, this method should be called before any conditional topic.        
 
 #### Parameters
 
@@ -69,26 +69,33 @@ class **Topics** [View source](https://github.com/code-lts/Laravel-FCM/blob/main
 
 [at line 66](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L66)
 
-<p>Add a or condition to the precedent topic set.</p>        <p>Parenthesis is a closure</p>
-<p>Equivalent of this: <strong>'TopicA' in topic' || 'TopicB' in topics</strong></p>
-<pre><code>         $topic = new Topics();
-         $topic-&gt;topic('TopicA')
-               -&gt;orTopic('TopicB');</code></pre>
-<p>Equivalent of this: <strong>'TopicA' in topics &amp;&amp; ('TopicB' in topics || 'TopicC' in topics)</strong></p>
-<pre><code>         $topic = new Topics();
-         $topic-&gt;topic('TopicA')
-               -&gt;andTopic(function($condition) {
-                     $condition-&gt;topic('TopicB')-&gt;orTopic('TopicC');
-         });</code></pre>
-<blockquote>
-<p>Note: Only two operators per expression are supported by fcm</p>
-</blockquote>
+Add a or condition to the precedent topic set.        Parenthesis is a closure
+
+Equivalent of this: **'TopicA' in topic' || 'TopicB' in topics**
+
+```
+         $topic = new Topics();
+         $topic->topic('TopicA')
+               ->orTopic('TopicB');
+```
+
+Equivalent of this: **'TopicA' in topics && ('TopicB' in topics || 'TopicC' in topics)**
+
+```
+         $topic = new Topics();
+         $topic->topic('TopicA')
+               ->andTopic(function($condition) {
+                     $condition->topic('TopicB')->orTopic('TopicC');
+         });
+```
+
+> Note: Only two operators per expression are supported by fcm
 
 #### Parameters
 
 |   |   |   |
 |---|---|---|
-|string|[Closure](https://www.php.net/Closure)|$first|<p>topicName or closure</p>
+|string|[Closure](https://www.php.net/Closure)|$first|topicName or closure
 
 #### Return Value
 
@@ -103,26 +110,33 @@ class **Topics** [View source](https://github.com/code-lts/Laravel-FCM/blob/main
 
 [at line 100](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L100)
 
-<p>Add a and condition to the precedent topic set.</p>        <p>Parenthesis is a closure</p>
-<p>Equivalent of this: <strong>'TopicA' in topic' &amp;&amp; 'TopicB' in topics</strong></p>
-<pre><code>         $topic = new Topics();
-         $topic-&gt;topic('TopicA')
-               -&gt;anTopic('TopicB');</code></pre>
-<p>Equivalent of this: <strong>'TopicA' in topics || ('TopicB' in topics &amp;&amp; 'TopicC' in topics)</strong></p>
-<pre><code>         $topic = new Topics();
-         $topic-&gt;topic('TopicA')
-               -&gt;orTopic(function($condition) {
-                     $condition-&gt;topic('TopicB')-&gt;AndTopic('TopicC');
-         });</code></pre>
-<blockquote>
-<p>Note: Only two operators per expression are supported by fcm</p>
-</blockquote>
+Add a and condition to the precedent topic set.        Parenthesis is a closure
+
+Equivalent of this: **'TopicA' in topic' && 'TopicB' in topics**
+
+```
+         $topic = new Topics();
+         $topic->topic('TopicA')
+               ->anTopic('TopicB');
+```
+
+Equivalent of this: **'TopicA' in topics || ('TopicB' in topics && 'TopicC' in topics)**
+
+```
+         $topic = new Topics();
+         $topic->topic('TopicA')
+               ->orTopic(function($condition) {
+                     $condition->topic('TopicB')->AndTopic('TopicC');
+         });
+```
+
+> Note: Only two operators per expression are supported by fcm
 
 #### Parameters
 
 |   |   |   |
 |---|---|---|
-|string|[Closure](https://www.php.net/Closure)|$first|<p>topicName or closure</p>
+|string|[Closure](https://www.php.net/Closure)|$first|topicName or closure
 
 #### Return Value
 
@@ -143,7 +157,7 @@ class **Topics** [View source](https://github.com/code-lts/Laravel-FCM/blob/main
 
 |   |   |   |
 |---|---|---|
-|[Closure](https://www.php.net/Closure)|$callback||string|$condition||bool|$strict|<p>Controls if the operators checking is enabled (default to true)</p>
+|[Closure](https://www.php.net/Closure)|$callback||string|$condition||bool|$strict|Controls if the operators checking is enabled (default to true)
 
 #### Return Value
 
@@ -158,7 +172,7 @@ class **Topics** [View source](https://github.com/code-lts/Laravel-FCM/blob/main
 
 [at line 167](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L167)
 
-<p>Transform to array.</p>        
+Transform to array.        
 
 #### Return Value
 
@@ -201,7 +215,7 @@ protected string **topicsForFcm**(array $conditions)
 
 [at line 225](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L225)
 
-<p>Check if only one topic was set.</p>        
+Check if only one topic was set.        
 
 #### Return Value
 

@@ -119,9 +119,9 @@ get token to delete.        remove all tokens returned by this method in your da
 [at line 57](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponseContract.php#L57)
 
 get token to modify.        key: oldToken
-value: new token</p>
+value: new token
 
-<p>find the old token in your database and replace it with the new one
+find the old token in your database and replace it with the new one
 
 #### Return Value
 
@@ -152,9 +152,9 @@ Get tokens that you should resend using exponential backoof.
 [at line 76](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponseContract.php#L76)
 
 Get tokens that thrown an error.        key : token
-value : error</p>
+value : error
 
-<p>In production, remove these tokens from you database
+In production, remove these tokens from you database
 
 #### Return Value
 

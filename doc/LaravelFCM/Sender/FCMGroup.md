@@ -111,10 +111,7 @@ Add registrationIds to an existing group.
 
 [at line 57](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMGroup.php#L57)
 
-Remove registeredIds from an existing group.        <blockquote>
-  <p>Note: if you remove all registrationIds the group is automatically deleted</p>
-</blockquote>
-
+Remove registeredIds from an existing group.        >Note: if you remove all registrationIds the group is automatically deleted
 
 #### Parameters
 

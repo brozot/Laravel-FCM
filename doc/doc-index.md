@@ -125,6 +125,9 @@
 - [LaravelFCM/FCMManager.md#method_createHttpDriver](<abbr title="LaravelFCM\FCMManager">FCMManager</abbr>::createHttpDriver)() &mdash; <em>Method in class [<abbr title="LaravelFCM\FCMManager">FCMManager</abbr>](LaravelFCM/FCMManager.md)
 ()
 
+- [LaravelFCM/Facades/FCMTopic.md#method_createTopic](<abbr title="LaravelFCM\Facades\FCMTopic">FCMTopic</abbr>::createTopic)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Facades\FCMTopic">FCMTopic</abbr>](LaravelFCM/Facades/FCMTopic.md)
+()
+
 - $[LaravelFCM/Message/Options.md#property_collapseKey](<abbr title="LaravelFCM\Message\Options">Options</abbr>#collapseKey) &mdash; <em>Property in class [<abbr title="LaravelFCM\Message\Options">Options</abbr>](LaravelFCM/Message/Options.md)
 ()
 
@@ -156,6 +159,9 @@
 ()
 
 - $[LaravelFCM/Message/Topics.md#property_conditions](<abbr title="LaravelFCM\Message\Topics">Topics</abbr>#conditions) &mdash; <em>Property in class [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](LaravelFCM/Message/Topics.md)
+()
+
+- [LaravelFCM/Message/Topics.md#method_checkIfOneTopicExist](<abbr title="LaravelFCM\Message\Topics">Topics</abbr>::checkIfOneTopicExist)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](LaravelFCM/Message/Topics.md)
 ()
 
 - $[LaravelFCM/Request/BaseRequest.md#property_client](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>#client) &mdash; <em>Property in class [<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>](LaravelFCM/Request/BaseRequest.md)
@@ -595,6 +601,12 @@ If true, remove all the empty token in your database.)
 (Remove registeredIds from an existing group.)S<a name="letterS"></a>
         <a name="indexS"></a>
 
+- [LaravelFCM/Facades/FCM.md#method_sendToGroup](<abbr title="LaravelFCM\Facades\FCM">FCM</abbr>::sendToGroup)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Facades\FCM">FCM</abbr>](LaravelFCM/Facades/FCM.md)
+()
+
+- [LaravelFCM/Facades/FCMTopic.md#method_subscribeTopic](<abbr title="LaravelFCM\Facades\FCMTopic">FCMTopic</abbr>::subscribeTopic)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Facades\FCMTopic">FCMTopic</abbr>](LaravelFCM/Facades/FCMTopic.md)
+()
+
 - [LaravelFCM/Message/OptionsBuilder.md#method_setCollapseKey](<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>::setCollapseKey)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](LaravelFCM/Message/OptionsBuilder.md)
 (This parameter identifies a group of messages
 A maximum of 4 different collapse keys is allowed at any given time.)
@@ -690,7 +702,7 @@ Supports an url or internal image.)
 (return true if it's necessary resent it using exponential backoff.)
 
 - [LaravelFCM/Sender/FCMSender.md#method_sendTo](<abbr title="LaravelFCM\Sender\FCMSender">FCMSender</abbr>::sendTo)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Sender\FCMSender">FCMSender</abbr>](LaravelFCM/Sender/FCMSender.md)
-(send a downstream message to.)
+(Send a downstream message to a unique device with is registration Token or to multiples devices with an array of registrationIds)
 
 - [LaravelFCM/Sender/FCMSender.md#method_sendToGroup](<abbr title="LaravelFCM\Sender\FCMSender">FCMSender</abbr>::sendToGroup)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Sender\FCMSender">FCMSender</abbr>](LaravelFCM/Sender/FCMSender.md)
 (Send a message to a group of devices identified with them notification key.)
@@ -745,6 +757,9 @@ Supports an url or internal image.)
 
 - [LaravelFCM/Message/Topics.md#method_topic](<abbr title="LaravelFCM\Message\Topics">Topics</abbr>::topic)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](LaravelFCM/Message/Topics.md)
 (Add a topic, this method should be called before any conditional topic.)
+
+- [LaravelFCM/Message/Topics.md#method_topicsForFcm](<abbr title="LaravelFCM\Message\Topics">Topics</abbr>::topicsForFcm)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](LaravelFCM/Message/Topics.md)
+()
 
 - $[LaravelFCM/Request/Request.md#property_to](<abbr title="LaravelFCM\Request\Request">Request</abbr>#to) &mdash; <em>Property in class [<abbr title="LaravelFCM\Request\Request">Request</abbr>](LaravelFCM/Request/Request.md)
 ()
@@ -813,6 +828,9 @@ Supports an url or internal image.)
 - [<abbr title="LaravelFCM\Response\TopicResponseContract">TopicResponseContract</abbr>](LaravelFCM/Response/TopicResponseContract.md) &mdash; <em>Class in namespace [LaravelFCM\Response](LaravelFCM/Response.md)(Interface TopicResponseContract.)U<a name="letterU"></a>
         <a name="indexU"></a>
 
+- [LaravelFCM/Facades/FCMTopic.md#method_unsubscribeTopic](<abbr title="LaravelFCM\Facades\FCMTopic">FCMTopic</abbr>::unsubscribeTopic)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Facades\FCMTopic">FCMTopic</abbr>](LaravelFCM/Facades/FCMTopic.md)
+()
+
 - [<abbr title="LaravelFCM\Response\Exceptions\UnauthorizedRequestException">UnauthorizedRequestException</abbr>](LaravelFCM/Response/Exceptions/UnauthorizedRequestException.md) &mdash; <em>Class in namespace [LaravelFCM\Response\Exceptions](LaravelFCM/Response/Exceptions.md)()
 
 - [LaravelFCM/Sender/FCMTopic.md#method_unsubscribeTopic](<abbr title="LaravelFCM\Sender\FCMTopic">FCMTopic</abbr>::unsubscribeTopic)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Sender\FCMTopic">FCMTopic</abbr>](LaravelFCM/Sender/FCMTopic.md)
@@ -821,6 +839,9 @@ Supports an url or internal image.)
 - $[LaravelFCM/Sender/HTTPSender.md#property_url](<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>#url) &mdash; <em>Property in class [<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>](LaravelFCM/Sender/HTTPSender.md)
 (The URL entry point.)V<a name="letterV"></a>
         <a name="indexV"></a>
+
+- [LaravelFCM/Facades/FCMValidator.md#method_validateToken](<abbr title="LaravelFCM\Facades\FCMValidator">FCMValidator</abbr>::validateToken)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Facades\FCMValidator">FCMValidator</abbr>](LaravelFCM/Facades/FCMValidator.md)
+()
 
 - [<abbr title="LaravelFCM\Request\ValidateRequest">ValidateRequest</abbr>](LaravelFCM/Request/ValidateRequest.md) &mdash; <em>Class in namespace [LaravelFCM\Request](LaravelFCM/Request.md)()
 
