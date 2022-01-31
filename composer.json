@@ -16,13 +16,13 @@
     ],
     "require": {
         "php": "^5.5.9 || ^7.0 || ^8.0",
-        "illuminate/support": "5.* || ^6 || ^7 || ^8",
+        "illuminate/support": "5.* || ^6 || ^7 || ^8 || ^9",
         "guzzlehttp/guzzle": "^6 || ^7",
         "monolog/monolog": "^1.12|^2.0"
     },
     "require-dev": {
         "phpunit/phpunit" : "^4 || ^5 || ^6 || ^7 || ^8 || ^9",
-        "laravel/laravel": "5.* || ^6 || ^7 || ^8"
+        "laravel/laravel": "5.* || ^6 || ^7 || ^8 || ^9"
     },
     "autoload": {
         "psr-4": {
