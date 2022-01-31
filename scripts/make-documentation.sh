@@ -15,9 +15,12 @@ function checkRelease() {
     if [ -f "${BUILD_ROOT}/doctum.phar" ]; then
         curl -s -o "${BUILD_ROOT}/doctum.phar.sha256" -O https://doctum.long-term.support/releases/5/doctum.phar.sha256
         cd "${BUILD_ROOT}/"
-        sha256sum --check --strict doctum.phar.sha256
+        set +e
+        sha256sum --check --strict doctum.phar.sha256 1> /dev/null 2> /dev/null
+        MATCHES_HASH=$?
+        set -e
         cd - > /dev/null
-        if [ "$?" != "0" ]; then
+        if [ ${MATCHES_HASH} -gt 0 ]; then
             downloadRelease
         else
             echo 'You are using the latest 5.x.x release of Doctum.'
