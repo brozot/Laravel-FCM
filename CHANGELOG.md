@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [v1.x.x] - YYYY-MM-DD
 
 - Make topics more extendable and fix topicsToFcm
+- Support laravel 9
 
 ## [v1.6.2] - 2021-04-03
 
