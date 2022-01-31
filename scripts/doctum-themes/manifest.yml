@@ -13,7 +13,7 @@ static:
     'fonts/doctum.eot': '.delete-me'
     'js/jquery-3.5.1.slim.min.js': '.delete-me'
     'js/bootstrap.min.js': '.delete-me'
-    'js/typeahead.min.js': '.delete-me'
+    'js/autocomplete.min.js': '.delete-me'
 
 global:
     'index.twig':      'index.md'
@@ -25,6 +25,7 @@ global:
     'opensearch.twig': '.delete-me'
     'search.twig':     'search.md'
     'doctum.js.twig':    '.delete-me'
+    'doctum-search.json.twig': '.delete-me'
 
 namespace:
     'namespace.twig': '%s.md'
