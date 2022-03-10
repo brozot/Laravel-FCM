@@ -13,6 +13,10 @@
 - PHP `7.1.3` to `8.1.3`
 - Laravel `5.6` to `9`
 
+### Legacy
+
+- PHP `^5.5.9` and Laravel `5.{1,2,3,4,5}` can still be used with old `1.6` versions by using `"code-lts/laravel-fcm": "1.6.*"`
+
 ## Introduction
 
 Laravel-FCM is an easy to use package working with both Laravel and Lumen for sending push notification with [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/) (FCM).
