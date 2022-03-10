@@ -8,10 +8,14 @@ class GroupResponseTest extends FCMTestCase
     {
         $notificationKey = 'notificationKey';
 
-        $response = new \GuzzleHttp\Psr7\Response(200, [], '{
+        $response = new \GuzzleHttp\Psr7\Response(
+            200,
+            [],
+            '{
 					"success": 2,
 					"failure": 0
-					}');
+					}'
+        );
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -27,13 +31,17 @@ class GroupResponseTest extends FCMTestCase
     {
         $notificationKey = 'notificationKey';
 
-        $response = new \GuzzleHttp\Psr7\Response(200, [], '{
+        $response = new \GuzzleHttp\Psr7\Response(
+            200,
+            [],
+            '{
 					"success": 0,
 					"failure": 2,
 					"failed_registration_ids":[
 					   "regId1",
 					   "regId2"
-					]}');
+					]}'
+        );
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -52,13 +60,17 @@ class GroupResponseTest extends FCMTestCase
     {
         $notificationKey = 'notificationKey';
 
-        $response = new \GuzzleHttp\Psr7\Response(200, [], '{
+        $response = new \GuzzleHttp\Psr7\Response(
+            200,
+            [],
+            '{
 					"success": 1,
 					"failure": 2,
 					"failed_registration_ids":[
 					   "regId1",
 					   "regId2"
-					]}');
+					]}'
+        );
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());

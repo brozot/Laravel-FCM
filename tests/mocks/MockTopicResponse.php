@@ -53,7 +53,7 @@ class MockTopicResponse implements TopicResponseContract
      */
     public function isSuccess()
     {
-        return  (bool) $this->messageId;
+        return (bool) $this->messageId;
     }
 
     /**

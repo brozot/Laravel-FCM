@@ -128,17 +128,21 @@ class PayloadTest extends FCMTestCase
 
     public function testFullWithAnalytics()
     {
-        $response = new Response(200, [], json_encode(
-            [
+        $response = new Response(
+            200,
+            [],
+            json_encode(
+                [
                 'multicast_id' => 216,
                 'success' => 3,
                 'failure' => 3,
                 'canonical_ids' => 1,
                 'results' => [
                     ['message_id' => '1:0408'],
+                ],
                 ]
-            ]
-        ));
+            )
+        );
 
         $handlerStack = HandlerStack::create(new MockHandler([$response]));
         $container = [];
@@ -172,7 +176,8 @@ class PayloadTest extends FCMTestCase
 
         /** @var \GuzzleHttp\Psr7\Request $request */
         $request = $container[0]['request'];
-        $this->assertSame([
+        $this->assertSame(
+            [
               'to' => 'uniqueToken',
               'data' => [
                 'foo' => 'bar',
@@ -185,9 +190,11 @@ class PayloadTest extends FCMTestCase
               'dry_run' => true,
               'direct_boot_ok' => true,
               'fcm_options' => [
-                'analytics_label' => 'UA-xxxxxxx'
-              ]
-        ], json_decode($request->getBody()->__toString(), true));
+                'analytics_label' => 'UA-xxxxxxx',
+              ],
+            ],
+            json_decode($request->getBody()->__toString(), true)
+        );
     }
 
     public function testItConstructAValidJsonWithData()
@@ -277,6 +284,5 @@ class PayloadTest extends FCMTestCase
 
         $optionBuilder = new OptionsBuilder();
         $optionBuilder->setTimeToLive(2419200 * 10);
-
     }
 }

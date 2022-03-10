@@ -9,7 +9,10 @@ class DownstreamResponseTest extends FCMTestCase
     {
         $token = 'new_token';
 
-        $response = new Response(200, [], '{
+        $response = new Response(
+            200,
+            [],
+            '{
 		                    "multicast_id": 108,
                             "success": 1,
                             "failure": 0,
@@ -17,7 +20,8 @@ class DownstreamResponseTest extends FCMTestCase
                             "results": [
                                 { "message_id": "1:08" }
                             ]
-						}');
+						}'
+        );
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -40,7 +44,10 @@ class DownstreamResponseTest extends FCMTestCase
             'third_token',
         ];
 
-        $response = new Response(200, [], '{
+        $response = new Response(
+            200,
+            [],
+            '{
 		                    "multicast_id": 108,
                             "success": 3,
                             "failure": 0,
@@ -50,7 +57,8 @@ class DownstreamResponseTest extends FCMTestCase
                                 { "message_id": "1:02" },
                                 { "message_id": "1:03" }
                             ]
-						}');
+						}'
+        );
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -69,7 +77,10 @@ class DownstreamResponseTest extends FCMTestCase
     {
         $token = 'new_token';
 
-        $response = new Response(200, [], '{
+        $response = new Response(
+            200,
+            [],
+            '{
 		                    "multicast_id": 108,
                             "success": 0,
                             "failure": 1,
@@ -77,7 +88,8 @@ class DownstreamResponseTest extends FCMTestCase
                             "results": [
                                  { "error": "NotRegistered" }
                             ]
-						}');
+						}'
+        );
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -103,7 +115,10 @@ class DownstreamResponseTest extends FCMTestCase
             'fourth_token',
         ];
 
-        $response = new Response(200, [], '{
+        $response = new Response(
+            200,
+            [],
+            '{
 		                    "multicast_id": 108,
                             "success": 0,
                             "failure": 3,
@@ -114,7 +129,8 @@ class DownstreamResponseTest extends FCMTestCase
                                  { "error": "NotRegistered" },
                                  { "error": "MissingRegistration"}
                             ]
-						}');
+						}'
+        );
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -137,7 +153,10 @@ class DownstreamResponseTest extends FCMTestCase
     {
         $token = 'new_token';
 
-        $response = new Response(200, [], '{
+        $response = new Response(
+            200,
+            [],
+            '{
 		                    "multicast_id": 108,
                             "success": 0,
                             "failure": 0,
@@ -145,7 +164,8 @@ class DownstreamResponseTest extends FCMTestCase
                             "results": [
                                   { "message_id": "1:2342", "registration_id": "32" }
                             ]
-						}');
+						}'
+        );
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -171,7 +191,10 @@ class DownstreamResponseTest extends FCMTestCase
             'third_token',
         ];
 
-        $response = new Response(200, [], '{
+        $response = new Response(
+            200,
+            [],
+            '{
 		                    "multicast_id": 108,
                             "success": 0,
                             "failure": 0,
@@ -181,7 +204,8 @@ class DownstreamResponseTest extends FCMTestCase
                                  { "message_id": "1:2342", "registration_id": "33" },
                                  { "message_id": "1:2342", "registration_id": "34" }
                             ]
-						}');
+						}'
+        );
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -209,7 +233,10 @@ class DownstreamResponseTest extends FCMTestCase
     {
         $token = 'first_token';
 
-        $response = new Response(200, [], '{
+        $response = new Response(
+            200,
+            [],
+            '{
 						  "multicast_id": 216,
 						  "success": 0,
 						  "failure": 1,
@@ -217,7 +244,8 @@ class DownstreamResponseTest extends FCMTestCase
 						  "results": [
 							    { "error": "Unavailable" }
 	                      ]
-					}');
+					}'
+        );
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -240,7 +268,10 @@ class DownstreamResponseTest extends FCMTestCase
     {
         $token = 'first_token';
 
-        $response = new Response(200, [], '{
+        $response = new Response(
+            200,
+            [],
+            '{
 						  "multicast_id": 216,
 						  "success": 0,
 						  "failure": 1,
@@ -248,7 +279,8 @@ class DownstreamResponseTest extends FCMTestCase
 						  "results": [
 							    { "error": "InternalServerError" }
 	                      ]
-					}');
+					}'
+        );
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -271,7 +303,10 @@ class DownstreamResponseTest extends FCMTestCase
     {
         $token = 'first_token';
 
-        $response = new Response(200, [], '{
+        $response = new Response(
+            200,
+            [],
+            '{
 						  "multicast_id": 216,
 						  "success": 0,
 						  "failure": 1,
@@ -279,7 +314,8 @@ class DownstreamResponseTest extends FCMTestCase
 						  "results": [
 							    { "error": "DeviceMessageRateExceeded" }
 	                      ]
-					}');
+					}'
+        );
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -309,7 +345,10 @@ class DownstreamResponseTest extends FCMTestCase
             'sixth_token',
         ];
 
-        $response = new Response(200, [], '{
+        $response = new Response(
+            200,
+            [],
+            '{
 						  "multicast_id": 216,
 						  "success": 0,
 						  "failure": 6,
@@ -322,7 +361,8 @@ class DownstreamResponseTest extends FCMTestCase
 							    { "error": "InternalServerError" },
 							    { "error": "Unavailable" }
 	                      ]
-					}');
+					}'
+        );
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -357,7 +397,10 @@ class DownstreamResponseTest extends FCMTestCase
             'sixth_token',
         ];
 
-        $response = new Response(200, [], '{
+        $response = new Response(
+            200,
+            [],
+            '{
 						  "multicast_id": 216,
 						  "success": 3,
 						  "failure": 3,
@@ -370,7 +413,8 @@ class DownstreamResponseTest extends FCMTestCase
 							    { "message_id": "1:2342", "registration_id": "32" },
 							    { "error": "NotRegistered"}
 	                      ]
-					}');
+					}'
+        );
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
@@ -414,7 +458,10 @@ class DownstreamResponseTest extends FCMTestCase
             'seventh_1_token',
         ];
 
-        $response = new Response(200, [], '{
+        $response = new Response(
+            200,
+            [],
+            '{
 						  "multicast_id": 216,
 						  "success": 3,
 						  "failure": 3,
@@ -428,7 +475,8 @@ class DownstreamResponseTest extends FCMTestCase
 							    { "error": "NotRegistered"},
 							    { "error": "MessageTooBig"}
 	                      ]
-					}');
+					}'
+        );
 
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());

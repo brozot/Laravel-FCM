@@ -78,12 +78,16 @@ class TopicsTest extends FCMTestCase
         $topics = new Topics();
 
         $topics->topic('TopicA')
-               ->andTopic(function ($condition) {
-                   $condition->topic('TopicB')->orTopic('TopicC');
-               })
-               ->orTopic(function ($condition) {
-                   $condition->topic('TopicD')->andTopic('TopicE');
-               });
+            ->andTopic(
+                function ($condition) {
+                    $condition->topic('TopicB')->orTopic('TopicC');
+                }
+            )
+            ->orTopic(
+                function ($condition) {
+                    $condition->topic('TopicD')->andTopic('TopicE');
+                }
+            );
 
         $this->assertEquals($target, $topics->build());
     }
@@ -93,11 +97,14 @@ class TopicsTest extends FCMTestCase
      * @param bool $strict
      * @return string
      */
-    private function getResultTest($condition, $strict) {
+    private function getResultTest($condition, $strict)
+    {
         return (new Topics())->topic('helo')->nest(
             function (Topics $item) {
                 return $item->topic('s')->orTopic('s2');
-            }, $condition, $strict
+            },
+            $condition,
+            $strict
         )->build()['condition'];
     }
 
@@ -159,7 +166,8 @@ class TopicsTest extends FCMTestCase
         (new Topics())->topic('helo')->nest(
             function (Topics $item) {
                 return $item->topic('s')->orTopic('s2');
-            }, $condition
+            },
+            $condition
         );
     }
 

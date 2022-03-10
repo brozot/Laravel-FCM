@@ -6,13 +6,20 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use LaravelFCM\Sender\FCMGroup;
 
-class GroupsTest extends FCMTestCase {
+class GroupsTest extends FCMTestCase
+{
 
     public function testCreateGroup()
     {
-        $response = new Response(200, [], json_encode([
-            'notification_key' => 'notification_keyId',
-        ]));
+        $response = new Response(
+            200,
+            [],
+            json_encode(
+                [
+                'notification_key' => 'notification_keyId',
+                ]
+            )
+        );
 
         $handlerStack = HandlerStack::create(new MockHandler([$response]));
         $client = new Client(['handler' => $handlerStack]);
@@ -28,9 +35,15 @@ class GroupsTest extends FCMTestCase {
 
     public function testAddTokenToGroup()
     {
-        $response = new Response(200, [], json_encode([
-            'notification_key' => 'notification_keyId',
-        ]));
+        $response = new Response(
+            200,
+            [],
+            json_encode(
+                [
+                'notification_key' => 'notification_keyId',
+                ]
+            )
+        );
 
         $handlerStack = HandlerStack::create(new MockHandler([$response]));
         $client = new Client(['handler' => $handlerStack]);
@@ -46,9 +59,15 @@ class GroupsTest extends FCMTestCase {
 
     public function testRemoveTokenToGroup()
     {
-        $response = new Response(200, [], json_encode([
-            'notification_key' => 'notification_keyId',
-        ]));
+        $response = new Response(
+            200,
+            [],
+            json_encode(
+                [
+                'notification_key' => 'notification_keyId',
+                ]
+            )
+        );
 
         $handlerStack = HandlerStack::create(new MockHandler([$response]));
         $client = new Client(['handler' => $handlerStack]);

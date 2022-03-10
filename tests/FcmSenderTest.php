@@ -13,11 +13,17 @@ class FcmSenderTest extends FCMTestCase
 
     public function testSendToGroupArray()
     {
-        $response = new Response(200, [], json_encode([
-            "success" => 6,
-            "failure" => 3,
-            "results" => []
-        ]));
+        $response = new Response(
+            200,
+            [],
+            json_encode(
+                [
+                'success' => 6,
+                'failure' => 3,
+                'results' => [],
+                ]
+            )
+        );
 
         $handlerStack = HandlerStack::create(new MockHandler([$response]));
         $container = [];
@@ -44,19 +50,30 @@ class FcmSenderTest extends FCMTestCase
         $this->assertSame([], $groupResponse->tokensFailed());
         /** @var \GuzzleHttp\Psr7\Request $request */
         $request = $container[0]['request'];
-        $this->assertSame(json_encode([
-            'registration_ids' => ['a_notification_key'],
-            'notification' => ['title' => 'my title', 'body' => 'Hello world', 'sound' => 'default']
-        ]), $request->getBody()->__toString());
+        $this->assertSame(
+            json_encode(
+                [
+                'registration_ids' => ['a_notification_key'],
+                'notification' => ['title' => 'my title', 'body' => 'Hello world', 'sound' => 'default'],
+                ]
+            ),
+            $request->getBody()->__toString()
+        );
     }
 
     public function testSendToGroupArrayTwoKeys()
     {
-        $response = new Response(200, [], json_encode([
-            "success" => 6,
-            "failure" => 3,
-            "results" => []
-        ]));
+        $response = new Response(
+            200,
+            [],
+            json_encode(
+                [
+                'success' => 6,
+                'failure' => 3,
+                'results' => [],
+                ]
+            )
+        );
 
         $handlerStack = HandlerStack::create(new MockHandler([$response]));
         $container = [];
@@ -84,9 +101,14 @@ class FcmSenderTest extends FCMTestCase
 
         /** @var \GuzzleHttp\Psr7\Request $request */
         $request = $container[0]['request'];
-        $this->assertSame(json_encode([
-            'registration_ids' => ['a_notification_key', 'b_notification_key'],
-            'notification' => ['title' => 'my title', 'body' => 'Hello world', 'sound' => 'default']
-        ]), $request->getBody()->__toString());
+        $this->assertSame(
+            json_encode(
+                [
+                'registration_ids' => ['a_notification_key', 'b_notification_key'],
+                'notification' => ['title' => 'my title', 'body' => 'Hello world', 'sound' => 'default'],
+                ]
+            ),
+            $request->getBody()->__toString()
+        );
     }
 }

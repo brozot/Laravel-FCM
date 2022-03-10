@@ -13,9 +13,13 @@ class TopicsResponseTest extends FCMTestCase
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
 
-        $response = new Response(200, [], '{
+        $response = new Response(
+            200,
+            [],
+            '{
 				"message_id": "1234"
-		}');
+		}'
+        );
 
         $topicResponse = new TopicResponse($response, $topic, $logger);
 
@@ -32,9 +36,13 @@ class TopicsResponseTest extends FCMTestCase
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
 
-        $response = new Response(200, [], '{
+        $response = new Response(
+            200,
+            [],
+            '{
 				"error": "MessageTooBig"
-		}');
+		}'
+        );
 
         $topicResponse = new TopicResponse($response, $topic, $logger);
 
@@ -51,9 +59,13 @@ class TopicsResponseTest extends FCMTestCase
         $logger = new \Monolog\Logger('test');
         $logger->pushHandler(new \Monolog\Handler\NullHandler());
 
-        $response = new Response(200, [], '{
+        $response = new Response(
+            200,
+            [],
+            '{
 				"error": "TopicsMessageRateExceeded"
-		}');
+		}'
+        );
 
         $topicResponse = new TopicResponse($response, $topic, $logger);
 

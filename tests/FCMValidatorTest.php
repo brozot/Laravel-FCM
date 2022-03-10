@@ -6,7 +6,8 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use LaravelFCM\Validator\FCMValidator;
 
-class FCMValidatorTest extends FCMTestCase {
+class FCMValidatorTest extends FCMTestCase
+{
 
     public function testValidateToken()
     {

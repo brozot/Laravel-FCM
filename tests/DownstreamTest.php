@@ -10,17 +10,21 @@ class ResponseTest extends FCMTestCase
 {
     public function testItSendANotificationToADevice()
     {
-        $response = new Response(200, [], json_encode(
-            [
+        $response = new Response(
+            200,
+            [],
+            json_encode(
+                [
                 'multicast_id' => 216,
                 'success' => 3,
                 'failure' => 3,
                 'canonical_ids' => 1,
                 'results' => [
                     ['message_id' => '1:0408'],
+                ],
                 ]
-            ]
-        ));
+            )
+        );
 
         $handlerStack = HandlerStack::create(new MockHandler([$response]));
         $client = new Client(['handler' => $handlerStack]);
@@ -36,8 +40,11 @@ class ResponseTest extends FCMTestCase
 
     public function testItSendANotificationTo_moreThan1000Devices()
     {
-        $response = new Response(200, [], json_encode(
-            [
+        $response = new Response(
+            200,
+            [],
+            json_encode(
+                [
                 'multicast_id' => 216,
                 'success' => 3,
                 'failure' => 3,
@@ -48,15 +55,18 @@ class ResponseTest extends FCMTestCase
                     ['error' => 'InvalidRegistration'],
                     ['message_id' => '1:1516'],
                     ['message_id' => '1:2342', 'registration_id' => '32'],
-                    ['error' => 'NotRegistered']
+                    ['error' => 'NotRegistered'],
+                ],
                 ]
-            ]
-        ));
+            )
+        );
 
-        $mock = new MockHandler([
+        $mock = new MockHandler(
+            [
             $response, $response, $response, $response, $response,
-            $response, $response, $response, $response, $response
-        ]);
+            $response, $response, $response, $response, $response,
+            ]
+        );
         $handlerStack = HandlerStack::create($mock);
         $client = new Client(['handler' => $handlerStack]);
 
@@ -74,8 +84,11 @@ class ResponseTest extends FCMTestCase
 
     public function testAnEmptyArrayOfTokensThrownAnException()
     {
-        $response = new Response(400, [], json_encode(
-            [
+        $response = new Response(
+            400,
+            [],
+            json_encode(
+                [
                 'multicast_id' => 216,
                 'success' => 3,
                 'failure' => 3,
@@ -86,10 +99,11 @@ class ResponseTest extends FCMTestCase
                     ['error' => 'InvalidRegistration'],
                     ['message_id' => '1:1516'],
                     ['message_id' => '1:2342', 'registration_id' => '32'],
-                    ['error' => 'NotRegistered']
+                    ['error' => 'NotRegistered'],
+                ],
                 ]
-            ]
-        ));
+            )
+        );
 
         $handlerStack = HandlerStack::create(new MockHandler([$response]));
         $client = new Client(['handler' => $handlerStack]);
