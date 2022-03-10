@@ -139,7 +139,7 @@ class Topics
 
         $callback($topic);
         if (count($topic->conditions)) {
-            if ($strict === true && ! in_array(trim($condition, ' '), array('||', '&&'))) {
+            if ($strict === true && ! in_array(trim($condition, ' '), ['||', '&&'])) {
                 throw new LogicException(
                     'You must use either one of \'||\' or \'&&\' as a condition'
                 );

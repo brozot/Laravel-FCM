@@ -130,26 +130,26 @@ class TopicsTest extends FCMTestCase
      */
     public function dataProviderInvalidConditionOperators()
     {
-        return array(
-            array(
+        return [
+            [
                 ':=',
-            ),
-            array(
+            ],
+            [
                 '||!',
-            ),
-            array(
+            ],
+            [
                 '| |',
-            ),
-            array(
+            ],
+            [
                 '>=',
-            ),
-            array(
+            ],
+            [
                 '!=',
-            ),
-            array(
+            ],
+            [
                 '=>',
-            )
-        );
+            ],
+        ];
     }
 
     /**
