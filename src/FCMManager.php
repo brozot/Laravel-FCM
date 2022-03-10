@@ -29,10 +29,11 @@ class FCMManager extends Manager
      */
     public function getContainer()
     {
+        // @phpstan-ignore-next-line
         if (isset($this->container)) {// Laravel 7.x, 8.x support
             return $this->container;
         }
         // "app" Does not exist anymore in 8.x
-        return $this->app;
+        return $this->app;// @phpstan-ignore-line
     }
 }

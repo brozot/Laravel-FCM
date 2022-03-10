@@ -6,16 +6,6 @@ parameters:
 			path: src/FCMManager.php
 
 		-
-			message: "#^Property Illuminate\\\\Support\\\\Manager\\:\\:\\$container \\(Illuminate\\\\Contracts\\\\Container\\\\Container\\) in isset\\(\\) is not nullable\\.$#"
-			count: 1
-			path: src/FCMManager.php
-
-		-
-			message: "#^Unreachable statement \\- code above always terminates\\.$#"
-			count: 1
-			path: src/FCMManager.php
-
-		-
 			message: "#^Call to an undefined method Illuminate\\\\Contracts\\\\Foundation\\\\Application\\:\\:configure\\(\\)\\.$#"
 			count: 1
 			path: src/FCMServiceProvider.php
@@ -64,11 +54,6 @@ parameters:
 			message: "#^Cannot call method get\\(\\) on mixed\\.$#"
 			count: 1
 			path: src/Request/BaseRequest.php
-
-		-
-			message: "#^Parameter \\#2 \\.\\.\\.\\$arrays of function array_merge expects array, array\\|string given\\.$#"
-			count: 1
-			path: src/Request/Request.php
 
 		-
 			message: "#^Property LaravelFCM\\\\Request\\\\Request\\:\\:\\$data \\(LaravelFCM\\\\Message\\\\PayloadData\\) does not accept LaravelFCM\\\\Message\\\\PayloadData\\|null\\.$#"

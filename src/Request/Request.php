@@ -120,7 +120,8 @@ class Request extends BaseRequest
         $options = $this->options ? $this->options->toArray() : [];
 
         if ($this->topic && !$this->topic->hasOnlyOneTopic()) {
-            $options = array_merge($options, $this->topic->build());
+            // We know it is an array because of the hasOnlyOneTopic check
+            $options = array_merge($options, (array) $this->topic->build());
         }
 
         return $options;
