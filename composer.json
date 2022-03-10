@@ -57,5 +57,9 @@
                 "FCMGroup": "LaravelFCM\\Facades\\FCMGroup"
             }
         }
+    },
+    "config": {
+        "allow-plugins": {
+        }
     }
 }
