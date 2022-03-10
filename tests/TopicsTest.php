@@ -10,6 +10,7 @@ use LaravelFCM\Message\Topics;
 use LaravelFCM\Sender\FCMSender;
 use LaravelFCM\Message\Exceptions\NoTopicProvidedException;
 use LaravelFCM\Sender\FCMTopic;
+use LogicException;
 
 class TopicsTest extends FCMTestCase
 {

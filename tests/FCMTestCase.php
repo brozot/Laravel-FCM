@@ -2,7 +2,10 @@
 
 namespace LaravelFCM\Tests;
 
+use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Testing\TestCase;
+use LaravelFCM\FCMServiceProvider;
+use PHPUnit\Runner\Version as PHPUnitVersion;
 
 abstract class FCMTestCase extends TestCase
 {
@@ -10,8 +13,8 @@ abstract class FCMTestCase extends TestCase
     {
         $app = require __DIR__ . '/../vendor/laravel/laravel/bootstrap/app.php';
 
-        $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
-        $app->register(LaravelFCM\FCMServiceProvider::class);
+        $app->make(Kernel::class)->bootstrap();
+        $app->register(FCMServiceProvider::class);
 
         $app['config']['fcm.driver'] = 'http';
         $app['config']['fcm.http.timeout'] = 20;
@@ -27,7 +30,7 @@ abstract class FCMTestCase extends TestCase
         if (class_exists(PHPUnit_Runner_Version::class)) {
             return (int) explode('.', PHPUnit_Runner_Version::id())[0];
         }
-        return (int) explode('.', PHPUnit\Runner\Version::id())[0];
+        return (int) explode('.', PHPUnitVersion::id())[0];
     }
 
     public function setExceptionExpected($className)
