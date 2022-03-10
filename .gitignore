@@ -3,21 +3,17 @@
 Thumbs.db
 
 # Project
-.env
 composer.phar
+composer.lock
 vendor
 build
-node_modules
-resources/assets/bower
-Homestead.yaml
-Homestead.json
 storage/debugbar
 doc/generated/*
 generatedoc.sh
-phpdoc.xml
 build/*
 
 # Editors
+.vscode
 .sublime-workspace
 .idea
 .idea/*
