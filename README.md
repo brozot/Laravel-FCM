@@ -5,8 +5,8 @@
 [![Latest Stable Version](https://poser.pugx.org/code-lts/laravel-fcm/v/stable)](https://packagist.org/packages/code-lts/laravel-fcm)
 [![Total Downloads](https://poser.pugx.org/code-lts/laravel-fcm/downloads)](https://packagist.org/packages/code-lts/laravel-fcm)
 [![License](https://poser.pugx.org/code-lts/laravel-fcm/license)](https://packagist.org/packages/code-lts/laravel-fcm)
-[![PHP Version Require](http://poser.pugx.org/code-lts/laravel-fcm/require/php)](https://packagist.org/packages/code-lts/laravel-fcm)
-[![.gitattributes](http://poser.pugx.org/code-lts/laravel-fcm/gitattributes)](https://packagist.org/packages/code-lts/laravel-fcm)
+[![PHP Version Require](https://poser.pugx.org/code-lts/laravel-fcm/require/php)](https://packagist.org/packages/code-lts/laravel-fcm)
+[![.gitattributes](https://poser.pugx.org/code-lts/laravel-fcm/gitattributes)](https://packagist.org/packages/code-lts/laravel-fcm)
 
 ## Support (guaranteed)
 
