@@ -1,5 +1,7 @@
 <?php
 
+namespace LaravelFCM\Tests;
+
 use Illuminate\Foundation\Testing\TestCase;
 
 abstract class FCMTestCase extends TestCase

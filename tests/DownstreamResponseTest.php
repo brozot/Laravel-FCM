@@ -1,5 +1,7 @@
 <?php
 
+namespace LaravelFCM\Tests;
+
 use GuzzleHttp\Psr7\Response;
 use LaravelFCM\Response\DownstreamResponse;
 

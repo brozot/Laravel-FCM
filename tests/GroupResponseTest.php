@@ -1,5 +1,7 @@
 <?php
 
+namespace LaravelFCM\Tests;
+
 use LaravelFCM\Response\GroupResponse;
 
 class GroupResponseTest extends FCMTestCase
