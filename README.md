@@ -5,6 +5,13 @@
 [![Latest Stable Version](https://poser.pugx.org/code-lts/laravel-fcm/v/stable)](https://packagist.org/packages/code-lts/laravel-fcm)
 [![Total Downloads](https://poser.pugx.org/code-lts/laravel-fcm/downloads)](https://packagist.org/packages/code-lts/laravel-fcm)
 [![License](https://poser.pugx.org/code-lts/laravel-fcm/license)](https://packagist.org/packages/code-lts/laravel-fcm)
+[![PHP Version Require](http://poser.pugx.org/code-lts/laravel-fcm/require/php)](https://packagist.org/packages/code-lts/laravel-fcm)
+[![.gitattributes](http://poser.pugx.org/code-lts/laravel-fcm/gitattributes)](https://packagist.org/packages/code-lts/laravel-fcm)
+
+## Support (guaranteed)
+
+- PHP `7.1.3` to `8.1.3`
+- Laravel `5.6` to `9`
 
 ## Introduction
 
