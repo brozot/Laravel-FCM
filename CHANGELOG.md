@@ -8,7 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [v1.x.x] - YYYY-MM-DD
 
 - Make topics more extendable and fix topicsToFcm
-- Support laravel 9
+- Support laravel `9`
+- Drop support for Laravel `5.{1,2,3,4,5}`
+- Set the minium PHP version allowed to `7.1.3` like Laravel `5.6`
 
 ## [v1.6.2] - 2021-04-03
 
