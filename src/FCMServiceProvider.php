@@ -14,6 +14,7 @@ use Monolog\Handler\NullHandler;
 
 class FCMServiceProvider extends ServiceProvider
 {
+    /** @var bool */
     protected $defer = true;
 
     public function boot()

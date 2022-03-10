@@ -48,6 +48,8 @@ class PayloadDataBuilder
 
     /**
      * Remove all data.
+     *
+     * @return void
      */
     public function removeAllData()
     {
@@ -57,7 +59,7 @@ class PayloadDataBuilder
     /**
      * return data.
      *
-     * @return array
+     * @return array|null
      */
     public function getData()
     {

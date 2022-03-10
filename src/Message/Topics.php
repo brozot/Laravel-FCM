@@ -105,7 +105,7 @@ class Topics
     /**
      * @internal
      *
-     * @param string $first
+     * @param string|Closure $first
      * @param string $condition
      *
      * @return self
@@ -230,6 +230,7 @@ class Topics
      * @internal
      *
      * @throws NoTopicProvidedException
+     * @return void
      */
     protected function checkIfOneTopicExist()
     {

@@ -54,10 +54,12 @@ class TopicResponse extends BaseResponse implements TopicResponseContract
      * parse the response.
      *
      * @param array $responseInJson
+     * @return void
      */
     protected function parseResponse($responseInJson)
     {
         if (!$this->parseSuccess($responseInJson)) {
+            //TODO: fix this bug
             $this->parseError($responseInJson);
         }
 
@@ -70,6 +72,7 @@ class TopicResponse extends BaseResponse implements TopicResponseContract
      * @internal
      *
      * @param array $responseInJson
+     * @return void
      */
     private function parseSuccess($responseInJson)
     {
@@ -82,6 +85,7 @@ class TopicResponse extends BaseResponse implements TopicResponseContract
      * @internal
      *
      * @param array $responseInJson
+     * @return void
      */
     private function parseError($responseInJson)
     {
@@ -96,6 +100,8 @@ class TopicResponse extends BaseResponse implements TopicResponseContract
 
     /**
      * Log the response.
+     *
+     * @return void
      */
     protected function logResponse()
     {

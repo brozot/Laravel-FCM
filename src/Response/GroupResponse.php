@@ -53,6 +53,7 @@ class GroupResponse extends BaseResponse implements GroupResponseContract
      * parse the response.
      *
      * @param array $responseInJson
+     * @return void
      */
     protected function parseResponse($responseInJson)
     {
@@ -67,6 +68,8 @@ class GroupResponse extends BaseResponse implements GroupResponseContract
 
     /**
      * Log the response.
+     *
+     * @return void
      */
     protected function logResponse()
     {
@@ -99,6 +102,7 @@ class GroupResponse extends BaseResponse implements GroupResponseContract
      * @internal
      *
      * @param array $responseInJson
+     * @return void
      */
     private function parseFailed($responseInJson)
     {

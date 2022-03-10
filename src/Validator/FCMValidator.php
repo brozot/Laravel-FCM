@@ -10,6 +10,7 @@ use Psr\Http\Message\ResponseInterface;
 class FCMValidator extends HTTPSender
 {
 
+    /** @var string */
     private $validate_token_url = 'https://iid.googleapis.com/iid/info/'; // + YOUR_APP_TOKEN_HERE
 
     /**

@@ -12,6 +12,9 @@ class FCMManager extends Manager
         return $this->getContainer()[ 'config' ][ 'fcm.driver' ];
     }
 
+    /**
+     * @return Client
+     */
     protected function createHttpDriver()
     {
         $config = $this->getContainer()[ 'config' ]->get('fcm.http', []);

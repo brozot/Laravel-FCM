@@ -106,6 +106,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
      * Parse the response.
      *
      * @param array $responseInJson
+     * @return void
      */
     protected function parseResponse($responseInJson)
     {
@@ -124,10 +125,12 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
      * @internal
      *
      * @param array $responseInJson
+     * @return void
      */
     private function parse($responseInJson)
     {
         if (array_key_exists(self::MULTICAST_ID, $responseInJson)) {
+            //TODO: fix this bug
             $this->messageId;
         }
 
@@ -148,6 +151,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
      * @internal
      *
      * @param array $responseInJson
+     * @return void
      */
     private function parseResult($responseInJson)
     {
@@ -271,6 +275,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
      *
      * @param string $index
      * @param array $result
+     * @return void
      */
     private function needToAddError($index, $result)
     {
@@ -283,6 +288,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
 
     /**
      * @internal
+     * @return void
      */
     protected function logResponse()
     {
@@ -298,6 +304,7 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
      * Merge two response.
      *
      * @param DownstreamResponse $response
+     * @return void
      */
     public function merge(DownstreamResponse $response)
     {

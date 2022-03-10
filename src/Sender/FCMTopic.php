@@ -12,7 +12,9 @@ class FCMTopic extends HTTPSender
     const SUBSCRIBE = 'subscribe';
     const UNSUBSCRIBE = 'unsubscribe';
 
+    /** @var string */
     private $add_subscription_url = 'https://iid.googleapis.com/iid/v1:batchAdd';
+    /** @var string */
     private $remove_subscription_url = 'https://iid.googleapis.com/iid/v1:batchRemove';
 
     /**

@@ -5,3 +5,4 @@ parameters:
 	paths:
 		- src/
 	checkMissingIterableValueType: false
+	checkGenericClassInNonGenericObjectType: false

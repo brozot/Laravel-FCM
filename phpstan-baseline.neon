@@ -1,2 +1,177 @@
 parameters:
 	ignoreErrors:
+		-
+			message: "#^Cannot access offset 'config' on Illuminate\\\\Contracts\\\\Container\\\\Container\\.$#"
+			count: 2
+			path: src/FCMManager.php
+
+		-
+			message: "#^Property Illuminate\\\\Support\\\\Manager\\:\\:\\$container \\(Illuminate\\\\Contracts\\\\Container\\\\Container\\) in isset\\(\\) is not nullable\\.$#"
+			count: 1
+			path: src/FCMManager.php
+
+		-
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			count: 1
+			path: src/FCMManager.php
+
+		-
+			message: "#^Call to an undefined method Illuminate\\\\Contracts\\\\Foundation\\\\Application\\:\\:configure\\(\\)\\.$#"
+			count: 1
+			path: src/FCMServiceProvider.php
+
+		-
+			message: "#^Method LaravelFCM\\\\FCMServiceProvider\\:\\:boot\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/FCMServiceProvider.php
+
+		-
+			message: "#^Property LaravelFCM\\\\Message\\\\PayloadData\\:\\:\\$data \\(array\\) does not accept array\\|null\\.$#"
+			count: 1
+			path: src/Message/PayloadData.php
+
+		-
+			message: "#^Property LaravelFCM\\\\Message\\\\PayloadNotification\\:\\:\\$bodyLocationArgs \\(string\\|null\\) does not accept array\\|string\\|null\\.$#"
+			count: 1
+			path: src/Message/PayloadNotification.php
+
+		-
+			message: "#^Property LaravelFCM\\\\Message\\\\PayloadNotification\\:\\:\\$titleLocationArgs \\(string\\|null\\) does not accept array\\|string\\|null\\.$#"
+			count: 1
+			path: src/Message/PayloadNotification.php
+
+		-
+			message: "#^Method LaravelFCM\\\\Message\\\\PayloadNotificationBuilder\\:\\:getTitleLocationKey\\(\\) should return string but returns string\\|null\\.$#"
+			count: 1
+			path: src/Message/PayloadNotificationBuilder.php
+
+		-
+			message: "#^Property LaravelFCM\\\\Message\\\\PayloadNotificationBuilder\\:\\:\\$bodyLocationArgs \\(string\\|null\\) does not accept mixed\\.$#"
+			count: 1
+			path: src/Message/PayloadNotificationBuilder.php
+
+		-
+			message: "#^Property LaravelFCM\\\\Message\\\\PayloadNotificationBuilder\\:\\:\\$titleLocationArgs \\(string\\|null\\) does not accept mixed\\.$#"
+			count: 1
+			path: src/Message/PayloadNotificationBuilder.php
+
+		-
+			message: "#^Unsafe usage of new static\\(\\)\\.$#"
+			count: 1
+			path: src/Message/Topics.php
+
+		-
+			message: "#^Cannot call method get\\(\\) on mixed\\.$#"
+			count: 1
+			path: src/Request/BaseRequest.php
+
+		-
+			message: "#^Parameter \\#2 \\.\\.\\.\\$arrays of function array_merge expects array, array\\|string given\\.$#"
+			count: 1
+			path: src/Request/Request.php
+
+		-
+			message: "#^Property LaravelFCM\\\\Request\\\\Request\\:\\:\\$data \\(LaravelFCM\\\\Message\\\\PayloadData\\) does not accept LaravelFCM\\\\Message\\\\PayloadData\\|null\\.$#"
+			count: 1
+			path: src/Request/Request.php
+
+		-
+			message: "#^Property LaravelFCM\\\\Request\\\\Request\\:\\:\\$notification \\(LaravelFCM\\\\Message\\\\PayloadNotification\\) does not accept LaravelFCM\\\\Message\\\\PayloadNotification\\|null\\.$#"
+			count: 1
+			path: src/Request/Request.php
+
+		-
+			message: "#^Property LaravelFCM\\\\Request\\\\Request\\:\\:\\$options \\(LaravelFCM\\\\Message\\\\Options\\) does not accept LaravelFCM\\\\Message\\\\Options\\|null\\.$#"
+			count: 1
+			path: src/Request/Request.php
+
+		-
+			message: "#^Ternary operator condition is always true\\.$#"
+			count: 3
+			path: src/Request/Request.php
+
+		-
+			message: "#^Cannot call method get\\(\\) on mixed\\.$#"
+			count: 1
+			path: src/Response/BaseResponse.php
+
+		-
+			message: "#^Parameter \\#1 \\$responseInJson of method LaravelFCM\\\\Response\\\\BaseResponse\\:\\:parseResponse\\(\\) expects array, mixed given\\.$#"
+			count: 1
+			path: src/Response/BaseResponse.php
+
+		-
+			message: "#^Expression \"\\$this\\-\\>messageId\" on a separate line does not do anything\\.$#"
+			count: 1
+			path: src/Response/DownstreamResponse.php
+
+		-
+			message: "#^Method LaravelFCM\\\\Response\\\\DownstreamResponseContract\\:\\:merge\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Response/DownstreamResponseContract.php
+
+		-
+			message: "#^Property LaravelFCM\\\\Response\\\\Exceptions\\\\ServerResponseException\\:\\:\\$retryAfter \\(int\\) does not accept array\\<string\\>\\.$#"
+			count: 1
+			path: src/Response/Exceptions/ServerResponseException.php
+
+		-
+			message: "#^Negated boolean expression is always true\\.$#"
+			count: 1
+			path: src/Response/TopicResponse.php
+
+		-
+			message: "#^Result of method LaravelFCM\\\\Response\\\\TopicResponse\\:\\:parseSuccess\\(\\) \\(void\\) is used\\.$#"
+			count: 1
+			path: src/Response/TopicResponse.php
+
+		-
+			message: "#^Cannot access offset 'notification_key' on mixed\\.$#"
+			count: 1
+			path: src/Sender/FCMGroup.php
+
+		-
+			message: "#^Method LaravelFCM\\\\Sender\\\\FCMGroup\\:\\:getNotificationToken\\(\\) should return string\\|null but returns mixed\\.$#"
+			count: 1
+			path: src/Sender/FCMGroup.php
+
+		-
+			message: "#^Parameter \\#3 \\$notificationKey of class LaravelFCM\\\\Request\\\\GroupRequest constructor expects string, null given\\.$#"
+			count: 1
+			path: src/Sender/FCMGroup.php
+
+		-
+			message: "#^Parameter \\#1 \\$response of class LaravelFCM\\\\Response\\\\DownstreamResponse constructor expects Psr\\\\Http\\\\Message\\\\ResponseInterface, Psr\\\\Http\\\\Message\\\\ResponseInterface\\|null given\\.$#"
+			count: 2
+			path: src/Sender/FCMSender.php
+
+		-
+			message: "#^Parameter \\#1 \\$response of class LaravelFCM\\\\Response\\\\GroupResponse constructor expects Psr\\\\Http\\\\Message\\\\ResponseInterface, Psr\\\\Http\\\\Message\\\\ResponseInterface\\|null given\\.$#"
+			count: 1
+			path: src/Sender/FCMSender.php
+
+		-
+			message: "#^Parameter \\#1 \\$response of class LaravelFCM\\\\Response\\\\TopicResponse constructor expects Psr\\\\Http\\\\Message\\\\ResponseInterface, Psr\\\\Http\\\\Message\\\\ResponseInterface\\|null given\\.$#"
+			count: 1
+			path: src/Sender/FCMSender.php
+
+		-
+			message: "#^Parameter \\#1 \\$to of class LaravelFCM\\\\Request\\\\Request constructor expects array\\|string, null given\\.$#"
+			count: 1
+			path: src/Sender/FCMSender.php
+
+		-
+			message: "#^Parameter \\#2 \\$to of class LaravelFCM\\\\Response\\\\GroupResponse constructor expects string, array\\<string\\>\\|string given\\.$#"
+			count: 1
+			path: src/Sender/FCMSender.php
+
+		-
+			message: "#^Call to function is_array\\(\\) with string will always evaluate to false\\.$#"
+			count: 1
+			path: src/Sender/FCMTopic.php
+
+		-
+			message: "#^Method LaravelFCM\\\\Sender\\\\FCMTopic\\:\\:createTopic\\(\\) should return bool but returns null\\.$#"
+			count: 1
+			path: src/Sender/FCMTopic.php
+

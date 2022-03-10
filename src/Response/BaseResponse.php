@@ -35,7 +35,7 @@ abstract class BaseResponse
     public function __construct(ResponseInterface $response, Logger $logger)
     {
         $this->logger = $logger;
-        $this->isJsonResponse($response);
+        $this->checkIsJsonResponse($response);
         $this->logEnabled = app('config')->get('fcm.log_enabled', false);
         $responseInJson = json_decode($response->getBody(), true);
         $this->parseResponse($responseInJson);
@@ -49,8 +49,9 @@ abstract class BaseResponse
      * @throws InvalidRequestException
      * @throws ServerResponseException
      * @throws UnauthorizedRequestException
+     * @return void
      */
-    private function isJsonResponse(ResponseInterface $response)
+    private function checkIsJsonResponse(ResponseInterface $response)
     {
         if ($response->getStatusCode() == 200) {
             return;
@@ -71,11 +72,14 @@ abstract class BaseResponse
      * parse the response.
      *
      * @param array $responseInJson
+     * @return void
      */
     abstract protected function parseResponse($responseInJson);
 
     /**
      * Log the response.
+     *
+     * @return void
      */
     abstract protected function logResponse();
 }
