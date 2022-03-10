@@ -5,7 +5,8 @@ namespace LaravelFCM\Sender;
 use LaravelFCM\Request\TopicRequest;
 use Psr\Http\Message\ResponseInterface;
 
-class FCMTopic extends HTTPSender {
+class FCMTopic extends HTTPSender
+{
 
     const CREATE = 'create';
     const SUBSCRIBE = 'subscribe';
@@ -35,7 +36,6 @@ class FCMTopic extends HTTPSender {
             return true;
         }
         return false;
-
     }
 
     /**

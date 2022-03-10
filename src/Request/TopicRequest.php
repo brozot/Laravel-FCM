@@ -36,7 +36,7 @@ class TopicRequest extends BaseRequest
     {
         parent::__construct();
 
-        if (! is_array($recipients_tokens)){
+        if (! is_array($recipients_tokens)) {
             $recipients_tokens = [$recipients_tokens];
         }
 

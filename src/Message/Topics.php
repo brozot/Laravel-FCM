@@ -28,7 +28,7 @@ class Topics
     public function topic($first)
     {
         $this->conditions[] = [
-            'first' => $first
+            'first' => $first,
         ];
 
         return $this;
@@ -118,7 +118,7 @@ class Topics
 
         $this->conditions[] = [
             'first' => $first,
-            'condition' => $condition
+            'condition' => $condition,
         ];
 
         return $this;
@@ -139,7 +139,6 @@ class Topics
 
         $callback($topic);
         if (count($topic->conditions)) {
-
             if ($strict === true && ! in_array(trim($condition, ' '), array('||', '&&'))) {
                 throw new LogicException(
                     'You must use either one of \'||\' or \'&&\' as a condition'
@@ -150,7 +149,7 @@ class Topics
                 'condition' => $condition,
                 'open_parenthesis' => '(',
                 'topic' => $topic->conditions,
-                'close_parenthesis' => ')'
+                'close_parenthesis' => ')',
             ];
         }
 
@@ -170,7 +169,7 @@ class Topics
 
         if ($this->hasOnlyOneTopic()) {
             foreach ($this->conditions[0] as $topic) {
-                return '/topics/'.$topic;
+                return '/topics/' . $topic;
             }
         }
 

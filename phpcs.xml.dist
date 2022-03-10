@@ -16,7 +16,11 @@
         <!-- Because PHP 5 support -->
         <exclude name="PSR12.Properties.ConstantVisibility.NotFound"/>
         <exclude name="SlevomatCodingStandard.Classes.ClassConstantVisibility.MissingConstantVisibility"/>
+        <exclude name="Generic.NamingConventions.UpperCaseConstantName.ClassConstantNotUpperCase"/>
         <exclude name="Generic.Arrays.DisallowLongArraySyntax.Found"/>
+        <!-- To be fixed -->
+        <exclude name="PSR1.Classes.ClassDeclaration.MultipleClasses"/>
+        <exclude name="Squiz.Strings.DoubleQuoteUsage.ContainsVar"/>
     </rule>
     <rule ref="Generic.Files.LineLength.TooLong">
         <severity>0</severity>

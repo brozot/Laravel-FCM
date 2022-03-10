@@ -4,10 +4,11 @@ namespace LaravelFCM\Validator;
 
 use LaravelFCM\Request\ValidateRequest;
 use LaravelFCM\Sender\HTTPSender;
-use \Exception;
+use Exception;
 use Psr\Http\Message\ResponseInterface;
 
-class FCMValidator extends HTTPSender {
+class FCMValidator extends HTTPSender
+{
 
     private $validate_token_url = 'https://iid.googleapis.com/iid/info/'; // + YOUR_APP_TOKEN_HERE
 
@@ -18,7 +19,8 @@ class FCMValidator extends HTTPSender {
      *
      * @return bool
      */
-    public function validateToken($token) {
+    public function validateToken($token)
+    {
         $request = new ValidateRequest();
         try {
             $build = $request->build();

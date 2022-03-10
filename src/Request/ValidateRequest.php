@@ -1,15 +1,15 @@
 <?php
 
-
 namespace LaravelFCM\Request;
 
-
-class ValidateRequest extends BaseRequest {
+class ValidateRequest extends BaseRequest
+{
 
     /**
      * @inheritDoc
      */
-    protected function buildBody() {
+    protected function buildBody()
+    {
         return [];
     }
 }

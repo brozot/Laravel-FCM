@@ -101,7 +101,7 @@ class TopicResponse extends BaseResponse implements TopicResponseContract
     {
         $topic = $this->topic->build();
 
-        $logMessage = "notification send to topic: ".json_encode($topic);
+        $logMessage = 'notification send to topic: ' . json_encode($topic);
         if ($this->messageId) {
             $logMessage .= "with success (message-id : $this->messageId)";
         } else {

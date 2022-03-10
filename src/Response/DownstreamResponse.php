@@ -217,8 +217,8 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
      */
     private function needToBeDeleted($index, $result)
     {
-        if (array_key_exists(self::ERROR, $result) &&
-            (in_array(self::NOT_REGISTERED, $result) || in_array(self::INVALID_REGISTRATION, $result))) {
+        $isError = array_key_exists(self::ERROR, $result);
+        if ($isError && (in_array(self::NOT_REGISTERED, $result) || in_array(self::INVALID_REGISTRATION, $result))) {
             if ($this->tokens[$index]) {
                 $this->tokensToDelete[] = $this->tokens[$index];
             }
@@ -286,10 +286,10 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
      */
     protected function logResponse()
     {
-        $logMessage = 'notification send to '.count($this->tokens).' devices'.PHP_EOL;
-        $logMessage .= 'success: '.$this->numberTokensSuccess.PHP_EOL;
-        $logMessage .= 'failures: '.$this->numberTokensFailure.PHP_EOL;
-        $logMessage .= 'number of modified token : '.$this->numberTokenModify.PHP_EOL;
+        $logMessage = 'notification send to ' . count($this->tokens) . ' devices' . PHP_EOL;
+        $logMessage .= 'success: ' . $this->numberTokensSuccess . PHP_EOL;
+        $logMessage .= 'failures: ' . $this->numberTokensFailure . PHP_EOL;
+        $logMessage .= 'number of modified token : ' . $this->numberTokenModify . PHP_EOL;
 
         $this->logger->info($logMessage);
     }

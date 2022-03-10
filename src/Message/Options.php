@@ -108,7 +108,7 @@ class Options implements Arrayable
         $dryRun = $this->isDryRun ? true : null;
         $directBootOk = $this->directBootOk ? true : null;
         $fcmOptions = $this->analyticsLabel !== null ? [
-            'analytics_label' => $this->analyticsLabel
+            'analytics_label' => $this->analyticsLabel,
         ] : null;
 
         $options = [
