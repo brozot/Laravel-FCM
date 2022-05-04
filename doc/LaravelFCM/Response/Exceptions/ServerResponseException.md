@@ -25,7 +25,7 @@ class **ServerResponseException**        extends [Exception](https://www.php.net
 
 |   |   |   |   |
 |---|---|---|---|
-|<a name="property_retryAfter"></a> int|$retryAfter|retry after.||
+|<a name="property_retryAfter"></a> int|string|$retryAfter|The value of the first Retry-After header in the response.||
 ### Methods
 
 |   |   |   |   |
@@ -39,7 +39,7 @@ class **ServerResponseException**        extends [Exception](https://www.php.net
 ### 
   **__construct**(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response)
 
-[at line 22](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/Exceptions/ServerResponseException.php#L22)
+[at line 23](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/Exceptions/ServerResponseException.php#L23)
 
 ServerResponseException constructor.        
 

@@ -47,8 +47,8 @@ class **GroupResponse**        extends [<abbr title="LaravelFCM\Response\BaseRes
 |   |   |   |   |
 |---|---|---|---|
 ||<a name="#method___construct"></a>__construct(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response, string $to, <abbr title="Monolog\Logger">Logger</abbr> $logger)|GroupResponse constructor.||
-||<a name="#method_parseResponse"></a>parseResponse(array $responseInJson)|parse the response.||
-||<a name="#method_logResponse"></a>logResponse()|Log the response.||
+|void|<a name="#method_parseResponse"></a>parseResponse(array $responseInJson)|parse the response.||
+|void|<a name="#method_logResponse"></a>logResponse()|Log the response.||
 |int|<a name="#method_numberSuccess"></a>numberSuccess()|Get the number of device reached with success.||
 |int|<a name="#method_numberFailure"></a>numberFailure()|Get the number of device which thrown an error.||
 |array|<a name="#method_tokensFailed"></a>tokensFailed()|Get all token in group that fcm cannot reach.||
@@ -72,9 +72,9 @@ GroupResponse constructor.
 <a name id="method_parseResponse"></a>
 
 ### 
-protected  **parseResponse**(array $responseInJson)
+protected void **parseResponse**(array $responseInJson)
 
-[at line 57](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/GroupResponse.php#L57)
+[at line 58](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/GroupResponse.php#L58)
 
 parse the response.        
 
@@ -83,20 +83,34 @@ parse the response.
 |   |   |   |
 |---|---|---|
 |array|$responseInJson|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|void|
+
 <a name id="method_logResponse"></a>
 
 ### 
-protected  **logResponse**()
+protected void **logResponse**()
 
-[at line 71](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/GroupResponse.php#L71)
+[at line 74](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/GroupResponse.php#L74)
 
 Log the response.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|void|
+
 <a name id="method_numberSuccess"></a>
 
 ### 
  int **numberSuccess**()
 
-[at line 117](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/GroupResponse.php#L117)
+[at line 121](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/GroupResponse.php#L121)
 
 Get the number of device reached with success.        
 
@@ -111,7 +125,7 @@ Get the number of device reached with success.
 ### 
  int **numberFailure**()
 
-[at line 127](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/GroupResponse.php#L127)
+[at line 131](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/GroupResponse.php#L131)
 
 Get the number of device which thrown an error.        
 
@@ -126,7 +140,7 @@ Get the number of device which thrown an error.
 ### 
  array **tokensFailed**()
 
-[at line 137](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/GroupResponse.php#L137)
+[at line 141](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/GroupResponse.php#L141)
 
 Get all token in group that fcm cannot reach.        
 

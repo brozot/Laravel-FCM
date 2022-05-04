@@ -67,7 +67,7 @@ Initializes a new sender object.
 ### 
  bool **createTopic**(string $topicId, string $registrationId)
 
-[at line 25](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMTopic.php#L25)
+[at line 28](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMTopic.php#L28)
 
 Create a topic.        
 
@@ -88,7 +88,7 @@ Create a topic.
 ### 
  bool **subscribeTopic**(string $topicId, array|string $recipientsTokens)
 
-[at line 48](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMTopic.php#L48)
+[at line 50](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMTopic.php#L50)
 
 Add subscription to a topic.        
 
@@ -109,7 +109,7 @@ Add subscription to a topic.
 ### 
  bool **unsubscribeTopic**(string $topicId, array|string $recipientsTokens)
 
-[at line 67](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMTopic.php#L67)
+[at line 69](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMTopic.php#L69)
 
 Remove subscription from a topic.        
 
@@ -130,7 +130,7 @@ Remove subscription from a topic.
 ### 
  bool **isValidResponse**(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response)
 
-[at line 83](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMTopic.php#L83)
+[at line 85](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMTopic.php#L85)
 
 
 

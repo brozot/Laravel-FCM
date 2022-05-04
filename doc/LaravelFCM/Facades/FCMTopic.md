@@ -37,7 +37,7 @@ class **FCMTopic**        extends <abbr title="Illuminate\Support\Facades\Facade
 ### 
 staticprotected  **getFacadeAccessor**()
 
-[at line 13](https://github.com/code-lts/Laravel-FCM/blob/main/src/Facades/FCMTopic.php#L13)
+[at line 14](https://github.com/code-lts/Laravel-FCM/blob/main/src/Facades/FCMTopic.php#L14)
 
 
 <a name id="method_createTopic"></a>

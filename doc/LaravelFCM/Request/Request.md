@@ -157,7 +157,7 @@ get Options transformed.
 ### 
 protected array|null **getNotification**()
 
-[at line 134](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L134)
+[at line 135](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L135)
 
 get notification transformed.        
 
@@ -172,7 +172,7 @@ get notification transformed.
 ### 
 protected array|null **getData**()
 
-[at line 144](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L144)
+[at line 145](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L145)
 
 get data transformed.        
 

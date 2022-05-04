@@ -57,7 +57,7 @@ Initializes a new sender object.
 ### 
  bool **validateToken**(string $token)
 
-[at line 21](https://github.com/code-lts/Laravel-FCM/blob/main/src/Validator/FCMValidator.php#L21)
+[at line 23](https://github.com/code-lts/Laravel-FCM/blob/main/src/Validator/FCMValidator.php#L23)
 
 
 
@@ -84,7 +84,7 @@ Initializes a new sender object.
 ### 
  bool **isValidResponse**(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response)
 
-[at line 39](https://github.com/code-lts/Laravel-FCM/blob/main/src/Validator/FCMValidator.php#L39)
+[at line 42](https://github.com/code-lts/Laravel-FCM/blob/main/src/Validator/FCMValidator.php#L42)
 
 
 

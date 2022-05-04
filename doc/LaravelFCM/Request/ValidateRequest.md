@@ -66,7 +66,7 @@ Build the header for the request.
 ### 
 protected mixed **buildBody**()
 
-[at line 12](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/ValidateRequest.php#L12)
+[at line 11](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/ValidateRequest.php#L11)
 
 
 

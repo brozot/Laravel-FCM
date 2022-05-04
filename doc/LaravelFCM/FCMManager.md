@@ -26,7 +26,7 @@ class **FCMManager**        extends <abbr title="Illuminate\Support\Manager">Man
 |   |   |   |   |
 |---|---|---|---|
 ||<a name="#method_getDefaultDriver"></a>getDefaultDriver()|No description||
-||<a name="#method_createHttpDriver"></a>createHttpDriver()|No description||
+|<abbr title="GuzzleHttp\Client">Client</abbr>|<a name="#method_createHttpDriver"></a>createHttpDriver()|No description||
 |<abbr title="Illuminate\Contracts\Container\Container">Container</abbr>|<a name="#method_getContainer"></a>getContainer()|Get the app container||
 
 
@@ -42,17 +42,24 @@ class **FCMManager**        extends <abbr title="Illuminate\Support\Manager">Man
 <a name id="method_createHttpDriver"></a>
 
 ### 
-protected  **createHttpDriver**()
+protected <abbr title="GuzzleHttp\Client">Client</abbr> **createHttpDriver**()
 
-[at line 15](https://github.com/code-lts/Laravel-FCM/blob/main/src/FCMManager.php#L15)
+[at line 18](https://github.com/code-lts/Laravel-FCM/blob/main/src/FCMManager.php#L18)
 
+
+
+#### Return Value
+
+|   |   |
+|---|---|
+|<abbr title="GuzzleHttp\Client">Client</abbr>|
 
 <a name id="method_getContainer"></a>
 
 ### 
  <abbr title="Illuminate\Contracts\Container\Container">Container</abbr> **getContainer**()
 
-[at line 27](https://github.com/code-lts/Laravel-FCM/blob/main/src/FCMManager.php#L27)
+[at line 30](https://github.com/code-lts/Laravel-FCM/blob/main/src/FCMManager.php#L30)
 
 Get the app container        
 

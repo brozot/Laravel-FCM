@@ -47,8 +47,8 @@ class **TopicResponse**        extends [<abbr title="LaravelFCM\Response\BaseRes
 |   |   |   |   |
 |---|---|---|---|
 ||<a name="#method___construct"></a>__construct(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response, [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) $topic, <abbr title="Monolog\Logger">Logger</abbr> $logger)|TopicResponse constructor.||
-||<a name="#method_parseResponse"></a>parseResponse(array $responseInJson)|parse the response.||
-||<a name="#method_logResponse"></a>logResponse()|Log the response.||
+|void|<a name="#method_parseResponse"></a>parseResponse(array $responseInJson)|parse the response.||
+|void|<a name="#method_logResponse"></a>logResponse()|Log the response.||
 |bool|<a name="#method_isSuccess"></a>isSuccess()|true if topic sent with success.||
 |string|<a name="#method_error"></a>error()|return error message. you should test if it&#039;s necessary to resent it.||
 |bool|<a name="#method_shouldRetry"></a>shouldRetry()|return true if it&#039;s necessary resent it using exponential backoff.||
@@ -72,9 +72,9 @@ TopicResponse constructor.
 <a name id="method_parseResponse"></a>
 
 ### 
-protected  **parseResponse**(array $responseInJson)
+protected void **parseResponse**(array $responseInJson)
 
-[at line 58](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php#L58)
+[at line 59](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php#L59)
 
 parse the response.        
 
@@ -83,20 +83,34 @@ parse the response.
 |   |   |   |
 |---|---|---|
 |array|$responseInJson|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|void|
+
 <a name id="method_logResponse"></a>
 
 ### 
-protected  **logResponse**()
+protected void **logResponse**()
 
-[at line 100](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php#L100)
+[at line 106](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php#L106)
 
 Log the response.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|void|
+
 <a name id="method_isSuccess"></a>
 
 ### 
  bool **isSuccess**()
 
-[at line 119](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php#L119)
+[at line 125](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php#L125)
 
 true if topic sent with success.        
 
@@ -111,7 +125,7 @@ true if topic sent with success.
 ### 
  string **error**()
 
-[at line 130](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php#L130)
+[at line 136](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php#L136)
 
 return error message
 you should test if it's necessary to resent it.        
@@ -127,7 +141,7 @@ you should test if it's necessary to resent it.
 ### 
  bool **shouldRetry**()
 
-[at line 140](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php#L140)
+[at line 146](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/TopicResponse.php#L146)
 
 return true if it's necessary resent it using exponential backoff.        
 

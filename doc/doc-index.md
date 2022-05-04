@@ -595,7 +595,7 @@ If true, remove all the empty token in your database.)
 ()
 
 - $[LaravelFCM/Response/Exceptions/ServerResponseException.md#property_retryAfter](<abbr title="LaravelFCM\Response\Exceptions\ServerResponseException">ServerResponseException</abbr>#retryAfter) &mdash; <em>Property in class [<abbr title="LaravelFCM\Response\Exceptions\ServerResponseException">ServerResponseException</abbr>](LaravelFCM/Response/Exceptions/ServerResponseException.md)
-(retry after.)
+(The value of the first Retry-After header in the response.)
 
 - [LaravelFCM/Sender/FCMGroup.md#method_removeFromGroup](<abbr title="LaravelFCM\Sender\FCMGroup">FCMGroup</abbr>::removeFromGroup)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Sender\FCMGroup">FCMGroup</abbr>](LaravelFCM/Sender/FCMGroup.md)
 (Remove registeredIds from an existing group.)S<a name="letterS"></a>

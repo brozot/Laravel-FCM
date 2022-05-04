@@ -37,7 +37,7 @@ Create topic or a topic condition
 |array|string|<a name="#method_build"></a>build()|Transform to array.||
 |string|<a name="#method_topicsForFcm"></a>topicsForFcm(array $conditions)|No description||
 |bool|<a name="#method_hasOnlyOneTopic"></a>hasOnlyOneTopic()|Check if only one topic was set.||
-||<a name="#method_checkIfOneTopicExist"></a>checkIfOneTopicExist()|No description||
+|void|<a name="#method_checkIfOneTopicExist"></a>checkIfOneTopicExist()|No description||
 
 
 ### Details
@@ -170,7 +170,7 @@ Equivalent of this: **'TopicA' in topics || ('TopicB' in topics && 'TopicC' in t
 ### 
  array|string **build**()
 
-[at line 167](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L167)
+[at line 166](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L166)
 
 Transform to array.        
 
@@ -192,7 +192,7 @@ Transform to array.
 ### 
 protected string **topicsForFcm**(array $conditions)
 
-[at line 189](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L189)
+[at line 188](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L188)
 
 
 
@@ -213,7 +213,7 @@ protected string **topicsForFcm**(array $conditions)
 ### 
  bool **hasOnlyOneTopic**()
 
-[at line 225](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L225)
+[at line 224](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L224)
 
 Check if only one topic was set.        
 
@@ -226,10 +226,17 @@ Check if only one topic was set.
 <a name id="method_checkIfOneTopicExist"></a>
 
 ### 
-protected  **checkIfOneTopicExist**()
+protected void **checkIfOneTopicExist**()
 
 [at line 235](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/Topics.php#L235)
 
+
+
+#### Return Value
+
+|   |   |
+|---|---|
+|void|
 
 
 #### Exceptions

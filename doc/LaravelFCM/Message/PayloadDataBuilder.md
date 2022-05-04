@@ -32,8 +32,8 @@ Official google documentation :
 |---|---|---|---|
 |[<abbr title="LaravelFCM\Message\PayloadDataBuilder">PayloadDataBuilder</abbr>](../../LaravelFCM/Message/PayloadDataBuilder.md)|<a name="#method_addData"></a>addData(array $data)|add data to existing data.||
 |[<abbr title="LaravelFCM\Message\PayloadDataBuilder">PayloadDataBuilder</abbr>](../../LaravelFCM/Message/PayloadDataBuilder.md)|<a name="#method_setData"></a>setData(array $data)|erase data with new data.||
-||<a name="#method_removeAllData"></a>removeAllData()|Remove all data.||
-|array|<a name="#method_getData"></a>getData()|return data.||
+|void|<a name="#method_removeAllData"></a>removeAllData()|Remove all data.||
+|array|null|<a name="#method_getData"></a>getData()|return data.||
 |[<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md)|<a name="#method_build"></a>build()|generate a PayloadData.||
 
 
@@ -83,17 +83,24 @@ erase data with new data.
 <a name id="method_removeAllData"></a>
 
 ### 
-  **removeAllData**()
+ void **removeAllData**()
 
-[at line 52](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadDataBuilder.php#L52)
+[at line 54](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadDataBuilder.php#L54)
 
 Remove all data.        
+
+#### Return Value
+
+|   |   |
+|---|---|
+|void|
+
 <a name id="method_getData"></a>
 
 ### 
- array **getData**()
+ array|null **getData**()
 
-[at line 62](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadDataBuilder.php#L62)
+[at line 64](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadDataBuilder.php#L64)
 
 return data.        
 
@@ -101,14 +108,14 @@ return data.
 
 |   |   |
 |---|---|
-|array|
+|array|null|
 
 <a name id="method_build"></a>
 
 ### 
  [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) **build**()
 
-[at line 72](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadDataBuilder.php#L72)
+[at line 74](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/PayloadDataBuilder.php#L74)
 
 generate a PayloadData.        
 

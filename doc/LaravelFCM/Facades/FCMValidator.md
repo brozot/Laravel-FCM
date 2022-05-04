@@ -35,7 +35,7 @@ class **FCMValidator**        extends <abbr title="Illuminate\Support\Facades\Fa
 ### 
 staticprotected  **getFacadeAccessor**()
 
-[at line 11](https://github.com/code-lts/Laravel-FCM/blob/main/src/Facades/FCMValidator.php#L11)
+[at line 12](https://github.com/code-lts/Laravel-FCM/blob/main/src/Facades/FCMValidator.php#L12)
 
 
 <a name id="method_validateToken"></a>
