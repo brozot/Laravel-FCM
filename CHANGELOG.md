@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [v1.x.x] - YYYY-MM-DD
 
+## [v1.7.1] - 2022-05-04
+
 - Fix detection of `Retry-After` header in ServerResponseException class and phpdoc
 
 ## [v1.7.0] - 2022-03-11
