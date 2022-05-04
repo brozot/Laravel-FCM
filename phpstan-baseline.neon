@@ -96,11 +96,6 @@ parameters:
 			path: src/Response/DownstreamResponseContract.php
 
 		-
-			message: "#^Property LaravelFCM\\\\Response\\\\Exceptions\\\\ServerResponseException\\:\\:\\$retryAfter \\(int\\) does not accept array\\<string\\>\\.$#"
-			count: 1
-			path: src/Response/Exceptions/ServerResponseException.php
-
-		-
 			message: "#^Negated boolean expression is always true\\.$#"
 			count: 1
 			path: src/Response/TopicResponse.php

@@ -8,9 +8,10 @@ use Psr\Http\Message\ResponseInterface;
 class ServerResponseException extends Exception
 {
     /**
-     * retry after.
+     * The value of the first Retry-After header in the response.
      *
-     * @var int
+     * @see https://httpwg.org/specs/rfc7231.html#header.retry-after
+     * @var int|string
      */
     public $retryAfter;
 
@@ -25,8 +26,9 @@ class ServerResponseException extends Exception
         $responseHeader = $response->getHeaders();
         $responseBody = $response->getBody()->getContents();
 
-        if (array_keys($responseHeader, 'Retry-After')) {
-            $this->retryAfter = $responseHeader['Retry-After'];
+        if (array_key_exists('Retry-After', $responseHeader)) {
+            $retryAfterValue = $responseHeader['Retry-After'][0];
+            $this->retryAfter = is_numeric($retryAfterValue) ? (int) $retryAfterValue : $retryAfterValue;
         }
 
         parent::__construct($responseBody, $code);
