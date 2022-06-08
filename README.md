@@ -131,8 +131,7 @@ $optionBuilder = new OptionsBuilder();
 $optionBuilder->setTimeToLive(60*20);
 
 $notificationBuilder = new PayloadNotificationBuilder('my title');
-$notificationBuilder->setBody('Hello world')
-				    ->setSound('default');
+$notificationBuilder->setBody('Hello world')->setSound('default');
 
 $dataBuilder = new PayloadDataBuilder();
 $dataBuilder->addData(['a_data' => 'my_data']);
@@ -169,8 +168,7 @@ $optionBuilder = new OptionsBuilder();
 $optionBuilder->setTimeToLive(60*20);
 
 $notificationBuilder = new PayloadNotificationBuilder('my title');
-$notificationBuilder->setBody('Hello world')
-				    ->setSound('default');
+$notificationBuilder->setBody('Hello world')->setSound('default');
 
 $dataBuilder = new PayloadDataBuilder();
 $dataBuilder->addData(['a_data' => 'my_data']);
@@ -219,8 +217,7 @@ use LaravelFCM\Message\Topics;
 
 ```php
 $notificationBuilder = new PayloadNotificationBuilder('my title');
-$notificationBuilder->setBody('Hello world')
-				    ->setSound('default');
+$notificationBuilder->setBody('Hello world')->setSound('default');
 
 $notification = $notificationBuilder->build();
 
@@ -245,8 +242,7 @@ It sends notification to devices registered at the following topics:
 
 ```php
 $notificationBuilder = new PayloadNotificationBuilder('my title');
-$notificationBuilder->setBody('Hello world')
-				    ->setSound('default');
+$notificationBuilder->setBody('Hello world')->setSound('default');
 
 $notification = $notificationBuilder->build();
 
@@ -274,8 +270,7 @@ $notificationKey = ['a_notification_key'];
 
 
 $notificationBuilder = new PayloadNotificationBuilder('my title');
-$notificationBuilder->setBody('Hello world')
-                        ->setSound('default');
+$notificationBuilder->setBody('Hello world')->setSound('default');
 
 $notification = $notificationBuilder->build();
 
@@ -351,10 +346,7 @@ See the [official documentation](https://firebase.google.com/docs/cloud-messagin
 
 ```php
 $notificationBuilder = new PayloadNotificationBuilder();
-$notificationBuilder->setTitle('title')
-            		->setBody('body')
-            		->setSound('sound')
-            		->setBadge('badge');
+$notificationBuilder->setTitle('title')->setBody('body')->setImage('image_url')->setSound('sound')->setBadge('badge');
 
 $notification = $notificationBuilder->build();
 ```
