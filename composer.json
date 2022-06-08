@@ -8,19 +8,23 @@
         {
             "name": "Nicolas Brosy",
             "email": "nicolas.brosy@gmail.com"
+        },
+        {
+            "name": "Domenico Neto",
+            "email": "netodomenico@me.com"
         }
     ],
     "require": {
-        "php": ">=5.5.9",
-        "illuminate/support": "5.*|^6",
-        "guzzlehttp/guzzle": "~6.0",
+        "php": "^5.5.9|^7.0|^8.0",
+        "illuminate/support": "5.*|^6|^7|^8",
+        "guzzlehttp/guzzle": "^6|^7",
         "monolog/monolog": "^1.12|^2.0"
     },
     "require-dev": {
         "mockery/mockery" : "0.9.*",
         "phpunit/phpunit" : "4.7.*",
         "php-coveralls/php-coveralls": "dev-master",
-        "laravel/laravel": "5.2.*"
+        "laravel/laravel": "5.2.*|^6.0|^7.0|^8.0|^9.0"
     },
     "autoload": {
         "psr-4": {
