@@ -31,6 +31,13 @@ class PayloadNotificationBuilder
      * @var null|string
      */
     protected $icon;
+    
+    /**
+     * @internal
+     *
+     * @var null|string
+     */
+    protected $image;
 
     /**
      * @internal
