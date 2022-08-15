@@ -100,6 +100,22 @@ Supports default or the filename of a sound resource bundled in the app.
 
 
 
+### setImage
+
+    \LaravelFCM\Message\PayloadNotificationBuilder LaravelFCM\Message\PayloadNotificationBuilder::setImage(String $image_url)
+
+Indicates the image that can be displayed in the notification
+
+Supports an url or internal image.
+
+* Visibility: **public**
+
+
+#### Arguments
+* $image_url **String**
+
+
+
 ### setBadge
 
     \LaravelFCM\Message\PayloadNotificationBuilder LaravelFCM\Message\PayloadNotificationBuilder::setBadge(String $badge)
