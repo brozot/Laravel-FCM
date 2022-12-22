@@ -52,8 +52,10 @@ class Request extends BaseRequest
      * @param PayloadNotification $notification
      * @param PayloadData         $data
      * @param Topics|null         $topic
+     * @param string              $senderId
+     * @param string              $serverKey
      */
-    public function __construct($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, Topics $topic = null)
+    public function __construct($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, Topics $topic = null, $senderId = null, $serverKey = null)
     {
         parent::__construct();
 
@@ -62,6 +64,14 @@ class Request extends BaseRequest
         $this->notification = $notification;
         $this->data = $data;
         $this->topic = $topic;
+
+        if ($senderId !== null) {
+            $this->config['sender_id'] = $senderId;
+        }
+
+        if ($serverKey !== null) {
+            $this->config['server_key'] = $serverKey;
+        }
     }
 
     /**

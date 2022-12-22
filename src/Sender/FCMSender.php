@@ -23,10 +23,12 @@ class FCMSender extends HTTPSender
      * @param Options|null             $options
      * @param PayloadNotification|null $notification
      * @param PayloadData|null         $data
+     * @param string                   $senderId
+     * @param string                   $serverKey
      *
      * @return DownstreamResponse|null
      */
-    public function sendTo($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null)
+    public function sendTo($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, $senderId = null, $serverKey = null)
     {
         $response = null;
 
@@ -45,7 +47,7 @@ class FCMSender extends HTTPSender
                 }
             }
         } else {
-            $request = new Request($to, $options, $notification, $data);
+            $request = new Request($to, $options, $notification, $data, null, $senderId, $serverKey);
             $responseGuzzle = $this->post($request);
 
             $response = new DownstreamResponse($responseGuzzle, $to, $this->logger);
@@ -61,12 +63,14 @@ class FCMSender extends HTTPSender
      * @param Options|null             $options
      * @param PayloadNotification|null $notification
      * @param PayloadData|null         $data
+     * @param string                   $senderId
+     * @param string                   $serverKey
      *
      * @return GroupResponse
      */
-    public function sendToGroup($notificationKey, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null)
+    public function sendToGroup($notificationKey, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, $senderId = null, $serverKey = null)
     {
-        $request = new Request($notificationKey, $options, $notification, $data);
+        $request = new Request($notificationKey, $options, $notification, $data, null, $senderId, $serverKey);
 
         $responseGuzzle = $this->post($request);
 
@@ -80,12 +84,14 @@ class FCMSender extends HTTPSender
      * @param Options|null             $options
      * @param PayloadNotification|null $notification
      * @param PayloadData|null         $data
+     * @param string                   $senderId
+     * @param string                   $serverKey
      *
      * @return TopicResponse
      */
-    public function sendToTopic(Topics $topics, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null)
+    public function sendToTopic(Topics $topics, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, $senderId = null, $serverKey = null)
     {
-        $request = new Request(null, $options, $notification, $data, $topics);
+        $request = new Request(null, $options, $notification, $data, $topics, $senderId, $serverKey);
 
         $responseGuzzle = $this->post($request);
 
