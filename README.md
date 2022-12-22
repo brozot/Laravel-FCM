@@ -1,4 +1,4 @@
-# Laravel-FCM (maintained version of the abandonned "official" repository)
+# Laravel-FCM (added support for multiple FCM account on code-lts/Laravel-FCM repository)
 
 ![Run tests](https://github.com/code-lts/Laravel-FCM/workflows/Run%20tests/badge.svg?branch=main)
 [![Coverage Status](https://codecov.io/gh/code-lts/laravel-fcm/branch/main/graph/badge.svg)](https://codecov.io/gh/code-lts/laravel-fcm)
@@ -157,7 +157,7 @@ $data = $dataBuilder->build();
 
 $token = "a_registration_from_your_database";
 
-$downstreamResponse = FCM::sendTo($token, $option, $notification, $data);
+$downstreamResponse = FCM::sendTo($token, $option, $notification, $data, $senderId, $serverKey);
 
 $downstreamResponse->numberSuccess();
 $downstreamResponse->numberFailure();
@@ -196,7 +196,7 @@ $data = $dataBuilder->build();
 // You must change it to get your tokens
 $tokens = MYDATABASE::pluck('fcm_token')->toArray();
 
-$downstreamResponse = FCM::sendTo($tokens, $option, $notification, $data);
+$downstreamResponse = FCM::sendTo($tokens, $option, $notification, $data, $senderId, $serverKey);
 
 $downstreamResponse->numberSuccess();
 $downstreamResponse->numberFailure();
@@ -271,7 +271,7 @@ $topic->topic('news')->andTopic(function($condition) {
 
 });
 
-$topicResponse = FCM::sendToTopic($topic, null, $notification, null);
+$topicResponse = FCM::sendToTopic($topic, null, $notification, null, $senderId, $serverKey);
 
 $topicResponse->isSuccess();
 $topicResponse->shouldRetry();
@@ -320,7 +320,7 @@ $notification = $notificationBuilder->build();
 
 $notificationKey = ['a_notification_key'];
 
-$groupResponse = FCM::sendToGroup($notificationKey, null, $notification, null);
+$groupResponse = FCM::sendToGroup($notificationKey, null, $notification, null, $senderId, $serverKey);
 
 $groupResponse->numberSuccess();
 $groupResponse->numberFailure();
