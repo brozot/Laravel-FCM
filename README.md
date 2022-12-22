@@ -241,7 +241,7 @@ $notification = $notificationBuilder->build();
 $topic = new Topics();
 $topic->topic('news');
 
-$topicResponse = FCM::sendToTopic($topic, null, $notification, null);
+$topicResponse = FCM::sendToTopic($topic, null, $notification, null, $senderId, $serverKey);
 
 $topicResponse->isSuccess();
 $topicResponse->shouldRetry();
